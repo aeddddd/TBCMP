@@ -433,6 +433,20 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 \begin{equation}
 	S_{z}|\pm\rangle=\pm(\hbar/2)|\pm\rangle 
 \end{equation}
+接下来我们尝试构造两个与其密切相关的算符(注意这两个算符目前并不是有对应的可观测量,换句话说,这两个算符\textbf{不一定}是厄米算符),并找出这两个算符所关联的物理意义.
+\begin{equation}
+	S_+\equiv\hbar|+\rangle\langle-| ,\quad S_-\equiv\hbar|-\rangle\langle+|
+\end{equation}
+显然,这两个算符都\textbf{不是}厄米算符,观察算符形式,我们可以发现当算符$S_+$作用在自旋向下的右矢$|-\rangle$时,其可以使右矢$|-\rangle$变为自旋向上的右矢$|+\rangle$并乘以一个系数$\hbar$.而另一方面,我们将算符$S_+$作用在自旋向上的右矢$|+\rangle$时,其变为一个零右矢.自然,我们得出算符$S_+$的物理意义:可以使自旋分量$S_z$升高$\hbar$,当$S_z$不能被继续升高时,我们将得到一个零态.同样的,算符$S_-$可以解释为自旋分量降低$\hbar$的算符.之后,我们会证明$S_\pm$可以用$x,z$分量的自旋角动量算符来表示($S_x\pm\i S_y$).
+
+而回到这一节的矩阵表示,我们同样构造该系统的矩阵表示,我们约定:按照角动量\textbf{依次减小}的顺序标记列(行)指标.在我们所关注的$\frac12$自旋系统中,有
+\begin{equation}
+	|+\rangle\doteq\begin{pmatrix}1\\0\end{pmatrix},\quad|-\rangle\doteq\begin{pmatrix}0\\1\end{pmatrix}
+\end{equation}
+\begin{equation}
+	S_z\doteq\frac{\hbar}{2}\binom{1}{0},\quad S_+\doteq\hbar\binom{0}{0},\quad S_-\doteq\hbar\binom{0}{1}.
+\end{equation}
+在后续的泡利算符的二分量表示时,将继续用到上述式子.
 \section{测量,不确定度关系}
 \section{表象变换}
 \section{位置,动量和平移}

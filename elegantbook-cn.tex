@@ -1,0 +1,636 @@
+\documentclass[lang=cn,newtx,10pt,scheme=chinese,thmcnt=section]{elegantbook}
+
+\usepackage{tikz-feynman}
+\usepackage{fixdif}
+
+\title{凝聚态物理:从量子力学到量子纠缠}
+\subtitle{Condensed Matter Physics : From Quantum Mechanics to Quantum Entanglement}
+
+\author{A \& B \& C}
+\institute{Group 530}
+\date{2024/7/18}
+\version{1.0}
+\bioinfo{当前进度}{尚未完成}
+
+\extrainfo{尚未完成!WIP!}
+
+\setcounter{tocdepth}{3}
+
+\cover{cover.jpg}
+
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+
+% 修改标题页的橙色带
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % 参考文献，不要删除
+
+\begin{document}
+
+\maketitle
+\frontmatter
+
+\tableofcontents
+
+\mainmatter
+
+%\begin{definition}[定义标题] \label{def:标签} 
+%\end{definition}
+
+%\begin{exercise}\label{exer:标签}练习
+%\end{exercise}
+
+%\begin{solution}解
+%\end{solution}
+
+%\begin{proof}证明
+%\end{proof}
+
+%\begin{theorem}[定理] \label{thm:标签} 
+%\end{theorem}
+
+%\begin{note}笔记
+%\end{note}
+
+%\begin{proposition}[命题] \label{pro:标签}
+%\end{proposition}
+
+%\begin{property}\label{property:标签}性质
+%\end{property}
+
+%\begin{conclusion}结论
+%\end{conclusion}
+
+
+\chapter*{前言}
+\markboth{Introduction}{Introduction}
+学好这些物理\textbf{必不可少}的是学好线性代数和微积分,本书的最低阅读门槛已经降到掌握线性代数和微积分就可以尝试阅读了.对于部分数学物理方法和固体物理中的概念会尝试在附录补充.
+
+我们可以把这些几乎所有的东西都算作\textbf{线性空间}里面的东西,无论是态矢量,算符,群$\cdots$这些都没有脱离线性空间的框架,所以本书的大部分内容都尽可能依托线性空间这个基本盘来诠释.大多数诠释是更加物理的,毕竟没有哪一本数学教材会把向量空间和线性空间模糊到一起(不过在必要的情况下尽量修补数学上的漏洞,在前几章尽量不会肆意使用晦涩的数学概念).
+
+对于一些经典实验,如盖拉赫实验,这个实验可以让\textbf{从未接触过}这一方面的新手受益匪浅.但是出于一些考虑(更加强调线性空间,能够提供更加深入的理解,同时不必花大篇幅来讲解这一实验),选择直接从线性空间来开始第一章的内容,如果想要对这一方面加以了解的话,可以参考这一篇文章\href{https://zhuanlan.zhihu.com/p/596869364}{盖拉赫实验(知乎)}.
+
+对于这一领域,学到第九章其实就\textbf{具备}阅读期刊论文的能力了,后面开始的章节前部分是面世已久的模型.后部分是近些年才面世的新模型和新理论,主要由个人经历写成,方向较为前沿且范围较小,故\textbf{仅供参考}.
+
+\textit{目前打算写在最后的东西包括:泛函重整化群,一些较新的模型,一些和纠缠相关的内容.预计在这几个月初步写到第九章,然后慢慢补充修正(尤其是第九章之后的内容),大部分重要的内容会尽量写在较前面,不过可能为了贴合书名先写纠缠的部分.}
+
+目前进度:第一章.
+
+
+\chapter{初识量子力学}
+\begin{introduction}
+	\item 狄拉克符号与算符
+	\item 厄米算符与幺正算符
+	\item 位置与动量
+	\item 平移
+\end{introduction}
+对于量子力学部分,本书并没有按照国内常见的教材的顺序逐步开始.主要参考了Sakurai的现代量子力学中的前五章.鉴于原书翻译年代较久且篇幅较长,故对一些章节做了变动.
+\section{狄拉克符号}
+我们首先关注的是一个矢量空间\footnote{文中指线性空间,下文统称线性空间.其由于物理规律的限制,它必须是复线性空间(在线性代数有时也叫酉空间,酉\textit{unitary}为过去音译,现物理常译作幺正,部分旧教科书会错译为么正).}.在量子物理中,我们通过把一个物理态抽象为该线性空间的一个元素(即其中一个矢量)来简化相关的研究.而狄拉克所开发的一套符号系统很好的描述这些特殊矢量的相互作用,使原本冗长的式子简洁起来,这就是为什么我们要学习掌握狄拉克符号.
+\subsection*{右矢空间}
+对于一个线性空间,我们稍稍回忆线性代数中的内容:显然,这个线性空间的维度数是一个非常重要的参数.但是,如果把一个物理态用该线性空间的一个矢量来表示,那么维度数该如何考虑?
+
+例如,对于一个拥有自旋自由度的电子(忽略其他自由度).我们想要在一个线性空间里面描述它,至少需要二维的空间.倘若要考虑这个电子的位置或动量,那一个有限维的空间已经无法表述它了,我们需要把这个线性空间扩展到无限维线性空间,我们称其为希尔伯特空间(\textit{注意这二者并不等价}).
+
+回到狄拉克符号,我们再次考虑一个电子并忽略除自旋以外的自由度.这样,一个确定自旋的电子就可以用一个线性空间中的一个矢量(我们称其为\textbf{态矢量})来表述,并按照狄拉克符号的记法,将其记为一个\textbf{右矢},以$|\alpha\rangle$表示.我们所关心的所有信息都包含在这个右矢里面(本例中为该电子的自旋方向),右矢可以相加.
+\begin{equation}
+	|\alpha\rangle+|\beta\rangle=|\gamma\rangle 
+\end{equation}
+它们的和$|\gamma\rangle$为另一个右矢.对于任意一个复数$c$,它与任意右矢的积为另一个右矢,且数在右矢左右没有区别.
+\begin{equation}
+	c|\alpha\rangle=|\alpha\rangle c
+\end{equation}
+特别的,当$c=0$时,得到的右矢称为\textbf{零右矢}.
+
+对于右矢,我们约定$|\alpha\rangle$和$c|\alpha\rangle$在$c\ne0$时表示同一物理态.这也是说,对于这个线性空间中的任意矢量,只有方向是存在意义的.
+
+一个可观测量.诸如动量和自旋的分量,可用所涉线性空间中的算符,比如$A$来表示.较为具象的理解,算符即一种操作(变换),将算符乘以右矢即对这个右矢相应的物理量进行变换(如时间演化算符作用到一个右矢上,那么表示这个右矢经历一段时间后的物理态).总的来说,一个算符从左边作用于一个右矢
+\begin{equation}
+	A\cdot(|\alpha\rangle)=A|\alpha\rangle 
+\end{equation}
+不难发现结果仍是右矢.\\
+\begin{remark}
+	事实上,对于一个线性空间,我们更容易联想到矩阵,如果把右矢看作相应线性空间中的一个矩阵,算符是具有物理意义的矩阵(如同线性代数中经典的旋转矩阵那样),算符和右矢的乘积相当于矩阵和矩阵的乘积,只能左乘但不能右乘自然是矩阵维度的限制,这一点将在下一节的矩阵表示中展示的更加清楚.
+\end{remark}
+\subsubsection*{本征态}
+在大多数情况下,算符$A$作用在右矢$|\alpha\rangle$上往往并不意味着直接乘以一个常数,但是存在一些特殊的右矢$|a'\rangle$使得算符$A$作用在该右矢后相当于直接乘以一个常数$a'$,此时我们称这个常数$a'$为\textbf{本征值},$|a'\rangle$为\textbf{本征右矢}.\\\\
+\textit{正如上一段所讲,我们可以直接把本征值和线性代数中的特征值联系起来,它们本质上是一致的,这下,我们又回到我们所熟知的线性代数的范畴了.}\\\\
+显然这些本征右矢根据定义有以下性质
+\begin{equation}
+	A| a^{\prime}\rangle=a^{\prime}| a^{\prime}\rangle,A| a^{\prime\prime}\rangle=a^{\prime\prime}| a^{\prime\prime}\rangle,\cdots
+\end{equation}
+根据定义,这些$a',a'',a'''\cdots$只是一些单纯的数字,且注意到算符$A$作用在一个本征右矢前后是仅相差一个常数的同一个右矢.算符$A$作用在\textbf{全部}本征右矢后所得出的本征值的集合$\{a',a'',a''',\cdots\}$,写成更紧凑的形式为$\{a'\}$被称为算符$A$的\textbf{本征值集}.使用中可以用数字角标替代$','','''$的形式.并且我们把与一个本征右矢相对应的物理态称作本征态.
+
+在前面我们并没有详细的探讨怎么确定该线性空间的维数,现在我们可以给出暂时的答案:这个线性空间是可观测量(算符)$A$的$N$个本征右矢所张成的一个$N$维线性空间,其中该空间中任一一个右矢$|\alpha\rangle$都可以用$A$所对应的本征右矢写成如下形式
+\begin{equation}
+	|\alpha\rangle=\sum_{a^{\prime}}c_{a^{\prime}}| a^{\prime}\rangle 
+\end{equation}
+其中$c_{a^{\prime}}$为复系数,这个关系从矩阵角度也很容易得出.
+\subsection*{左矢空间和内积}
+我们一直处理的线性空间是右矢空间.现在我们引人左矢空间的概念，它是一个与右矢空间\textbf{对偶}\footnote{对偶通常是转换角度解决问题的方法,我们论述两个东西对偶通常是指其在某一结构上的统一形式.我们可以考虑小学就学过的古诗词,上下两句对仗,这就是按照一种结构(对仗)下的两个东西所具有统一形式(这个例子并不严谨但足够形象).更深入的讨论请参考附录部分}的线性空间.我们假定对应于每个右矢$|a\rangle$,在这个对偶空间或左矢空间中都存在一个左矢,用$\langle\alpha|$表示.左矢空间由本征左矢$\{\langle\alpha'|\}$所张成,它们与本征右矢$\{|a^{\prime}\rangle\}$相对应.右矢空间与左矢空间的一一对应关系为
+\begin{equation}
+	\begin{aligned}|\alpha\rangle&\overset{\mathrm{DC}}{\operatorname*{\longleftrightarrow}}\langle\alpha|\\| a^{\prime}\rangle,| a^{\prime\prime}\rangle,\cdotp\cdotp\cdotp&\overset{\mathrm{DC}}{\operatorname*{\longleftrightarrow}}\langle a^{\prime}|,\langle a^{\prime\prime}|,\cdotp\cdotp\cdotp\\| a\rangle+|\beta\rangle&\overset{\mathrm{DC}}{\operatorname*{\longleftrightarrow}}\langle\alpha|+\langle\beta|,\end{aligned}
+\end{equation}
+其中DC代表\textbf{对偶对应},简单来讲(但不严谨),左矢空间可以看作右矢空间的某种镜像(或者说是共轭).
+
+特别的,我们需要注意的是,与$c|\alpha\rangle$对偶的不是$c\langle\alpha|$而是$c^*\langle\alpha|$.即如下
+\begin{equation}
+	c_\alpha|\alpha\rangle+c_\beta|\beta\rangle\overset{\mathrm{DC}}{\operatorname*{\longleftrightarrow}}c_\alpha^*\langle\alpha|+c_\beta^*\langle\beta|
+\end{equation}
+我们现在定义一个左矢和一个右矢的\textbf{内积}\footnote{可以类比高中所学的向量标量积(数量积),或者通俗来讲的向量``点乘"}.左矢和右矢的内积要求为左矢左乘右矢,即如下形式
+\begin{equation}
+	\langle\beta|\alpha\rangle=(\langle\beta|)\cdot(|\alpha\rangle)
+\end{equation}
+正如同我们高中所学过的``向量点乘"那样,左右矢内积的结果也同样是一个数,不同的是,它一般是一个复数.这里还需要强调一下,构成一个内积的结果总是从左矢空间和右矢空间取一个矢量.
+
+内积存在两个基本性质,首先
+\begin{equation}\label{eq1.9}
+	\langle\beta|\alpha\rangle=\langle\alpha|\beta\rangle^*
+\end{equation}
+即表明,$\langle\beta|\alpha\rangle$与$\langle\alpha|\beta\rangle$互为复共轭.\\
+\begin{remark}
+	虽然我们在前面数次将其类比为两个矢量间的``点乘",但实际中还是存在差别,必须加以区分.这里我们可以发现其中显而易见的区别:$\mathbf{a}\cdot\mathbf{b}=\mathbf{b}\cdot\mathbf{a}$,但是对于内积而言$\langle\beta|\alpha\rangle\ne\langle\alpha|\beta\rangle$.我们可以发现造成这个不同的主要原因是左右矢空间为复线性空间,而通常的矢量被定义在三维欧氏空间中(实空间),我们在线性代数中接触的内积也大多定义在实空间内,这是出现这一区别的核心因素.
+\end{remark}
+
+从这个基本性质,我们自然得到$\langle\alpha|\alpha\rangle$一点为实数(证明这个关系只需要让$\langle\beta|\rightarrow\langle\alpha|$即可).
+
+另一个性质为
+\begin{equation}
+	\langle\alpha|\alpha\rangle\geqslant0
+\end{equation}
+其中当且仅当$|\alpha\rangle$为零右矢时成立.这个性质也称\textbf{正定度规}假设\footnote{也称黎曼度规,详细内容会在涉及的时候重新论述.},这个概念对于量子力学中的概率解释是必要的.
+
+如果两个\textbf{右矢}$|\alpha\rangle$和$|\beta\rangle$满足
+\begin{equation}
+	\langle\alpha|\beta\rangle=0
+\end{equation}
+此时我们称这两个右矢为\textbf{正交}的.我们特殊强调了是位于同一空间中的两个右矢直接的关系,即使式子中存在左矢$\langle\alpha|$.
+
+我们前面提到过,在一个物理态所处的线性空间(右矢空间),对于其中的右矢,只有方向是存在意义的.我们自然想到:如果只有方向存在意义,那我们可以把大小统一为一个标准(通常为单位长度1).这样的操作在物理上被称为\textbf{归一化},一个归一化的右矢$\left|\tilde{\alpha}\right\rangle $可以被构造为
+\begin{equation}
+	|\bar{\alpha}\rangle=\left(\frac1{\sqrt{\langle\alpha|\alpha\rangle}}\right)|\alpha\rangle
+\end{equation}
+它存在以下性质\footnote{如果对度规有一定了解的话,可以发现这里先给定正定度规是必要的.}
+\begin{equation}
+	\langle\alpha|\alpha\rangle=1
+\end{equation}
+类似于欧氏空间中的长度$\sqrt{\mathbf{a}\cdot\mathbf{a}}=|\mathbf{a}|$,$\sqrt{\langle\alpha|\alpha\rangle}$被称为$|\alpha\rangle$的\textbf{模长},简称\textbf{模}.
+
+\subsection*{算符}
+正如我们前面所说,类似动量,自旋分量等可观测量可以用算符来表示,在这一部分,我们使用$A,B$表示这类算符.相应的,我们使用$X,Y$来表示更广泛的作用在右矢上的算符.
+
+算符从左边作用在右矢上
+$$X\cdot(\begin{array}{c}|\alpha\rangle)=X|\alpha\rangle,\end{array}$$
+得到的乘积是另一个右矢.如果对于所涉及右矢空间的任意一个右矢都有
+$$X|\alpha\rangle=Y|\alpha\rangle$$
+则称算符$X$和$Y$\textbf{相等}
+$$X=Y$$
+若对任意的右矢$\left|\alpha\right\rangle$,我们都有
+$$X|\alpha\rangle=0$$
+则称算符$X$为\textbf{零算符}. 算符可以相加:加法运算是可交换的和可结合的:
+$$X+Y=Y+X$$
+$$X+(Y+Z)=(X+Y)+Z$$
+除了少数例外,如最常见的时间反演算符为\textbf{非线性算符},我们所用的算符大多都是\textbf{线性算符},即满足
+\begin{equation}
+	X(c_\alpha|\alpha\rangle+c_\beta|\beta\rangle)=c_\alpha X|\alpha\rangle+c_\beta X|\beta\rangle 
+\end{equation}
+算符$X$总是从右边作用在左矢上
+\begin{equation}
+	(\langle\alpha|)\cdot X=\langle\alpha|X
+\end{equation}
+得到的积是另一个左矢. 一般而言，右矢 $X|\alpha\rangle$与左矢$\langle\alpha|X$ 彼此并\textit{不}相互对偶. 我们把符号$X^\dagger$定义为
+\begin{equation}
+	X|\alpha\rangle\overset{\mathrm{DC}}{\operatorname*{\leftrightarrow}}\langle\alpha| X^\dagger
+\end{equation}
+算符$X^\dagger$称为$X$的\textbf{厄米共轭}或简称$X$的共轭算符. 如果一个算符满足
+\begin{equation}
+	X=X^\dagger
+\end{equation}
+它被称作为\textbf{厄米算符}.
+
+对于乘法,算符$X$和$Y$可以相乘. 一般而言,乘法运算是\textbf{非对易}的.这就是说:
+\begin{equation}
+	XY\ne YX 
+\end{equation}
+然而,乘法运算是可结合的:
+\begin{equation}
+	X(YZ)=(XY)Z=XYZ
+\end{equation}
+我们还有
+$$X(Y|\alpha\rangle)=(XY)|\alpha\rangle=XY|\alpha\rangle,\quad(\langle\beta|X\rangle Y=\langle\beta|(XY)=\langle\beta|XY$$
+可以注意到如下关系
+\begin{equation}
+	(XY)^\dagger=Y^\dagger X^\dagger
+\end{equation}
+这是因为对偶关系的共轭性,即
+\begin{equation}
+	XY|\alpha\rangle=X(Y|\alpha\rangle)\overset{\mathrm{DC}}{\operatorname*{\leftrightarrow}}(\langle\alpha|Y^\dagger)X^\dagger=\langle\alpha|Y^\dagger X^\dagger 
+\end{equation}
+至此,我们考虑了左矢,右矢和算符之间的大多数乘积关系,最后,我们考虑让$|\beta\rangle$左乘$\langle\alpha|$,其结果
+\begin{equation}
+	(|\beta\rangle)\cdot(\langle\alpha|)=|\beta\rangle\langle\alpha|
+\end{equation}
+被称为$|\beta\rangle$与$\langle\alpha|$的\textbf{外积},其与内积不同,它被视作一个算符(正如两个行向量和列向量的内积和外积分别为数和矩阵那样).
+
+其余的乘积大多数无意义的.我们已经提到过,一个算符必须放在一个右矢的左边或者一个左矢的右边.换言之,$|\alpha\rangle X$ 和$X\langle\alpha|$都是不合法乘积的例子.它们既不是右矢也不是左矢,又不是算符,它们只是一些毫无意义的东西.当$|\alpha\rangle$ 和$|\beta\rangle$($\langle\alpha|$和$\langle\beta|$)是属于同一个右矢(左矢)空间的右矢(左矢)时,$|\alpha\rangle|\beta\rangle$和$\langle\alpha|\langle\beta|$等这样的乘积也都是不合法的\footnote{倘若$|\alpha\rangle$ 和$|\beta\rangle$($\langle\alpha|$和$\langle\beta|$)是位于不同线性空间中的右矢(左矢),那$|\alpha\rangle|\beta\rangle$和$\langle\alpha|\langle\beta|$是存在意义的,但是它们通常写作$|\alpha\rangle\otimes|\beta\rangle$和$\langle\alpha|\otimes\langle\beta|$}.
+\subsection*{结合公理}
+从我们之前所举出的乘法案例来看,算符之间的乘法是可结合的.事实上,对于算符之间的\textbf{合法}乘法运算,这一性质是普遍成立的,即\textbf{乘法的结合公理}.
+
+一个简单的例子,如果$X=|\beta\rangle\langle\alpha|$,那么则有$X^\dagger=|\alpha\rangle\langle\beta|$.这一例子同时作为第一章习题集的第一道题,其中答案位于附录部分.
+
+对于结合中的另一个重要组合,我们注意到
+$$ \underset{\text{左矢}\quad\text{  右矢}}{(\langle\beta|)\cdot(X|\alpha\rangle)}=\underset{\text{左矢}\quad\text{ 右矢}}{\operatorname*{(\langle\beta|X)\cdot(|\alpha\rangle)}}.$$
+我们使用更加紧凑的符号来表示这一组合$\langle\beta|(X|\alpha\rangle$,而对于一个厄米算符$X$,我们有
+\begin{equation}
+\langle\beta|X|\alpha\rangle=\langle\alpha|X|\beta\rangle^*
+\end{equation}
+这个关系利用之前所学可以较轻松的证明.
+\begin{proof}
+	考虑结合公理和内积的基本性质\ref{eq1.9},有
+	$$
+	\begin{aligned}
+		\langle\beta|X|\alpha\rangle & =\langle\beta|\cdot(X|\alpha\rangle) \\
+		&=\{(\langle\alpha| X^\dagger)\cdot|\beta\rangle\}^\dagger \\
+		&=\langle\alpha| X^\dagger|\beta\rangle^*
+	\end{aligned}
+	$$
+\end{proof}
+\section{基矢与矩阵表示}
+我们这里只讨论基右矢,基左矢的相关性质是显然可以通过基右矢得出的.
+\subsection*{可观测量的本征矢}
+由于通常在物理中,可观测量的算符$A$一般为厄米算符,于是我们考虑一个厄米算符$A$的本征右矢和本征值.
+
+\begin{theorem}\label{thm:1.2.1}
+	厄米算符$A$的本征值均为实数;$A$的相应于不同本征值的本征矢是正交的.
+\end{theorem}
+\begin{proof}
+	首先,我们回顾第一节的部分
+	$$
+	A|a^{\prime}\rangle=a^{\prime}| a^{\prime}\rangle
+	$$
+	由于$A$是厄米算符,我们自然得出
+	$$
+		\langle a^{\prime\prime}|A=a^{\prime\prime*}\langle a^{\prime\prime}|
+	$$
+	其中$a^\prime,a^{\prime\prime},\cdots$都是$A$的本征值.如果我们把第一式的两边都左乘以$\langle a^\prime\prime|$,第二式的两边都右乘以$|a^\prime\rangle$,然后相减,就可得到
+	$$(a^{\prime}-a^{\prime\prime*})\langle a^{\prime\prime}|a^{\prime}\rangle=0$$
+	现在 $a^{\prime}$和$a^{\prime\prime}$可以取相同的值也可以取不同的值.
+	
+	让我们先将它们取相同的.这可以推证出实数条件(该定理的前半部分)
+	$$a^{\prime}=a^{\prime*}$$
+	其中我们用到了$|a^\prime\rangle$ 不是一个零矢量的事实. 
+	
+	现在让我们假定 $a^\prime$与$a^{\prime\prime}$不同.因为刚刚证明了的实数条件,则差$a^{\prime}-a^{\prime\prime*}$等于$a^{\prime}-a^{\prime\prime}$,根据假定,它不可能是零. 于是内积$\langle a^{\prime\prime}|a^{\prime}\rangle$一定是零:
+	$$\langle a^{\prime\prime}| a^{\prime}\rangle=0,\quad(a^{\prime}\neq a^{\prime\prime})$$
+	由此证明了正交性(定理的后半部分).
+\end{proof}
+从定理\ref{thm:1.2.1}中得出:厄米算符的本征值为实数.这也意味着我们通常讨论的可观测量的本征值也是实数.而正交关系意味着我们可以构造基矢.
+
+我们通常把$|\alpha\rangle$归一化,使$\{|\alpha^{'} \rangle\}$构成一个\textbf{正交集}.
+\begin{equation}\label{eq1.2.1}
+	\langle a^{\prime\prime}| a^{\prime}\rangle=\delta_{a^{\prime\prime}a^{\prime}}
+\end{equation}
+关于克罗内克符号$\delta_{ij}$参考附录部分.
+
+通过我们右矢空间的构造,$A$的本征右矢必然构成一个\textbf{完备集}.这是为了能够``推导"出薛定谔方程所采取的一类假设.
+\subsection*{本征矢作为基右矢}
+我们已经看到$A$的归一化的本征右矢构成了一个完备正交集. 右矢空间的一个任意右矢可以用$A$的本征右矢展开. 换句话说,$A$的本征右矢被用作基右矢\textbf{就像}一组相互正交的单位矢量被用作欧几里得空间的基矢量一样.
+
+在$A$的本征右矢所张的右矢空间中给定一个任意右矢$|\alpha\rangle$,让我们试着将其展开如下:
+\begin{equation}
+	|\alpha\rangle=\sum_{a^{\prime}}c_{a^{\prime}}|a^{\prime}\rangle
+\end{equation}
+用$\langle a^{\prime\prime}|$左乘且利用正交性\ref{eq1.2.1},我们立即可以得到展开系数:
+$$c_{a^{\prime}}=\langle a^{\prime}|\alpha\rangle$$
+换句话说,我们有
+\begin{equation}\label{eq1.2.2}
+	|\alpha\rangle=\sum_{a^{\prime}}|a^{\prime}\rangle\langle a^{\prime}|\alpha\rangle
+\end{equation}
+它类似于(实)欧几里得空间的一个矢量$\mathbf{V}$的展开:
+$$\mathbf{V}=\sum_i\hat{\mathbf{e}}_i(\hat{\mathbf{e}}_i\cdot\mathbf{V})$$
+其中的$\{\hat{\mathbf{e}}_i\}$形成一组单位矢量的正交集.我们现在来回忆一下乘法的结合公理:$|a^\prime\rangle\langle a^{\prime}|\alpha\rangle$ 既可以看作数 $\langle a^\prime|\alpha\rangle$ 乘以$|a^\prime\rangle$,或等价地,也可以看成算符$|a^\prime\rangle\langle a^\prime|$作用在$|\alpha\rangle$上.\\
+因为\ref{eq1.2.2}中的$|\alpha\rangle$是一个任意的右矢.所以我们一定有:
+\begin{equation}\label{eq1.2.3}
+	\sum_{a^{\prime}}|a^{\prime}\rangle\langle a^{\prime}|=\mathbf{1}
+\end{equation}
+其中右边的 $\mathbf{1}$ 被理解为单位算符. 方程\ref{eq1.2.3}称为\textbf{完备性关系}或\textbf{封闭性}.
+
+\ref{eq1.2.3}是极为重要的式子,有了它,我们可以在任何需要的位置插入一个这个形式的单位算符,这个式子在此后会经常看见.\\
+例如:对于$\langle\alpha|\alpha\rangle$,我们在$\langle\alpha|$和$|\alpha\rangle$之间插入一个这样的单位算符,自然得出:
+\begin{equation}
+	\begin{aligned}
+		\langle\alpha|\alpha\rangle&=\langle\alpha|\cdot(\sum_{a^{\prime}}|a^{\prime}\rangle\langle a^{\prime}|)\cdot|\alpha\rangle\\&=\sum_{a^{\prime}}|\langle a^{\prime}|\alpha\rangle|^2
+	\end{aligned}
+\end{equation}
+而对于\ref{eq1.2.3}中的$|a^{\prime}\rangle\langle a^{\prime}|$,显然这是一个算符,我们让它作用在$|\alpha\rangle$上
+\begin{equation}
+	(\begin{array}{c}|a^{\prime}\rangle\langle a^{\prime}|\end{array})\cdot|\alpha\rangle=|a^{\prime}\rangle\langle a^{\prime}|\alpha\rangle=c_{a^{\prime}}|a^{\prime}\rangle 
+\end{equation}
+我们发现,$|a^{\prime}\rangle\langle a^{\prime}|$从右矢$|\alpha\rangle$中筛选出来方向与$|a^{'}\rangle$平行的部分,所以,我们称$|a^{\prime}\rangle\langle a^{\prime}|$为沿着基右矢$|a^{'}\rangle$的投影算符$\Lambda_{a^{\prime}}$\
+\begin{equation}
+	\Lambda_{a^{\prime}}\equiv| a^{\prime}\rangle\langle a^{\prime}| 
+\end{equation}
+于是\ref{eq1.2.3}现在可以写为
+\begin{equation}
+	\sum_{a^{\prime}}\Lambda_{a^{\prime}}=1
+\end{equation}
+\subsection*{矩阵表示}
+在规定基右矢之后,我们所构造的一套狄拉克符号系统与我们熟知的线性代数所构造的一套矩阵语言几乎一模一样.事实上,我们完全可以用矩阵的语言来表示这一部分,同时也展示出狄拉克符号在叙述时的简洁.
+
+首先我们连续利用两次\ref{eq1.2.3},可以把算符$X$写成
+\begin{equation}
+X=\sum_{a^{\prime\prime}}\sum_{a^{\prime}}|a^{\prime\prime}\rangle\langle a^{\prime\prime}|X|a^{\prime}\rangle\langle a^{\prime}|
+\end{equation}
+这正是我们所熟知的线性代数中矩阵的形式,其中共有$N^2$个形式为$\langle a^{''}|X|a^{'}\rangle$的数,$N$为该右矢空间的维数.
+
+我们把算符$X$写成矩阵的形式
+\begin{equation}
+	X\doteq
+	\begin{pmatrix}
+		\langle a^{(1)}| X| a^{(1)}\rangle&\langle a^{(1)}| X| a^{(2)}\rangle&\ldots\\
+		\langle a^{(2)}| X| a^{(1)}\rangle&\langle a^{(2)}| X| a^{(2)}\rangle&\ldots\\
+		\vdots&\vdots&\ddots
+	\end{pmatrix}
+\end{equation}
+其中$\doteq$代表``被表示为"的含义.
+
+在之前的内容中,我们有
+$$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| a^{\prime\prime}\rangle^*$$
+此时我们发现,之前所定义的厄米共轭算符与我们所熟悉的共轭转置联系在一起,特别的,对于一个厄米算符$B$有
+\begin{equation}
+	\langle a^{\prime\prime}|B| a^{\prime}\rangle=\langle a^{\prime}| B| a^{\prime\prime}\rangle^*
+\end{equation}
+
+现在我们考虑如何用基右矢来表示右矢的关系式
+\begin{equation}
+	|\gamma\rangle=X|\alpha\rangle 
+\end{equation}
+其中$|\gamma\rangle$的展开系数可以通过使用$\langle a^{'}|$左乘来求得
+\begin{equation}
+	\begin{aligned}\langle a^{\prime}|\gamma\rangle&=\langle a^{\prime}| X|\alpha\rangle\\&=\sum_{a^{\prime\prime}}\langle a^{\prime}| X| a^{\prime\prime}\rangle\langle a^{\prime\prime}|\alpha\rangle\end{aligned}
+\end{equation}
+我们将$|\alpha\rangle$和$|\gamma\rangle$的展开系数排列为如下的列矩阵
+\begin{equation}
+	|\alpha\rangle\doteq\begin{pmatrix}\langle a^{(1)}\mid\alpha\rangle\\\langle a^{(2)}\mid\alpha\rangle\\\langle a^{(3)}\mid\alpha\rangle\\\vdots\end{pmatrix},\quad|\gamma\rangle\doteq
+	\begin{pmatrix}\langle a^{(1)}\mid\gamma\rangle\\\langle a^{(2)}\mid\gamma\rangle\\\langle a^{(3)}\mid\gamma\rangle\\\vdots\end{pmatrix}
+\end{equation}
+则上式便可以认为是一个方阵$X$乘以一个列矩阵$|\alpha\rangle$得到另一个列矩阵$|\gamma\rangle$.
+
+同样的,给定
+\begin{equation}
+	\langle\gamma|=\langle\alpha|X
+\end{equation}
+不难把左矢表示为类似的行矩阵
+\begin{equation}
+	\begin{aligned}\langle\gamma|&\doteq(\langle\gamma|a^{(1)}\rangle,\langle\gamma|a^{(2)}\rangle,\langle\gamma|a^{(3)}\rangle,\cdotp\cdotp\cdotp)\\&=(\langle a^{(1)}\mid\gamma\rangle^*,\langle a^{(2)}\mid\gamma\rangle^*,\langle a^{(3)}\mid\gamma\rangle^*,\cdotp\cdotp\cdotp)\end{aligned}
+\end{equation}
+我们注意到列矩阵元出现了复共轭,并且我们可以立刻写出内积$\langle\beta|\alpha\rangle$的矩阵形式
+\begin{equation}
+	\begin{aligned}
+		\langle\beta|\alpha\rangle
+		&=\sum_{{u^{\prime}}}\langle\beta|a^{\prime}\rangle\langle a^{\prime}|\alpha\rangle\\
+		&=(\langle a^{(1)}|\beta\rangle^{*},\langle a^{(2)}|\beta\rangle^{*},\ldots)
+		\begin{pmatrix}
+			\langle a^{(1)}|\alpha\rangle\\
+			\langle a^{(2)}|\alpha\rangle\\
+			\vdots
+		\end{pmatrix}
+	\end{aligned}
+\end{equation}
+自然,根据我们在线性代数的学习,得到的结果的确是一个复数.同样的,对于外积$|\beta\rangle\langle\alpha|$的矩阵形式,不难猜测结果仍为一个矩阵,并如下所示:
+\begin{equation}
+	|\beta\rangle\langle\alpha|\doteq
+	\begin{pmatrix}
+		\langle\alpha^{(1)}\mid\beta\rangle\langle\alpha^{(1)}\mid\alpha\rangle^*&\langle\alpha^{(1)}\mid\beta\rangle\langle\alpha^{(2)}\mid\alpha\rangle^*&\cdots\\\langle\alpha^{(2)}\mid\beta\rangle\langle\alpha^{(1)}\mid\alpha\rangle^*&\langle\alpha^{(2)}\mid\beta\rangle\langle\alpha^{(2)}\mid\alpha\rangle^*&\cdots\\\vdots&\vdots&\ddots
+	\end{pmatrix}
+\end{equation}
+如果我们直接使用可观测量$A$自身的本征右矢作为基右矢,那么$A$的矩阵表示得到非常大的简化.我们先插入两个单位算符:
+\begin{equation}
+	A=\sum_{a^{\prime\prime}}\sum_{a^{\prime}}|a^{\prime\prime}\rangle\langle a^{\prime\prime}|A|a^{\prime}\rangle\langle a^{\prime}|
+\end{equation}
+并且注意到$\langle a^{\prime\prime}| A| a^{\prime}\rangle $是对角矩阵(为什么?).
+\begin{equation}
+	\langle a^{\prime\prime}|A|a^{\prime}\rangle=\langle a^{\prime}|A|a^{\prime}\rangle\delta_{a^{\prime}a^{\prime\prime}}=a^{\prime}\delta_{a^{\prime}a^{\prime\prime}}
+\end{equation}
+于是有
+\begin{equation}\label{eq1.2.4}
+\begin{aligned}\text{A}&= \sum_{a^{\prime}}a^{\prime}| a^{\prime}\rangle\langle a^{\prime}|\\&= \sum_{a^{\prime}}a^{\prime}\Lambda_{a^{\prime}}\end{aligned}
+\end{equation}
+\subsection*{自旋$\frac12$系统}
+为了更加深刻的理解我们这一部分所学的内容,我们需要考虑一个简单的例子  $\frac12$自旋系统,对于一个粒子(当然它应该是费米子),其自旋角动量的$z$分量的取值是分立的:只能从$\{\frac12,-\frac12\}$中取一个值,对于这个值,有相应的自旋角动量算符$S_z$,其基右矢可以表示为$| S_{z};\pm\rangle $,简单起见,我们把它表示为$|\pm\rangle $,在$|\pm\rangle $所张成的右矢空间中,出于简单的角度,我们考虑一个最基本的算符--单位算符$\mathbf{1}$,按照之前所强调的\ref{eq1.2.3},可以写成
+\begin{equation}
+	\mathbf{1}=|+\rangle\langle+|+|-\rangle\langle-|
+\end{equation}
+根据式子\label{1.2.4},$S_z$可以进一步写成如下形式
+\begin{equation}
+	S_{z}=(\hbar/2)\Big[(|+\rangle\langle+|)-(|-\rangle\langle-|)\Big]
+\end{equation}
+而根据$|\pm\rangle$的正交性,进一步可以得到本征右矢-本征值关系:
+\begin{equation}
+	S_{z}|\pm\rangle=\pm(\hbar/2)|\pm\rangle 
+\end{equation}
+\section{测量,不确定度关系}
+\section{表象变换}
+\section{位置,动量和平移}
+\section{坐标空间和动量空间下的波函数}
+\begin{problemset}
+	\item 证明:如果$X=|\beta\rangle\langle\alpha|$,那么则有$X^\dagger=|\alpha\rangle\langle\beta|$.
+	\item 习题2
+	\item 习题3
+\end{problemset}
+\chapter{量子动力学}
+\begin{introduction}
+	\item 时间演化算符
+	\item 薛定谔方程
+	\item 两种绘景
+	\item 波动方程
+	\item 传播子
+	\item 路径积分
+\end{introduction}
+1
+
+\chapter{角动量理论}
+\begin{introduction}
+	\item 角动量对易关系
+	\item $\frac12$自旋
+	\item SO(3)和SU(2)
+	\item 系综
+\end{introduction}
+1
+
+\chapter{对称关系}
+\begin{introduction}
+	\item 诺特定理
+	\item 简并
+	\item 离散对称性
+	\item 宇称
+\end{introduction}
+1
+
+\chapter{近似方法}
+\begin{introduction}
+	\item 微扰
+	\item 变分
+\end{introduction}
+1
+
+\chapter{二次量子化}
+\begin{introduction}
+	\item 声子
+	\item 紧束缚模型
+	\item 位能
+	\item 哈伯德模型
+\end{introduction}
+1
+
+\chapter{零温格林函数}
+\begin{introduction}
+	\item Wick定理
+	\item 费曼图
+	\item Dyson方程
+	\item 格林函数
+\end{introduction}
+1
+
+\chapter{非零温格林函数}
+\begin{introduction}
+	\item 松原函数
+	\item Kubo公式
+\end{introduction}
+1
+
+\chapter{凝聚态入门}
+\begin{introduction}
+	\item 泛函积分
+	\item 泛函导数
+	\item 路径积分
+	\item 配分函数
+\end{introduction}
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\nocite{*}
+
+\printbibliography[heading=bibintoc, title=\ebibname]
+\appendix
+
+\chapter{单位制}
+我们从小学就逐步接触一些单位,常见的如米(m),千克(kg),秒(s)等是国际统一使用的\textbf{标准度量系统(国际单位制)}.相应的,像是国内经常接触的斤,公里,亩,美国\footnote{包括美国、开曼群岛、伯利兹等极少数国家和地区}常用的华氏度等,则是生活中使用的独立度量系统,大多数度量系统都和标准度量系统之间存在换算关系.而且生活中使用的度量单位大多比较局限,对于相干度较低的单位往往是不涉及的.\\
+对于初中和高中的物理学习,我们已经熟练使用国际单位制(SI\footnote{法语 Système International d'Unités,简称SI})来解决一些简单的物理问题.但是,就像生活中使用的单位制一样,人们出于方便的角度对于一些物理场景也构建出一些新的单位制.这些单位制能够简化相关的物理问题.\\物理上使用的单位制与国际单位制的转换往往比较复杂,使用时建议标注使用了哪个单位制.\\
+\begin{remark}
+	在这个附录中,电磁单位制与自然单位制独立分为两节,但是按照较广义的自然单位制的定义\footnote{区别于粒子物理的``自然单位制"和普朗克单位制},电磁单位制也属于其中的一类,特此说明.
+\end{remark}
+\section{电磁单位制}
+相比于我们常用的国际单位制,也称为MKSA单位制(即米,千克,秒,安培),我们在电磁中常用的高斯单位制被称为CGS单位制(即厘米,克,秒).\\接下来为了避免混乱,列举高斯单位制所常用的单位:电荷$statC$,电势$statV$,力$dyne$\footnote{中文音译为达因},磁感应强度$gauss$,磁场强度$oersted$,磁通量$mx$,能量$erg$.\\
+
+相比于自然单位制直接将值赋为1,高斯单位制就比较保守,它根据我们熟知的库仑定律,通过定义$1\mathrm{A}=0.1c\cdot\mathrm{dyne}^{\frac12},1\mathrm{C}=0.1c\cdot\rm{dyne}^{\frac12}\cdot s$来达到简化的操作.\\
+\begin{table}[htbp]
+	\centering
+	\caption{一些简单对应关系}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		& SI      & Gaussian        & G/SI                     \\ \hline
+		E          & $V/m$   & $statV/m$       & $\sqrt{4\pi\epsilon_0}$  \\ \hline
+		V          & $V$     & $statV$         & $\sqrt{4\pi\epsilon_0}$  \\ \hline
+		D          & $C/m^2$ & $statC/cm^2$    & $\sqrt{4\pi/\epsilon_0}$ \\ \hline
+		q          & $C$     & $statC$         & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
+		P          & $C/m^2$ & $statC/cm^2$    & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
+		I          & $A$     & $statC/s$       & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
+		B          & $T$     & $Gauss$         & $\sqrt{4\pi/\mu_0}$      \\ \hline
+		A          & $Wb/m$  & $Gauss\cdot cm$ & $\sqrt{4\pi/\mu_0}$      \\ \hline
+		H          & $A/m$   & $oersted$       & $\sqrt{4\pi\mu_0}$       \\ \hline
+		$\epsilon$ & $F/m$   & 1               & $1/\epsilon_0$           \\ \hline
+		$\mu$      & $H/m$   & 1               & $1/\mu_0$                \\ \hline
+	\end{tabular}
+\end{table}
+\section{自然单位制}
+我们熟知,国际单位制的7个基本单位是通过物理常数所定义的,那么,如果我们把其中\textbf{一个或几个}的定义值改为1,那么就又可以构造出来一套度量系统.这其中\textbf{显而易见的优点}是直接导致原本含有大量常数的公式可以被写成更加简洁方便的形式.在物理学里,自然单位制就是一种建立于此类方法的计量单位制度.例如,电荷的自然单位是基本电荷${\displaystyle e}$,速度的自然单位是光速${\displaystyle c}$,角动量的自然单位是约化普朗克常数${\displaystyle \hbar }$,电阻的自然单位是自由空间阻抗${\displaystyle Z_{0}}$,质量的自然单位则有电子质量${\displaystyle m_{e}}$与质子质量${\displaystyle m_{p}}$等.\\
+
+事实上,对于单位的改动,我们至少要求不会导致无量纲常数的值发生改变,如精细结构常数.
+$${\displaystyle \alpha ={\frac {e^{2}k_{e}}{\hbar c}}={\frac {e^{2}}{\hbar c(4\pi \epsilon _{0})}}={\frac {1}{137.035999074}}=7.2973525698\cdot 10^{-3}}$$
+这个常数就要求不能同时把${\displaystyle e},{\displaystyle \hbar },{\displaystyle c},{\displaystyle k_{e}}$同时为1.
+\subsection{普朗克单位制}
+普朗克单位制几乎是最常使用的单位制,它的定义只依赖于最基本的性质.普朗克单位选择将真空光速${\displaystyle c}$,万有引力常数${\displaystyle G}$,约化普朗克常数${\displaystyle \hbar }$,真空电容率${\displaystyle \epsilon _{0}}$,玻尔兹曼常数${\displaystyle k_{B}}$定为1\footnote{普朗克洛伦兹-亥维赛单位制将${\displaystyle 4\pi G},{\displaystyle \epsilon _{0}}$定为1，普朗克高斯单位制将${\displaystyle G},{\displaystyle 4\pi \epsilon _{0}}$定为1}.\\
+类比国际单位制,普朗克单位制也有一些基本单位(如常常出现在各种科普作品中的普朗克长度,普朗克时间等)和导出单位(普朗克面积,普朗克动量等).具体列表可参考相关wiki\href{https://zh.wikipedia.org/wiki/%E6%99%AE%E6%9C%97%E5%85%8B%E5%96%AE%E4%BD%8D%E5%88%B6}{普朗克单位制},这里不做展开.
+\subsection{``自然单位制"(粒子物理)}
+在粒子物理中,自然单位制特指${\displaystyle \hbar =c=k_{B}=1}$情况下的单位制.通常会根据情况选择使用洛伦兹-亥维赛单位制或高斯单位制来确定电荷定义.
+\subsection{其他单位制}
+\subsubsection*{史东纳单位制}
+第一次出现的单位制,已经不再使用.规定了${\displaystyle c=G=e={\frac {1}{4\pi \epsilon _{0}}}=k_{B}=1}$.
+\subsubsection*{原子单位制}
+这类单位制是特别为了简易表达原子物理学和分子物理学的方程而精心设计,在本篇中仅做介绍.\\
+原子单位制分为两种:哈特里原子单位制和里德伯原子单位制.哈特里原子单位制比里德伯原子单位制常见.两者的主要区别在于质量单位与电荷单位的选取.\\
+哈特里原子单位制的基本单位为${\displaystyle e=m_{e}=\hbar ={\frac {1}{4\pi \epsilon _{0}}}=k_{B}=1}$,${\displaystyle c={\frac {1}{\alpha }}}$.\\
+里德伯原子单位制的基本单位为${\displaystyle {\frac {e}{\sqrt {2}}}=2m_{e}=\hbar ={\frac {1}{4\pi \epsilon _{0}}}=k_{B}=1}$,${\displaystyle c={\frac {2}{\alpha }}}$.
+\chapter{坐标空间与动量空间}
+对于物理研究,把它放在合适的空间下能够简化问题.对于坐标空间(正格子,基矢)和动量空间(倒格子,倒格矢)来讲,相当于从两个角度来描写\textbf{同一}事物.在之后对于晶格的分析中,我们常常要在动量空间上分析这一问题.\\
+\textit{如果对于物理形式较为敏感,应该会容易的想到``两个角度描写同一事物"的表述和傅里叶变换有很大的相似性.实际上,坐标空间和动量空间互为傅里叶变换.如果对于量子力学有一定了解或已经阅读过关于表象变换的内容,对这一部分会有更深的体会.}
+\section*{一些需要了解的概念}
+为了能够便于理解接下来的内容,以下是需要了解的概念.
+\begin{enumerate}
+	\item \textbf{格矢}:联系任两个晶格点的向量
+	\item \textbf{布拉维晶格 Bravais lattices}:由同种原子构成的晶胞,多种原子构成的晶胞可以视为几个布拉维晶格的叠加.
+	\item 待补充
+\end{enumerate}
+\section*{我们什么时候需要它?为什么需要它?}
+对于晶格的分析.
+\chapter{对偶和对偶空间}
+这个概念太数学了,不太好解释,知乎上的文章大多数是抄书或者一大堆数学系玩的概念,暂且先跳过去,之后有时间再补全这部分内容.
+
+列一个讲的挺形象的回答\href{https://www.zhihu.com/question/38464481/answer/23567212}{如何理解对偶空间},可以直接看他的,后续补充也是基于这个然后加点物理料的版本.动图应该是不会插进去的,大概会放一个mma的动画实现自己去试试.
+\chapter{$\delta$函数}
+1
+\chapter{$\delta_{ij},\varepsilon_{ijk}$和爱因斯坦求和约定}
+1
+\chapter{格林函数介绍}
+1
+\chapter{mathematica的基本用法}
+1
+\chapter{答案及解析}
+\section*{第一章}
+\begin{enumerate}
+	\item 证明:如果$X=|\beta\rangle\langle\alpha|$,那么则有$X^\dagger=|\alpha\rangle\langle\beta|$.
+	\begin{proof}
+		暂略,第一章结束补充.
+	\end{proof}
+	\item 习题2
+	\item 习题3
+\end{enumerate}
+\chapter{致谢/参考}
+\section{致谢}
+感谢elegantbook所提供的模板,\href{https://elegantlatex.org/}{https://elegantlatex.org/}.\\
+
+\section{参考}
+本文主要参考的书籍和期刊如下:
+\begin{enumerate}
+	\item Modern Quantum Mechanics 2nd.J.J.Sakurai
+	\item Quantum Field Theory in Condensed Matter Physics 2nd.Alexei M.Tsvellk
+	\item Entanglement in Many-Body Systems
+\end{enumerate}
+
+\end{document}

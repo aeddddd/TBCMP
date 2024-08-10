@@ -375,8 +375,8 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 \end{equation}
 我们将$|\alpha\rangle$和$|\gamma\rangle$的展开系数排列为如下的列矩阵
 \begin{equation}
-	|\alpha\rangle\doteq\begin{pmatrix}\langle a^{(1)}\mid\alpha\rangle\\\langle a^{(2)}\mid\alpha\rangle\\\langle a^{(3)}\mid\alpha\rangle\\\vdots\end{pmatrix},\quad|\gamma\rangle\doteq
-	\begin{pmatrix}\langle a^{(1)}\mid\gamma\rangle\\\langle a^{(2)}\mid\gamma\rangle\\\langle a^{(3)}\mid\gamma\rangle\\\vdots\end{pmatrix}
+	|\alpha\rangle\doteq\begin{pmatrix}\langle a^{(1)}|\alpha\rangle\\\langle a^{(2)}|\alpha\rangle\\\langle a^{(3)}|\alpha\rangle\\\vdots\end{pmatrix},\quad|\gamma\rangle\doteq
+	\begin{pmatrix}\langle a^{(1)}|\gamma\rangle\\\langle a^{(2)}|\gamma\rangle\\\langle a^{(3)}|\gamma\rangle\\\vdots\end{pmatrix}
 \end{equation}
 则上式便可以认为是一个方阵$X$乘以一个列矩阵$|\alpha\rangle$得到另一个列矩阵$|\gamma\rangle$.
 
@@ -386,7 +386,7 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 \end{equation}
 不难把左矢表示为类似的行矩阵
 \begin{equation}
-	\begin{aligned}\langle\gamma|&\doteq(\langle\gamma|a^{(1)}\rangle,\langle\gamma|a^{(2)}\rangle,\langle\gamma|a^{(3)}\rangle,\cdotp\cdotp\cdotp)\\&=(\langle a^{(1)}\mid\gamma\rangle^*,\langle a^{(2)}\mid\gamma\rangle^*,\langle a^{(3)}\mid\gamma\rangle^*,\cdotp\cdotp\cdotp)\end{aligned}
+	\begin{aligned}\langle\gamma|&\doteq(\langle\gamma|a^{(1)}\rangle,\langle\gamma|a^{(2)}\rangle,\langle\gamma|a^{(3)}\rangle,\cdotp\cdotp\cdotp)\\&=(\langle a^{(1)}|\gamma\rangle^*,\langle a^{(2)}|\gamma\rangle^*,\langle a^{(3)}|\gamma\rangle^*,\cdotp\cdotp\cdotp)\end{aligned}
 \end{equation}
 我们注意到列矩阵元出现了复共轭,并且我们可以立刻写出内积$\langle\beta|\alpha\rangle$的矩阵形式
 \begin{equation}
@@ -405,7 +405,7 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 \begin{equation}
 	|\beta\rangle\langle\alpha|\doteq
 	\begin{pmatrix}
-		\langle\alpha^{(1)}\mid\beta\rangle\langle\alpha^{(1)}\mid\alpha\rangle^*&\langle\alpha^{(1)}\mid\beta\rangle\langle\alpha^{(2)}\mid\alpha\rangle^*&\cdots\\\langle\alpha^{(2)}\mid\beta\rangle\langle\alpha^{(1)}\mid\alpha\rangle^*&\langle\alpha^{(2)}\mid\beta\rangle\langle\alpha^{(2)}\mid\alpha\rangle^*&\cdots\\\vdots&\vdots&\ddots
+		\langle\alpha^{(1)}|\beta\rangle\langle\alpha^{(1)}|\alpha\rangle^*&\langle\alpha^{(1)}|\beta\rangle\langle\alpha^{(2)}|\alpha\rangle^*&\cdots\\\langle\alpha^{(2)}|\beta\rangle\langle\alpha^{(1)}|\alpha\rangle^*&\langle\alpha^{(2)}|\beta\rangle\langle\alpha^{(2)}|\alpha\rangle^*&\cdots\\\vdots&\vdots&\ddots
 	\end{pmatrix}
 \end{equation}
 如果我们直接使用可观测量$A$自身的本征右矢作为基右矢,那么$A$的矩阵表示得到非常大的简化.我们先插入两个单位算符:
@@ -460,7 +460,7 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 \end{equation}
 现在我们开始测量,此时系统\textbf{坍缩}为可观测量$A$的某一个本征态,我们用$a^{'}$来表示.换句话说
 \begin{equation}\label{eq1.3.1}
-	|\alpha\rangle\xrightarrow{\text{测量}}\mid a^{\prime}\rangle 
+	|\alpha\rangle\xrightarrow{\text{测量}}| a^{\prime}\rangle 
 \end{equation}
 我们再次以$\frac12$自旋系统为例:考虑一个具有任意自旋取向的粒子,当我们对其$z$分量进行测量时,其将变为$|S_z;+\rangle$或$|S_-;-\rangle$,因此,\textit{测量常常使态矢量发生改变}.我们使用``常常"是因为当这个态矢量已经是待观测量的某个本征态时,测量并不会使其变为其他的本征态.
 
@@ -470,15 +470,55 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 
 我们假定经过测量后,该右矢坍缩为本征态$|a^{'}\rangle$,我们需要令$|\alpha\rangle$归一化,其坍缩至$a^{'}$的概率可以用下式来表示
 \begin{equation}
-	\mid\langle a^{\prime}\mid\alpha\rangle\mid^{2}
+	|\langle a^{\prime}|\alpha\rangle|^{2}
 \end{equation}
+到目前为止,许多人很难理解为什么模的平方可以代表概率.原因很简单:它足够简单,足够有效,更足够正确.紧接着又有一个问题:这种表示是唯一的吗?是否存在一种更好的表述方法?答案是目前不存在\footnote{该假设又称\textbf{波恩定则},目前实验中尚未发现违背玻恩定则的量子行为.},并且有一些人尝试解释这一假设\footnote{Andrew M. Gleason,David Deutsch,Wojciech H. Zurek,Charles Sebens,Simon Saunders,其中格里森定理为其提供了数学支撑.其他人试图从更基本的角度证明波恩定则,但事实上大多为循环论证.},这种表示是无法被证明的,它是量子力学的基本假设之一.相应的,为了在实验中对其进行验证,我们需要定义一些较好的系统来方便我们研究(就如同高中我们天天打交道的小木块那样),这类系统要求由一个全同制备且以同样的右矢$|\alpha\rangle$表征,我们把这类系统的集合称作\textbf{纯系综},当然,某类系统的集合我们称为\textbf{系综}.
 
+当然,我们在这里尚且不必要去穷追不舍探究这个假设是否是唯一准确的,我们仅通过一些极端案例来探索这一假设的恰当性.能被证明.然而，我们应该注意，在一些极端的情况下它具有明确的意义.
 
+假定在测量之前态右矢就是$|a^\prime\rangle$,则按照假设将得到测量结果$a^\prime$,或更精确地说,坍缩为$|a^{\prime}\rangle$态的概率是1.再一次测量$A$,我们当然只能得到$|a^{\prime}\rangle$;一般来说,连续重复测量同一个可观测量得到的结果相同\footnote{当然我们要求这两次测量是连续的,中间不存在间隔,不然对于随时间演化的系统所得到的结果往往是不同的.}.另一方面,我们考虑开始由$|a^\prime\rangle$表征的系统坍缩为某个具有 $a^{\prime\prime}\neq a^{\prime}$的本征右矢$|a^\prime\prime\rangle$的概率,我们能够发现,因为$|a^\prime\rangle$和$|a^\prime\rangle$间存在正交性致使相应所取概率为零.例如,如果一个自旋$\frac12$系统处在$|S_z;+\rangle$态,它肯定不会处于$|S_{z};-\rangle$态.
 
+我们在中学就知道,概率的取值范围为$[0,1]$,所有可能的概率加起来的和一定等于1,我们继续通过这一原理来验证上面所提出的假设:
 
+我们定义$A$对于态右矢$|\alpha\rangle$所取概率的\textbf{期望}为
+\begin{equation}
+	\langle A\rangle\equiv\langle\alpha| A|\alpha\rangle 
+\end{equation}
+为了表明期望所对应的态,我们有时采取角标$\langle A\rangle_{\alpha}$来强调这一点.由于我们将其称为期望,那么它自然能够写成期望定义的形式:
+\begin{equation}
+	\begin{aligned}
+		\text{(A)}& = \sum_{a^{\prime}} \sum_{a^{\prime}} \langle\alpha | a^{\prime\prime}\rangle \langle a^{\prime\prime} | A | a^{\prime} \rangle \langle a^{\prime} | \alpha\rangle  \\
+		&=\sum_{a^{\prime}}\quad \underbrace{a^{\prime}}\qquad\underbrace{|\langle a^{\prime}|\alpha\rangle|^{2}} \\
+		&\qquad\quad\text{测量值}\quad\text{得到}a^{\prime}\text{的概率}
+	\end{aligned}
+\end{equation}
+当然,我们不能把期望和本征值搞混,于是,在第一章末尾习题中给出了几个简单判断题来帮助加深印象.
+\subsection*{再论自旋$\frac12$系统}
+我们在这一节探讨了一些测量的内容,现在,我们回到自旋$\frac12$系统,继续深入考虑一些内容.
 
-
-
+我们认为自旋角动量算符$S$的每一次坍缩到不同本征态的概率是相等的.具体来讲,对于$x$分量的算符$S_x$,其位于$|S_x;+\rangle$态上,在经过一次对于$z$分量的测量后,$|S_x;+\rangle$坍缩为$|S_z;\pm\rangle$(对于$z$分量,我们简记为$|\pm\rangle$),由于概率相等,每一个态的概率都是$\frac12$,因此有
+\begin{equation}
+	|\langle+| S_x ; +\rangle|=|\langle-| S_x ; +\rangle|=\frac{1}{\sqrt{2}}
+\end{equation}
+我们不妨利用右矢的非零系数(我们称其为\textit{整体相因子})不影响实际右矢来重新构造右矢$|S_x;+\rangle$
+\begin{equation}
+	|S_x;+\rangle=\frac{1}{\sqrt{2}}|+\rangle+\frac{1}{\sqrt{2}}e^{i\kappa_1} |-\rangle 
+\end{equation}
+其中$\kappa_1$为待定实数,我们默认把$|+\rangle$的系数选为正的和实的(这不是必须的!).我们知道,$|S_x;+\rangle$与$|S_-;+\rangle$必须相互正交,这样我们也能写出$|S_x;-\rangle$的相应构造
+\begin{equation}
+	|S_x;-\rangle=\frac{1}{\sqrt{2}}|+\rangle-\frac{1}{\sqrt{2}}e^{i\kappa_2} |-\rangle 
+\end{equation}
+我们这次同样把$|+\rangle$的系数选为正的和实的,并利用\ref{eq1.2.4},我们可以继续构造$S_x$算符.
+\begin{equation}
+	\begin{aligned}S_{x}&=\frac{\hbar}{2}[(\mid S_{x} ; +\rangle\langle S_{x} ; +\mid)-(\mid S_{x} ; -\rangle\langle S_{x} ; -\mid) ]\\&=\frac{\hbar}{2}[e^{-i\kappa_{1}}\left(\mid+\rangle\langle-\mid\right)+e^{i\kappa_{1}}\left(\mid-\rangle\langle+\mid\right)]\end{aligned}
+\end{equation}
+以同样的论证方法得到$S_y$的相关内容:
+\begin{equation}
+	|S_{y};\pm\rangle=\frac{1}{\sqrt{2}}|+\rangle\pm\frac{1}{\sqrt{2}}e^{i\kappa_{2}} |-\rangle
+\end{equation}
+\begin{equation}
+	S_{y}=\frac{\hbar}{2}[e^{-i\kappa_{2}}(|+\rangle\langle-|)+e^{i\kappa_{2}}(|-\rangle\langle+|)]
+\end{equation}
 
 
 
@@ -536,7 +576,12 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 \section{坐标空间和动量空间下的波函数}
 \begin{problemset}
 	\item 证明:如果$X=|\beta\rangle\langle\alpha|$,那么则有$X^\dagger=|\alpha\rangle\langle\beta|$.
-	\item 习题2
+	\item 判断
+	\begin{enumerate}
+		\item 对于一个$\frac12$自旋系统,$S_z$的期望可以取$0.233\hbar$.
+		\item 对于一个$\frac12$自旋系统,$S_z$的本征值可以取$0.233\hbar$.
+		\item 本征值取值往往是几个特定的值,而期望往往是范围内的实数.
+	\end{enumerate}
 	\item 习题3
 \end{problemset}
 \chapter{量子动力学}

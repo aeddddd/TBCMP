@@ -2,7 +2,7 @@
 
 \usepackage{tikz-feynman}
 \usepackage{fixdif}
-
+\usepackage{ulem}
 \title{凝聚态物理:从量子力学到量子纠缠}
 \subtitle{Condensed Matter Physics : From Quantum Mechanics to Quantum Entanglement}
 
@@ -592,122 +592,101 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 \subsection*{相容可观测量}
 
 现在回到普遍形式, 我们将对照讨论相容的和不相容的可观测量. 当相应的算符对易时, 即
-
-$$
-\left\lbrack {A, B}\right\rbrack = 0. \tag{1.4.26}
-$$
+\begin{equation}
+	\left\lbrack {A, B}\right\rbrack = 0
+\end{equation}
 
 可观测量 $A$ 和 $B$ 被定义为相容的,而当
-
-$$
-\left\lbrack {A, B}\right\rbrack \neq 0 \tag{1.4.27}
-$$
-
+\begin{equation}
+	\left\lbrack {A, B}\right\rbrack \neq 0
+\end{equation}
 时, $A$ 和 $B$ 被定义为不相容的. 例如, ${\mathbf{S}}^{2}$ 和 ${S}_{z}$ 是相容的可观测量,而 ${S}_{x}$ 和 ${S}_{z}$ 是不相容的可观测量.
 
 让我们先来考虑相容可观测量 $A$ 和 $B$ 的情况. 像往常一样,我们假定右矢空间是由 $A$ 的本征右矢所张成的. 我们还可以把这个同样的右矢空间看作是由 $B$ 的本征右矢所张成的. 现在我们要问: 当 $A$ 和 $B$ 是相容的可观测量时, $A$ 的本征右矢与 $B$ 的本征右矢有什么样的关系?
 
+\begin{remark}
+	这部分解释可能会在这几天进行改动,加入一些更亲近的表述方法.
+\end{remark}
+
 在回答这个问题之前, 我们必须涉及早些时候避开的非常重要的一点——简并性的概念. 假定存在两个 (或多个) 线性独立的 $A$ 的本征右矢,它们具有相同的本征值; 则这两个本征右矢的本征值就称为简并的. 在这样的情况下, 单用本征值标记本征右矢的符号 $\left| {a}^{\prime }\right\rangle$ 给不出一种完整的描述; 此外,我们还可以回忆一下,我们前面给出的关于不同本征右矢的正交性定理是在非简并的假设下证明的. 更糟糕的是,当右矢空间的维数大于 $A$ 的可区分本征值的个数时,这个由 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 张成右矢空间的整个概念似乎陷入了困境. 幸运的是,在量子力学的实际应用中,通常的情况是此时某个其他对易的可观测量 (比如 $B$ ) 的本征值, 可以用来标记这些简并的本征右矢.
 
 现在我们准备表述一个重要的定理
+\begin{theorem}\label{thm:1.3.1} 
+	假定 $A$ 和 $B$ 是相容的可观测量,而且 $A$ 的本征值是非简并的. 则矩阵元 $\langle {a}^{\prime \prime } \left| B\right| {a}^{\prime }\rangle$ 是全对角的. (在这里回顾一下,如果用 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 作为基右矢. 则 $A$ 的矩阵元已经是对角的.)
+\end{theorem}
 
----
-
-定理 1.2 假定 $A$ 和 $B$ 是相容的可观测量,而且 $A$ 的本征值是非简并的. 则矩阵元 $\left\langle {a}^{\prime \prime }\right.$ $\left| B\right| {a}^{\prime }\rangle$ 是全对角的. (在这里回顾一下,如果用 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 作为基右矢. 则 $A$ 的矩阵元已经是对角的.)
-
-证明 这个重要定理的证明是极其简单的. 利用相容可观测量的定义 (1.4.26) 式, 我们注意到
-
-$$
-\left\langle {{a}^{\prime \prime }\left| \left\lbrack {A, B}\right\rbrack \right| {a}^{\prime }}\right\rangle = \left( {{a}^{\prime \prime } - {a}^{\prime }}\right) \left\langle {{a}^{\prime \prime }\left| B\right| {a}^{\prime }}\right\rangle = 0. \tag{1. 4.28}
-$$
-
-因此, $\left\langle {{a}^{\prime \prime }\left| B\right| {a}^{\prime }}\right\rangle$ 一定是零,除非 ${a}^{\prime } = {a}^{\prime \prime }$ ,这就证明了我们的论点.
-
----
+\begin{proof}
+	这个重要定理的证明是极其简单的. 利用相容可观测量的定义式,我们注意到
+	\begin{equation}
+		\left\langle {{a}^{\prime \prime }\left| \left\lbrack {A, B}\right\rbrack \right| {a}^{\prime }}\right\rangle = \left( {{a}^{\prime \prime } - {a}^{\prime }}\right) \left\langle {{a}^{\prime \prime }\left| B\right| {a}^{\prime }}\right\rangle = 0
+	\end{equation}
+	因此,除非 ${a}^{\prime } = {a}^{\prime \prime }$的情况下,$\left\langle {{a}^{\prime \prime }\left| B\right| {a}^{\prime }}\right\rangle$ 一定是零,这就证明了我们的论点.
+\end{proof}
 
 我们可以把 $B$ 的矩阵元写成
-
-$$
-\left\langle {{a}^{\prime \prime }\left| B\right| {a}^{\prime }}\right\rangle = {\delta }_{{a}^{\prime }{a}^{\prime \prime }}\left\langle {{a}^{\prime }\left| B\right| {a}^{\prime }}\right\rangle . \tag{1.4.29}
-$$
-
-于是,使用同样的基右矢集合, $A$ 和 $B$ 都可以用对角矩阵表示. 用 (1.3.17) 式和 (1.4.29) 式,我们可以把 $B$ 写成
-
-$$
-B = \mathop{\sum }\limits_{{a}^{\prime \prime }}\left| {a}^{\prime \prime }\right\rangle \left\langle {{a}^{\prime \prime }\left| B\right| {a}^{\prime \prime }}\right\rangle \left\langle {a}^{\prime \prime }\right| . \tag{1. 4.30}
-$$
-
+\begin{equation}
+	\left\langle {{a}^{\prime \prime }\left| B\right| {a}^{\prime }}\right\rangle = {\delta }_{{a}^{\prime }{a}^{\prime \prime }}\left\langle {{a}^{\prime }\left| B\right| {a}^{\prime }}\right\rangle
+\end{equation}
+于是,使用同样的基右矢集合, $A$ 和 $B$ 都可以用对角矩阵表示. 那么我们可以把 $B$ 写成
+\begin{equation}
+	B = \mathop{\sum }\limits_{{a}^{\prime \prime }}\left| {a}^{\prime \prime }\right\rangle \left\langle {{a}^{\prime \prime }\left| B\right| {a}^{\prime \prime }}\right\rangle \left\langle {a}^{\prime \prime }\right|
+\end{equation}
 假定这个算符作用在 $A$ 的一个本征右矢上:
-
-$$
-B\left| {a}^{\prime }\right\rangle = \mathop{\sum }\limits_{{a}^{\prime \prime }}\left| {a}^{\prime \prime }\right\rangle \left\langle {{a}^{\prime \prime }\left| B\right| {a}^{\prime \prime }}\right\rangle \left\langle {{a}^{\prime \prime }\left| {a}^{\prime }\right\rangle }\right\rangle = \left( \left\langle {{a}^{\prime }\left| B\right| {a}^{\prime }}\right\rangle \right) \left| {a}^{\prime }\right\rangle . \tag{1. 4.31}
-$$
-
+\begin{equation}
+	B\left| {a}^{\prime }\right\rangle = \mathop{\sum }\limits_{{a}^{\prime \prime }}\left| {a}^{\prime \prime }\right\rangle \left\langle {{a}^{\prime \prime }\left| B\right| {a}^{\prime \prime }}\right\rangle \left\langle {{a}^{\prime \prime }\left| {a}^{\prime }\right\rangle } = \left( \left\langle {{a}^{\prime }\left| B\right| {a}^{\prime }}\right\rangle \right) \left| {a}^{\prime }\right\rangle
+\end{equation}
 然而,这只不过是算符 $B$ 的本征方程,其本征值为
-
-$$
-{b}^{\prime } \equiv \left\langle {{a}^{\prime }\left| B\right| {a}^{\prime }}\right\rangle . \tag{1. 4.32}
-$$
-
-因此, $\left| {a}^{\prime }\right\rangle$ 是 $A$ 和 $B$ 的一个共同本征右矢. 正是要不偏不倚地对待这两个算符,我们可以利用 $\left| {{a}^{\prime },{b}^{\prime }}\right\rangle$ 来表征这个共同本征右矢.
+\begin{equation}
+	{b}^{\prime } \equiv \left\langle {{a}^{\prime }\left| B\right| {a}^{\prime }}\right\rangle
+\end{equation}
+因此, $\left| {a}^{\prime }\right\rangle$ 是 $A$ 和 $B$ 的一个\textbf{共同本征右矢}. 为了突出强调这一点,我们采取 $\left| {{a}^{\prime },{b}^{\prime }}\right\rangle$ 来表征这个共同本征右矢.
 
 我们已经看到,相容的可观测量具有共同本征右矢. 尽管这是在 $A$ 的本征右矢是非简并的情况下证明的,这个表述即使在 $n$ 重简并存在时也成立. 这就是说,
+\begin{equation}
+	A| {a}^{\prime \left( i\right) }\rangle = {a}^{\prime }| {a}^{\prime \left( i\right) }\rangle \;\text{ 对于 }i = 1,2,\cdots, n
+\end{equation}
 
-$$
-A\left| {a}^{\prime \left( i\right) }\right\rangle = {a}^{\prime }\left| {a}^{\prime \left( i\right) }\right\rangle \;\text{ 对于 }i = 1,2,\cdots, n, \tag{1. 4.33}
-$$
+其中 $\left| {a}^{\prime \left( i\right) }\right\rangle$ 是 $A$ 的 $n$ 个相互正交的本征右矢. 它们都有相同的本征值 ${a}^{\prime }$ . 为了看清这一点,我们所需要做的就是构造一个适当的 $\left| {a}^{\prime \left( i\right) }\right\rangle$ 的线性组合,它能按照将在下一节讨论的对角化方法把 $B$ 算符对角化.
 
-其中 $\left| {a}^{\prime \left( i\right) }\right\rangle$ 是 $A$ 的 $n$ 个相互正交的本征右矢. 它们都有相同的本征值 ${a}^{\prime }$ . 为了看清这一点,我们所需要做的就是构造一个适当的 $\left| {a}^{\prime \left( i\right) }\right\rangle$ 的线性组合,它能按照将在 1.5 节讨论的对角化手续把 $B$ 算符对角化.
+前面我们说过$A$ 和 $B$ 的共同本征右矢用 $\left| {{a}^{\prime },{b}^{\prime }}\right\rangle$ 表示,它有下列性质:
+\begin{equation}
+	A\left| {{a}^{\prime },{b}^{\prime }}\right\rangle = {a}^{\prime }\left| {{a}^{\prime },{b}^{\prime }}\right\rangle
+\end{equation}
+\begin{equation}
+	B\left| {{a}^{\prime },{b}^{\prime }}\right\rangle = {b}^{\prime }\left| {{a}^{\prime },{b}^{\prime }}\right\rangle
+\end{equation}
 
-$A$ 和 $B$ 的共同本征右矢用 $\left| {{a}^{\prime },{b}^{\prime }}\right\rangle$ 表示,它有下列性质:
-
-$$
-A\left| {{a}^{\prime },{b}^{\prime }}\right\rangle = {a}^{\prime }\left| {{a}^{\prime },{b}^{\prime }}\right\rangle ,
-$$
-
-(1. ${4.34a}$ )
-
-$$
-B\left| {{a}^{\prime },{b}^{\prime }}\right\rangle = {b}^{\prime }\left| {{a}^{\prime },{b}^{\prime }}\right\rangle . \tag{1. 4.34b}
-$$
-
-当不存在任何简并时, 这个符号有点多余, 因为从 (1.4.32) 式可明显看到, 如果确定了 ${a}^{\prime }$ ,我们就一定知道出现在 $\left| {{a}^{\prime },{b}^{\prime }}\right\rangle$ 中的 ${b}^{\prime }$ . 当有简并存在时,符号 $\left| {{a}^{\prime },{b}^{\prime }}\right\rangle$ 要强有力得多. 可用一个简单的例子来说明这一点.
+当不存在任何简并时, 这个符号有点多余, 因为在前面的讨论中可明显看到, 如果确定了 ${a}^{\prime }$ ,我们就一定知道出现在 $\left| {{a}^{\prime },{b}^{\prime }}\right\rangle$ 中的 ${b}^{\prime }$ . 当有简并存在时,符号 $\left| {{a}^{\prime },{b}^{\prime }}\right\rangle$ 要强有力得多. 可用一个简单的例子来说明这一点.
 
 尽管在第 3 章之前, 本书将不会完整地讨论轨道角动量, 读者可能从他或她早期学过的初等波动力学知道 ${\mathbf{L}}^{2}$ (轨道角动量平方) 和 ${L}_{z}$ (轨道角动量的 $z$ 分量) 的本征值分别是 ${\hbar }^{2}l\left( {l + 1}\right)$ 和 ${m}_{l}\hbar$ ,其中 $l$ 是一个整数且 ${m}_{l} = - l, - l + 1,\cdots , + l$ . 为了完整地表征一个轨道角动量态,必须同时给定 $l$ 和 ${m}_{l}$ . 例如,如果我们只是说 $l = 1$ ,则 ${m}_{l}$ 的值仍然可以取 $0, + 1$ 或 -1 ; 如果只是说 ${m}_{l} = 1$ ,则 $l$ 可以是 $1,2,3,4$ ,等等. 只有同时给定 $l$ 和 ${m}_{l}$ ,我们才能在轨道角动量态唯一表征的问题上取得成功. 通常使用一个集体指标 ${K}^{\prime }$ 来表示 $\left( {{a}^{\prime },{b}^{\prime }}\right)$ ,使
-
-$$
-\left| {K}^{\prime }\right\rangle = \left| {{a}^{\prime },{b}^{\prime }}\right\rangle . \tag{1. 4.35}
-$$
+\begin{equation}
+	\left| {K}^{\prime }\right\rangle = \left| {{a}^{\prime },{b}^{\prime }}\right\rangle
+\end{equation}
 
 显然可以把我们的考虑推广到有几个 (两个以上) 互相相容可观测量的情况, 即
-
-$$
-\left\lbrack {A, B}\right\rbrack = \left\lbrack {B, C}\right\rbrack = \left\lbrack {A, C}\right\rbrack = \cdots = 0. \tag{1. 4.36}
-$$
+\begin{equation}
+	\left\lbrack {A, B}\right\rbrack = \left\lbrack {B, C}\right\rbrack = \left\lbrack {A, C}\right\rbrack = \cdots = 0
+\end{equation}
 
 假定我们已经找到了一个对易可观测量的最大集合; 这就是说, 我们不可能在不破坏 (1.4.36) 式的情况下,再在我们的清单中添加可观测量. 各个算符 $A, B, C,\cdots$ 的本征值可以有简并,但是如果我们确定了一个组合 $\left( {{a}^{\prime },{b}^{\prime },{c}^{\prime },\cdots }\right)$ ,则 $A, B, C,\cdots$ 的共同本征右矢就被唯一地确定了. 我们可以再一次利用一个集体指标 ${K}^{\prime }$ 表示 $\left( {{a}^{\prime },{b}^{\prime },{c}^{\prime },\cdots }\right)$ . 对于
-
-$$
-\left| {K}^{\prime }\right\rangle = \left| {{a}^{\prime },{b}^{\prime },{c}^{\prime },\cdots }\right\rangle \tag{1. 4.37}
-$$
+\begin{equation}
+	\left| {K}^{\prime }\right\rangle = \left| {{a}^{\prime },{b}^{\prime },{c}^{\prime },\cdots }\right\rangle
+\end{equation}
 
 其正交关系记为
-
-$$
-\left\langle {{K}^{\prime \prime } \mid {K}^{\prime }}\right\rangle = {\delta }_{{K}^{\prime }{K}^{\prime \prime }} = {\delta }_{a{a}^{\prime }}{\delta }_{b{b}^{\prime }}{\delta }_{c{c}^{\prime }}\cdots , \tag{1. 4.38}
-$$
+\begin{equation}
+	\left\langle {{K}^{\prime \prime } \mid {K}^{\prime }}\right\rangle = {\delta }_{{K}^{\prime }{K}^{\prime \prime }} = {\delta }_{a{a}^{\prime }}{\delta }_{b{b}^{\prime }}{\delta }_{c{c}^{\prime }}\cdots
+\end{equation}
 
 而完备性关系或封闭性可以写成
-
-$$
-\mathop{\sum }\limits_{{K}^{\prime }}\left| {K}^{\prime }\right\rangle \left\langle {K}^{\prime }\right| = \mathop{\sum }\limits_{{a}^{\prime }}\mathop{\sum }\limits_{{b}^{\prime }}\mathop{\sum }\limits_{{c}^{\prime }}\cdots \left| {{a}^{\prime },{b}^{\prime },{c}^{\prime },\cdots }\right\rangle \left\langle {{a}^{\prime },{b}^{\prime },{c}^{\prime },\cdots }\right| = 1. \tag{1. 4.39}
-$$
+\begin{equation}
+	\mathop{\sum }\limits_{{K}^{\prime }}\left| {K}^{\prime }\right\rangle \left\langle {K}^{\prime }\right| = \mathop{\sum }\limits_{{a}^{\prime }}\mathop{\sum }\limits_{{b}^{\prime }}\mathop{\sum }\limits_{{c}^{\prime }}\cdots \left| {{a}^{\prime },{b}^{\prime },{c}^{\prime },\cdots }\right\rangle \left\langle {{a}^{\prime },{b}^{\prime },{c}^{\prime },\cdots }\right| = 1
+\end{equation}
 
 现在我们考虑当 $A$ 和 $B$ 是相容的可观测量时对它们的测量. 假定我们先测量 $A$ ,得到结果 ${a}^{\prime }$ . 紧接着,我们可以测量 $B$ 而得到结果 ${b}^{\prime }$ . 最后,我们再测量 $A$ . 从我们的测量公式框架可得到第三次测量总是确定地给出 ${a}^{\prime }$ . 这就是说,第二次 (B) 测量并不破坏以前在第一次 $\left( A\right)$ 测量中得到的信息. 当 $A$ 的本征值非简并时,这个结果是非常明确的:
-
-$$
-\left| {\alpha \rangle \xrightarrow[]{A\text{ 测量 }}\left| {{a}^{\prime },{b}^{\prime }}\right\rangle \xrightarrow[]{B\text{ 测量 }}\left| {{a}^{\prime },{b}^{\prime }}\right\rangle \xrightarrow[]{A\text{ 测量 }}\left| {{a}^{\prime },{b}^{\prime }}\right\rangle .}\right| \tag{1.4.40}
-$$
+\begin{equation}
+	| {\alpha \rangle \xrightarrow[]{A\text{ 测量 }}\left| {{a}^{\prime },{b}^{\prime }}\right\rangle \xrightarrow[]{B\text{ 测量 }}\left| {{a}^{\prime },{b}^{\prime }}\right\rangle \xrightarrow[]{A\text{ 测量 }}\left| {{a}^{\prime },{b}^{\prime }}\right\rangle .}
+\end{equation}
 
 当存在简并时,情况应该是这样的: 第一次 (A) 测量得到 ${a}^{\prime }$ 之后,系统被抛进某种线性组合
 
@@ -2630,12 +2609,15 @@ $${\displaystyle \alpha ={\frac {e^{2}k_{e}}{\hbar c}}={\frac {e^{2}}{\hbar c(4\
 \chapter{对偶和对偶空间}
 这个概念太数学了,不太好解释,知乎上的文章大多数是抄书或者一大堆数学系玩的概念,暂且先跳过去,之后有时间再补全这部分内容.
 
-列一个讲的挺形象的回答\href{https://www.zhihu.com/question/38464481/answer/23567212}{如何理解对偶空间},可以直接看他的,后续补充也是基于这个然后加点物理料的版本.动图应该是不会插进去的,大概会放一个mma的动画实现自己去试试.
+\sout{列一个讲的挺形象的回答\href{https://www.zhihu.com/question/38464481/answer/23567212}{如何理解对偶空间},可以直接看他的,后续补充也是基于这个然后加点物理料的版本.}
+\sout{动图应该是不会插进去的,大概会放一个mma的动画实现自己去试试.}
+
+该知乎回答已被删除,后续自己重新写吧.
+
+简单说一下,对偶空间就是一个赋范空间的所有线性有界泛函所组成的定义了范数的向量空间.之后会详细讲一下这些东西都是什么.
 \chapter{$\delta$函数}
 1
 \chapter{$\delta_{ij},\varepsilon_{ijk}$和爱因斯坦求和约定}
-1
-\chapter{格林函数介绍}
 1
 \chapter{mathematica的基本用法}
 1

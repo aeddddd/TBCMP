@@ -131,7 +131,7 @@
 \end{equation}
 其中$c_{a^{\prime}}$为复系数,这个关系从矩阵角度也很容易得出.
 \subsection*{左矢空间和内积}
-我们一直处理的线性空间是右矢空间.现在我们引人左矢空间的概念，它是一个与右矢空间\textbf{对偶}\footnote{对偶通常是转换角度解决问题的方法,我们论述两个东西对偶通常是指其在某一结构上的统一形式.我们可以考虑小学就学过的古诗词,上下两句对仗,这就是按照一种结构(对仗)下的两个东西所具有统一形式(这个例子并不严谨但足够形象).更深入的讨论请参考附录部分}的线性空间.我们假定对应于每个右矢$|a\rangle$,在这个对偶空间或左矢空间中都存在一个左矢,用$\langle\alpha|$表示.左矢空间由本征左矢$\{\langle\alpha'|\}$所张成,它们与本征右矢$\{|a^{\prime}\rangle\}$相对应.右矢空间与左矢空间的一一对应关系为
+我们一直处理的线性空间是右矢空间.现在我们引人左矢空间的概念，它是一个与右矢空间\textbf{对偶}\footnote{我们可以粗浅的认为对偶是一类更深刻的对称性,更详细的说\textit{对偶空间就是一个赋范空间的所有线性有界泛函所组成的定义了范数的向量空间},更详细的探讨在后续章节}的线性空间.我们假定对应于每个右矢$|a\rangle$,在这个对偶空间或左矢空间中都存在一个左矢,用$\langle\alpha|$表示.左矢空间由本征左矢$\{\langle\alpha'|\}$所张成,它们与本征右矢$\{|a^{\prime}\rangle\}$相对应.右矢空间与左矢空间的一一对应关系为
 \begin{equation}
 	\begin{aligned}|\alpha\rangle&\overset{\mathrm{DC}}{\operatorname*{\longleftrightarrow}}\langle\alpha|\\| a^{\prime}\rangle,| a^{\prime\prime}\rangle,\cdotp\cdotp\cdotp&\overset{\mathrm{DC}}{\operatorname*{\longleftrightarrow}}\langle a^{\prime}|,\langle a^{\prime\prime}|,\cdotp\cdotp\cdotp\\| a\rangle+|\beta\rangle&\overset{\mathrm{DC}}{\operatorname*{\longleftrightarrow}}\langle\alpha|+\langle\beta|,\end{aligned}
 \end{equation}
@@ -706,7 +706,7 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 	{AB}\left| {{a}^{\prime },{b}^{\prime }}\right\rangle = {BA}\left| {{a}^{\prime },{b}^{\prime }}\right\rangle
 \end{equation}
 
-于是有 $\left\lbrack {A, B}\right\rbrack = 0$ ,它与假设矛盾. 所以,一般而言,对于不相容的可观测量, $\left| {{a}^{\prime },{b}^{\prime }}\right\rangle$ 没有什么意义. 然而, 存在一个有意思的例外: 在右矢空间中可能存在一个这样的子空间,尽管 $A$ 和 $B$ 是不相容的可观测量,但是上式对该子空间的所有元素都成立. 在这里,我们再次引用轨道角动量理论中的一个例子来帮助理解. 假定我们考虑一个 $l = 0$ 的态 $\left( s\right)$ 态尽管 ${L}_{x}$ 和 ${L}_{z}$ 不对易,这个态却是 ${L}_{x}$ 和 ${L}_{z}$ 的一个共同本征态（对于这两个算符,本征值均为零). 这种情况下的这个子空间是一维的.
+于是有 $\left\lbrack {A, B}\right\rbrack = 0$ ,它与假设矛盾. 所以,一般而言,对于不相容的可观测量, $\left| {{a}^{\prime },{b}^{\prime }}\right\rangle$ 没有什么意义. 然而, 存在一个有意思的例外: 在右矢空间中可能存在一个这样的子空间,尽管 $A$ 和 $B$ 是不相容的可观测量,但是上式对该子空间的所有元素都成立. 在这里,我们再次引用轨道角动量理论中的一个例子来帮助理解. 假定我们考虑一个 $l = 0$ 的态 ($s$ 态)尽管 ${L}_{x}$ 和 ${L}_{z}$ 不对易,这个态却是 ${L}_{x}$ 和 ${L}_{z}$ 的一个共同本征态（对于这两个算符,本征值均为零). 这种情况下的这个子空间是一维的.
 \subsection*{不确定度关系}
 这一节要讨论的最后一个论题是不确定度关系. 给定一个可观测量 $A$ ,我们定义一个\textbf{算符}
 \begin{equation}
@@ -716,12 +716,12 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 \begin{equation}
 	\left\langle {\left( \Delta A\right) }^{2}\right\rangle = \left\langle \left( {{A}^{2} - {2A}\langle A\rangle +\langle A{\rangle }^{2}}\right) \right\rangle = \langle {A}^{2}\rangle - \langle A{\rangle }^{2}
 \end{equation}
-上式中最后的一个式子, 可作为弥散度的另一类定义.当然,根据我们概率论的所学知识,这也是方差的形式,于是自然,我们可以定义其的方差为$A$的\textbf{弥散度}. 显然,当所谈及的态是 $A$ 的一个本征态时,弥散度为零. 粗略地讲,一个可观测量的弥散度表征着 “模糊性”. 例如,对于一个自旋 $\frac{1}{2}$ 系统的 ${S}_{z} +$ 态, ${S}_{x}$ 的弥散度可以计算出来,结果为
+上式中最后的一个式子, 可作为弥散度的另一类定义.当然,根据我们概率论的所学知识,这也是方差的形式,于是自然,我们可以定义其的方差为$A$的\textbf{弥散度}. 显然,当所谈及的态是 $A$ 的一个本征态时,弥散度为零. 我们现在应当回想我们是如何引入概率诠释的,然后思考方差在数学上的意义,当弥散度为零时,方差为零,即我们所关注的态坍缩为某一本征态的概率是平均且清楚的,易分辨的\footnote{樱井纯的现代量子力学的中译本称其为``尖锐的",原文为sharp,但文中意义更贴近于与模糊性对比.}.粗略地讲,一个可观测量的弥散度表征着 “模糊性”. 例如,对于一个自旋 $\frac{1}{2}$ 系统的 ${S}_{z} +$ 态, ${S}_{x}$ 的弥散度可以计算出来,结果为
 \begin{equation}
 	\left\langle {S}_{x}^{2}\right\rangle - {\left\langle {S}_{x}\right\rangle }^{2} = {\hbar }^{2}/4
 \end{equation}
 
-相比之下,对于 ${S}_{z} +$ 态,弥散度 $\left\langle {\left( \Delta {S}_{z}\right) }^{2}\right\rangle$ 显然为零. 因此,对于 ${S}_{z} +$ 态, ${S}_{z}$ 是 “尖锐的” $\left( {S}_{z}\right.$ 有零弥散度) 而 ${S}_{x}$ 是模糊的.
+相比之下,对于 ${S}_{z} +$ 态,弥散度 $\left\langle {\left( \Delta {S}_{z}\right) }^{2}\right\rangle$ 显然为零. 因此,对于 ${S}_{z} +$ 态, ${S}_{z}$ 是清晰的,或者说是\textit{可分辨}的(${S}_{z}$ 有零弥散度) 而 ${S}_{x}$ 是模糊的.
 
 我们现在来表述不确定度关系,量子力学最广为人知的 $x - p$ 不确定度关系正是它的一个例子. 设 $A$ 和 $B$ 是两个可观测量. 那么,对任意一个态,我们一定有下列的不等式(有些量子力学教科书会把它放在习题里):
 \begin{equation}
@@ -792,462 +792,327 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 由于忽略掉上式的第二项 (反对易项) 只会使不等关系更强一些, 现在不确定度关系就自然被证明了\footnote{许多作者用 ${\Delta A}$ 取代我们的 $\sqrt{\left\langle {\left( \Delta A\right) }^{2}\right\rangle }$ ,因此不确定度关系被写成 ${\Delta A\Delta B} \geq \frac{1}{2}\left| {\langle \left\lbrack {A, B}\right\rbrack \rangle }\right|$ .}.
 \section{表象变换}
 \subsection*{变换算符}
-假定我们有两个不相容的可观测量 $A$ 和 $B$ . 论及的右矢空间既可以看作为集合 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 所张,也可看作为集合 $\left\{ \left| {b}^{\prime }\right\rangle \right\}$ 所张. 例如,对于自旋 $\frac{1}{2}$ 的系统, $\left| {{S}_{i} \pm }\right\rangle$ 可以用作基右矢. 此外, $| {S}_{i} \pm \rangle$ 也可以用作我们的基右矢. 当然,这两个不同的基右矢集合张着同一个右矢空间. 我们感兴趣的是找到这两种描写是怎样关联着的. 基矢集合的改变称之为基矢的改变或者表象的改变. 由 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 给定基本征右矢的基被称为 $A$ 表象,有时也称为 $A$ 对角表象,因为在这个基中 $A$ 所对应的方阵是对角矩阵.
+假定我们有两个不相容的可观测量 $A$ 和 $B$ . 论及的右矢空间既可以看作为集合 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 所张,也可看作为集合 $\left\{ \left| {b}^{\prime }\right\rangle \right\}$ 所张. 例如,对于自旋 $\frac{1}{2}$ 的系统, $\left| {{S}_{i} \pm }\right\rangle$ 可以用作基右矢. 此外, $| {S}_{i} \pm \rangle$ 也可以用作我们的基右矢. 当然,这两个不同的基右矢集合张着同一个右矢空间. 我们感兴趣的是找到这两种不同的表述方法是怎样关联着的. 基矢集合的改变称之为\textbf{基矢的改变}或者\textbf{表象的改变}. 由 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 给定基本征右矢的基被称为 $A$ \textbf{表象},有时也称为 $A$ 对角表象,因为在这个基中 $A$ 所对应的方阵是对角矩阵.
 
 我们的基本任务是构造一个变换算符,它把老的正交归一集合 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 和新的正交归一集合 $\left\{ \left| {b}^{\prime }\right\rangle \right\}$ 联系起来. 为此,我们首先证明下述定理.
 
-定理 1.3 给定两个基右矢的集合, 它们都满足正交归一性和完备性, 则存在这样的一个幺正算符 $U$ ,使得
+\begin{theorem}\label{thm:1.3}
+	 给定两个基右矢的集合, 它们都满足正交归一性和完备性, 则存在这样的一个幺正算符 $U$ ,使得
+	 \begin{equation}
+	 	| {b}^{( 1) }\rangle = U| {a}^{( 1) }\rangle ,| {b}^{( 2) }\rangle = U| {a}^{( 2) }\rangle \cdots ,| {b}^{( N) }\rangle = U| {a}^{( N) }\rangle
+	 \end{equation}
+	 作为一个\textbf{幺正算符}, 我们指的是一个算符满足条件
+	 \begin{equation}
+	 	{U}^{ \dagger }U = \textbf{1}
+	 \end{equation}
+	 \begin{equation}
+	 	U{U}^{ \dagger } = \textbf{1}
+	 \end{equation}
+\end{theorem}
 
-$$
-\left| {b}^{\left( 1\right) }\right\rangle = U\left| {a}^{\left( 1\right) }\right\rangle ,\left| {b}^{\left( 2\right) }\right\rangle = U\left| {a}^{\left( 2\right) }\right\rangle \cdots ,\left| {b}^{\left( N\right) }\right\rangle = U\left| {a}^{\left( N\right) }\right\rangle . \tag{1.5.1}
-$$
-
-作为一个幺正算符, 我们指的是一个算符满足条件
-
-$$
-{U}^{ \dagger }U = 1 \tag{1.5.2}
-$$
-
-和
-
-$$
-U{U}^{ \dagger } = 1\text{.} \tag{1.5.3}
-$$
-
-证明 我们通过具体地构建来证明这个定理. 我们断定算符
-
-$$
-U = \mathop{\sum }\limits_{k}\left| {b}^{\left( k\right) }\right\rangle \left\langle {a}^{\left( k\right) }\right| \tag{1.5.4}
-$$
-
-将满足这一要求,并把这个 $U$ 作用于 $\left| {a}^{\left( I\right) }\right\rangle$ 上. 显然, $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 的正交归一性保障了
-
-$$
-U\left| {a}^{\left( l\right) }\right\rangle = \left| {b}^{\left( l\right) }\right\rangle . \tag{1.5.5}
-$$
-
-另外, $U$ 是幺正的:
-
-$$
-{U}^{ \dagger }U = \mathop{\sum }\limits_{k}\mathop{\sum }\limits_{l}\left| {a}^{\left( l\right) }\right\rangle \left\langle {{b}^{\left( l\right) }\left| {{b}^{\left( k\right) }\rangle \left\langle {a}^{\left( k\right) }\right\rangle }\right| = \mathop{\sum }\limits_{k}\left| {a}^{\left( k\right) }\right\rangle \left\langle {a}^{\left( k\right) }\right| = 1}\right\rangle . \tag{1.5.6}
-$$
-
-其中,我们用到了 $\left\{ \left| {b}^{\prime }\right\rangle \right\}$ 的正交归一性和 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 的完备性. 用类似的方式我们得到关系式 (1.5.3) 式.
+\begin{proof}
+	我们通过具体地构建来证明这个定理. 我们构建算符
+	\begin{equation}\label{1.115}
+		U = \mathop{\sum }\limits_{k}| {b}^{( k) }\rangle \langle {a}^{( k) }|
+	\end{equation}
+	使其满足这一要求,并把这个 $U$ 作用于 $\left| {a}^{\left( I\right) }\right\rangle$ 上. 显然, $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 的正交归一性保障了
+	\begin{equation}\label{1.116}
+		U| {a}^{( l) }\rangle = | {b}^{( l) }\rangle
+	\end{equation}
+	另外, $U$ 是幺正的:
+	\begin{equation}
+		{U}^{ \dagger }U = \mathop{\sum }\limits_{k}\mathop{\sum }\limits_{l}| {a}^{( l) }\rangle \langle {{b}^{( l) }| {{b}^{( k) }\rangle \langle {a}^{( k) }\rangle }| = \mathop{\sum }\limits_{k}| {a}^{( k) }\rangle \langle {a}^{( k) }| = \textbf{1}}
+	\end{equation}
+	其中,我们用到了 $\left\{ \left| {b}^{\prime }\right\rangle \right\}$ 的正交归一性和 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 的完备性. 用类似的方式我们得到关系式$U{U}^{ \dagger } = \textbf{1}$式.
+\end{proof}
 \subsection*{变换矩阵}
+下面我们将研究算符 $U$ 在老的基 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 中的矩阵表示. 我们有
+\begin{equation}
+	\langle {{a}^{\left( k\right) }\left| U\right| {a}^{\left( l\right) }}\rangle = \langle {{a}^{\left( k\right) } | {b}^{\left( l\right) }}\rangle
+\end{equation}
+它显然来自于\ref{1.116}式. 换言之, $U$ 算符的矩阵元由老的基左矢和新的基右矢的内积构成. 我们还记得在三维空间中,把一组单位基矢量 $\left( {\widehat{\mathbf{x}},\widehat{\mathbf{y}},\widehat{\mathbf{z}}}\right)$ 变为另一组单位基矢量 $\left( {{\widehat{\mathbf{x}}}^{\prime },{\widehat{\mathbf{y}}}^{\prime },{\widehat{\mathbf{z}}}^{\prime }}\right)$的转动矩阵可以写成如下所示
+\begin{equation}
+	R = \left( \begin{array}{lll} \widehat{\mathbf{x}} \cdot {\widehat{\mathbf{x}}}^{\prime } & \widehat{\mathbf{x}} \cdot {\widehat{\mathbf{y}}}^{\prime } & \widehat{\mathbf{x}} \cdot {\widehat{\mathbf{z}}}^{\prime } \\ \widehat{\mathbf{y}} \cdot {\widehat{\mathbf{x}}}^{\prime } & \widehat{\mathbf{y}} \cdot {\widehat{\mathbf{y}}}^{\prime } & \widehat{\mathbf{y}} \cdot {\widehat{\mathbf{z}}}^{\prime } \\ \widehat{\mathbf{z}} \cdot {\widehat{\mathbf{x}}}^{\prime } & \widehat{\mathbf{z}} \cdot {\widehat{\mathbf{y}}}^{\prime } & \widehat{\mathbf{z}} \cdot {\widehat{\mathbf{z}}}^{\prime } \end{array}\right)
+\end{equation}
+由 $\left\langle {{a}^{\left( k\right) }\left| U\right| {a}^{\left( l\right) }}\right\rangle$ 组成的方矩阵称为从基 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 到基 $\left\{ \left| {b}^{\prime }\right\rangle \right\}$ 的\textbf{变换矩阵}.
 
-研究算符 $U$ 在老的基 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 中的矩阵表示是有意义的. 我们有
-
-$$
-\left\langle {{a}^{\left( k\right) }\left| U\right| {a}^{\left( l\right) }}\right\rangle = \left\langle {{a}^{\left( k\right) } | {b}^{\left( l\right) }}\right\rangle , \tag{1.5.7}
-$$
-
-它显然来自于 (1.5.5) 式. 换言之, $U$ 算符的矩阵元由老基左矢和新基右矢的内积构成. 我们记得在三维空间中,把一组单位基矢量 $\left( {\widehat{\mathbf{x}},\widehat{\mathbf{y}},\widehat{\mathbf{z}}}\right)$ 变为另一组单位基矢量 $\left( {{\widehat{\mathbf{x}}}^{\prime },{\widehat{\mathbf{y}}}^{\prime },{\widehat{\mathbf{z}}}^{\prime }}\right)$
-
-的转动矩阵可以写成 [例如 Goldstein (2002), ${134} \sim {144}$ 页]
-
-$$
-R = \left( \begin{array}{lll} \widehat{\mathbf{x}} \cdot {\widehat{\mathbf{x}}}^{\prime } & \widehat{\mathbf{x}} \cdot {\widehat{\mathbf{y}}}^{\prime } & \widehat{\mathbf{x}} \cdot {\widehat{\mathbf{z}}}^{\prime } \\ \widehat{\mathbf{y}} \cdot {\widehat{\mathbf{x}}}^{\prime } & \widehat{\mathbf{y}} \cdot {\widehat{\mathbf{y}}}^{\prime } & \widehat{\mathbf{y}} \cdot {\widehat{\mathbf{z}}}^{\prime } \\ \widehat{\mathbf{z}} \cdot {\widehat{\mathbf{x}}}^{\prime } & \widehat{\mathbf{z}} \cdot {\widehat{\mathbf{y}}}^{\prime } & \widehat{\mathbf{z}} \cdot {\widehat{\mathbf{z}}}^{\prime } \end{array}\right) . \tag{1.5.8}
-$$
-
-由 $\left\langle {{a}^{\left( k\right) }\left| U\right| {a}^{\left( l\right) }}\right\rangle$ 组成的方矩阵称为从基 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 到基 $\left\{ \left| {b}^{\prime }\right\rangle \right\}$ 的变换矩阵.
-
-给定一个任意右矢 $|\alpha \rangle$ ,它在老基中的展开系数 $\left\langle {{a}^{\prime } | \alpha }\right\rangle$ 是已知的,即
-
-$$
-\left| {\alpha \rangle = \mathop{\sum }\limits_{{a}^{\prime }}\left| {a}^{\prime }\right\rangle \left\langle {{a}^{\prime } | \alpha }\right\rangle }\right| \tag{1.5.9}
-$$
-
-怎样得到它在新基中的展开系数 $\left\langle {\left. {b}^{\prime }\right| }_{\alpha }\right\rangle$ 呢? 答案非常简单: 只要用 $\left\langle {b}^{\left( k\right) }\right|$ 乘以 (1.5.9) 式 (为了避免混淆用 ${a}^{\left( l\right) }$ 代替了 ${a}^{\prime }$ ):
-
-$$
-\left\langle {{b}^{\left( k\right) } | \alpha }\right\rangle = \mathop{\sum }\limits_{l}\left\langle {{b}^{\left( k\right) }\left| {a}^{\left( l\right) }\right\rangle \left\langle {{a}^{\left( l\right) } | \alpha }\right\rangle = \mathop{\sum }\limits_{l}\left\langle {{a}^{\left( k\right) }\left| {U}^{ \dagger }\right| {a}^{\left( l\right) }}\right\rangle \left\langle {{a}^{\left( l\right) } | \alpha }\right\rangle .}\right\rangle \tag{1.5.10}
-$$
-
-用矩阵符号,(1.5.10) 式是说,只要用方矩阵 ${U}^{ \dagger }$ 作用在老基中的列矩阵上,即可得到新基中的列矩阵:
-
-$$
-\text{(新)} = \left( {U}^{ \dagger }\right) \text{(老)} \tag{1.5.11}
-$$
-
+给定一个任意右矢 $|\alpha \rangle$ ,它在老的基中的展开系数 $\left\langle {{a}^{\prime } | \alpha }\right\rangle$ 是已知的,即
+\begin{equation}
+	| {\alpha \rangle = \mathop{\sum }\limits_{{a}^{\prime }}\left| {a}^{\prime }\right\rangle \left\langle {{a}^{\prime } | \alpha }\right\rangle }|
+\end{equation}
+怎样得到它在新基中的展开系数 $\langle {{b}^{\prime }| }_{\alpha }\rangle$ 呢? 答案非常简单: 只要用 $\left\langle {b}^{\left( k\right) }\right|$ 乘以上式式 (为了避免混淆用 ${a}^{\left( l\right) }$ 代替了 ${a}^{\prime }$ ):
+\begin{equation}
+	\langle {{b}^{\left( k\right) } | \alpha }\rangle = \mathop{\sum }\limits_{l}\langle {{b}^{\left( k\right) }| {a}^{\left( l\right) }\rangle \left\langle {{a}^{\left( l\right) } | \alpha }\rangle = \mathop{\sum }\limits_{l}\langle {{a}^{\left( k\right) }| {U}^{ \dagger }| {a}^{\left( l\right) }}\rangle \langle {{a}^{\left( l\right) } | \alpha }\rangle}\rangle
+\end{equation}
+如果采用用矩阵符号,上式表明,只要用方矩阵 ${U}^{ \dagger }$ 作用在老的基中的列矩阵上,即可得到新的基中的列矩阵:
+\begin{equation}
+	\text{(新)} = ( {U}^{ \dagger }) \text{(老)}
+\end{equation}
 老矩阵元和新矩阵元之间的关系也很容易得到:
+\begin{equation}
+	\begin{aligned}
+	\left\langle {{b}^{\left( k\right) }\left| X\right| {b}^{\left( l\right) }}\right\rangle &= \mathop{\sum }\limits_{m}\mathop{\sum }\limits_{n}\left\langle {{b}^{\left( k\right) }\left| {a}^{\left( m\right) }\right\rangle \left\langle {{a}^{\left( m\right) }\left| X\right| {a}^{\left( n\right) }}\right\rangle \left\langle {a}^{\left( n\right) }\right| {b}^{\left( l\right) }}\right\rangle\\
+	&= \mathop{\sum }\limits_{m}\mathop{\sum }\limits_{n}\left\langle {{a}^{\left( k\right) }\left| {U}^{ \dagger }\right| {a}^{\left( m\right) }}\right\rangle \left\langle {{a}^{\left( m\right) }\left| X\right| {a}^{\left( n\right) }}\right\rangle \left\langle {{a}^{\left( n\right) }\left| U\right| {a}^{\left( l\right) }}\right\rangle
+	\end{aligned}
+\end{equation}
+这只不过是线性代数中我们所熟知的\textbf{相似变换}.
+\begin{equation}
+	{X}^{\prime } = {U}^{ \dagger }{XU}
+\end{equation}
 
-$$
-\left\langle {{b}^{\left( k\right) }\left| X\right| {b}^{\left( l\right) }}\right\rangle = \mathop{\sum }\limits_{m}\mathop{\sum }\limits_{n}\left\langle {{b}^{\left( k\right) }\left| {a}^{\left( m\right) }\right\rangle \left\langle {{a}^{\left( m\right) }\left| X\right| {a}^{\left( n\right) }}\right\rangle \left\langle {a}^{\left( n\right) }\right| {b}^{\left( l\right) }}\right\rangle \tag{1.5.12}
-$$
-
-$$
-= \mathop{\sum }\limits_{m}\mathop{\sum }\limits_{n}\left\langle {{a}^{\left( k\right) }\left| {U}^{ \dagger }\right| {a}^{\left( m\right) }}\right\rangle \left\langle {{a}^{\left( m\right) }\left| X\right| {a}^{\left( n\right) }}\right\rangle \left\langle {{a}^{\left( n\right) }\left| U\right| {a}^{\left( l\right) }}\right\rangle .
-$$
-
-这只不过是矩阵代数中熟知的相似变换
-
-$$
-{X}^{\prime } = {U}^{ \dagger }{XU} \tag{1.5.13}
-$$
-
-一个算符 $X$ 的迹定义为对角矩阵元之和:
-
-$$
-\operatorname{tr}\left( X\right) = \mathop{\sum }\limits_{{a}^{\prime }}\left\langle {{a}^{\prime }\left| X\right| {a}^{\prime }}\right\rangle . \tag{1. 5.14}
-$$
-
+一个算符 $X$ 的\textbf{迹}定义为对角矩阵元之和:
+\begin{equation}
+	\operatorname{tr}\left( X\right) = \mathop{\sum }\limits_{{a}^{\prime }}\left\langle {{a}^{\prime }\left| X\right| {a}^{\prime }}\right\rangle
+\end{equation}
 尽管在定义中使用了一组特定的基右矢,但可以证明 $\operatorname{tr}\left( X\right)$ 是不依赖于表象的,如下所示:
-
-$$
-\mathop{\sum }\limits_{{a}^{\prime }}\left\langle {{a}^{\prime }\left| X\right| {a}^{\prime }}\right\rangle = \mathop{\sum }\limits_{{a}^{\prime }}\mathop{\sum }\limits_{{b}^{\prime }}\mathop{\sum }\limits_{{b}^{\prime }}\left\langle {{a}^{\prime }\left| {{b}^{\prime }\rangle \left\langle {{b}^{\prime }\left| X\right| {b}^{\prime \prime }}\right\rangle \left\langle {b}^{\prime \prime }\right| {a}^{\prime }}\right| }\right\rangle
-$$
-
-$$
-= \mathop{\sum }\limits_{{b}^{\prime }}\mathop{\sum }\limits_{{b}^{\prime \prime }}\left\langle {{b}^{\prime \prime }\left| {{b}^{\prime }\rangle \left\langle {{b}^{\prime }\left| X\right| {b}^{\prime \prime }}\right\rangle }\right| }\right\rangle \tag{1.5.15}
-$$
-
-$$
-= \mathop{\sum }\limits_{{b}^{\prime }}\left\langle {{b}^{\prime }\left| X\right| {b}^{\prime }}\right\rangle .
-$$
-
+\begin{equation}
+	\begin{aligned}
+		\mathop{\sum }\limits_{{a}^{\prime }}\left\langle {{a}^{\prime }\left| X\right| {a}^{\prime }}\right\rangle &= \mathop{\sum }\limits_{{a}^{\prime }}\mathop{\sum }\limits_{{b}^{\prime }}\mathop{\sum }\limits_{{b}^{\prime }}\left\langle {{a}^{\prime }\left| {{b}^{\prime }\rangle \left\langle {{b}^{\prime }\left| X\right| {b}^{\prime \prime }}\right\rangle \left\langle {b}^{\prime \prime }\right| {a}^{\prime }}\right| }\right\rangle\\
+		&= \mathop{\sum }\limits_{{b}^{\prime }}\mathop{\sum }\limits_{{b}^{\prime \prime }}\left\langle {b}^{\prime \prime }\left| {b}^{\prime }\rangle \left\langle {{b}^{\prime }\left| X\right| {b}^{\prime \prime }}\right\rangle \\
+		&= \mathop{\sum }\limits_{{b}^{\prime }}\left\langle {{b}^{\prime }\left| X\right| {b}^{\prime }}\right\rangle
+	\end{aligned}
+\end{equation}
 我们还可以证明:
-
-$$
-\operatorname{tr}\left( {XY}\right) = \operatorname{tr}\left( {YX}\right) , \tag{1.5.16a}
-$$
-
-$$
-\operatorname{tr}\left( {{U}^{ \dagger }{XU}}\right) = \operatorname{tr}\left( X\right) , \tag{1.5.16b}
-$$
-
-$$
-\operatorname{tr}\left( {\left| {a}^{\prime }\right\rangle \left\langle {a}^{\prime \prime }\right| }\right) = {\delta }_{{a}^{\prime }{a}^{\prime \prime }}, \tag{1.5.16c}
-$$
-
-$$
-\operatorname{tr}\left( \left| {{b}^{\prime }\rangle \left\langle {a}^{\prime }\right| }\right| \right) = \left\langle {{a}^{\prime } | {b}^{\prime }}\right\rangle . \tag{1.5.16d}
-$$
-
-对角化
-
-到此为止我们还没有讨论: 假定一个算符 $B$ 在老基 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 中的矩阵元已知,如何找到这个算符的本征值和本征矢. 这个问题等价于寻找对角化 $B$ 的幺正矩阵. 尽管读者可能已经熟悉矩阵代数中的对角化程序, 用狄拉克的左矢-右矢符号解答这个问题仍是值得的.
+\begin{equation}
+	\begin{aligned}
+		\operatorname{tr}\left( {XY}\right) &= \operatorname{tr}\left( {YX}\right)\\
+		\operatorname{tr}\left( {{U}^{ \dagger }{XU}}\right) &= \operatorname{tr}\left( X\right)\\
+		\operatorname{tr}\left( {\left| {a}^{\prime }\right\rangle \left\langle {a}^{\prime \prime }\right| }\right) &= {\delta }_{{a}^{\prime }{a}^{\prime \prime }}\\
+		\operatorname{tr}\left( \left| {{b}^{\prime }\rangle \left\langle {a}^{\prime }\right| } \right) &= \left\langle {{a}^{\prime } | {b}^{\prime }}\right\rangle
+	\end{aligned}
+\end{equation}
+\subsection*{对角化}
+到此为止我们还没有讨论: 假定一个算符 $B$ 在老的基 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 中的矩阵元已知,如何找到这个算符的本征值和本征矢. 这个问题等价于寻找能够对角化 $B$ 的幺正矩阵. 尽管读者可能已经熟悉线性代数中的对角化方法, 但再次使用狄拉克的左矢-右矢符号解答这个问题仍是必要的.
 
 我们感兴趣的是求得本征值 ${b}^{\prime }$ 和本征右矢 $\left| {b}^{\prime }\right\rangle$ ,它们有下列性质
-
-$$
-B\left| {b}^{\prime }\right\rangle = {b}^{\prime }\left| {b}^{\prime }\right\rangle . \tag{1. 5.17}
-$$
-
+\begin{equation}\label{1.128}
+	B\left| {b}^{\prime }\right\rangle = {b}^{\prime }\left| {b}^{\prime }\right\rangle
+\end{equation}
 首先, 我们把上式改写成
-
-$$
-\mathop{\sum }\limits_{{a}^{\prime }}\left\langle {{a}^{\prime \prime }\left| B\right| {a}^{\prime }}\right\rangle \left\langle {{a}^{\prime } | {b}^{\prime }}\right\rangle = {b}^{\prime }\left\langle {{a}^{\prime \prime } | {b}^{\prime }}\right\rangle . \tag{1. 5.18}
-$$
-
-当 (1.5.17) 式中的 $\left| {b}^{\prime }\right\rangle$ 代表 $B$ 的第 $l$ 个本征右矢时,我们可以用矩阵符号把 (1.5.18) 式写成如下形式
-
-$$
-\left( \begin{matrix} {B}_{11} & {B}_{12} & {B}_{13} & \cdots \\ {B}_{21} & {B}_{22} & {B}_{23} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{matrix}\right) \left( \begin{matrix} {C}_{1}^{\left( l\right) } \\ {C}_{2}^{\left( l\right) } \\ \vdots \end{matrix}\right) = {b}^{\left( l\right) }\left( \begin{matrix} {C}_{1}^{\left( l\right) } \\ {C}_{2}^{\left( l\right) } \\ \vdots \end{matrix}\right) , \tag{1.5.19}
-$$
-
+\begin{equation}
+	\mathop{\sum }\limits_{{a}^{\prime }}\left\langle {{a}^{\prime \prime }\left| B\right| {a}^{\prime }}\right\rangle \left\langle {{a}^{\prime } | {b}^{\prime }}\right\rangle = {b}^{\prime }\left\langle {{a}^{\prime \prime } | {b}^{\prime }}\right\rangle
+\end{equation}
+当\ref{1.128}式中的 $\left| {b}^{\prime }\right\rangle$ 代表 $B$ 的第 $l$ 个本征右矢时,我们可以用矩阵符号把上式重写成如下形式
+\begin{equation}
+	\left( \begin{matrix} {B}_{11} & {B}_{12} & {B}_{13} & \cdots \\ {B}_{21} & {B}_{22} & {B}_{23} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{matrix}\right) \left( \begin{matrix} {C}_{1}^{\left( l\right) } \\ {C}_{2}^{\left( l\right) } \\ \vdots \end{matrix}\right) = {b}^{\left( l\right) }\left( \begin{matrix} {C}_{1}^{\left( l\right) } \\ {C}_{2}^{\left( l\right) } \\ \vdots \end{matrix}\right)
+\end{equation}
 其中的
-
-$$
-{B}_{ij} = \left\langle {{a}^{\left( i\right) }\left| B\right| {a}^{\left( j\right) }}\right\rangle \tag{1.5.20a}
-$$
-
+\begin{equation}\label{1.131}
+	{B}_{ij} = \langle {{a}^{\left( i\right) }\left| B\right| {a}^{\left( j\right) }}\rangle
+\end{equation}
 和
-
-$$
-{C}_{k}^{\left( l\right) } = \left\langle {{a}^{\left( k\right) } | {b}^{\left( l\right) }}\right\rangle , \tag{1.5.20b}
-$$
-
+\begin{equation}
+	{C}_{k}^{\left( l\right) } = \langle {{a}^{\left( k\right) } | {b}^{\left( l\right) }}\rangle
+\end{equation}
 而 $i, j, k$ 从 1 取到右矢空间的维数 $N$ . 正如我们从线性代数中知道的,仅当特征方程
+\begin{equation}
+	\det \left( {B - {\lambda \textbf{1}}}\right) = 0
+\end{equation}
+成立时, ${C}_{k}^{\left( I\right) }$ 才可能有非平庸解. 这是一个关于 $\lambda$ 的 $N$ 次代数方程,解得的 $N$ 个根就等同于我们试图确定的各个 ${b}^{\left( l\right) }$ . 知道了 ${b}^{\left( l\right) }$ ,我们就可以解得相应的 ${C}_{k}^{\left( l\right) }$ 直至一个由归一化条件确定的整体常数因子. 将\ref{1.131}式与\ref{1.128}式对比,我们看到 ${C}_{k}^{\left( l\right) }$ 恰恰就是 $\left\{ \left| {a}^{\prime }\right\rangle \right\} \rightarrow \left\{ \left| {b}^{\prime }\right\rangle \right\}$ 基变换所涉及的幺正矩阵的矩阵元.
 
-$$
-\det \left( {B - {\lambda 1}}\right) = 0 \tag{1.5.21}
-$$
-
-成立时, ${C}_{k}^{\left( I\right) }$ 才可能有非平庸解. 这是一个关于 $\lambda$ 的 $N$ 次代数方程,解得的 $N$ 个根就等同于我们试图确定的各个 ${b}^{\left( l\right) }$ . 知道了 ${b}^{\left( l\right) }$ ,我们就可以解得相应的 ${C}_{k}^{\left( l\right) }$ 直至一个由归一化条件确定的整体常数因子. 将 (1.5.20b) 式与 (1.5.7) 式对比,我们看到 ${C}_{k}^{\left( l\right) }$ 恰恰就是 $\left\{ \left| {a}^{\prime }\right\rangle \right\} \rightarrow \left\{ \left| {b}^{\prime }\right\rangle \right\}$ 基变换所涉及的幺正矩阵的矩阵元.
-
-对于这种解法, $B$ 的厄米性很重要. 例如,考虑由 (1.3.38) 式或 (1.4.19) 式所定义的 ${S}_{ + }$ . 这个算符显然是非厄米的. 用 ${S}_{z}$ 基写出来的相应的矩阵
-
-$$
-{S}_{ + } \doteq \hbar \left( \begin{array}{ll} 0 & 1 \\ 0 & 0 \end{array}\right) , \tag{1.5.22}
-$$
-
-不可能用任何幺正矩阵对角化. 在第 2 章我们将遇到一个与简谐振子相干态相关的一个非厄米算符的本征右矢. 然而, 已经知道这样的本征右矢不能形成一个完备的正交归一基, 因此, 我们在这一节所发展的公式框架就不能直接使用.
-
+对于这种解法, $B$ 的厄米性很重要. 例如,考虑前面所讨论的${S}_{+}$.这个算符显然是非厄米的. 用 ${S}_{z}$ 基写出来的相应的矩阵
+\begin{equation}
+	{S}_{ + } \doteq \hbar \left( \begin{array}{ll} 0 & 1 \\ 0 & 0 \end{array}\right)
+\end{equation}
+不可能用任何幺正矩阵对角化. 在下一章我们将遇到一个与简谐振子相干态相关的一个非厄米算符的本征右矢. 然而, 现在我们已经知道这样的本征右矢不能形成一个完备的正交归一基, 因此, 我们在这一节所发展的公式框架就不能直接使用.
 \subsection*{幺正等价可观测量}
----
-
 我们通过讨论可观测量幺正变换的一个著名定理来结束这一节.
+\begin{theorem}\label{thm:1.4} 
+	再一次考虑由\ref{1.115}式的 $U$ 算符联系着的两组正交归一基 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 和 $\left\{ \left| {b}^{\prime }\right\rangle \right\}$ . 知道了 $U$ ,我们可以构造 $A$ 的一个\textbf{幺正变换}, ${UA}{U}^{-1}$ ; 则称 $A$ 和 ${UA}{U}^{-1}$ 为\textbf{幺正等价可观测量}. $A$ 的本征值方程
+	\begin{equation}
+		A| {a}^{\left( l\right) }\rangle = {a}^{\left( l\right) }| {a}^{\left( l\right) }\rangle
+	\end{equation}
+	显然意味着
+	\begin{equation}
+		{UA}{U}^{-1}U| {a}^{\left( l\right) }\rangle = {a}^{\left( l\right) }U| {a}^{\left( l\right) }\rangle
+	\end{equation}
+	但是该式可以改写为
+	\begin{equation}
+		( {{UA}{U}^{-1}}) | {b}^{\left( l\right) }\rangle = {a}^{\left( l\right) }| {b}^{\left( l\right) }\rangle
+	\end{equation}
+\end{theorem}
 
-定理 1.4 再一次考虑由 (1.5.4) 式的 $U$ 算符联系着的两组正交归一基 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 和 $\left\{ \left| {b}^{\prime }\right\rangle \right\}$ . 知道了 $U$ ,我们可以构造 $A$ 的一个幺正变换, ${UA}{U}^{-1}$ ; 则称 $A$ 和 ${UA}{U}^{-1}$ 为幺正等价可观测量. $A$ 的本征值方程,
-
-$$
-A\left| {a}^{\left( l\right) }\right\rangle = {a}^{\left( l\right) }\left| {a}^{\left( l\right) }\right\rangle , \tag{1.5.23}
-$$
-
-显然意味着
-
-$$
-{UA}{U}^{-1}U\left| {a}^{\left( l\right) }\right\rangle = {a}^{\left( l\right) }U\left| {a}^{\left( l\right) }\right\rangle . \tag{1.5.24}
-$$
-
-但是该式可以改写为
-
-$$
-\left( {{UA}{U}^{-1}}\right) \left| {b}^{\left( l\right) }\right\rangle = {a}^{\left( l\right) }\left| {b}^{\left( l\right) }\right\rangle . \tag{1.5.25}
-$$
-
----
-
-这个看似简单的结果是相当深奥的. 它告诉我们,这些 $\left| {b}^{\prime }\right\rangle$ 是 ${UA}{U}^{-1}$ 的本征右矢, 它们有着与 $A$ 的本征值完全相同的本征值. 换言之,幺正等价可观测量具有全同的谱.
-
+这个看似简单的结果是相当深奥的. 它告诉我们,这些 $\left| {b}^{\prime }\right\rangle$ 是 ${UA}{U}^{-1}$ 的本征右矢, 它们有着与 $A$ 的本征值\textit{完全相同的本征值}. 换言之,\textit{幺正等价可观测量}具有\textbf{全同的谱}.
+	
 根据定义,本征右矢 $\left| {b}^{\left( l\right) }\right\rangle$ 满足关系
+\begin{equation}
+	B| {b}^{\left( l\right) }\rangle = {b}^{\left( l\right) }| {b}^{\left( l\right) }\rangle
+\end{equation}
 
-$$
-B\left| {b}^{\left( l\right) }\right\rangle = {b}^{\left( l\right) }\left| {b}^{\left( l\right) }\right\rangle . \tag{1.5.26}
-$$
-
-把 (1.5.25) 式与 (1.5.26) 式对比,我们推断 $B$ 和 ${UA}{U}^{-1}$ 是可以同时对角化的. 一个自然的问题是: ${UA}{U}^{-1}$ 和 $B$ 本身是相同的吗? 在有物理兴趣的情况中,答案通常是 “是的”. 例如,取 ${S}_{x}$ 和 ${S}_{z}$ ,它们通过一个幺正算符关联在一起,正如我们在第 3 章将要讨论的,这个幺正算符实际上是绕 $y$ 轴转动 $\pi /2$ 角的转动算符. 在这种情况下, ${S}_{x}$ 自身就是 ${S}_{z}$ 的幺正变换. 因为我们知道 ${S}_{x}$ 和 ${S}_{z}$ 展示了相同的本征值——即, $+ \hbar /2$ 和 $- \hbar /2 -$ 可看到在这个特定的例子中, 我们的定理是成立的.
+根据我们刚才所做得出的定理,我们推断 $B$ 和 ${UA}{U}^{-1}$ 是可以同时对角化的. 一个自然的问题是: ${UA}{U}^{-1}$ 和 $B$ 本身是相同的吗? 答案通常是 “是的”. 例如,取 ${S}_{x}$ 和 ${S}_{z}$ ,它们通过一个幺正算符关联在一起,正如我们在角动量理论那一章中将要讨论的,这个幺正算符实际上是绕 $y$ 轴转动 $\pi /2$ 角的转动算符. 在这种情况下, ${S}_{x}$ 自身就是 ${S}_{z}$ 的幺正变换. 因为我们知道 ${S}_{x}$ 和 ${S}_{z}$ 展示了相同的本征值——即, $+ \hbar /2$ 和 $- \hbar /2$ 可看到在这个特定的例子中, 我们的定理是成立的.
 \section{位置,动量和平移}
 \subsection*{连续谱}
 到目前为止, 所考虑的可观测量都被假定具有分立的本征值谱. 然而, 量子力学中有一些可观测量具有连续的本征值. 例如,取动量的 $z$ 分量 ${p}_{z}$ . 在量子力学中这个量再一次用一个厄米算符来表示. 然而,与 ${S}_{z}$ 大不相同, ${p}_{z}$ 的本征值 (在适当的单位下) 可以取 $- \infty$ 到 $\infty$ 之间的任何实数值.
 
-连续谱本征右矢所张矢量空间的严格数学是相当靠不住的. 这样的一个空间的维数显然是无穷大的. 幸运的是, 很多从具有分立本征值的有限维矢量空间中得到的结果都可以立即推广. 在直接推广不适用的地方, 我们会指明危险信号.
+\begin{remark}
+\textit{	实际上,我们现在应当考虑一个希尔伯特空间$l^2(-\infty,+\infty)$,其相关数学性质将在后续章节再深入讨论.}
+\end{remark}
 
-我们从与本征值方程 (1.2.5) 式类似的方程开始, 在连续谱的情况下它被写成
+连续谱本征右矢所张矢量空间的严格数学目前是相当靠不住的. 这样的一个空间的维数显然是无穷大的. 幸运的是, 很多从具有分立本征值的有限维矢量空间中得到的结果都可以立即推广. 在直接推广不适用的地方, 我们会格外强调(正如我们常常不去首先考虑级数与积分的换序是否可行那样).
 
-$$
-\xi \left| {\xi }^{\prime }\right\rangle = {\xi }^{\prime }\left| {\xi }^{\prime }\right\rangle , \tag{1.6.1}
-$$
-
+我们从与本征值方程类似的方程开始, 在连续谱的情况下它被写成
+\begin{equation}
+	\xi \left| {\xi }^{\prime }\right\rangle = {\xi }^{\prime }\left| {\xi }^{\prime }\right\rangle
+\end{equation}
 其中, $\xi$ 是一个算符,而 ${\xi }^{\prime }$ 只是个数. 换句话说,右矢 $\left| {\xi }^{\prime }\right\rangle$ 是算符 $\xi$ 的一个本征右矢,其本征值为 ${\xi }^{\prime }$ ,就像 $\left| {a}^{\prime }\right\rangle$ 是算符 $A$ 的一个本征右矢,其本征值为 ${a}^{\prime }$ 一样.
 
-在追求这一类比时,我们用狄拉克的 $\delta$ 函数替代克罗内克 (Kronecker) 符号一一用对连续变量 ${\xi }^{\prime }$ 的积分代替对本征值 $\left\{ {a}^{\prime }\right\}$ 的分立求和——因此,
-
-$$
-\left\langle {{a}^{\prime } | {a}^{\prime \prime }}\right\rangle = {\delta }_{{a}^{\prime }{a}^{\prime \prime }} \rightarrow \left\langle {{\xi }^{\prime } | {\xi }^{\prime \prime }}\right\rangle = \delta \left( {{\xi }^{\prime } - {\xi }^{\prime \prime }}\right) , \tag{1.6.2a}
-$$
-
-$$
-\mathop{\sum }\limits_{{a}^{\prime }}\left| {a}^{\prime }\right\rangle \left\langle {{a}^{\prime } | = 1 \rightarrow \int d{\xi }^{\prime } | {\xi }^{\prime }}\right\rangle \left\langle {\xi }^{\prime }\right| = 1, \tag{1.6.2b}
-$$
-
-$$
-\left| {\alpha \rangle = \mathop{\sum }\limits_{{a}^{\prime }}}\right| {a}^{\prime }\rangle \left\langle {{a}^{\prime }\left| {\alpha \rangle \rightarrow }\right| \alpha }\right\rangle = \int d{\xi }^{\prime }\left| {\xi }^{\prime }\right\rangle \left\langle {{\xi }^{\prime } | \alpha }\right\rangle ,
-$$
-
-(1.6. $2\mathrm{c}$ )
-
-$$
-\mathop{\sum }\limits_{{a}^{\prime }}{\left| \left\langle {a}^{\prime } | \alpha \right\rangle \right| }^{2} = 1 \rightarrow \int d{\xi }^{\prime }{\left| \left\langle {\xi }^{\prime } | \alpha \right\rangle \right| }^{2} = 1, \tag{1.6.2d}
-$$
-
-$$
-\langle \beta | \alpha \rangle = \mathop{\sum }\limits_{{a}^{\prime }}\left\langle {\beta | {a}^{\prime }}\right\rangle \left\langle {{a}^{\prime } | \alpha }\right\rangle \rightarrow \langle \beta | \alpha \rangle = \int d{\xi }^{\prime }\left\langle {\beta | {\xi }^{\prime }}\right\rangle \left\langle {{\xi }^{\prime } | \alpha }\right\rangle , \tag{1.6.2e}
-$$
-
-$$
-\left\langle {{a}^{\prime \prime }\left| A\right| {a}^{\prime }}\right\rangle = {a}^{\prime }{\delta }_{{a}^{\prime }{a}^{\prime \prime }} \rightarrow \left\langle {{\xi }^{\prime \prime }\left| \xi \right| {\xi }^{\prime }}\right\rangle = {\xi }^{\prime }\delta \left( {{\xi }^{\prime \prime } - {\xi }^{\prime }}\right) . \tag{1.6.2f}
-$$
-
-特别要注意, 如何用完备性关系 (1.6.2b) 式求得 (1.6.2c) 式和 (1.6.2e) 式.
+在追求这一类比时,我们用狄拉克的 $\delta$ 函数替代克罗内克 (Kronecker) 符号——用对连续变量 ${\xi }^{\prime }$ 的积分代替对本征值 $\left\{ {a}^{\prime }\right\}$ 的分立求和——因此,
+\begin{equation}
+	\begin{gathered}
+		\left\langle {{a}^{\prime } | {a}^{\prime \prime }}\right\rangle = {\delta }_{{a}^{\prime }{a}^{\prime \prime }}\rightarrow \left\langle {{\xi }^{\prime } | {\xi }^{\prime \prime }}\right\rangle = \delta \left( {{\xi }^{\prime } - {\xi }^{\prime \prime }}\right)\\
+		\mathop{\sum }\limits_{{a}^{\prime }}| {a}^{\prime }\rangle \langle {{a}^{\prime } | = 1\rightarrow \int \d{\xi }^{\prime } | {\xi }^{\prime }}\rangle \langle {\xi }^{\prime }| = 1\\
+		| {\alpha \rangle = \mathop{\sum }\limits_{{a}^{\prime }}}| {a}^{\prime }\rangle \left\langle {{a}^{\prime }\left| {\alpha \rangle\rightarrow }\right| \alpha }\right\rangle = \int \d{\xi }^{\prime }\left| {\xi }^{\prime }\right\rangle \left\langle {{\xi }^{\prime } | \alpha }\right\rangle\\
+		\mathop{\sum }\limits_{{a}^{\prime }}{\left| \left\langle {a}^{\prime } | \alpha \right\rangle \right| }^{2} = 1\rightarrow \int \d{\xi }^{\prime }{\left| \left\langle {\xi }^{\prime } | \alpha \right\rangle \right| }^{2} = 1\\
+		\langle \beta | \alpha \rangle = \mathop{\sum }\limits_{{a}^{\prime }}\left\langle {\beta | {a}^{\prime }}\right\rangle \left\langle {{a}^{\prime } | \alpha }\right\rangle \rightarrow \langle \beta | \alpha \rangle = \int \d{\xi }^{\prime }\left\langle {\beta | {\xi }^{\prime }}\right\rangle \left\langle {{\xi }^{\prime } | \alpha }\right\rangle\\
+		\left\langle {{a}^{\prime \prime }\left| A\right| {a}^{\prime }}\right\rangle = {a}^{\prime }{\delta }_{{a}^{\prime }{a}^{\prime \prime }} \rightarrow \left\langle {{\xi }^{\prime \prime }\left| \xi \right| {\xi }^{\prime }}\right\rangle = {\xi }^{\prime }\delta \left( {{\xi }^{\prime \prime } - {\xi }^{\prime }}\right)\\
+	\end{gathered}
+\end{equation}
 \subsection*{位置本征右矢和位置测量}
-在 1.4 节我们强调量子力学中的一次测量实质上是一个过滤过程. 为了把这种想法扩展到具有连续谱的可观测量的测量, 最好的做法是处理一个特殊的例子. 为此我们来考虑一维的位置 (或坐标) 算符.
+在上一节我们强调量子力学中的一次测量实质上是一个筛选过程. 为了把这种想法扩展到具有连续谱的可观测量的测量, 最好的做法是处理一个特殊的例子. 为此我们来考虑一维的位置 (或坐标) 算符.
 
 位置算符 $x$ 的本征右矢 $\left| {x}^{\prime }\right\rangle$ 满足
-
-$$
-x\left| {x}^{\prime }\right\rangle = {x}^{\prime }\left| {x}^{\prime }\right\rangle \tag{1.6.3}
-$$
+\begin{equation}
+	x\left| {x}^{\prime }\right\rangle = {x}^{\prime }\left| {x}^{\prime }\right\rangle
+\end{equation}
 
 人们假定它形成一个完备集. 这里 ${x}^{\prime }$ 只是一个有着长度量纲的数,例如 ${0.23}\mathrm{\;{cm}}$ ,而 $x$ 是个算符. 一个任意物理态的态右矢可以用 $\left\{ \left| {x}^{\prime }\right\rangle \right\}$ 展开:
+\begin{equation}
+	| {\alpha \rangle = \int_{-\infty}^{\infty}\d{x}^{\prime }}| {x}^{\prime }\rangle \left\langle {{x}^{\prime } | \alpha }\right\rangle
+\end{equation}
 
-$$
-\left| {\alpha \rangle = {\int }_{-\infty }^{\infty }d{x}^{\prime }}\right| {x}^{\prime }\rangle \left\langle {{x}^{\prime } | \alpha }\right\rangle . \tag{1.6.4}
-$$
+现在我们考虑对于位置可观测量的一个高度理想化的选择性测量. 假定我们安放了一个非常微小的探测器,仅当粒子精确地处于 ${x}^{\prime }$ 处而不在任何其他地方时,该探测器才发出咔嗒声. 一经探测器发出咔嗒声,我们就可以说,所谈及的态由 $\left| {x}^{\prime }\right\rangle$ 表示. 换句话说,当该探测器发出咔嗒声时, $|\alpha \rangle$ 突然 “跳入”了 $\left| {x}^{\prime }\right\rangle$ .
 
-现在我们考虑位置可观测量的一个高度理想化的选择性测量. 假定我们安放了一个非常微小的探测器,仅当粒子精确地处于 ${x}^{\prime }$ 处而不在任何其他地方时,该探测器才发出咔嗒声. 一经探测器发出咔嗒声,我们就可以说,所谈及的态由 $\left| {x}^{\prime }\right\rangle$ 表示. 换句话说,当该探测器发出咔嗒声时, $|\alpha \rangle$ 突然 “跳入”了 $\left| {x}^{\prime }\right\rangle$ ,非常类似于一个任意自旋态经由一个 ${S}_{z}$ 类型的 $\mathrm{{SG}}$ 仪器时跳到 ${S}_{z} +$ (或 ${S}_{z} -$ ) 态.
-
-实际上,探测器最多能做的是把粒子定位于 ${x}^{\prime }$ 附近的一个很窄的间隔. 当观测到一个粒子位于某个很窄的区间 $\left( {{x}^{\prime } - \Delta /2,{x}^{\prime } + \Delta /2}\right)$ 时,一个实际的探测器就会发出咔嗒声. 当该探测器显出一次计数时, 态右矢突然改变如下:
-
-$$
-\left| {\alpha \rangle = {\int }_{-\infty }^{\infty }d{x}^{\prime \prime }}\right| {x}^{\prime \prime }\rangle \left\langle {{x}^{\prime \prime } | \alpha }\right\rangle \overset{\text{ 测量 }}{ \rightarrow }{\int }_{{x}^{\prime } - \Delta /2}^{{x}^{\prime } + \Delta /2}d{x}^{\prime \prime }\left| {x}^{\prime \prime }\right\rangle \left\langle {{x}^{\prime \prime } | \alpha }\right\rangle . \tag{1. 6.5}
-$$
-
+但实际上,探测器最多能做的是把粒子定位于 ${x}^{\prime }$ 附近的一个很窄的间隔. 当观测到一个粒子位于某个很窄的区间 $\left( {{x}^{\prime } - \Delta /2,{x}^{\prime } + \Delta /2}\right)$ 时,一个实际的探测器就会发出咔嗒声. 当该探测器显出一次计数时, 态右矢突然改变如下:
+\begin{equation}
+	| {\alpha \rangle = \int_{-\infty }^{\infty }\d{x}^{\prime \prime }}| {x}^{\prime \prime }\rangle \left\langle {{x}^{\prime \prime } | \alpha }\right\rangle \overset{\text{ 测量 }}{ \rightarrow }\int_{{x}^{\prime } - \Delta /2}^{{x}^{\prime } + \Delta /2}\d{x}^{\prime \prime }\left| {x}^{\prime \prime }\right\rangle \left\langle {{x}^{\prime \prime } | \alpha }\right\rangle
+\end{equation}
 假定在这个狭窄的区间内, $\left\langle {{x}^{\prime \prime } | \alpha }\right\rangle$ 没有可以察觉的变化,探测器发出响声的概率由下式给出
-
-$$
-{\left| \left\langle {x}^{\prime } | \alpha \right\rangle \right| }^{2}d{x}^{\prime }, \tag{1.6.6}
-$$
-
-其中我们把 $\Delta$ 写成 $d{x}^{\prime }$ . 这与测量 $A$ 时 $|\alpha \rangle$ 跳到 $\left| {a}^{\prime }\right\rangle$ 的概率为 ${\left| \left\langle {a}^{\prime } | \alpha \right\rangle \right| }^{2}$ 类似. 在 $- \infty$ 和
-
-$\infty$ 之间的某个地方记录到粒子的概率为:
-
-$$
-{\int }_{-\infty }^{\infty }d{x}^{\prime }{\left| \left\langle {x}^{\prime } | \alpha \right\rangle \right| }^{2}, \tag{1.6.7}
-$$
-
+\begin{equation}
+	{\left| \left\langle {x}^{\prime } | \alpha \right\rangle \right| }^{2}\d{x}^{\prime }
+\end{equation}
+其中我们把 $\Delta$ 写成 $\d{x}^{\prime }$ . 这与测量 $A$ 时 $|\alpha \rangle$ 跳到 $\left| {a}^{\prime }\right\rangle$ 的概率为 ${\left| \left\langle {a}^{\prime } | \alpha \right\rangle \right| }^{2}$ 类似. 在 $- \infty$ 和$\infty$ 之间的某个地方记录到粒子的概率为:
+\begin{equation}
+	\int_{-\infty }^{\infty }\d{x}^{\prime }{\left| \left\langle {x}^{\prime } | \alpha \right\rangle \right| }^{2}
+\end{equation}
 它是归一到 1 的,只要 $|\alpha \rangle$ 是归一化的,即
+\begin{equation}
+	\langle \alpha | \alpha \rangle = 1 \Rightarrow \int_{-\infty }^{\infty }\d{x}^{\prime }\left\langle {\alpha | {x}^{\prime }}\right\rangle \left\langle {{x}^{\prime } | \alpha }\right\rangle = 1
+\end{equation}
 
-$$
-\langle \alpha | \alpha \rangle = 1 \Rightarrow {\int }_{-\infty }^{\infty }d{x}^{\prime }\left\langle {\alpha | {x}^{\prime }}\right\rangle \left\langle {{x}^{\prime } | \alpha }\right\rangle = 1. \tag{1.6.8}
-$$
-
-这时熟悉波动力学的读者可能已经看到, $\left\langle {{x}^{\prime } | \alpha }\right\rangle$ 就是由 $|\alpha \rangle$ 表示的物理态的波函数. 在 1.7 节我们将更多地谈到把这种展开系数确定为波函数的 $x$ 表象.
+这时熟悉波动力学的读者可能已经看到, $\left\langle {{x}^{\prime } | \alpha }\right\rangle$ 就是由 $|\alpha \rangle$ 表示的物理态的波函数. 在下一节我们将更多地谈到把这种展开系数确定为波函数的 $x$ 表象.
 
 位置本征右矢的概念可以扩充到三维. 在非相对论量子力学中人们假定位置的本征右矢 $\left| {\mathbf{x}}^{\prime }\right\rangle$ 是完备的. 因此,一个忽略了内部自由度 (比如自旋) 的粒子的态右矢可以用 $\left\{ \left| {\mathbf{x}}^{\prime }\right\rangle \right\}$ 做如下展开:
-
-$$
-|\alpha \rangle = \int {d}^{3}{x}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle \left\langle {{\mathbf{x}}^{\prime } | \alpha }\right\rangle , \tag{1.6.9}
-$$
-
-其中 ${\mathbf{x}}^{\prime }$ 代表 ${x}^{\prime },{y}^{\prime }$ 和 ${z}^{\prime }$ ; 换句话说, $\left| {\mathbf{x}}^{\prime }\right\rangle$ 是可观测量 $x, y$ 和 $z$ 在 1.4 节意义上的共同本征右矢:
-
-$$
-\left| {\mathbf{x}}^{\prime }\right\rangle \equiv \left| {{x}^{\prime },{y}^{\prime },{z}^{\prime }}\right\rangle \tag{1.6.10a}
-$$
-
-$$
-x\left| {\mathbf{x}}^{\prime }\right\rangle = {x}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle ,\;y\left| {\mathbf{x}}^{\prime }\right\rangle = {y}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle ,\;z\left| {\mathbf{x}}^{\prime }\right\rangle = {z}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle , \tag{1.6.10b}
-$$
-
+\begin{equation}
+	|\alpha \rangle = \int {\d}^{3}{x}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle \left\langle {{\mathbf{x}}^{\prime } | \alpha }\right\rangle
+\end{equation}
+其中 ${\mathbf{x}}^{\prime }$ 代表 ${x}^{\prime },{y}^{\prime }$ 和 ${z}^{\prime }$ ; 换句话说, $\left| {\mathbf{x}}^{\prime }\right\rangle$ 是可观测量 $x, y$ 和 $z$ 的共同本征右矢:
+\begin{equation}
+	\left| {\mathbf{x}}^{\prime }\right\rangle \equiv \left| {{x}^{\prime },{y}^{\prime },{z}^{\prime }}\right\rangle
+\end{equation}
+\begin{equation}
+	x\left| {\mathbf{x}}^{\prime }\right\rangle = {x}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle ,\;y\left| {\mathbf{x}}^{\prime }\right\rangle = {y}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle ,\;z\left| {\mathbf{x}}^{\prime }\right\rangle = {z}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle
+\end{equation}
 既然能够考虑这样的一个共同本征右矢, 我们就隐含地假定了位置矢量的三个分量能在任意精度下同时测量. 因此, 我们一定有
-
-$$
-\left\lbrack {{x}_{i},{x}_{j}}\right\rbrack = 0, \tag{1.6.11}
-$$
-
+\begin{equation}
+	\left\lbrack {{x}_{i},{x}_{j}}\right\rbrack = 0
+\end{equation}
 其中 ${x}_{1},{x}_{2}$ 和 ${x}_{3}$ 分别表示 $x, y$ 和 $z$ .
-
 \subsection*{平移}
-现在我们引入非常重要的平移或空间位移的概念. 假定开始时我们有一个准确地处于 ${\mathbf{x}}^{\prime }$ 周围的态. 让我们考虑一种操作,它把这个态改变为另一个准确定位的态,这一次它位于 ${\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime }$ 周围,而其他的一切 (例如自旋方向) 都不变. 这样一种操作被定义为无穷小平移 $d{\mathbf{x}}^{\prime }$ ,实现这种操作的算符用 $\% \left( {d{\mathbf{x}}^{\prime }}\right)$ 表示,即
-
-$$
-f\left( {d{\mathbf{x}}^{\prime }}\right) \left| {\mathbf{x}}^{\prime }\right\rangle = \left| {{\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime }}\right\rangle . \tag{1.6.12}
-$$
-
-其中按照约定, 将一个可能的任意相因子设为 1 . 注意, (1.6.12) 式的右边仍是一个位置本征右矢,但是这一次,其本征值为 ${\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime }$ . 显然, $\left| {\mathbf{x}}^{\prime }\right\rangle$ 不是无穷小平移算符的一个本征右矢.
+现在我们引入非常重要的平移或空间位移的概念. 假定开始时我们有一个准确地处于 ${\mathbf{x}}^{\prime }$ 周围的态. 让我们考虑一种操作,它把这个态改变为另一个准确定位的态,这一次它位于 ${\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime }$ 周围,而其他的一切 (例如自旋方向) 都不变. 这样一种操作被定义为\textbf{无穷小平移} $\d{\mathbf{x}}^{\prime }$ ,实现这种操作的算符用 $\mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right)$ 表示,即
+\begin{equation}
+	\mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) \left| {\mathbf{x}}^{\prime }\right\rangle = \left| {{\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime }}\right\rangle
+\end{equation}
+其中按照约定, 将一个可能的任意相因子设为 1 . 注意,式子的右边仍是一个位置本征右矢,但是这一次,其本征值为 ${\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime }$ . 显然, $\left| {\mathbf{x}}^{\prime }\right\rangle$ 不是无穷小平移算符的一个本征右矢.
 
 用位置本征右矢把一个任意态的右矢 $|\alpha \rangle$ 展开,可以考查无穷小平移对于 $|\alpha \rangle$ 的影响:
+\begin{equation}
+	\left| {\alpha \rangle \rightarrow \mathscr{G} \left( {\d{\mathbf{x}}^{\prime }}\right) }\right| \alpha \rangle = \mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) \int {\d}^{3}{x}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle \left\langle {{\mathbf{x}}^{\prime } | \alpha }\right\rangle = \int {\d}^{3}{x}^{\prime }\left| {{\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime }}\right\rangle \left\langle {{\mathbf{x}}^{\prime } | \alpha }\right\rangle
+\end{equation}
+我们还可以把式子的右边写成
+\begin{equation}
+	\int {\d}^{3}{x}^{\prime }\left| {{\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime }}\right\rangle \left\langle {{\mathbf{x}}^{\prime } | \alpha }\right\rangle = \int {\d}^{3}{x}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle \left\langle {{\mathbf{x}}^{\prime } - \d{\mathbf{x}}^{\prime } | \alpha }\right\rangle
+\end{equation}
+因为积分是对全空间进行的,而 ${\mathbf{x}}^{\prime }$ 只是一个积分变量. 这表明,平移态 $ \mathscr{G} (d{\mathbf{x}}^{\prime }) |\alpha\rangle$ 可以通过把 $\left\langle {{\mathbf{x}}^{\prime } | \alpha }\right\rangle$ 中的 ${\mathbf{x}}^{\prime }$ 替换成 ${\mathbf{x}}^{\prime } - \d{\mathbf{x}}^{\prime }$ 得到.
 
-$$
-\left| {\alpha \rangle \rightarrow \sharp \left( {d{\mathbf{x}}^{\prime }}\right) }\right| \alpha \rangle = \sharp \left( {d{\mathbf{x}}^{\prime }}\right) \int {d}^{3}{x}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle \left\langle {{\mathbf{x}}^{\prime } | \alpha }\right\rangle = \int {d}^{3}{x}^{\prime }\left| {{\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime }}\right\rangle \left\langle {{\mathbf{x}}^{\prime } | \alpha }\right\rangle . \tag{1.6.13}
-$$
+在文献中有一种经常用来处理平移的等价方法. 代替考虑物理系统本身的无穷小平移,我们考虑对于坐标系作这样一种变化,即坐标原点沿相反的方向移动 $- \d{\mathbf{x}}^{\prime }$ . 从物理上讲,在这样一种替代做法中我们要问,对于其坐标系移动了 $- \d{\mathbf{x}}^{\prime }$ 的另一位观察者,同一个态右矢看上去会是怎么样的. 显然, 我们不要把这两种方法混在一起.
 
-我们还可以把 (1.6.13) 式的右边写成
-
-$$
-\int {d}^{3}{x}^{\prime }\left| {{\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime }}\right\rangle \left\langle {{\mathbf{x}}^{\prime } | \alpha }\right\rangle = \int {d}^{3}{x}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle \left\langle {{\mathbf{x}}^{\prime } - d{\mathbf{x}}^{\prime } | \alpha }\right\rangle \tag{1.6.14}
-$$
-
-因为积分是对全空间进行的,而 ${\mathbf{x}}^{\prime }$ 只是一个积分变量. 这表明,平移态 $\left. {\left. {\Im \left( {d{\mathbf{x}}^{\prime }}\right) }\right| \;\alpha }\right\rangle$ 可以通过把 $\left\langle {{\mathbf{x}}^{\prime } | \alpha }\right\rangle$ 中的 ${\mathbf{x}}^{\prime }$ 替换成 ${\mathbf{x}}^{\prime } - d{\mathbf{x}}^{\prime }$ 得到.
-
-在文献中有一种经常用来处理平移的等价方法. 代替考虑物理系统本身的无穷小平移,我们考虑对于坐标系作这样一种变化,即坐标原点沿相反的方向移动 $- d{\mathbf{x}}^{\prime }$ . 从物理上讲,在这样一种替代做法中我们要问,对于其坐标系移动了 $- d{\mathbf{x}}^{\prime }$ 的另一位观察者,同一个态右矢看上去会是怎么样的. 在本书中我们尽量不采用这种方法. 显然, 重要的是我们不要把这两种方法混在一起.
-
-现在,我们列出无穷小平移算符 $\% \left( {d{\mathbf{x}}^{\prime }}\right)$ 的一些性质. 我们要求的第一个性质是由概率守恒所强加的幺正性. 如果右矢 $|\alpha \rangle$ 归一为 1,要求平移后的右矢 $\left. {\left. {\left. \left( d{\mathbf{x}}^{\prime }\right) \right| }_{\alpha }\right| \;\alpha }\right\rangle$ 也被归一为 1 是合理的, 因此
-
-$$
-\langle \alpha | \alpha \rangle = \left\langle {\alpha \left| {{f}^{ \dagger }\left( {d{\mathbf{x}}^{\prime }}\right) f\left( {d{\mathbf{x}}^{\prime }}\right) }\right| \alpha }\right\rangle , \tag{1.6.15}
-$$
-
-通过要求无穷小平移是幺正的
-
-$$
-{f}^{ + }\left( {d{\mathbf{x}}^{\prime }}\right) f\left( {d{\mathbf{x}}^{\prime }}\right) = 1. \tag{1.6.16}
-$$
-
-这个条件可以得到保障. 总的说来, 在幺正变换下右矢的模保持不变. 对于第二个性质, 我们假定考虑两个相继的无穷小平移——首先平移 $d{\mathbf{x}}^{\prime }$ ,接着再平移 $d{\mathbf{x}}^{\prime \prime }$ ,其中 $d{\mathbf{x}}^{\prime }$ 和 $d{\mathbf{x}}^{\prime \prime }$ 不必沿同一个方向. 我们预期最终的结果就是一个通过矢量之和 $d{\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime \prime }$ 的单一的平移操作, 于是我们要求
-
-$$
-\sharp \left( {d{\mathbf{x}}^{\prime \prime }}\right) \sharp \left( {d{\mathbf{x}}^{\prime }}\right) = \sharp \left( {d{\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime \prime }}\right) . \tag{1. 6.17}
-$$
-
+现在,我们列出无穷小平移算符 $\mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right)$ 的一些性质. 我们要求的第一个性质是由概率守恒所强加的幺正性. 
+\begin{property}[幺正性]\label{property:1.1}
+	如果右矢 $|\alpha \rangle$ 归一为 1,要求平移后的右矢 $( \d{\mathbf{x}}^{\prime })|\right|\alpha \rangle$ 也被归一为 1.因此
+	\begin{equation}
+		\langle \alpha | \alpha \rangle = \left\langle {\alpha \left| {{\mathscr{G}}^{ \dagger }\left( {\d{\mathbf{x}}^{\prime }}\right) \mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) }\right| \alpha }\right\rangle
+	\end{equation}
+\end{property}
+这个性质通过要求无穷小平移是幺正的
+\begin{equation}
+	{\mathscr{G}}^{\dagger}\left( {\d{\mathbf{x}}^{\prime }}\right) \mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) = \textbf{1}
+\end{equation}
+这个条件可以得到保障. 总的说来, 在幺正变换下右矢的模保持不变. 
+\begin{property}[可加性]\label{property:1.2}
+	对于第二个性质, 我们假定考虑两个相继的无穷小平移——首先平移 $\d{\mathbf{x}}^{\prime }$ ,接着再平移 $\d{\mathbf{x}}^{\prime \prime }$ ,其中 $\d{\mathbf{x}}^{\prime }$ 和 $\d{\mathbf{x}}^{\prime \prime }$ 不必沿同一个方向. 我们预期最终的结果就是一个通过矢量之和 $\d{\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime \prime }$ 的单一的平移操作, 于是我们要求
+	\begin{equation}
+		\mathscr{G} \left( {\d{\mathbf{x}}^{\prime \prime }}\right) \mathscr{G} \left( {\d{\mathbf{x}}^{\prime }}\right) = \mathscr{G} \left( {\d{\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime \prime }}\right)
+	\end{equation}
+\end{property}
+\begin{property}[可加性]\label{property:1.3}
 第三个性质是, 假定考虑一个沿相反方向的平移, 我们预期这个反方向的平移与原来平移的逆相同
-
-$$
-\mathcal{J}\left( {-d{\mathbf{x}}^{\prime }}\right) = {\mathcal{J}}^{-1}\left( {d{\mathbf{x}}^{\prime }}\right) . \tag{1.6.18}
-$$
-
-第四个性质要求,当 $d{\mathbf{x}}^{\prime } \rightarrow 0$ 时,平移算符约化为恒等算符
-
-$$
-\mathop{\lim }\limits_{{d{\mathbf{x}}^{\prime } \rightarrow 0}}f\left( {d{\mathbf{x}}^{\prime }}\right) = 1 \tag{1.6.19}
-$$
-
-并且 $\$ \left( {d{\mathbf{x}}^{\prime }}\right)$ 与单位算符之差是 $d{\mathbf{x}}^{\prime }$ 的一级小量.
-
+\begin{equation}
+	\mathscr{G}\left( {-\d{\mathbf{x}}^{\prime }}\right) = {\mathscr{G}}^{-1}\left( {\d{\mathbf{x}}^{\prime }}\right)
+\end{equation}
+\end{property}
+\begin{property}[化一性]\label{property:1.4}
+	第四个性质要求,当 $\d{\mathbf{x}}^{\prime } \rightarrow 0$ 时,平移算符约化为恒等算符
+	\begin{equation}
+		\mathop{\lim }\limits_{{\d{\mathbf{x}}^{\prime } \rightarrow 0}}\mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) = \textbf{1}
+	\end{equation}
+	并且 $\mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right)$ 与单位算符之差是 $\d{\mathbf{x}}^{\prime }$ 的一级小量.
+\end{property}
 我们现在证明, 如果把无穷小平移算符取为
+\begin{equation}\label{1.159}
+	\mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) = \textbf{1} - i\mathbf{K} \cdot \d{\mathbf{x}}^{\prime }
+\end{equation}
+其中 $\mathbf{K}$ 的分量 ${K}_{x},{K}_{y}$ 和 ${K}_{z}$ 都是厄米算符,则上述所有的性质都能得到满足. 第一个性质 [即 $\mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right)$ 的幺正性] 的检验如下
+\begin{equation}
+	\begin{aligned}
+		{\mathscr{G}}^{ \dagger }\left( {\d{\mathbf{x}}^{\prime }}\right) \mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) &= \left( {\textbf{1} + i{\mathbf{K}}^{ \dagger } \cdot \d{\mathbf{x}}^{\prime }}\right) \left( {\textbf{1} - i\mathbf{K} \cdot \d{\mathbf{x}}^{\prime }}\right)\\
+		&= \textbf{1} - i\left( {\mathbf{K} - {\mathbf{K}}^{ \dagger }}\right) \cdot \d{\mathbf{x}}^{\prime } + 0\left\lbrack {\left( \d{\mathbf{x}}^{\prime }\right) }^{2}\right\rbrack\\
+		&\simeq \textbf{1}
+	\end{aligned}
+\end{equation}
+其中对于无穷小变换,我们忽略了 $\d{\mathbf{x}}^{\prime }$ 的二级项. 第二个性质也可以证明如下
+\begin{equation}
+	\begin{aligned}
+		\mathscr{G}\left( {\d{\mathbf{x}}^{\prime \prime }}\right) \mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) &= \left( {\textbf{1} - i\mathbf{K} \cdot \d{\mathbf{x}}^{\prime \prime }}\right) \left( {\textbf{1} - i\mathbf{K} \cdot \d{\mathbf{x}}^{\prime }}\right)\\
+		&\simeq \textbf{1} - i\mathbf{K} \cdot \left( {\d{\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime \prime }}\right) \\
+		&= \mathscr{G}\left( {\d{\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime \prime }}\right)
+	\end{aligned}
+\end{equation}
+第三个和第四个性质显然成立.
 
-$$
-\mathcal{J}\left( {d{\mathbf{x}}^{\prime }}\right) = 1 - i\mathbf{K} \cdot d{\mathbf{x}}^{\prime }, \tag{1.6.20}
-$$
-
-其中 $\mathbf{K}$ 的分量 ${K}_{x},{K}_{y}$ 和 ${K}_{z}$ 都是厄米算符,则上述所有的性质都能得到满足. 第一个性质 [即 $\% \left( {d{\mathbf{x}}^{\prime }}\right)$ 的幺正性] 的检验如下
-
-$$
-{\mathcal{J}}^{ \dagger }\left( {d{\mathbf{x}}^{\prime }}\right) \mathcal{J}\left( {d{\mathbf{x}}^{\prime }}\right) = \left( {1 + i{\mathbf{K}}^{ \dagger } \cdot d{\mathbf{x}}^{\prime }}\right) \left( {1 - i\mathbf{K} \cdot d{\mathbf{x}}^{\prime }}\right)
-$$
-
-$$
-= 1 - i\left( {\mathbf{K} - {\mathbf{K}}^{ \dagger }}\right) \cdot d{\mathbf{x}}^{\prime } + 0\left\lbrack {\left( d{\mathbf{x}}^{\prime }\right) }^{2}\right\rbrack \tag{1.6.21}
-$$
-
-$$
-\simeq 1\text{,}
-$$
-
-其中对于无穷小变换,我们忽略了 $d{\mathbf{x}}^{\prime }$ 的二级项. 第二个性质 (1.6.17) 式也可以证明如下
-
-$$
-\mathcal{J}\left( {d{\mathbf{x}}^{\prime \prime }}\right) \mathcal{J}\left( {d{\mathbf{x}}^{\prime }}\right) = \left( {1 - i\mathbf{K} \cdot d{\mathbf{x}}^{\prime \prime }}\right) \left( {1 - i\mathbf{K} \cdot d{\mathbf{x}}^{\prime }}\right)
-$$
-
-$$
-\simeq 1 - i\mathbf{K} \cdot \left( {d{\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime \prime }}\right) \tag{1.6.22}
-$$
-
-$$
-= f\left( {d{\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime \prime }}\right) .
-$$
-
-第三个和第四个性质显然为 (1.6.20) 式所满足.
-
-若认为 (1.6.20) 式为 $\% \left( {d{\mathbf{x}}^{\prime }}\right)$ 的正确形式,我们就能推导出一个算符 $\mathbf{K}$ 与算符 $\mathbf{x}$ 之间的非常基本的关系. 首先注意到
-
-$$
-\mathbf{x}\% \left( {d{\mathbf{x}}^{\prime }}\right) \left| {\mathbf{x}}^{\prime }\right\rangle = \mathbf{x}\left| {{\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime }}\right\rangle = \left( {{\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime }}\right) \left| {{\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime }}\right\rangle \tag{1.6.23a}
-$$
-
+若认为\ref{1.159}式为 $\mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right)$ 的正确形式,我们就能推导出一个算符 $\mathbf{K}$ 与算符 $\mathbf{x}$ 之间的非常基本的关系. 首先注意到
+\begin{equation}
+	\mathbf{x}\mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) \left| {\mathbf{x}}^{\prime }\right\rangle = \mathbf{x}\left| {{\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime }}\right\rangle = \left( {{\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime }}\right) \left| {{\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime }}\right\rangle
+\end{equation}
 和
-
-$$
-\mathcal{J}\left( {d{\mathbf{x}}^{\prime }}\right) \mathbf{x}\left| {\mathbf{x}}^{\prime }\right\rangle = {\mathbf{x}}^{\prime }\mathcal{J}\left( {d{\mathbf{x}}^{\prime }}\right) \left| {\mathbf{x}}^{\prime }\right\rangle = {\mathbf{x}}^{\prime }\left| {{\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime }}\right\rangle ; \tag{1.6.23b}
-$$
-
+\begin{equation}
+	\mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) \mathbf{x}\left| {\mathbf{x}}^{\prime }\right\rangle = {\mathbf{x}}^{\prime }\mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) \left| {\mathbf{x}}^{\prime }\right\rangle = {\mathbf{x}}^{\prime }\left| {{\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime }}\right\rangle
+\end{equation}
 因此,
-
-$$
-\left\lbrack {\mathbf{x},\sharp \left( {d{\mathbf{x}}^{\prime }}\right) }\right\rbrack \left| {\mathbf{x}}^{\prime }\right\rangle = d{\mathbf{x}}^{\prime }\left| {{\mathbf{x}}^{\prime } + d{\mathbf{x}}^{\prime }}\right\rangle \simeq d{\mathbf{x}}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle , \tag{1.6.24}
-$$
-
-在 (1.6.24) 式最后一步的近似中产生的误差是 $d{\mathbf{x}}^{\prime }$ 的二级小量. 这里, $\left| {\mathbf{x}}^{\prime }\right\rangle$ 可以是任意的位置本征右矢, 并且知道位置本征右矢形成了一个完备集. 因此我们一定有一个算符恒等式
-
-$$
-\left\lbrack {\mathbf{x}, f\left( {d{\mathbf{x}}^{\prime }}\right) }\right\rbrack = d{\mathbf{x}}^{\prime }, \tag{1.6.25}
-$$
-
+\begin{equation}
+	\left\lbrack {\mathbf{x},\mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) }\right\rbrack \left| {\mathbf{x}}^{\prime }\right\rangle = \d{\mathbf{x}}^{\prime }\left| {{\mathbf{x}}^{\prime } + \d{\mathbf{x}}^{\prime }}\right\rangle \simeq \d{\mathbf{x}}^{\prime }\left| {\mathbf{x}}^{\prime }\right\rangle
+\end{equation}
+在上式最后一步的近似中产生的误差是 $\d{\mathbf{x}}^{\prime }$ 的二级小量. 这里, $\left| {\mathbf{x}}^{\prime }\right\rangle$ 可以是任意的位置本征右矢, 并且知道位置本征右矢形成了一个完备集. 因此我们一定有一个算符恒等式
+\begin{equation}
+	\left\lbrack {\mathbf{x}, \mathscr{G}\left( {\d{\mathbf{x}}^{\prime }}\right) }\right\rbrack = \d{\mathbf{x}}^{\prime }
+\end{equation}
 或
-
-$$
-- i\mathbf{x}\mathbf{K} \cdot d{\mathbf{x}}^{\prime } + i\mathbf{K} \cdot d{\mathbf{x}}^{\prime }\mathbf{x} = d{\mathbf{x}}^{\prime }, \tag{1.6.26}
-$$
-
-,其中,在 (1.6.25) 式和 (1.6.26) 式的右边, $d{\mathbf{x}}^{\prime }$ 被认为是一个数 $d{\mathbf{x}}^{\prime }$ 乘以一个由 $\left| {\mathbf{x}}^{\prime }\right\rangle$ 所张的右矢空间中的单位算符. 取 $d{\mathbf{x}}^{\prime }$ 沿 ${\widehat{\mathbf{x}}}_{j}$ 方向并且取它与 ${\widehat{\mathbf{x}}}_{i}$ 的标量积,我们得到
-
-$$
-\left\lbrack {{x}_{i},{K}_{j}}\right\rbrack = i{\delta }_{ij}, \tag{1.6.27}
-$$
-
+\begin{equation}
+	- i\mathbf{x}\mathbf{K} \cdot \d{\mathbf{x}}^{\prime } + i\mathbf{K} \cdot \d{\mathbf{x}}^{\prime }\mathbf{x} = \d{\mathbf{x}}^{\prime }
+\end{equation}
+其中,在上两个式子的右边, $\d{\mathbf{x}}^{\prime }$ 被认为是一个数 $\d{\mathbf{x}}^{\prime }$ 乘以一个由 $\left| {\mathbf{x}}^{\prime }\right\rangle$ 所张的右矢空间中的单位算符. 取 $\d{\mathbf{x}}^{\prime }$ 沿 ${\widehat{\mathbf{x}}}_{j}$ 方向并且取它与 ${\widehat{\mathbf{x}}}_{i}$ 的标量积,我们得到
+\begin{equation}
+	\left\lbrack {{x}_{i},{K}_{j}}\right\rbrack = i{\delta }_{ij}
+\end{equation}
 其中, ${\delta }_{ij}$ 再次被认为乘上一个单位算符.
 \subsection*{动量作为一个平移生成元}
 方程 (1.6.27) 式是位置算符 $x, y, z$ 和 $K$ 算符 ${K}_{x},{K}_{y},{K}_{z}$ 之间的基本对易关系. 记住,到此为止, $K$ 算符是借助无穷小平移算符通过 (1.6.20) 式定义的. 我们可以赋予 $\mathbf{K}$ 什么样的物理意义呢?
@@ -1918,6 +1783,7 @@ $$
 (1. 7. ${51}\mathrm{\;b}$ )
 
 核对一下波函数的量纲是有意思的. 在一维问题中, 归一化条件 (1.6.8) 式意味着 ${\left| \left\langle {x}^{\prime } | \alpha \right\rangle \right| }^{2}$ 具有长度倒数的量纲,因此,波函数本身必须有 (长度) ${}^{-1/2}$ 的量纲. 与之相比, 三维问题中的波函数一定有 (长度) ${}^{-3/2}$ 的量纲,因为 ${\left| \left\langle {\mathbf{x}}^{\prime } | \alpha \right\rangle \right| }^{2}$ 对全空间体积积分之后必须为 1 (无量纲).
+
 \begin{problemset}
 	\item 证明:如果$X=|\beta\rangle\langle\alpha|$,那么则有$X^\dagger=|\alpha\rangle\langle\beta|$.
 	\item 判断
@@ -2236,15 +2102,7 @@ $${\displaystyle \alpha ={\frac {e^{2}k_{e}}{\hbar c}}={\frac {e^{2}}{\hbar c(4\
 \end{enumerate}
 \section*{我们什么时候需要它?为什么需要它?}
 对于晶格的分析.
-\chapter{对偶和对偶空间}
-这个概念太数学了,不太好解释,知乎上的文章大多数是抄书或者一大堆数学系玩的概念,暂且先跳过去,之后有时间再补全这部分内容.
 
-\sout{列一个讲的挺形象的回答\href{https://www.zhihu.com/question/38464481/answer/23567212}{如何理解对偶空间},可以直接看他的,后续补充也是基于这个然后加点物理料的版本.}
-\sout{动图应该是不会插进去的,大概会放一个mma的动画实现自己去试试.}
-
-该知乎回答已被删除,后续自己重新写吧.
-
-简单说一下,对偶空间就是一个赋范空间的所有线性有界泛函所组成的定义了范数的向量空间.之后会详细讲一下这些东西都是什么.
 \chapter{$\delta$函数}
 1
 \chapter{$\delta_{ij},\varepsilon_{ijk}$和爱因斯坦求和约定}

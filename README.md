@@ -9,8 +9,11 @@
 - Modern Quantum Mechanics 2nd.J.J.Sakurai
 - Quantum Field Theory in Condensed Matter Physics 2nd.Alexei M.Tsvellk
 - Entanglement in Many-Body Systems
-
-当前版本:1.0.3
+- 物理学家用李群李代数
+- 物理学中的泛函分析
+- Nicolas Dupuis - Field Theory of Condensed Matter and Ultracold Gases
+- Conformal Field Theory A.N. Schellekens
+当前版本:1.0.4
 
 *尚未制作完成,仅供参考.*
 
@@ -25,7 +28,7 @@
 
 *目前打算写在最后的东西包括:泛函重整化群,一些较新的模型,一些和纠缠相关的内容.预计在这几个月初步写到第九章,然后慢慢补充修正(尤其是第九章之后的内容),大部分重要的内容会尽量写在较前面,不过可能为了贴合书名先写纠缠的部分.*
 
-目前进度:第一章.
+目前进度:第二章.
 
 ### 版本更新历史 History
 #### 1.0.0 
@@ -39,3 +42,7 @@
 * 开始完成第一章部分,对前言部分进行补充.
 * 移除了原本在文章中的更新记录,改为在README中记录.
 * 开始使用Git控制文档.
+#### 1.0.4 
+*date:2024/09/04*
+* 第一章完成,开始第二章
+* 更改了部分大纲,中间加入泛函分析和Lie群Lie代数的内容,删去一些重复内容.

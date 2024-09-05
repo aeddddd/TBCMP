@@ -1764,82 +1764,60 @@ $p$ 和 ${p}^{2}$ 的期望也可以计算如下
 \end{equation}
 这个方程是说,如果对获得从 ${t}_{0}$ 到 ${t}_{2}$ 的时间演化感兴趣,我们则可以通过考虑先从 ${t}_{0}$ 到 ${t}_{1}$ ,再从 ${t}_{1}$ 到 ${t}_{2}$ 的时间演化得到相同的结果(当然,如果你已经对群论有所了解,很容易发现其构成了一个群). 
 
-类比在平移算符时我们的做法,现在考虑一个无穷小时间演化算符 $\mathcal{U}\left( {{t}_{0} + {\dt},{t}_{0}}\right)$:
+类比在平移算符时我们的做法,现在考虑一个无穷小时间演化算符 $\mathcal{U}\left( {{t}_{0} + {\d t},{t}_{0}}\right)$:
 \begin{equation}
-	\left| {\alpha ,{t}_{0};{t}_{0} + {\dt}}\right\rangle = u\left( {{t}_{0} + {\dt},{t}_{0}}\right) \left| {\alpha ,{t}_{0}}\right\rangle
+	\left| {\alpha ,{t}_{0};{t}_{0} + {\d t}}\right\rangle = u\left( {{t}_{0} + {\d t},{t}_{0}}\right) \left| {\alpha ,{t}_{0}}\right\rangle
 \end{equation}
-由于连续性,当 ${\dt}$ 趋于零时,该无穷小时间演化算符一定约化为单位算符,
-
-$$
-\mathop{\lim }\limits_{{{\dt} \rightarrow 0}}u\left( {{t}_{0} + {\dt},{t}_{0}}\right) = 1, tag{2.1.14}
-$$
-
-而且,就像在平移情况中那样,我们预期 $u\left( {{t}_{0} + {\dt},{t}_{0}}\right)$ 与 1 之差为 ${\dt}$ 的量级.
+由于连续性,当 ${\d t}$ 趋于零时,该无穷小时间演化算符一定约化为单位算符,
+\begin{equation}
+	\mathop{\lim }\limits_{{{\d t} \rightarrow 0}}u\left( {{t}_{0} + {\d t},{t}_{0}}\right) = \textbf{1}
+\end{equation}
+而且,就像在平移情况中那样,我们预期 $\mathcal{U}\left( {{t}_{0} + {\d t},{t}_{0}}\right)$ 与 \textbf{1} 之差为 ${\d t}$ 的量级.
 
 我们断言, 下式满足所有这些要求
-
-$$
-u\left( {{t}_{0} + {\dt},{t}_{0}}\right) = 1 - {i\Omega dt}, tag{2.1.15}
-$$
-
-其中 $\Omega$ 是一个厄米算符**
-
-$$
-{\Omega }^{ \dagger } = \Omega \text{.} tag{2.1.16}
-$$
-
-使用 (2.1.15) 式时, 该无穷小时间平移算符满足结合性
-
-$$
-u\left( {{t}_{0} + d{t}_{1} + d{t}_{2},{t}_{0}}\right) = u\left( {{t}_{0} + d{t}_{1} + d{t}_{2},{t}_{0} + d{t}_{1}}\right) u\left( {{t}_{0} + d{t}_{1},{t}_{0}}\right) ; tag{2.1.17}
-$$
-
-它与单位算符只相差一个 ${\dt}$ 量级的项. 幺正性还可以在 ${\left( dt\right) }^{2}$ 或更高阶的项可以忽略的
-
-* 
-
-** 如果这个 $\Omega$ 算符显含时间,那时它必须在 ${t}_{0}$ 时刻求值. 程度上被验证
-
-$$
-{\mathbf{u}}^{ \dagger }\left( {{t}_{0} + {\dt},{t}_{0}}\right) \mathbf{u}\left( {{t}_{0} + {\dt},{t}_{0}}\right) = \left( {1 + i{\Omega }^{ \dagger }{\dt}}\right) \left( {1 - {i\Omega dt}}\right) \simeq 1. tag{2.1.18}
-$$
-
-算符 $\Omega$ 具有频率或者反比于时间的量纲. 那么存在我们熟悉的具有频率量纲的可观测量吗? 回忆一下,在旧量子论中,假定角频率 $\omega$ 通过普朗克-爱因斯坦关系
-
-$$
-E = \hbar \omega . tag{2.1.19}
-$$
-
-与能量联系起来. 现在让我们借用经典力学中哈密顿量是时间演化生成元的概念 (Goldstein ${2002},{401} \sim {402}$ 页). 那时自然可以把 $\Omega$ 与哈密顿量算符 $H$ 联系起来:
-
-$$
-\Omega = \frac{H}{\hbar }. tag{2.1.20}
-$$
-
+\begin{equation}
+	\mathcal{U}\left( {{t}_{0} + {\d t},{t}_{0}}\right) = 1 - {i\Omega \d t}
+\end{equation}
+其中 $\Omega$ 是一个厄米算符,则显然有
+\begin{equation}
+	{\Omega }^{ \dagger } = \Omega
+\end{equation}
+该无穷小时间平移算符同样满足结合性
+\begin{equation}
+	\mathcal{U}\left( {{t}_{0} + \d{t}_{1} + \d{t}_{2},{t}_{0}}\right) = \mathcal{U}\left( {{t}_{0} + \d{t}_{1} + \d{t}_{2},{t}_{0} + \d{t}_{1}}\right) \mathcal{U}\left( {{t}_{0} + \d{t}_{1},{t}_{0}}\right) 
+\end{equation}
+它与单位算符只相差一个 ${\d t}$ 量级的项. 幺正性还可以在 ${\left( \\d t\right) }^{2}$ 或更高阶的项可以忽略的
+\begin{equation}
+	{\mathcal{U}}^{ \dagger }\left( {{t}_{0} + {\d t},{t}_{0}}\right) \mathcal{U}\left( {{t}_{0} + {\d t},{t}_{0}}\right) = \left( {\textbf{1} + i{\Omega }^{ \dagger }{\d t}}\right) \left( {\textbf{1} - {i\Omega \d t}}\right) \simeq \textbf{1}
+\end{equation}
+算符 $\Omega$ 具有频率或者反比于时间的量纲. 那么存在我们熟悉的具有频率量纲的可观测量吗? 回忆一下,在旧量子论中,假定角频率 $\omega$ 通过普朗克关系
+\begin{equation}
+	E = \hbar \omega
+\end{equation}
+与能量联系起来. 现在让我们借用经典力学中哈密顿量是时间演化生成元的概念. 那时自然可以把 $\Omega$ 与哈密顿量算符 $H$ 联系起来:
+\begin{equation}
+	\Omega = \frac{H}{\hbar }
+\end{equation}
 综上所述, 无穷小时间演化算符可写为:
-
-$$
-u\left( {{t}_{0} + {\dt},{t}_{0}}\right) = 1 - \frac{iHdt}{\hbar }, tag{2.1.21}
-$$
-
-其中假定了哈密顿量算符 $H$ 是厄米的. 读者可能要问,这里引入的 $\hbar$ 是否与出现在平移算符表达式 (1.6.32) 中的 $\hbar$ 相同. 人们可通过稍后导出的量子力学运动方程与经典运动方程做比较回答这个问题. 结果表明,除非这两个 $\hbar$ 是一样的,否则就不能够得到作为相应量子力学关系式的经典极限关系式
-
-$$
-\frac{d\mathbf{x}}{\dt} = \frac{\mathbf{p}}{m} tag{2.1.22}
-$$
-
+\begin{equation}
+	\mathcal{U}\left( {{t}_{0} + {\d t},{t}_{0}}\right) = \textbf{1} - \frac{iH\d t}{\hbar }
+\end{equation}
+其中假定了哈密顿量算符 $H$ 是厄米的. 读者可能要问,这里引入的 $\hbar$ 是否与出现在平移算符表达式中的 $\hbar$ 相同.我们可通过稍后导出的量子力学运动方程与经典运动方程做比较回答这个问题. 结果表明,除非这两个 $\hbar$ 是一样的,否则就不能够得到作为相应量子力学关系式的经典极限关系式
+\begin{equation}
+	\frac{\d\mathbf{x}}{\d t} = \frac{\mathbf{p}}{m}
+\end{equation}
 \subsection*{薛定谔方程}
 
-我们现在能够推导时间演化算符 $\mathbf{u}\left( {t,{t}_{0}}\right)$ 满足的基本微分方程. 在 (2.1.12) 式中令 ${t}_{1} \rightarrow t,{t}_{2} \rightarrow t + {\dt}$ ,利用时间演化算符的结合性:
+我们现在能够推导时间演化算符 $\mathbf{u}\left( {t,{t}_{0}}\right)$ 满足的基本微分方程. 在 (2.1.12) 式中令 ${t}_{1} \rightarrow t,{t}_{2} \rightarrow t + {\d t}$ ,利用时间演化算符的结合性:
 
 $$
-u\left( {t + {\dt},{t}_{0}}\right) = u\left( {t + {\dt}, t}\right) u\left( {t,{t}_{0}}\right) = \left( {1 - \frac{iHdt}{\hbar }}\right) u\left( {t,{t}_{0}}\right) , tag{2.1.23}
+u\left( {t + {\d t},{t}_{0}}\right) = u\left( {t + {\d t}, t}\right) u\left( {t,{t}_{0}}\right) = \left( {1 - \frac{iH\d t}{\hbar }}\right) u\left( {t,{t}_{0}}\right) , tag{2.1.23}
 $$
 
 其中的时间差 $t - {t}_{0}$ 不必为无穷小. 我们有
 
 $$
-u\left( {t + {\dt},{t}_{0}}\right) - u\left( {t,{t}_{0}}\right) = - i\left( \frac{H}{\hbar }\right) {\dt}u\left( {t,{t}_{0}}\right) , tag{2.1.24}
+u\left( {t + {\d t},{t}_{0}}\right) - u\left( {t,{t}_{0}}\right) = - i\left( \frac{H}{\hbar }\right) {\d t}u\left( {t,{t}_{0}}\right) , tag{2.1.24}
 $$
 
 它可以写成微分方程形式:
@@ -2413,7 +2391,7 @@ $$
 我们现在推导海森堡绘景中的基本运动方程. 假定 ${A}^{\left( S\right) }$ 不显含时间,许多感兴趣的物理情况正是这样的, 我们得到 [通过把 (2.2.10) 式求微商]
 
 $$
-\frac{d{A}^{\left( H\right) }}{\dt} = \frac{\partial {u}^{ \dagger }}{\partial t}{A}^{\left( S\right) }u + {u}^{ \dagger }{A}^{\left( S\right) }\frac{\partial u}{\partial t}
+\frac{d{A}^{\left( H\right) }}{\d t} = \frac{\partial {u}^{ \dagger }}{\partial t}{A}^{\left( S\right) }u + {u}^{ \dagger }{A}^{\left( S\right) }\frac{\partial u}{\partial t}
 $$
 
 $$
@@ -2451,7 +2429,7 @@ $$
 于是把 (2.2.15) 式写成
 
 $$
-\frac{d{A}^{\left( H\right) }}{\dt} = \frac{1}{i\hbar }\left\lbrack {{A}^{\left( H\right) }, H}\right\rbrack . tag{2.2.19}
+\frac{d{A}^{\left( H\right) }}{\d t} = \frac{1}{i\hbar }\left\lbrack {{A}^{\left( H\right) }, H}\right\rbrack . tag{2.2.19}
 $$
 
 是合理的. 这个方程称为海森堡运动方程. 注意, 推导该式时我们用到了时间演化算符的性质和 ${A}^{\left( H\right) }$ 的定义式.
@@ -2459,13 +2437,13 @@ $$
 将 (2.2.19) 式与泊松括号形式的经典运动方程相比较是有益的. 在经典物理中, 对于一个不显含时间的 $q$ 和 $p$ 的函数 $A$ ,我们有 (Goldstein 2002,396 $\sim {397}$ 页)
 
 $$
-\frac{dA}{\dt} = {\left\lbrack A, H\right\rbrack }_{\text{经典 }}. tag{2.2.20}
+\frac{dA}{\d t} = {\left\lbrack A, H\right\rbrack }_{\text{经典 }}. tag{2.2.20}
 $$
 
 我们再一次看到狄拉克的量子化规则 (1.6.47) 导致了量子力学中的正确方程. 确实, 历史上 (2.2.19) 式最早是由狄拉克写出来的, 他以其谦逊的天性把这个方程称为海森堡运动方程. 然而,值得注意的是不管 ${A}^{\left( H\right) }$ 是否有经典类比,(2.2.19) 式都是有意义的. 例如, 在海森堡绘景中, 自旋算符满足
 
 $$
-\frac{d{S}_{i}^{\left( H\right) }}{\dt} = \frac{1}{i\hbar }\left\lbrack {{S}_{i}^{\left( H\right) }, H}\right\rbrack , tag{2.2.21}
+\frac{d{S}_{i}^{\left( H\right) }}{\d t} = \frac{1}{i\hbar }\left\lbrack {{S}_{i}^{\left( H\right) }, H}\right\rbrack , tag{2.2.21}
 $$
 
 它可以用来讨论自旋进动,但是这个方程没有任何经典的对应物,因为 ${S}_{z}$ 不可能被写成为 $q$ 和 $p$ 的函数. 与其说是坚持狄拉克规则 (1.6.47) 式,倒不如说我们可以论证,对于具有经典对照物的那些量, 正确的经典方程可以借助拟设 (ansatz, 一种先猜测再试图证明的方法. ——译者注)
@@ -2502,7 +2480,7 @@ $$
 我们来看一下可观测量 ${p}_{i}$ 和 ${x}_{i}$ ,它们可被理解为海森堡绘景中的动量与位置算符,尽管我们省略了上标 $\left( H\right)$ . 因为 ${p}_{i}$ 与任何 ${p}_{j}$ 的函数都对易,所以我们有
 
 $$
-\frac{d{p}_{i}}{\dt} = \frac{1}{i\hbar }\left\lbrack {{p}_{i}, H}\right\rbrack = 0. tag{2.2.25}
+\frac{d{p}_{i}}{\d t} = \frac{1}{i\hbar }\left\lbrack {{p}_{i}, H}\right\rbrack = 0. tag{2.2.25}
 $$
 
 ---
@@ -2514,7 +2492,7 @@ $$
 于是对于一个自由粒子,动量算符是一个运动常数,它意味着,在任何时刻 ${p}_{i}\left( t\right)$ 都与 ${p}_{i}\left( 0\right)$ 相同. 通常从海森堡运动方程 (2.2.19) 可明显看到: 只要 ${A}^{\left( H\right) }$ 与哈密顿量对易, ${A}^{\left( H\right) }$ 就是一个运动常数. 其次,
 
 $$
-\frac{d{x}_{i}}{\dt} = \frac{1}{i\hbar }\left\lbrack {{x}_{i}, H}\right\rbrack = \frac{1}{i\hbar }\frac{1}{2m}i\hbar \frac{\partial }{\partial {p}_{i}}\left( {\mathop{\sum }\limits_{{j = 1}}^{3}{p}_{j}^{2}}\right) tag{2.2.26}
+\frac{d{x}_{i}}{\d t} = \frac{1}{i\hbar }\left\lbrack {{x}_{i}, H}\right\rbrack = \frac{1}{i\hbar }\frac{1}{2m}i\hbar \frac{\partial }{\partial {p}_{i}}\left( {\mathop{\sum }\limits_{{j = 1}}^{3}{p}_{j}^{2}}\right) tag{2.2.26}
 $$
 
 $$
@@ -2556,23 +2534,23 @@ $$
 这里的 $V\left( \mathbf{x}\right)$ 被理解为 $x, y$ 和 $z$ 算符的函数. 这时利用 (2.2.23b) 式我们得到
 
 $$
-\frac{d{p}_{i}}{\dt} = \frac{1}{i\hbar }\left\lbrack {{p}_{i}, V\left( \mathbf{x}\right) }\right\rbrack = - \frac{\partial }{\partial {x}_{i}}V\left( \mathbf{x}\right) , tag{2. 2.32}
+\frac{d{p}_{i}}{\d t} = \frac{1}{i\hbar }\left\lbrack {{p}_{i}, V\left( \mathbf{x}\right) }\right\rbrack = - \frac{\partial }{\partial {x}_{i}}V\left( \mathbf{x}\right) , tag{2. 2.32}
 $$
 
 另一方面,我们看到因为 ${x}_{i}$ 与新添加的 $V\left( \mathbf{x}\right)$ 项对易,
 
 $$
-\frac{d{x}_{i}}{\dt} = \frac{{p}_{i}}{m} tag{2. 2.33}
+\frac{d{x}_{i}}{\d t} = \frac{{p}_{i}}{m} tag{2. 2.33}
 $$
 
 仍然成立. 我们可以再一次利用海森堡运动方程推导出:
 
 $$
-\frac{{d}^{2}{x}_{i}}{d{t}^{2}} = \frac{1}{i\hbar }\left\lbrack {\frac{d{x}_{i}}{\dt}, H}\right\rbrack = \frac{1}{i\hbar }\left\lbrack {\frac{{p}_{i}}{m}, H}\right\rbrack tag{2. 2.34}
+\frac{{d}^{2}{x}_{i}}{d{t}^{2}} = \frac{1}{i\hbar }\left\lbrack {\frac{d{x}_{i}}{\d t}, H}\right\rbrack = \frac{1}{i\hbar }\left\lbrack {\frac{{p}_{i}}{m}, H}\right\rbrack tag{2. 2.34}
 $$
 
 $$
-= \frac{1}{m}\frac{d{p}_{i}}{\dt},
+= \frac{1}{m}\frac{d{p}_{i}}{\d t},
 $$
 
 把该式和 (2.2.32) 式结合在一起, 我们最后得到矢量形式的
@@ -2584,7 +2562,7 @@ $$
 这是类似于牛顿第二定律的量子力学公式. 在不随时间变动的海森堡态右矢上对该式的两边取期望, 我们得到
 
 $$
-m\frac{{d}^{2}}{d{t}^{2}}\langle \mathbf{x}\rangle = \frac{d\langle \mathbf{p}\rangle }{\dt} = - \langle \nabla V\left( \mathbf{x}\right) \rangle . tag{2.3.36}
+m\frac{{d}^{2}}{d{t}^{2}}\langle \mathbf{x}\rangle = \frac{d\langle \mathbf{p}\rangle }{\d t} = - \langle \nabla V\left( \mathbf{x}\right) \rangle . tag{2.3.36}
 $$
 
 该式称为埃伦费斯特定理, 以 P. 埃伦费斯特的名字命名, 他在 1927 年利用波动力学形式推导出这个公式. 当把这个定理写成这种期望形式时, 它的适用性与是否用海森堡绘景还是薛定谔绘景无关, 毕竟在这两个绘景中期望是相同的. 相比之下, 仅当我们把算符形式 (2.2.35) 中的 $\mathbf{x}$ 和 $\mathbf{p}$ 当成海森堡绘景的算符时,该式才是有意义的.
@@ -2990,7 +2968,7 @@ $$
 由 (2.2.32) 式和 (2.2.33) 式得知 $p$ 和 $x$ 的海森堡运动方程为
 
 $$
-\frac{dp}{\dt} = - m{\omega }^{2}x
+\frac{dp}{\d t} = - m{\omega }^{2}x
 $$
 
 (2.3. ${41a}$ )
@@ -2998,7 +2976,7 @@ $$
 和
 
 $$
-\frac{dx}{\dt} = \frac{p}{m}.
+\frac{dx}{\d t} = \frac{p}{m}.
 $$
 
 (2.3. ${41}\mathrm{\;b}$ )
@@ -3006,7 +2984,7 @@ $$
 这一对耦合微分方程等价于 $a$ 和 ${a}^{ \dagger }$ 满足的两个无耦合微分方程,即
 
 $$
-\frac{da}{\dt} = \sqrt{\frac{m\omega }{2\hbar }}\left( {\frac{p}{m} - {i\omega x}}\right) = - {i\omega a}
+\frac{da}{\d t} = \sqrt{\frac{m\omega }{2\hbar }}\left( {\frac{p}{m} - {i\omega x}}\right) = - {i\omega a}
 $$
 
 (2.3. ${42a}$ )
@@ -3014,7 +2992,7 @@ $$
 和
 
 $$
-\frac{d{a}^{ \dagger }}{\dt} = {i\omega }{a}^{ \dagger }
+\frac{d{a}^{ \dagger }}{\d t} = {i\omega }{a}^{ \dagger }
 $$
 
 (2.3. ${42}\mathrm{\;b}$ )
@@ -4062,11 +4040,11 @@ $$
 其次,让我们考虑 $G\left( t\right)$ 的拉普拉斯-傅里叶变换:
 
 $$
-\widetilde{G}\left( E\right) \equiv - i{\int }_{0}^{\infty }{dtG}\left( t\right) \exp \left( {{iEt}/\hbar }\right) /\hbar tag{2.6.23}
+\widetilde{G}\left( E\right) \equiv - i{\int }_{0}^{\infty }{\d tG}\left( t\right) \exp \left( {{iEt}/\hbar }\right) /\hbar tag{2.6.23}
 $$
 
 $$
-= - i{\int }_{0}^{\infty }{\dt}\mathop{\sum }\limits_{{a}^{\prime }}\exp \left( {-i{E}_{{a}^{\prime }}t/\hbar }\right) \exp \left( {{iEt}/\hbar }\right) /\hbar ,
+= - i{\int }_{0}^{\infty }{\d t}\mathop{\sum }\limits_{{a}^{\prime }}\exp \left( {-i{E}_{{a}^{\prime }}t/\hbar }\right) \exp \left( {{iEt}/\hbar }\right) /\hbar ,
 $$
 
 这里的被积函数是一直振荡的. 但是我们可以通过让 $E$ 有一个小的正虚部:
@@ -4128,7 +4106,7 @@ $$
 \times \left\langle {{\mathbf{x}}^{\prime \prime },{t}^{\prime \prime } | {\mathbf{x}}^{\prime },{t}^{\prime }}\right\rangle ,\;\left( {{t}^{\prime \prime \prime \prime } > {t}^{\prime \prime \prime } > {t}^{\prime \prime } > {t}^{\prime }}\right) .
 $$
 
-等等. 如果我们以某种方式猜出了无穷小间隔 (在 ${t}^{\prime }$ 与 ${t}^{\prime \prime } = {t}^{\prime } + {\dt}$ 之间) 的 $\left\langle {{\mathbf{x}}^{\prime \prime },{t}^{\prime \prime } | {\mathbf{x}}^{\prime },{t}^{\prime }}\right\rangle$ 的形式, 我们就应当能够通过把无穷小间隔的那些适当的跃迁振幅以类似于 (2.6.29) 式的方式结合起来,求得有限时间间隔的振幅 $\left\langle {{\mathbf{x}}^{\prime \prime },{t}^{\prime \prime } | {\mathbf{x}}^{\prime },{t}^{\prime }}\right\rangle$ . 这类推理导致费曼在 1948 年发表了量子力学的一种独立的表述形式, 我们现在就把注意力转到它上面.
+等等. 如果我们以某种方式猜出了无穷小间隔 (在 ${t}^{\prime }$ 与 ${t}^{\prime \prime } = {t}^{\prime } + {\d t}$ 之间) 的 $\left\langle {{\mathbf{x}}^{\prime \prime },{t}^{\prime \prime } | {\mathbf{x}}^{\prime },{t}^{\prime }}\right\rangle$ 的形式, 我们就应当能够通过把无穷小间隔的那些适当的跃迁振幅以类似于 (2.6.29) 式的方式结合起来,求得有限时间间隔的振幅 $\left\langle {{\mathbf{x}}^{\prime \prime },{t}^{\prime \prime } | {\mathbf{x}}^{\prime },{t}^{\prime }}\right\rangle$ . 这类推理导致费曼在 1948 年发表了量子力学的一种独立的表述形式, 我们现在就把注意力转到它上面.
 
 * 在概率论中 (2.6.28) 式的类似结果称为查普曼-科尔莫戈罗夫 (Chapman-Kolmogoroff) 方程, 而在扩散理论中称为斯莫鲁霍夫斯基 (Smoluchowsky) 方程.
 
@@ -4181,7 +4159,7 @@ $$
 更为普遍的是, 按照哈密顿原理, 这条唯一的路径是使经典拉格朗日量的时间积分定义的作用量取最小值的路径
 
 $$
-\delta {\int }_{{t}_{1}}^{{t}_{2}}{\dt}{L}_{\text{经典 }}\left( {x,\dot{x}}\right) = 0, tag{2.6.35}
+\delta {\int }_{{t}_{1}}^{{t}_{2}}{\d t}{L}_{\text{经典 }}\left( {x,\dot{x}}\right) = 0, tag{2.6.35}
 $$
 
 由它可以求得拉格朗日运动方程.
@@ -4193,7 +4171,7 @@ $$
 作为普林斯顿大学的一名年轻的研究生, 费曼试图攻克这一难题. 在寻找可能的线索时, 据说他被 Dirac 书中一段不可思议的评注迷住了, 用我们的记号, 它相当于下列说法
 
 $$
-\exp \left\lbrack {i{\int }_{{t}_{1}}^{{t}_{2}}\frac{{\dt}{L}_{\text{经典 }}\left( {x,\dot{x}}\right) }{\hbar }}\right\rbrack \text{ 对应于 }\left\langle {{x}_{2},{t}_{2} | {x}_{1},{t}_{1}}\right\rangle .
+\exp \left\lbrack {i{\int }_{{t}_{1}}^{{t}_{2}}\frac{{\d t}{L}_{\text{经典 }}\left( {x,\dot{x}}\right) }{\hbar }}\right\rbrack \text{ 对应于 }\left\langle {{x}_{2},{t}_{2} | {x}_{1},{t}_{1}}\right\rangle .
 $$
 
 费曼试图理解这个评注. “对应于” 与 “等于” 或者 “正比于” 是一回事吗? 这种做法导致他构想出了一种基于路径积分的量子力学时空方法.
@@ -4201,7 +4179,7 @@ $$
 在费曼的公式化表述中, 经典作用量起着非常重要的作用. 为了简洁起见, 我们引进一种新的记号:
 
 $$
-S\left( {n, n - 1}\right) \equiv {\int }_{{t}_{n - 1}}^{{t}_{n}}{\dt}{L}_{\text{经典 }}\left( {x,\dot{x}}\right) . tag{2.6.36}
+S\left( {n, n - 1}\right) \equiv {\int }_{{t}_{n - 1}}^{{t}_{n}}{\d t}{L}_{\text{经典 }}\left( {x,\dot{x}}\right) . tag{2.6.36}
 $$
 
 由于 ${L}_{\text{经典 }}$ 是 $x$ 和 $x$ 的函数,只有在规定了一条沿着它做积分的确定的路径之后,才能把 $S\left( {n, n - 1}\right)$ 确定下来. 因此,尽管在这个记号中路径相关性并不明显,人们相信在计算这个积分时, 我们正在考虑一条特殊的路径. 现在想象我们正沿着某条指定的路径. 我们把注意力集中在沿着这条路径的一小分段上,比如在 $\left( {{x}_{n - 1},{t}_{n - 1}}\right)$ 和 $\left( {{x}_{n},{t}_{n}}\right)$ 之间的一段. 按照狄拉克的做法,要求我们把 $\exp \left\lbrack {{iS}\left( {n, n - 1}\right) /\hbar }\right\rbrack$ 与这一小段联系起来. 沿着这条准备跟踪的确定路径, 我们把这类表示式依次相乘得到
@@ -4240,7 +4218,7 @@ $$
 现在我们看一下 (2.6.40) 式中的指数. 我们的任务是计算 $S\left( {n, n - 1}\right)$ 在 ${\Delta t} \rightarrow 0$ 时的极限. 因为时间间隔如此之小,可以合理地对连接 $\left( {{x}_{n - 1},{t}_{n - 1}}\right)$ 和 $\left( {{x}_{n},{t}_{n}}\right)$ 的路径做直线近似:
 
 $$
-S\left( {n, n - 1}\right) = {\int }_{{t}_{n - 1}}^{{t}_{n}}{\dt}\left\lbrack {\frac{m{\dot{x}}^{2}}{2} - V\left( x\right) }\right\rbrack tag{2.6.41}
+S\left( {n, n - 1}\right) = {\int }_{{t}_{n - 1}}^{{t}_{n}}{\d t}\left\lbrack {\frac{m{\dot{x}}^{2}}{2} - V\left( x\right) }\right\rbrack tag{2.6.41}
 $$
 
 $$
@@ -4308,7 +4286,7 @@ $$
 并把 (2.6.47) 式写成
 
 $$
-\left\langle {{x}_{N},{t}_{N} | {x}_{1},{t}_{1}}\right\rangle = {\int }_{{x}_{1}}^{{x}_{N}}\mathcal{D}\left\lbrack {x\left( t\right) }\right\rbrack \exp \left\lbrack {i{\int }_{{t}_{1}}^{{t}_{N}}{\dt}\frac{{L}_{\text{经典 }}\left( {x,\dot{x}}\right) }{\hbar }}\right\rbrack . tag{2.6.49}
+\left\langle {{x}_{N},{t}_{N} | {x}_{1},{t}_{1}}\right\rangle = {\int }_{{x}_{1}}^{{x}_{N}}\mathcal{D}\left\lbrack {x\left( t\right) }\right\rbrack \exp \left\lbrack {i{\int }_{{t}_{1}}^{{t}_{N}}{\d t}\frac{{L}_{\text{经典 }}\left( {x,\dot{x}}\right) }{\hbar }}\right\rbrack . tag{2.6.49}
 $$
 
 这个表达式称为费曼路径积分. 它作为对所有可能的路径求和的意义应当从 (2.6.47) 式中清晰地看到.
@@ -4459,7 +4437,7 @@ $$
 其中
 
 $$
-{\phi }_{1} - {\phi }_{2} = \left( \frac{1}{\hbar }\right) {\int }_{{t}_{i}}^{{t}_{f}}{\dt}\left\lbrack {{V}_{2}\left( t\right) - {V}_{1}\left( t\right) }\right\rbrack . tag{2. 7.9}
+{\phi }_{1} - {\phi }_{2} = \left( \frac{1}{\hbar }\right) {\int }_{{t}_{i}}^{{t}_{f}}{\d t}\left\lbrack {{V}_{2}\left( t\right) - {V}_{1}\left( t\right) }\right\rbrack . tag{2. 7.9}
 $$
 
 所以, 尽管事实上粒子没有受到力, 却存在一个可观测效应,它依赖于 ${V}_{2}\left( t\right) - {V}_{1}\left( t\right)$ 是否作用其上. 注意,这个效应是纯量子力学的,在 $\hbar \rightarrow 0$ 的极限下,这个有趣的干涉效应被抹掉了, 因为余弦项的振荡变得无穷剧烈*.
@@ -4488,7 +4466,7 @@ $$
 质量不再相消了,而是以组合 $\hbar /m$ 的形式出现. 所以在一个有 $\hbar$ 出现的问题中,预期 $m$ 也会出现. 使用基于
 
 $$
-\left\langle {{\mathbf{x}}_{n},{t}_{n} | {\mathbf{x}}_{n - 1},{t}_{n - 1}}\right\rangle = \sqrt{\frac{m}{{2\pi i}\hbar {\Delta t}}}\exp \left\lbrack {i{\int }_{{t}_{n} - 1}^{{t}_{n}}{\dt}\frac{\left( \frac{1}{2}m{\dot{\mathbf{x}}}^{2} - mgz\right) }{\hbar }}\right\rbrack ,
+\left\langle {{\mathbf{x}}_{n},{t}_{n} | {\mathbf{x}}_{n - 1},{t}_{n - 1}}\right\rangle = \sqrt{\frac{m}{{2\pi i}\hbar {\Delta t}}}\exp \left\lbrack {i{\int }_{{t}_{n} - 1}^{{t}_{n}}{\d t}\frac{\left( \frac{1}{2}m{\dot{\mathbf{x}}}^{2} - mgz\right) }{\hbar }}\right\rbrack ,
 $$
 
 $$
@@ -4498,7 +4476,7 @@ $$
 的一个落体的费曼路径积分公式框架, 我们也可以看到这一点. 在这里我们再一次看到, $m$ 出现在组合 $m/\hbar$ 中. 这与基于
 
 $$
-\delta {\int }_{{t}_{1}}^{{t}_{2}}{\dt}\left( {\frac{m{\dot{\mathbf{x}}}^{2}}{2} - {mgz}}\right) = 0, tag{2.7.13}
+\delta {\int }_{{t}_{1}}^{{t}_{2}}{\d t}\left( {\frac{m{\dot{\mathbf{x}}}^{2}}{2} - {mgz}}\right) = 0, tag{2.7.13}
 $$
 
 的哈密顿经典方法形成鲜明的对比,在那里的 $m$ 一开始就可以消掉,
@@ -4579,13 +4557,13 @@ $$
 为了研究一个受到 $\phi$ 和 $\mathbf{A}$ 作用的带电粒子的动力学,让我们首先在海森堡绘景中操作. 我们可以直接计算 $\mathbf{x}$ 的时间微商
 
 $$
-\frac{d{x}_{i}}{\dt} = \frac{\left\lbrack {x}_{i}, H\right\rbrack }{i\hbar } = \frac{\left( {p}_{i} - e{A}_{i}/c\right) }{m}, tag{2.7.22}
+\frac{d{x}_{i}}{\d t} = \frac{\left\lbrack {x}_{i}, H\right\rbrack }{i\hbar } = \frac{\left( {p}_{i} - e{A}_{i}/c\right) }{m}, tag{2.7.22}
 $$
 
-它显示本书中定义为平移生成元的算符 $\mathbf{p}$ 与 ${md}\mathbf{x}/{\dt}$ 不同. $\mathbf{p}$ 经常称为正则动量,以示与运动学 (或力学) 动量的区别,后者用 $\Pi$ 标记:
+它显示本书中定义为平移生成元的算符 $\mathbf{p}$ 与 ${md}\mathbf{x}/{\d t}$ 不同. $\mathbf{p}$ 经常称为正则动量,以示与运动学 (或力学) 动量的区别,后者用 $\Pi$ 标记:
 
 $$
-\Pi \equiv m\frac{d\mathbf{x}}{\dt} = \mathbf{p} - \frac{e\mathbf{A}}{c}. tag{2.7.23}
+\Pi \equiv m\frac{d\mathbf{x}}{\d t} = \mathbf{p} - \frac{e\mathbf{A}}{c}. tag{2.7.23}
 $$
 
 尽管对于正则动量我们有
@@ -4615,7 +4593,7 @@ $$
 并利用基本对易关系, 我们可以导出量子力学版本的洛伦兹 (Lorentz) 力, 即
 
 $$
-m\frac{{d}^{2}\mathbf{x}}{d{t}^{2}} = \frac{d\Pi }{\dt} = e\left\lbrack {\mathbf{E} + \frac{1}{2c}\left( {\frac{d\mathbf{x}}{\dt} \times \mathbf{B} - \mathbf{B} \times \frac{d\mathbf{x}}{\dt}}\right) }\right\rbrack tag{2.7.27}
+m\frac{{d}^{2}\mathbf{x}}{d{t}^{2}} = \frac{d\Pi }{\d t} = e\left\lbrack {\mathbf{E} + \frac{1}{2c}\left( {\frac{d\mathbf{x}}{\d t} \times \mathbf{B} - \mathbf{B} \times \frac{d\mathbf{x}}{\d t}}\right) }\right\rbrack tag{2.7.27}
 $$
 
 这就是海森堡绘景中,当 $\mathbf{E}$ 和 $\mathbf{B}$ 存在时,带电粒子的埃伦费斯特定理.
@@ -4731,10 +4709,10 @@ $$
 回顾哈密顿运动方程:
 
 $$
-\frac{d{p}_{x}}{\dt} = - \frac{\partial H}{\partial x},\;\frac{d{p}_{y}}{\dt} = - \frac{\partial H}{\partial y},\cdots tag{2. 7.43}
+\frac{d{p}_{x}}{\d t} = - \frac{\partial H}{\partial x},\;\frac{d{p}_{y}}{\d t} = - \frac{\partial H}{\partial y},\cdots tag{2. 7.43}
 $$
 
-一般说来,正则动量 $\mathbf{p}$ 不是一个规范不变量,即使我们针对的是同一个物理情况,它的数值仍依赖于所采用的特殊规范. 相比之下,跟踪粒子轨迹的运动学动量 $\Pi$ ,或 ${md}\mathbf{x}/{\dt}$ ,是一个规范不变量,这一点可以明确证明. 因为 $\mathbf{p}$ 和 ${md}\mathbf{x}/{\dt}$ 通过 (2.7.23) 式相关联, $\mathbf{p}$ 必须改变以补偿 (2.7.42) 式给出的 $\mathbf{A}$ 的变化.
+一般说来,正则动量 $\mathbf{p}$ 不是一个规范不变量,即使我们针对的是同一个物理情况,它的数值仍依赖于所采用的特殊规范. 相比之下,跟踪粒子轨迹的运动学动量 $\Pi$ ,或 ${md}\mathbf{x}/{\d t}$ ,是一个规范不变量,这一点可以明确证明. 因为 $\mathbf{p}$ 和 ${md}\mathbf{x}/{\d t}$ 通过 (2.7.23) 式相关联, $\mathbf{p}$ 必须改变以补偿 (2.7.42) 式给出的 $\mathbf{A}$ 的变化.
 
 现在我们回到量子力学. 我们相信, 在规范变换下要求量子力学中的期望具有类似于相应的经典量的行为方式是合理的,所以在规范变换下,预期 $\langle \mathbf{x}\rangle$ 和 $\langle \Pi \rangle$ 不变,而 $\langle \mathbf{p}\rangle$ 会变化.
 
@@ -4919,19 +4897,19 @@ $$
 尽管可以通过比较 B 存在和不存在时薛定谔方程的解来处理这个问题, 为了便于教学,我们宁可采用费曼路径积分方法. 设 ${\mathbf{x}}_{1}$ 和 ${\mathbf{x}}_{N}$ 分别是源区 $\mathrm{A}$ 和干涉区 $\mathrm{B}$ 中的两个有代表性的点. 从经典力学得知, 存在磁场时的拉格朗日量可从不存在磁场时的拉格朗日量 (用 ${L}_{\text{经典 }}^{\left( 0\right) }$ 表示) 得到
 
 $$
-{L}_{\text{经典 }}^{\left( 0\right) } = \frac{m}{2}{\left( \frac{d\mathbf{x}}{\dt}\right) }^{2} \rightarrow {L}_{\text{经典 }}^{\left( 0\right) } + \frac{e}{c}\frac{d\mathbf{x}}{\dt} \cdot \mathbf{A}. tag{2. 7.65}
+{L}_{\text{经典 }}^{\left( 0\right) } = \frac{m}{2}{\left( \frac{d\mathbf{x}}{\d t}\right) }^{2} \rightarrow {L}_{\text{经典 }}^{\left( 0\right) } + \frac{e}{c}\frac{d\mathbf{x}}{\d t} \cdot \mathbf{A}. tag{2. 7.65}
 $$
 
 然后,对于从 $\left( {{\mathbf{x}}_{n - 1},{t}_{n - 1}}\right)$ 到 $\left( {{\mathbf{x}}_{n},{t}_{n}}\right)$ 的某段确定的路径单元,作用量相应的改变由下式给出
 
 $$
-{S}^{\left( 0\right) }\left( {n, n - 1}\right) \rightarrow {S}^{\left( 0\right) }\left( {n, n - 1}\right) + \frac{e}{c}{\int }_{{t}_{n - 1}}^{{t}_{n}}{\dt}\left( \frac{d\mathbf{x}}{\dt}\right) \cdot \mathbf{A}. tag{2. 7.66}
+{S}^{\left( 0\right) }\left( {n, n - 1}\right) \rightarrow {S}^{\left( 0\right) }\left( {n, n - 1}\right) + \frac{e}{c}{\int }_{{t}_{n - 1}}^{{t}_{n}}{\d t}\left( \frac{d\mathbf{x}}{\d t}\right) \cdot \mathbf{A}. tag{2. 7.66}
 $$
 
 而最后的这个积分可以写成
 
 $$
-\frac{e}{c}{\int }_{{t}_{n - 1}}^{{t}_{n}}{\dt}\left( \frac{d\mathbf{x}}{\dt}\right) \cdot \mathbf{A} = \frac{e}{c}{\int }_{{x}_{n - 1}}^{{x}_{n}}\mathbf{A} \cdot d\mathbf{s}, tag{2.7.67}
+\frac{e}{c}{\int }_{{t}_{n - 1}}^{{t}_{n}}{\d t}\left( \frac{d\mathbf{x}}{\d t}\right) \cdot \mathbf{A} = \frac{e}{c}{\int }_{{x}_{n - 1}}^{{x}_{n}}\mathbf{A} \cdot d\mathbf{s}, tag{2.7.67}
 $$
 
 其中的 $d\mathbf{s}$ 是沿着这段路径单元的微分线元,因此当我们考虑从 ${\mathbf{x}}_{1}$ 到 ${\mathbf{x}}_{N}$ 的全部贡献时, 有下列的改变
@@ -5167,7 +5145,7 @@ $$
 通过计算 $\left\lbrack {\mathbf{x} \cdot \mathbf{p}, H}\right\rbrack$ ,求
 
 $$
-\frac{d}{\dt}\langle \mathbf{x} \cdot \mathbf{p}\rangle = \left\langle \frac{{\mathbf{p}}^{2}}{m}\right\rangle - \langle \mathbf{x} \cdot \nabla V\rangle .
+\frac{d}{\d t}\langle \mathbf{x} \cdot \mathbf{p}\rangle = \left\langle \frac{{\mathbf{p}}^{2}}{m}\right\rangle - \langle \mathbf{x} \cdot \nabla V\rangle .
 $$
 
 为了使我们能把上面的关系式等同于维里定理的量子力学类似物, 左边等于零是必要的. 这会在什么条件下发生?

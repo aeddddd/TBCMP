@@ -38,8 +38,8 @@
 
 \mainmatter
 
-%\begin{definition}[定义标题] \label{def:标签} 
-%\end{definition}
+%\begin{\d efinition}[定义标题] \label{\d ef:标签} 
+%\end{\d efinition}
 
 %\begin{exercise}\label{exer:标签}练习
 %\end{exercise}
@@ -133,13 +133,13 @@
 \subsection*{左矢空间和内积}
 我们一直处理的线性空间是右矢空间.现在我们引人左矢空间的概念，它是一个与右矢空间\textbf{对偶}\footnote{我们可以粗浅的认为对偶是一类更深刻的对称性,更详细的说\textit{对偶空间就是一个赋范空间的所有线性有界泛函所组成的定义了范数的向量空间},更详细的探讨在后续章节}的线性空间.我们假定对应于每个右矢$|a\rangle$,在这个对偶空间或左矢空间中都存在一个左矢,用$\langle\alpha|$表示.左矢空间由本征左矢$\{\langle\alpha'|\}$所张成,它们与本征右矢$\{|a^{\prime}\rangle\}$相对应.右矢空间与左矢空间的一一对应关系为
 \begin{equation}
-	\begin{aligned}|\alpha\rangle&\overset{\mathrm{DC}}{\operatorname*{\longleftrightarrow}}\langle\alpha|\\| a^{\prime}\rangle,| a^{\prime\prime}\rangle,\cdotp\cdotp\cdotp&\overset{\mathrm{DC}}{\operatorname*{\longleftrightarrow}}\langle a^{\prime}|,\langle a^{\prime\prime}|,\cdotp\cdotp\cdotp\\| a\rangle+|\beta\rangle&\overset{\mathrm{DC}}{\operatorname*{\longleftrightarrow}}\langle\alpha|+\langle\beta|,\end{aligned}
+	\begin{aligned}|\alpha\rangle&\overset{\mathrm{\d C}}{\operatorname*{\longleftrightarrow}}\langle\alpha|\\| a^{\prime}\rangle,| a^{\prime\prime}\rangle,\cdotp\cdotp\cdotp&\overset{\mathrm{\d C}}{\operatorname*{\longleftrightarrow}}\langle a^{\prime}|,\langle a^{\prime\prime}|,\cdotp\cdotp\cdotp\\| a\rangle+|\beta\rangle&\overset{\mathrm{\d C}}{\operatorname*{\longleftrightarrow}}\langle\alpha|+\langle\beta|,\end{aligned}
 \end{equation}
 其中DC代表\textbf{对偶对应},简单来讲(但不严谨),左矢空间可以看作右矢空间的某种镜像(或者说是共轭).
 
 特别的,我们需要注意的是,与$c|\alpha\rangle$对偶的不是$c\langle\alpha|$而是$c^*\langle\alpha|$.即如下
 \begin{equation}
-	c_\alpha|\alpha\rangle+c_\beta|\beta\rangle\overset{\mathrm{DC}}{\operatorname*{\longleftrightarrow}}c_\alpha^*\langle\alpha|+c_\beta^*\langle\beta|
+	c_\alpha|\alpha\rangle+c_\beta|\beta\rangle\overset{\mathrm{\d C}}{\operatorname*{\longleftrightarrow}}c_\alpha^*\langle\alpha|+c_\beta^*\langle\beta|
 \end{equation}
 我们现在定义一个左矢和一个右矢的\textbf{内积}\footnote{可以类比高中所学的向量标量积(数量积),或者通俗来讲的向量``点乘"}.左矢和右矢的内积要求为左矢左乘右矢,即如下形式
 \begin{equation}
@@ -204,7 +204,7 @@ $$X+(Y+Z)=(X+Y)+Z$$
 \end{equation}
 得到的积是另一个左矢. 一般而言，右矢 $X|\alpha\rangle$与左矢$\langle\alpha|X$ 彼此并\textit{不}相互对偶. 我们把符号$X^\dagger$定义为
 \begin{equation}
-	X|\alpha\rangle\overset{\mathrm{DC}}{\operatorname*{\leftrightarrow}}\langle\alpha| X^\dagger
+	X|\alpha\rangle\overset{\mathrm{\d C}}{\operatorname*{\leftrightarrow}}\langle\alpha| X^\dagger
 \end{equation}
 算符$X^\dagger$称为$X$的\textbf{厄米共轭}或简称$X$的共轭算符. 如果一个算符满足
 \begin{equation}
@@ -228,7 +228,7 @@ $$X(Y|\alpha\rangle)=(XY)|\alpha\rangle=XY|\alpha\rangle,\quad(\langle\beta|X\ra
 \end{equation}
 这是因为对偶关系的共轭性,即
 \begin{equation}
-	XY|\alpha\rangle=X(Y|\alpha\rangle)\overset{\mathrm{DC}}{\operatorname*{\leftrightarrow}}(\langle\alpha|Y^\dagger)X^\dagger=\langle\alpha|Y^\dagger X^\dagger 
+	XY|\alpha\rangle=X(Y|\alpha\rangle)\overset{\mathrm{\d C}}{\operatorname*{\leftrightarrow}}(\langle\alpha|Y^\dagger)X^\dagger=\langle\alpha|Y^\dagger X^\dagger 
 \end{equation}
 至此,我们考虑了左矢,右矢和算符之间的大多数乘积关系,最后,我们考虑让$|\beta\rangle$左乘$\langle\alpha|$,其结果
 \begin{equation}
@@ -1428,7 +1428,7 @@ $\left\langle {{x}^{\prime } | {p}^{\prime }}\right\rangle$ 的这个微分方�
 \subsection*{高斯型波包}
 通过观察一个物理实例来阐述我们的基本形式是有益的. 我们考虑一个所谓的高斯型波包,它的 $x$ 空间波函数由下式给定
 \begin{equation}
-	\left\langle {{x}^{\prime } | \alpha }\right\rangle = \left\lbrack \frac{1}{{\pi }^{1/4}\sqrt{d}}\right\rbrack \exp \left\lbrack {{ik}{x}^{\prime } - \frac{{x}^{\prime 2}}{2{d}^{2}}}\right\rbrack
+	\left\langle {{x}^{\prime } | \alpha }\right\rangle = \left\lbrack \frac{1}{{\pi }^{1/4}\sqrt{\d}}\right\rbrack \exp \left\lbrack {{ik}{x}^{\prime } - \frac{{x}^{\prime 2}}{2{\d}^{2}}}\right\rbrack
 \end{equation}
 这是一个被中心位于原点的高斯型轮廓线调制的,波数为 $k$ 的平面波. 对于 $\left| {x}^{\prime }\right| > d$ ,观测到这个粒子的概率迅速地变为零; 更定量地讲,概率密度 ${\left| \left\langle {x}^{\prime } | \alpha \right\rangle \right| }^{2}$ 具有宽度为 $d$ 的高斯型形状.
 
@@ -1440,24 +1440,24 @@ $\left\langle {{x}^{\prime } | {p}^{\prime }}\right\rangle$ 的这个微分方�
 \begin{equation}
 	\begin{aligned}
 		\left\langle {x}^{2}\right\rangle &=\int_{-\infty }^{\infty }\d{x}^{\prime }{x}^{\prime 2}{\left| \left\langle {x}^{\prime } | \alpha \right\rangle \right| }^{2}\\
-		&= \left( \frac{1}{\sqrt{\pi }d}\right) \int_{-\infty }^{\infty }\d{x}^{\prime }{x}^{\prime 2}\exp \left\lbrack \frac{-{x}^{\prime 2}}{{d}^{2}}\right\rbrack\\
-		&= \frac{{d}^{2}}{2}
+		&= \left( \frac{1}{\sqrt{\pi }d}\right) \int_{-\infty }^{\infty }\d{x}^{\prime }{x}^{\prime 2}\exp \left\lbrack \frac{-{x}^{\prime 2}}{{\d}^{2}}\right\rbrack\\
+		&= \frac{{\d}^{2}}{2}
 	\end{aligned}
 \end{equation}
 它导致位置算符的弥散度为
 \begin{equation}
-	\left\langle {\left( \Delta x\right) }^{2}\right\rangle = \left\langle {x}^{2}\right\rangle - \langle x{\rangle }^{2} = \frac{{d}^{2}}{2}
+	\left\langle {\left( \Delta x\right) }^{2}\right\rangle = \left\langle {x}^{2}\right\rangle - \langle x{\rangle }^{2} = \frac{{\d}^{2}}{2}
 \end{equation}
 $p$ 和 ${p}^{2}$ 的期望也可以计算如下
 \begin{equation}
 	\langle p\rangle = \hbar k
 \end{equation}
 \begin{equation}
-	\left\langle {p}^{2}\right\rangle = \frac{{\hbar }^{2}}{2{d}^{2}} + {\hbar }^{2}{k}^{2}
+	\left\langle {p}^{2}\right\rangle = \frac{{\hbar }^{2}}{2{\d}^{2}} + {\hbar }^{2}{k}^{2}
 \end{equation}
 因此, 动量的弥散度由下式给出
 \begin{equation}
-	\left\langle {\left( \Delta p\right) }^{2}\right\rangle = \left\langle {p}^{2}\right\rangle - \langle p{\rangle }^{2} = \frac{{\hbar }^{2}}{2{d}^{2}}
+	\left\langle {\left( \Delta p\right) }^{2}\right\rangle = \left\langle {p}^{2}\right\rangle - \langle p{\rangle }^{2} = \frac{{\hbar }^{2}}{2{\d}^{2}}
 \end{equation}
 我们现在可以检验海森堡的不确定度关系,在这种情况下, 不确定度乘积由下式给出
 \begin{equation}
@@ -1468,8 +1468,8 @@ $p$ 和 ${p}^{2}$ 的期望也可以计算如下
 我们现在转向动量空间. 通过直接的积分, 只要把指数部分配成平方, 我们求得
 \begin{equation}
 	\begin{aligned}
-		\left\langle {{p}^{\prime } | \alpha }\right\rangle &= \left( \frac{1}{\sqrt{{2\pi }\hbar }}\right) \left( \frac{1}{{\pi }^{1/4}\sqrt{d}}\right) \int_{-\infty }^{\infty }\d{x}^{\prime }\exp \left( {\frac{-i{p}^{\prime }{x}^{\prime }}{\hbar } + {ik}{x}^{\prime } - \frac{{x}^{\prime 2}}{2{d}^{2}}}\right)\\
-		&= \sqrt{\frac{d}{\hbar \sqrt{\pi }}}\exp \left\lbrack \frac{-{\left( {p}^{\prime } - \hbar k\right) }^{2}{d}^{2}}{2{\hbar }^{2}}\right\rbrack
+		\left\langle {{p}^{\prime } | \alpha }\right\rangle &= \left( \frac{1}{\sqrt{{2\pi }\hbar }}\right) \left( \frac{1}{{\pi }^{1/4}\sqrt{\d}}\right) \int_{-\infty }^{\infty }\d{x}^{\prime }\exp \left( {\frac{-i{p}^{\prime }{x}^{\prime }}{\hbar } + {ik}{x}^{\prime } - \frac{{x}^{\prime 2}}{2{\d}^{2}}}\right)\\
+		&= \sqrt{\frac{\d}{\hbar \sqrt{\pi }}}\exp \left\lbrack \frac{-{\left( {p}^{\prime } - \hbar k\right) }^{2}{\d}^{2}}{2{\hbar }^{2}}\right\rbrack
 	\end{aligned}
 \end{equation}
 这个动量空间波函数提供了获得 $\langle p\rangle$ 和 $\left\langle {p}^{2}\right\rangle$ 的替代方法.
@@ -1543,7 +1543,7 @@ $p$ 和 ${p}^{2}$ 的期望也可以计算如下
 	\end{enumerate}
 	\item 证明:
 	$$
-	\left\lbrack {{AB},{CD}}\right\rbrack = - {AC}\{ D, B\} + A\{ C, B\} D - C\{ D, A\} B + \{ C, A\} {DB}.
+	\left\lbrack {{AB},{CD}}\right\rbrack = - {AC}\{ D, B\} + A\{ C, B\} D - C\{ D, A\} B + \{ C, A\} {\d B}.
 	$$
 	\item 假定一个 $2 \times 2$ 矩阵 $X$ (不一定是厄米或幺正矩阵) 被写成
 	$$
@@ -2057,7 +2057,7 @@ $p$ 和 ${p}^{2}$ 的期望也可以计算如下
 \end{equation}
 其中 $\rho \left( E\right)$ 表示能量本征态的密度. 现在表示式变成
 \begin{equation}
-	C\left( t\right) = \int {dE}{\left| g\left( E\right) \right| }^{2}\rho \left( E\right) \exp \left( \frac{-{iEt}}{\hbar }\right)
+	C\left( t\right) = \int {\d E}{\left| g\left( E\right) \right| }^{2}\rho \left( E\right) \exp \left( \frac{-{iEt}}{\hbar }\right)
 \end{equation}
 并服从归一化条件
 \begin{equation}
@@ -2065,7 +2065,7 @@ $p$ 和 ${p}^{2}$ 的期望也可以计算如下
 \end{equation}
 在真实的物理情况下, ${\left| g\left( E\right) \right| }^{2}\rho \left( E\right)$ 可能会有一个以 $E = {E}_{0}$ 为中心、宽度为 ${\Delta E}$ 的峰. 把式子写成
 \begin{equation}
-	C\left( t\right) = \exp \left( \frac{-i{E}_{0}t}{\hbar }\right) \int {dE}{\left| g\left( E\right) \right| }^{2}\rho \left( E\right) \exp \left\lbrack \frac{-i\left( {E - {E}_{0}}\right) t}{\hbar }\right\rbrack
+	C\left( t\right) = \exp \left( \frac{-i{E}_{0}t}{\hbar }\right) \int {\d E}{\left| g\left( E\right) \right| }^{2}\rho \left( E\right) \exp \left\lbrack \frac{-i\left( {E - {E}_{0}}\right) t}{\hbar }\right\rbrack
 \end{equation}
 我们看到,随着 $t$ 变大,除非 $\left| {E - {E}_{0}}\right|$ 小到与 $\hbar /t$ 可比,否则被积函数振荡得非常剧烈. 如果使 $\left| {E - {E}_{0}}\right| \simeq \hbar /t$ 成立的间隔比 ${\left| g\left( E\right) \right| }^{2}\rho \left( E\right)$ 的宽度 ${\Delta E}$ 窄得多,则由于强烈的相消,基本上得不到对 $C\left( t\right)$ 的贡献. 关联振幅的模开始明显异于 1 的特征时间由下式给定:
 \begin{equation}
@@ -2704,637 +2704,251 @@ c_{a^\prime}(t)=\underset{\text{基左矢}}{\underbrace{\langle a^\prime |}}\cdo
 我们假定, 本书的读者具有求解时间相关和时间无关波动方程的一些经验.也就是常见量子力学书往往要花一整章来解决,这里直接略过了.
 \subsection*{波函数的解释}
 我们现在转而讨论波函数的物理解释. 在前面,我们评述了 ${\left| \psi \right| }^{2}$ 的概率解释,这种解释源于把 $\left\langle {{\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t}\right\rangle$ 看作是 $\left. {| \alpha ,{t}_{0};t}\right\rangle$ 用位置本征右矢 $\left\{ \left| {\mathbf{x}}^{\prime }\right\rangle \right\}$ 展开的系数. 因此,由
-
-$$
-\rho \left( {{\mathbf{x}}^{\prime }, t}\right) = {\left| \psi \left( {\mathbf{x}}^{\prime }, t\right) \right| }^{2} = {\left| \left\langle {\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t\right\rangle \right| }^{2} tag{2.4.14}
-$$
-
-定义的量 $\rho \left( {{\mathbf{x}}^{\prime }, t}\right)$ ,在波动力学中被视为概率密度. 具体地说,当我们使用一个探测器确认在 ${\mathbf{x}}^{\prime }$ 附近一个小体积元 ${d}^{3}{x}^{\prime }$ 内存在粒子时,在 $t$ 时刻记录到一个肯定结果的概率由 $\rho \left( {{\mathbf{x}}^{\prime }, t}\right) {d}^{3}{x}^{\prime }$ 给出.
+\begin{equation}
+	\rho \left( {{\mathbf{x}}^{\prime }, t}\right) = {\left| \psi \left( {\mathbf{x}}^{\prime }, t\right) \right| }^{2} = {\left| \left\langle {\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t\right\rangle \right| }^{2}
+\end{equation}
+定义的量 $\rho \left( {{\mathbf{x}}^{\prime }, t}\right)$ ,在波动力学中被视为概率密度. 具体地说,当我们使用一个探测器确认在 ${\mathbf{x}}^{\prime }$ 附近一个小体积元 ${\d}^{3}{x}^{\prime }$ 内存在粒子时,在 $t$ 时刻记录到一个肯定结果的概率由 $\rho \left( {{\mathbf{x}}^{\prime }, t}\right) {\d}^{3}{x}^{\prime }$ 给出.
 
 在本节余下的部分中,因为位置算符将不出现,我们用 $\mathbf{x}$ 取代 ${\mathbf{x}}^{\prime }$ . 利用薛定谔时间相关波动方程, 可以直接推导出连续性方程
-
-$$
-\frac{\partial \rho }{\partial t} + \nabla \cdot \mathbf{j} = 0, tag{2.4.15}
-$$
-
+\begin{equation}
+	\frac{\partial \rho }{\partial t} + \nabla \cdot \mathbf{j} = 0
+\end{equation}
 其中 $\rho \left( {\mathbf{x}, t}\right)$ 像前面一样代表 ${\left| \psi \right| }^{2}$ ,而 $\mathbf{j}\left( {\mathbf{x}, t}\right)$ 称作概率流,由下式给出
-
-$$
-\mathbf{j}\left( {\mathbf{x}, t}\right) = - \left( \frac{i\hbar }{2m}\right) \left\lbrack {{\psi }^{ * }\nabla \psi - \left( {\nabla {\psi }^{ * }}\right) \psi }\right\rbrack tag{2. 4.16}
-$$
-
-$$
-= \left( \frac{\hbar }{m}\right) \operatorname{Im}\left( {{\psi }^{ * }\nabla \psi }\right) .
-$$
-
+\begin{equation}
+	\begin{aligned}
+		\mathbf{j}\left( {\mathbf{x}, t}\right) &= - \left( \frac{i\hbar }{2m}\right) \left\lbrack {{\psi }^{ * }\nabla \psi - \left( {\nabla {\psi }^{ * }}\right) \psi }\right\rbrack\\
+		&= \left( \frac{\hbar }{m}\right) \operatorname{Im}\left( {{\psi }^{ * }\nabla \psi }\right)
+	\end{aligned}
+\end{equation}
 位势 $V$ 的实数性（或算符 $V$ 的厄米性）在我们求得上述结果时起着决定性作用. 相反, 一个复的位势可唯象地解释一个粒子的消失, 这样的位势经常用在核反应中, 在那里入射的粒子被原子核吸收了.
 
-我们可以凭直觉预期概率流 $\mathbf{j}$ 与动量相关. 对于全空间积分的 $\mathbf{j}$ 来说,情况的确如此. 由 (2.4.16) 式我们求得
-
-$$
-\int {\d}^{3}x\mathbf{j}\left( {\mathbf{x}, t}\right) = \frac{\langle \mathbf{p}{\rangle }_{t}}{m}, tag{2.4.17}
-$$
-
+我们可以凭直觉预期概率流 $\mathbf{j}$ 与动量相关. 对于全空间积分的 $\mathbf{j}$ 来说,情况的确如此. 由上式我们求得
+\begin{equation}
+	\int {\d}^{3}x\mathbf{j}\left( {\mathbf{x}, t}\right) = \frac{\langle \mathbf{p}{\rangle }_{t}}{m}
+\end{equation}
 其中 $\langle \mathbf{p}{\rangle }_{t}$ 是动量算符在 $t$ 时刻的期望.
 
-方程 (2.4.15) 让人想起流体力学中的连续性方程, 它描述流体在一个无源、无漏区域的流体动力学流动的特征. 的确,历史上薛定谔是最早的一个把 ${\left| \psi \right| }^{2}$ 解释为实际物质密度,或者把 $e{\left| \psi \right| }^{2}$ 解释为实际电荷密度的人. 如果我们采纳了这样的观点,就会把我们引导到某些奇异的结果.
-
-位置测量的一种典型的争论或许会如下所示. 原子的一个电子被看作是连续分布的物质充满在原子核周围一个有限的区域; 然而, 当进行了一次测量, 肯定电子处于某个特殊点上,这种连续分布的物质突然收缩为一个没有空间延展的类点粒子. 把 ${\left| \psi \right| }^{2}$ 作为概率密度的较为满意的统计解释首先是由玻恩提出来的.
-
+上面的连续性方程让人想起流体力学中的连续性方程, 它描述流体在一个无源、无漏区域的流体动力学流动的特征. 的确,历史上薛定谔是最早的一个把 ${\left| \psi \right| }^{2}$ 解释为实际物质密度,或者把 $e{\left| \psi \right| }^{2}$ 解释为实际电荷密度的人. 如果我们采纳了这样的观点,就会把我们引导到某些奇异的结果.
 为了理解波函数的物理意义, 把它写成
-
-$$
-\psi \left( {\mathbf{x}, t}\right) = \sqrt{\rho \left( {\mathbf{x}, t}\right) }\exp \left\lbrack \frac{{iS}\left( {\mathbf{x}, t}\right) }{\hbar }\right\rbrack , tag{2.4.18}
-$$
-
+\begin{equation}
+	\psi \left( {\mathbf{x}, t}\right) = \sqrt{\rho \left( {\mathbf{x}, t}\right) }\exp \left\lbrack \frac{{iS}\left( {\mathbf{x}, t}\right) }{\hbar }\right\rbrack
+\end{equation}
 其中 $S$ 为实的并且 $\rho > 0$ ,对于 $\mathbf{x}$ 和 $t$ 的任何一个复函数总可以这么写. $\rho$ 的意义已经给出了. $S$ 的物理意义又是什么呢? 注意到
-
-$$
-{\psi }^{ * }\nabla \psi = \sqrt{\rho }\nabla \left( \sqrt{\rho }\right) + \left( \frac{i}{\hbar }\right) \rho \nabla S, tag{2.4.19}
-$$
-
-我们可以把概率流写成 [见 (2.4.16)式]
-
-$$
-\mathbf{j} = \frac{\rho \nabla S}{m}. tag{2.4.20}
-$$
-
-我们现在看到这个波函数具有比把 ${\left| \psi \right| }^{2}$ 视为概率密度更多的东西,相位 $S$ 的梯度包含一个极为重要的信息. 从 (2.4.20) 式可见, 波函数相位的空间变化描绘了概率流的特征, 相位变化越剧烈,概率流越强. 在某点 $\mathbf{x}$ 处 $\mathbf{j}$ 的方向可以看作是通过该点的等相位面的法线. 在特别简单的平面波 (动量本征函数) 的例子中
-
-$$
-\psi \left( {\mathbf{x}, t}\right) \propto \exp \left( {\frac{i\mathbf{p} \cdot \mathbf{x}}{\hbar } - \frac{iEt}{\hbar }}\right) , tag{2.4.21}
-$$
-
+\begin{equation}
+	{\psi }^{ * }\nabla \psi = \sqrt{\rho }\nabla \left( \sqrt{\rho }\right) + \left( \frac{i}{\hbar }\right) \rho \nabla S
+\end{equation}
+我们可以把概率流写成
+\begin{equation}
+	\mathbf{j} = \frac{\rho \nabla S}{m}
+\end{equation}
+我们现在看到这个波函数具有比把 ${\left| \psi \right| }^{2}$ 视为概率密度更多的内涵,相位 $S$ 的梯度包含一个极为重要的信息. 从上面的式子可见, 波函数相位的空间变化描绘了概率流的特征, 相位变化越剧烈,概率流越强.在某点$\mathbf{x}$ 处 $\mathbf{j}$ 的方向可以看作是通过该点的等相位面的法线. 在特别简单的平面波 (动量本征函数) 的例子中
+\begin{equation}
+	\psi \left( {\mathbf{x}, t}\right) \propto \exp \left( {\frac{i\mathbf{p} \cdot \mathbf{x}}{\hbar } - \frac{iEt}{\hbar }}\right) 
+\end{equation}
 其中 $\mathbf{p}$ 代表动量算符的本征值. 所有的结果都是显然的,因为
-
-$$
-\nabla S = \mathbf{p}. tag{2.4.22}
-$$
-
+\begin{equation}
+	\nabla S = \mathbf{p}
+\end{equation}
 更一般地讲,使人感兴趣的是把 $\nabla S/m$ 看作是某种 “速度”,
-
-$$
-\text{"v"} = \frac{\nabla S}{m}\text{,} tag{2.4.23}
-$$
-
-而且把连续性方程 (2.4.15) 写成
-
-$$
-\frac{\partial \rho }{\partial t} + \nabla \cdot \left( {{\rho }^{\prime \prime }{\mathbf{v}}^{\prime \prime }}\right) = 0, tag{2.4.24}
-$$
-
+\begin{equation}
+	\text{``\textbf{v}"}= \frac{\nabla S}{m}
+\end{equation}
+而且把连续性方程写成
+\begin{equation}
+	\frac{\partial \rho }{\partial t} + \nabla \cdot \left( {{\rho }^{\prime \prime }{\mathbf{v}}^{\prime \prime }}\right) = 0
+\end{equation}
 它恰与流体动力学相同. 然而,我们愿意提醒读者不要太拘泥于字面上把 $\mathbf{j}$ 解释为 $\rho$ 乘以在空间每一点定义的速度, 因为位置与速度的同时精确测量必然会破坏不确定度原理.
-
 \subsection*{经典极限}
 我们现在讨论波动力学的经典极限. 首先,我们把写成 (2.4.18) 式形式的 $\psi$ 代入到时间相关波动方程的两边. 直接求微商导致
-
-$$
-- \left( \frac{{\hbar }^{2}}{2m}\right)
-$$
-
-$$
-\times \left\lbrack {{\nabla }^{2}\sqrt{\rho } + \left( \frac{2i}{\hbar }\right) \left( {\nabla \sqrt{\rho }}\right) \cdot \left( {\nabla S}\right) - \left( \frac{1}{{\hbar }^{2}}\right) \sqrt{\rho }{\left| \nabla S\right| }^{2} + \left( \frac{i}{\hbar }\right) \sqrt{\rho }{\nabla }^{2}S}\right\rbrack + \sqrt{\rho }V tag{2.4.25}
-$$
-
-$$
-= i\hbar \left\lbrack {\frac{\partial \sqrt{\rho }}{\partial t} + \left( \frac{i}{\hbar }\right) \sqrt{\rho }\frac{\partial S}{\partial t}}\right\rbrack .
-$$
-
+\begin{equation}
+	\begin{aligned}
+		&- \left( \frac{{\hbar }^{2}}{2m}\right)\times \left\lbrack {{\nabla }^{2}\sqrt{\rho } + \left( \frac{2i}{\hbar }\right) \left( {\nabla \sqrt{\rho }}\right) \cdot \left( {\nabla S}\right) - \left( \frac{1}{{\hbar }^{2}}\right) \sqrt{\rho }{\left| \nabla S\right| }^{2} + \left( \frac{i}{\hbar }\right) \sqrt{\rho }{\nabla }^{2}S}\right\rbrack + \sqrt{\rho }V\\
+		&= i\hbar \left\lbrack {\frac{\partial \sqrt{\rho }}{\partial t} + \left( \frac{i}{\hbar }\right) \sqrt{\rho }\frac{\partial S}{\partial t}}\right\rbrack
+	\end{aligned}
+\end{equation}
 至此一切都是精确的. 现在让我们假定,在某种意义上,可以把 $h$ 看成一个小量. 这种近似的精确物理意义现在还不明显, 稍后我们还要回到这一点, 但是让我们假定
-
-$$
-\hbar \left| {{\nabla }^{2}S}\right| \ll {\left| \nabla S\right| }^{2}, tag{2.4.26}
-$$
-
-等等. 接着我们可以收集 (2.4.25) 式中那些不显含 $\hbar$ 的项,得到一个 $S$ 满足的非线性偏微分方程:
-
-$$
-\frac{1}{2m}{\left| \nabla S\left( \mathbf{x}, t\right) \right| }^{2} + V\left( \mathbf{x}\right) + \frac{\partial S\left( {\mathbf{x}, t}\right) }{\partial t} = 0. tag{2.4.27}
-$$
-
+\begin{equation}
+	\hbar \left| {{\nabla }^{2}S}\right| \ll {\left| \nabla S\right| }^{2}
+\end{equation}
+等等. 接着我们可以收集式中那些不显含 $\hbar$ 的项,得到一个 $S$ 满足的非线性偏微分方程:
+\begin{equation}
+	\frac{1}{2m}{\left| \nabla S\left( \mathbf{x}, t\right) \right| }^{2} + V\left( \mathbf{x}\right) + \frac{\partial S\left( {\mathbf{x}, t}\right) }{\partial t} = 0
+\end{equation}
 我们看到该式正是最早于 1836 年写出的经典力学中的哈密顿-雅可比 (Hamilton-Jacobi) 方程,其中 $\mathrm{S}\left( {\mathbf{x}, t}\right)$ 是哈密顿主函数. 因此,在 $\hbar \rightarrow 0$ 的极限下,经典力学被包含在薛定谔波动力学中就不奇怪了. 我们有一个关于波函数相位的半经典解释: $h$ 乘以相位等于哈密顿主函数,只要 $\hbar$ 可被视为一个小量.
 
 现在让我们来看看一个有着时间依赖关系 $\exp \left( {-{iEt}/\hbar }\right)$ 的定态. 这种时间依赖关系可由这样的事实预料到, 即对于具有一个恒定哈密顿量的经典系统, 哈密顿量主函数是可分离的:
-
-$$
-S\left( {x, t}\right) = W\left( x\right) - {Et}, tag{2.4.28}
-$$
-
-其中 $W\left( x\right)$ 称为哈密顿特征函数 (Goldstein 2002,440 年 444 页). 随着时间推移, $S$ 为常数的曲面向前推移, 很像波动光学中相位恒定的曲面——波前的推移. 经典哈密顿-雅可比理论中的动量由下式给出
-
-$$
-{\mathbf{P}}_{\text{经典 }} = \nabla S = \nabla W, tag{2.4.29}
-$$
-
+\begin{equation}
+	S\left( {x, t}\right) = W\left( x\right) - {Et}
+\end{equation}
+其中 $W\left( x\right)$ 称为哈密顿特征函数. 随着时间推移, $S$ 为常数的曲面向前推移, 很像波动光学中相位恒定的曲面——波前的推移. 经典哈密顿-雅可比理论中的动量由下式给出
+\begin{equation}
+	{\mathbf{P}}_{\text{经典 }} = \nabla S = \nabla W
+\end{equation}
 它与前面我们已确认 $\nabla S/m$ 为某类速度是一致的. 在经典力学中,速度矢量是粒子轨道的切线, 因此作为结果, 我们通过连续地追踪速度矢量的方向就可以追踪这条轨道. 粒子的轨道就像几何光学中的一条光线,因为追踪轨道的 $\nabla S$ 垂直于由常数 $S$ 定义的波前. 在这个意义上, 几何光学对波动光学, 就如同经典力学对波动力学.
 
-事后来看, 人们或许感到好奇, 为什么这种光-力学类比在十九世纪没被充分探讨. 理由就在于没有任何动机把哈密顿主函数看作某个传播波的相位. 直到二十世纪二十年代, 一个物质粒子的波动性才变得清晰. 此外, 由于量纲的原因必须进入 (2.4.18) 式的作用量的基本单位 $\hbar$ 在十九世纪的物理学中也还没有出现.
-
-
+事后来看, 人们或许感到好奇, 为什么这种光-力学类比在十九世纪没被充分探讨. 理由就在于没有任何动机把哈密顿主函数看作某个传播波的相位. 直到二十世纪二十年代, 一个物质粒子的波动性才变得清晰. 此外, 由于量纲的原因必须参与进来的作用量的基本单位 $\hbar$ 在十九世纪的物理学中也还没有出现.
 \section{薛定谔波动方程的基本解}
-对特殊选择的势函数 $V\left( \mathbf{x}\right)$ ,看一下 (2.4.11) 式的相对基本的解既有指导意义也是有用的. 在这一节, 我们选择了一些例子, 它们诠释了当代物理学, 并且/或者将对本书以后的几章是有用的.
+在这一节, 我们选择了一些例子, 它们诠释了当代物理学, 并且/或者将对本书以后的几章是有用的.
 \subsection*{三维自由粒子}
-$V\left( \mathbf{x}\right) = 0$ 的情况有重要意义. 这里我们将在三维情况下利用笛卡儿坐标考虑薛定谔方程的解. 球坐标中的解将留到下一章阐述角动量的处理时给出. 方程 (2.4.11) 式变成
-
-$$
-{\nabla }^{2}{u}_{E}\left( \mathbf{x}\right) = - \frac{2mE}{{\hbar }^{2}}{u}_{E}\left( \mathbf{x}\right) . tag{2.5.1}
-$$
-
+$V\left( \mathbf{x}\right) = 0$ 的情况有重要意义. 这里我们将在三维情况下利用笛卡儿坐标考虑薛定谔方程的解.方程变成
+\begin{equation}
+	{\nabla }^{2}{u}_{E}\left( \mathbf{x}\right) = - \frac{2mE}{{\hbar }^{2}}{u}_{E}\left( \mathbf{x}\right)
+\end{equation}
 定义一个矢量 $\mathbf{k}$ ,使
-
-$$
-{\mathbf{k}}^{2} = {k}_{x}^{2} + {k}_{y}^{2} + {k}_{z}^{2} \equiv \frac{2mE}{{\hbar }^{2}} = \frac{{\mathbf{p}}^{2}}{{\hbar }^{2}}, tag{2.5.2}
-$$
-
-这就是说, $\mathbf{p} = \hbar \mathbf{k}$ . 利用所谓的 “变量分离” 技术,微分方程 (2.5.1) 可以很容易求解. 取
-
-$$
-{u}_{E}\left( \mathbf{x}\right) = {u}_{x}\left( x\right) {u}_{y}\left( y\right) {u}_{z}\left( z\right) , tag{2.5.3}
-$$
-
+\begin{equation}
+	{\mathbf{k}}^{2} = {k}_{x}^{2} + {k}_{y}^{2} + {k}_{z}^{2} \equiv \frac{2mE}{{\hbar }^{2}} = \frac{{\mathbf{p}}^{2}}{{\hbar }^{2}}
+\end{equation}
+这就是说, $\mathbf{p} = \hbar \mathbf{k}$ . 利用所谓的 “分离变量” 技术,微分方程可以很容易求解. 取
+\begin{equation}
+	{u}_{E}\left( \mathbf{x}\right) = {u}_{x}\left( x\right) {u}_{y}\left( y\right) {u}_{z}\left( z\right)
+\end{equation}
 我们得到
-
-$$
-\left\lbrack {\frac{1}{{u}_{x}}\frac{{d}^{2}{u}_{x}}{d{x}^{2}} + {k}_{x}^{2}}\right\rbrack + \left\lbrack {\frac{1}{{u}_{y}}\frac{{d}^{2}{u}_{y}}{d{y}^{2}} + {k}_{y}^{2}}\right\rbrack + \left\lbrack {\frac{1}{{u}_{z}}\frac{{d}^{2}{u}_{z}}{d{z}^{2}} + {k}_{z}^{2}}\right\rbrack = 0 tag{2.5.4}
-$$
-
+\begin{equation}
+	\left\lbrack {\frac{1}{{u}_{x}}\frac{{\d}^{2}{u}_{x}}{\d {x}^{2}} + {k}_{x}^{2}}\right\rbrack + \left\lbrack {\frac{1}{{u}_{y}}\frac{{\d}^{2}{u}_{y}}{\d{y}^{2}} + {k}_{y}^{2}}\right\rbrack + \left\lbrack {\frac{1}{{u}_{z}}\frac{{\d}^{2}{u}_{z}}{\d{z}^{2}} + {k}_{z}^{2}}\right\rbrack = 0
+\end{equation}
 这导致三个单独的平面波解: ${u}_{w}\left( w\right) = {c}_{w}{e}^{i{k}_{w}w}$ ,其中 $w = x, y, z$ . 注意对于 $\pm {k}_{w}$ 值,人们得到相同的能量 $E$ .
 
 把这些解收集起来并与归一常数组合在一起, 我们得到
-
-$$
-{u}_{E}\left( \mathbf{x}\right) = {c}_{x}{c}_{y}{c}_{z}{e}^{i{k}_{x}x + i{k}_{y}y + i{k}_{z}z} = C{e}^{i\mathbf{k} \cdot \mathbf{x}}. tag{2.5.5}
-$$
-
+\begin{equation}
+	{u}_{E}\left( \mathbf{x}\right) = {c}_{x}{c}_{y}{c}_{z}{e}^{i{k}_{x}x + i{k}_{y}y + i{k}_{z}z} = C{e}^{i\mathbf{k} \cdot \mathbf{x}}
+\end{equation}
 归一常数 $C$ 呈现出通常遇到的困难,我们一般利用 $\delta$ 函数的归一条件来进行处理. 然而, 在很多情况下, 最方便的是利用一个 “大箱子” 归一化, 在那里整个空间被包含在边长为 $L$ 的立方体中. 我们在箱子上强加周期边界条件,从而求得一个有限的归一常数 $C$ . 对任何实际的计算,我们只要在计算末尾让箱子的大小 $L \rightarrow \infty$ 即可.
 
 强加了条件 ${u}_{x}\left( {x + L}\right) = {u}_{x}\left( x\right)$ ,我们就有 ${k}_{x}L = {2\pi }{n}_{x}$ ,其中 ${n}_{x}$ 是整数. 这就是说,
-
-$$
-{k}_{x} = \frac{2\pi }{L}{n}_{x},\;{k}_{y} = \frac{2\pi }{L}{n}_{y},\;{k}_{z} = \frac{2\pi }{L}{n}_{z}, tag{2.5.6}
-$$
-
+\begin{equation}
+	{k}_{x} = \frac{2\pi }{L}{n}_{x},\;{k}_{y} = \frac{2\pi }{L}{n}_{y},\;{k}_{z} = \frac{2\pi }{L}{n}_{z}
+\end{equation}
 而归一化的判据变成
-
-$$
-1 = \int_{0}^{L}{dx}\int_{0}^{L}{dy}\int_{0}^{L}{dz}{u}_{E}^{ * }\left( \mathbf{x}\right) {u}_{E}\left( \mathbf{x}\right) = {L}^{3}{\left| C\right| }^{2}, tag{2.5.7}
-$$
-
+\begin{equation}
+	1 = \int_{0}^{L}{\d x}\int_{0}^{L}{\d y}\int_{0}^{L}{\d z}{u}_{E}^{ * }\left( \mathbf{x}\right) {u}_{E}\left( \mathbf{x}\right) = {L}^{3}{\left| C\right| }^{2}
+\end{equation}
 在这种情况下, $C = 1/{L}^{3/2}$ 而
-
-$$
-{u}_{E}\left( \mathbf{x}\right) = \frac{1}{{L}^{3/2}}{e}^{i\mathbf{k} \cdot \mathbf{x}}. tag{2.5.8}
-$$
-
+\begin{equation}
+	{u}_{E}\left( \mathbf{x}\right) = \frac{1}{{L}^{3/2}}{e}^{i\mathbf{k} \cdot \mathbf{x}}
+\end{equation}
 能量的本征值是
+\begin{equation}
+	E = \frac{{\mathbf{p}}^{2}}{2m} = \frac{{\hbar }^{2}{\mathbf{k}}^{2}}{2m} = \frac{{\hbar }^{2}}{2m}{\left( \frac{2\pi }{L}\right) }^{2}\left( {{n}_{x}^{2} + {n}_{y}^{2} + {n}_{z}^{2}}\right)
+\end{equation}
+我们早先提到过的六重简并对应于 $\left( {\pm {n}_{x}, \pm {n}_{y}, \pm {n}_{z}}\right)$ 的六种组合,但是实际上简并度可能要大得多,因为,在某些情况下,存在着 ${n}_{x},{n}_{y}$ 和 ${n}_{z}$ 的各种组合,它们都能给出相同的 $E$ . 事实上,在 $L$ 非常大的 (实际的) 极限下,可能会有大量的 $N$ 的状态,能量都在 $E$ 到 $E + {\d E}$ 之间. 这个 “态密度” ${\d N}/{\d E}$ 对含有自由粒子过程的计算是一个重要的量.
 
-$$
-E = \frac{{\mathbf{p}}^{2}}{2m} = \frac{{\hbar }^{2}{\mathbf{k}}^{2}}{2m} = \frac{{\hbar }^{2}}{2m}{\left( \frac{2\pi }{L}\right) }^{2}\left( {{n}_{x}^{2} + {n}_{y}^{2} + {n}_{z}^{2}}\right) . tag{2.5.9}
-$$
-
-我们早先提到过的六重简并对应于 $\left( {\pm {n}_{x}, \pm {n}_{y}, \pm {n}_{z}}\right)$ 的六种组合,但是实际上简并度可能要大得多,因为,在某些情况下,存在着 ${n}_{x},{n}_{y}$ 和 ${n}_{z}$ 的各种组合,它们都能给出相同的 $E$ . 事实上,在 $L$ 非常大的 (实际的) 极限下,可能会有大量的 $N$ 的状态,能量都在 $E$ 到 $E + {dE}$ 之间. 这个 “态密度” ${dN}/{dE}$ 对含有自由粒子过程的计算是一个重要的量. 例如, 请参看 5.8 节中的光电效应的讨论.
-
-为了计算态密度,设想 $\mathbf{k}$ 空间中的一个球壳,其半径为 $\left| \mathbf{k}\right| = {2\pi }\left| \mathbf{n}\right| /L$ ,厚度为 $d\left| \mathbf{k}\right| = {2\pi d}\left| \mathbf{n}\right| /L$ . 在这个球壳内的所有的态都具有能量 $E = {\hbar }^{2}{\mathbf{k}}^{2}/{2m}$ . 在这个球壳内态的数目 ${dN}$ 为 ${4\pi }{\mathbf{n}}^{2}d\left| \mathbf{n}\right|$ . 因此
-
-$$
-\frac{dN}{dE} = \frac{{4\pi }{\mathbf{n}}^{2}d\left| \mathbf{n}\right| }{{\hbar }^{2}\left| \mathbf{k}\right| d\left| \mathbf{k}\right| /m} = \frac{4\pi }{{\hbar }^{2}}m{\left( \frac{L}{2\pi }\right) }^{2}\left| \mathbf{k}\right| \frac{L}{2\pi } tag{2. 5.10}
-$$
-
-$$
-= \frac{{m}^{3/2}{E}^{1/2}{L}^{3}}{\sqrt{2}{\pi }^{2}{\hbar }^{3}}.
-$$
-
-在一个典型的 “真实” 计算中,态密度将被乘以某个含有 ${u}_{E}^{ * }\left( \mathbf{x}\right) {u}_{E}\left( \mathbf{x}\right)$ 的概率. 在这种情况下,因子 ${L}^{3}$ 将被明显地消掉了,因此极限 $L \rightarrow \infty$ 就没有意义了. 这种 “大箱子” 归一化也产生了概率流的正确答案. 用这个归一化重写 (2.4.21) 式, 我们有
-
-$$
-\psi \left( {\mathbf{x}, t}\right) = \frac{1}{{L}^{3/2}}\exp \left( {\frac{i\mathbf{p} \cdot \mathbf{x}}{\hbar } - \frac{iEt}{\hbar }}\right) , tag{2.5.11}
-$$
-
+为了计算态密度,设想 $\mathbf{k}$ 空间中的一个球壳,其半径为 $\left| \mathbf{k}\right| = {2\pi }\left| \mathbf{n}\right| /L$ ,厚度为 $d\left| \mathbf{k}\right| = {2\pi d}\left| \mathbf{n}\right| /L$ . 在这个球壳内的所有的态都具有能量 $E = {\hbar }^{2}{\mathbf{k}}^{2}/{2m}$ . 在这个球壳内态的数目 ${\d N}$ 为 ${4\pi }{\mathbf{n}}^{2}d\left| \mathbf{n}\right|$ . 因此
+\begin{equation}
+	\begin{aligned}
+		\frac{\d N}{\d E} &= \frac{{4\pi }{\mathbf{n}}^{2}d\left| \mathbf{n}\right| }{{\hbar }^{2}\left| \mathbf{k}\right| d\left| \mathbf{k}\right| /m} = \frac{4\pi }{{\hbar }^{2}}m{\left( \frac{L}{2\pi }\right) }^{2}\left| \mathbf{k}\right| \frac{L}{2\pi }\\
+		&= \frac{{m}^{3/2}{E}^{1/2}{L}^{3}}{\sqrt{2}{\pi }^{2}{\hbar }^{3}}
+	\end{aligned}
+\end{equation}
+在一个典型的 “真实” 计算中,态密度将被乘以某个含有 ${u}_{E}^{ * }\left( \mathbf{x}\right) {u}_{E}\left( \mathbf{x}\right)$ 的概率. 在这种情况下,因子 ${L}^{3}$ 将被明显地消掉了,因此极限 $L \rightarrow \infty$ 就没有意义了. 这种 “大箱子” 归一化也产生了概率流的正确答案. 用这个归一化重写式子, 我们有
+\begin{equation}
+	\psi \left( {\mathbf{x}, t}\right) = \frac{1}{{L}^{3/2}}\exp \left( {\frac{i\mathbf{p} \cdot \mathbf{x}}{\hbar } - \frac{iEt}{\hbar }}\right)
+\end{equation}
 在这种情况下我们发现
-
-$$
-\mathbf{j}\left( {\mathbf{x}, t}\right) = \frac{\hbar }{m}\operatorname{Im}\left( {{\psi }^{ * }\nabla \psi }\right) = \frac{\hbar \mathbf{k}}{m}\frac{1}{{L}^{3}} = \mathbf{v}\rho , tag{2.5.12}
-$$
-
+\begin{equation}
+	\mathbf{j}\left( {\mathbf{x}, t}\right) = \frac{\hbar }{m}\operatorname{Im}\left( {{\psi }^{ * }\nabla \psi }\right) = \frac{\hbar \mathbf{k}}{m}\frac{1}{{L}^{3}} = \mathbf{v}\rho
+\end{equation}
 其中 $\rho = 1/{L}^{3}$ 的确是概率密度.
-
-
 \subsection*{简谐振子}
-在 2.3 节我们看到了 $V\left( x\right) = m{\omega }^{2}{x}^{2}/2$ 情况的一个漂亮的解,它给出了能量本征值、 本征态和波函数. 这里, 我们演示一种不同的方法求解这个微分方程
+我们看到了 $V\left( x\right) = m{\omega }^{2}{x}^{2}/2$ 情况的一个漂亮的解,它给出了能量本征值,本征态和波函数. 这里, 我们演示一种不同的方法求解这个微分方程
+\begin{equation}
+	- \frac{{\hbar }^{2}}{2m}\frac{{\d}^{2}}{\d {x}^{2}}{u}_{E}\left( x\right) + \frac{1}{2}m{\omega }^{2}{x}^{2}{u}_{E}\left( x\right) = E{u}_{E}\left( x\right)
+\end{equation}
+我们的方法将引入\textbf{生成函数}的概念, 这是一个在许多微分本征值问题的处理中见到的普遍有用的技术.
 
-$$
-- \frac{{\hbar }^{2}}{2m}\frac{{d}^{2}}{d{x}^{2}}{u}_{E}\left( x\right) + \frac{1}{2}m{\omega }^{2}{x}^{2}{u}_{E}\left( x\right) = E{u}_{E}\left( x\right) . tag{2.5.13}
-$$
-
-我们的方法将引入生成函数的概念, 这是一个在许多微分本征值问题的处理中见到的普遍有用的技术.
-
-首先,将 (2.5.13) 式用一个无量纲的位置 $y \equiv x/{x}_{0}$ 做变量变换,其中 ${x}_{0} \equiv$ $\sqrt{\hbar /{m\omega }}$ . 再引进一个无量纲的能量变量 $\varepsilon \equiv {2E}/\hbar \omega$ . 因此,我们需要求解的微分方程变成
-
-$$
-\frac{{d}^{2}}{d{y}^{2}}\mathcal{U}\left( y\right) + \left( {\varepsilon - {y}^{2}}\right) \mathcal{U}\left( y\right) = 0. tag{2.5.14}
-$$
-
+首先,将式子用一个无量纲的位置变量 $y \equiv x/{x}_{0}$ 做变量变换,其中 ${x}_{0} \equiv$ $\sqrt{\hbar /{m\omega }}$ . 再引进一个无量纲的能量变量 $\varepsilon \equiv {2E}/\hbar \omega$ . 因此,我们需要求解的微分方程变成
+\begin{equation}
+	\frac{{\d}^{2}}{\d{y}^{2}}u\left( y\right) + \left( {\varepsilon - {y}^{2}}\right) u\left( y\right) = 0
+\end{equation}
 对于 $y \rightarrow \pm \infty$ ,解必须趋向于零; 否则波函数不是可归一的,因而是非物理的. 微分方程 ${w}^{\prime \prime }\left( y\right) - {y}^{2}w\left( y\right) = 0$ 有解 $w\left( y\right) \propto \exp \left( {\pm {y}^{2}/2}\right)$ ,所以我们不得不选负号. 然后,通过取
-
-$$
-\mathcal{U}\left( y\right) = h\left( y\right) {e}^{-{y}^{2}/2}, tag{2.5.15}
-$$
-
+\begin{equation}
+	u\left( y\right) = h\left( y\right) {e}^{-{y}^{2}/2}
+\end{equation}
 “消除” 波函数的渐近行为,其中,函数 $h\left( y\right)$ 满足微分方程
-
-$$
-\frac{{d}^{2}h}{d{y}^{2}} - {2y}\frac{dh}{dy} + \left( {\varepsilon - 1}\right) h\left( y\right) = 0. tag{2.5.16}
-$$
-
-到此为止, 我们一直遵循简谐振子的传统解法, 它在很多教科书中都可以找到. 典型的做法是,人们现在会寻找 $h\left( y\right)$ 的级数解,而且发现,仅当这个级数中断,一个可归一的解才是可能的. (事实上, 在本书中我们对三维各向同性谐振子使用了这种方法. 参见 3.7 节) 人们通过强加 $\varepsilon - 1$ 是非负偶整数 ${2n}, n = 0,1,2,\cdots$ 的条件迫使它中断. 然后, 使用得到的多项式 ${h}_{n}\left( y\right)$ 写出这个解. 当然, $\varepsilon - 1 = {2n}$ 等价于 $E = \left( {n + \frac{1}{2}}\right) \hbar \omega$ ,即量子化关系 (2.3.22) 式.
+\begin{equation}
+	\frac{{\d}^{2}h}{\d{y}^{2}} - {2y}\frac{\d h}{\d y} + \left( {\varepsilon - 1}\right) h\left( y\right) = 0
+\end{equation}
+到此为止, 我们一直遵循简谐振子的传统解法, 它在很多教科书中都可以找到. 典型的做法是,人们现在会寻找 $h\left( y\right)$ 的级数解,而且发现,仅当这个级数中断,一个可归一的解才是可能的.人们通过强加 $\varepsilon - 1$ 是非负偶整数 ${2n}, n = 0,1,2,\cdots$ 的条件迫使它中断. 然后, 使用得到的多项式 ${h}_{n}\left( y\right)$ 写出这个解. 当然, $\varepsilon - 1 = {2n}$ 等价于 $E = \left( {n + \frac{1}{2}}\right) \hbar \omega$ ,即量子化关系.
 
 让我们采用一种不同的方法. 考虑由 “生成函数” $g\left( {x, t}\right)$ 通过
-
-$$
-g\left( {x, t}\right) \equiv {e}^{-{t}^{2} + {2tx}} tag{2.5.17a}
-$$
-
-$$
-\equiv \mathop{\sum }\limits_{{n = 0}}^{\infty }{H}_{n}\left( x\right) \frac{{t}^{n}}{n!}. tag{2.5.17b}
-$$
-
-定义的 “厄米 (Hermite) 多项式” ${H}_{n}\left( x\right) .{H}_{n}\left( x\right)$ 的某些性质显而易见. 例如, ${H}_{0}\left( x\right)$ $= 1$ . 再有,因为
-
-$$
-g\left( {0, t}\right) = {e}^{-{t}^{2}} = \mathop{\sum }\limits_{{n = 0}}^{\infty }\frac{{\left( -1\right) }^{n}}{n!}{t}^{2n}, tag{2.5.18}
-$$
-
+\begin{equation}
+	\begin{aligned}
+		g\left( {x, t}\right) &\equiv {e}^{-{t}^{2} + {2tx}}\\
+		&\equiv \mathop{\sum }\limits_{{n = 0}}^{\infty }{H}_{n}\left( x\right) \frac{{t}^{n}}{n!}
+	\end{aligned}
+\end{equation}
+定义的 “厄米 (Hermite) 多项式”\footnote{在数学物理方法的课上我们常称其为厄尔米特多项式} ${H}_{n}\left( x\right) .{H}_{n}\left( x\right)$ 的某些性质显而易见. 例如, ${H}_{0}\left( x\right)= 1$ . 再有,因为
+\begin{equation}
+	g\left( {0, t}\right) = {e}^{-{t}^{2}} = \mathop{\sum }\limits_{{n = 0}}^{\infty }\frac{{\left( -1\right) }^{n}}{n!}{t}^{2n}
+\end{equation}
 显然,若 $n$ 为奇数,则 ${H}_{n}\left( 0\right) = 0$ ,因为这个级数仅含有 $t$ 的偶次幂. 另一方面,如果限于偶数值的 $n$ ,则有
-
-$$
-g\left( {0, t}\right) = {e}^{-{t}^{2}} = \mathop{\sum }\limits_{{n = 0}}^{\infty }\frac{{\left( -1\right) }^{\left( n/2\right) }}{\left( {n/2}\right) !}{t}^{n} = \mathop{\sum }\limits_{{n = 0}}^{\infty }\frac{{\left( -1\right) }^{\left( n/2\right) }}{\left( {n/2}\right) !}\frac{n!}{n!}{t}^{n} tag{2.5.19}
-$$
-
+\begin{equation}
+	g\left( {0, t}\right) = {e}^{-{t}^{2}} = \mathop{\sum }\limits_{{n = 0}}^{\infty }\frac{{\left( -1\right) }^{\left( n/2\right) }}{\left( {n/2}\right) !}{t}^{n} = \mathop{\sum }\limits_{{n = 0}}^{\infty }\frac{{\left( -1\right) }^{\left( n/2\right) }}{\left( {n/2}\right) !}\frac{n!}{n!}{t}^{n} 
+\end{equation}
 所以 ${H}_{n}\left( 0\right) = {\left( -1\right) }^{n/2}n!/\left( {n/2}\right) !$ . 并且,因为 $g\left( {-x, t}\right)$ 仅反转 $t$ 的奇次幂项的符号,故 ${H}_{n}\left( {-x}\right) = {\left( -1\right) }^{n}{H}_{n}\left( x\right) .$
 
-我们可以取 $g\left( {x, t}\right)$ 的微商,并使用在它们与它们的微商之间的递推关系来构建厄米多项式. 这个技巧就是, 我们可以对生成函数的解析形式 (2.5.17a) 式或级数形式 (2.5.17b) 式求微商, 然后比较所得的结果. 例如, 如果我们对 (2.5.17a) 式求微商, 则
-
-$$
-\frac{\partial g}{\partial x} = {2tg}\left( {x, t}\right) = \mathop{\sum }\limits_{{n = 0}}^{\infty }2{H}_{n}\left( x\right) \frac{{t}^{n + 1}}{n!} = \mathop{\sum }\limits_{{n = 0}}^{\infty }2\left( {n + 1}\right) {H}_{n}\left( x\right) \frac{{t}^{n + 1}}{\left( {n + 1}\right) !}, tag{2.5.20}
-$$
-
-其中, 在取微商之后, 我们插入了生成函数的级数定义. 另一方面, 我们可以直接取 (2.5.17b) 式的微商, 在这种情况下有
-
-$$
-\frac{\partial g}{\partial x} = \mathop{\sum }\limits_{{n = 0}}^{\infty }{H}_{n}^{\prime }\left( x\right) \frac{{t}^{n}}{n!}. tag{2.5.21}
-$$
-
-比较 (2.5.20) 式与 (2.5.21) 式给出
-
-$$
-{H}_{n}^{\prime }\left( x\right) = {2n}{H}_{n - 1}\left( x\right) . tag{2.5.22}
-$$
+我们可以取 $g\left( {x, t}\right)$ 的微商,并使用在它们与它们的微商之间的递推关系来构建厄米多项式. 这个技巧就是, 我们可以对生成函数的解析形式或级数形式求微商, 然后比较所得的结果. 例如, 如果我们对解析形式求微商, 则
+\begin{equation}
+	\frac{\partial g}{\partial x} = {2tg}\left( {x, t}\right) = \mathop{\sum }\limits_{{n = 0}}^{\infty }2{H}_{n}\left( x\right) \frac{{t}^{n + 1}}{n!} = \mathop{\sum }\limits_{{n = 0}}^{\infty }2\left( {n + 1}\right) {H}_{n}\left( x\right) \frac{{t}^{n + 1}}{\left( {n + 1}\right) !}
+\end{equation}
+其中, 在取微商之后, 我们插入了生成函数的级数定义. 另一方面, 我们可以直接取级数形式的微商, 在这种情况下有
+\begin{equation}
+	\frac{\partial g}{\partial x} = \mathop{\sum }\limits_{{n = 0}}^{\infty }{H}_{n}^{\prime }\left( x\right) \frac{{t}^{n}}{n!}
+\end{equation}
+比较给出
+\begin{equation}
+	{H}_{n}^{\prime }\left( x\right) = {2n}{H}_{n - 1}\left( x\right)
+\end{equation}
 
 以下是我们构建厄米多项式所需的足够的信息
-
-$$
-{H}_{0}\left( x\right) = 1
-$$
-
-于是 ${H}_{1}^{\prime }\left( x\right) = 2$ ,因此 ${H}_{1}\left( x\right) = {2x}$
-
-于是 ${H}_{2}^{\prime }\left( x\right) = {8x}$ ,因此 ${H}_{2}\left( x\right) = 4{x}^{2} - 2$
-
-于是 ${H}_{3}^{\prime }\left( x\right) = {24}{x}^{2} - {12}$ ,因此 ${H}_{3}\left( x\right) = 8{x}^{3} - {12x}$
-
-$\vdots$
-
-至此为止, 这只是一个奇妙的数学练习. 要看到为什么它与简谐振子有关, 考虑生成函数对 $t$ 的微商. 如果我们从 (2.5.17a) 式开始,则
-
-$$
-\frac{\partial g}{\partial t} = - {2tg}\left( {x, t}\right) + {2xg}\left( {x, t}\right)
-$$
-
-$$
-= - \mathop{\sum }\limits_{{n = 0}}^{\infty }2{H}_{n}\left( x\right) \frac{{t}^{n + 1}}{n!} + \mathop{\sum }\limits_{{n = 0}}^{\infty }{2x}{H}_{n}\left( x\right) \frac{{t}^{n}}{n!} tag{2.5.23}
-$$
-
-$$
-= - \mathop{\sum }\limits_{{n = 0}}^{\infty }{2n}{H}_{n - 1}\left( x\right) \frac{{t}^{n}}{n!} + \mathop{\sum }\limits_{{n = 0}}^{\infty }{2x}{H}_{n}\left( x\right) \frac{{t}^{n}}{n!}.
-$$
-
-或者, 如果我们微商 (2.5.17b) 式, 则我们有
-
-$$
-\frac{\partial g}{\partial t} = \mathop{\sum }\limits_{{n = 0}}^{\infty }n{H}_{n}\left( x\right) \frac{{t}^{n - 1}}{n!} = \mathop{\sum }\limits_{{n = 0}}^{\infty }{H}_{n + 1}\left( x\right) \frac{{t}^{n}}{n!}. tag{2.5.24}
-$$
-
-把 (2.5.23) 式与 (2.5.24) 式相比较, 给出递推关系
-
-$$
-{H}_{n + 1}\left( x\right) = {2x}{H}_{n}\left( x\right) - {2n}{H}_{n - 1}\left( x\right) , tag{2.5.25}
-$$
-
-我们把它与 (2.5.22) 组合在一起, 得到
-
-$$
-{H}^{\prime \prime }{}_{n}\left( x\right) = {2n} \cdot 2\left( {n - 1}\right) {H}_{n - 2}\left( x\right)
-$$
-
-$$
-= {2n}\left\lbrack {{2x}{H}_{n - 1}\left( x\right) - {H}_{n}\left( x\right) }\right\rbrack tag{2.5.26}
-$$
-
-$$
-= {2x}{H}_{n}^{\prime }\left( x\right) - {2n}{H}_{n}\left( x\right) \text{.}
-$$
-
+\begin{equation}
+	\begin{aligned}
+		&&&{H}_{0}\left( x\right) = 1\\
+		&\text{于是}{H}_{1}^{\prime }\left( x\right) = 2,&\text{因此}&{H}_{1}\left( x\right) = {2x}\\
+		&\text{于是}{H}_{2}^{\prime }\left( x\right) = {8x},&\text{因此}&{H}_{2}\left( x\right) = 4{x}^{2} - 2\\
+		&\text{于是}{H}_{3}^{\prime }\left( x\right) = {24}{x}^{2} - {12},&\text{因此}&{H}_{3}\left( x\right) = 8{x}^{3} - {12x}\\
+		&&\vdots&
+	\end{aligned}
+\end{equation}
+至此为止, 这只是一个奇妙的数学练习. 要看到为什么它与简谐振子有关, 考虑生成函数对 $t$ 的微商. 如果我们从解析形式开始,则
+\begin{equation}
+	\begin{aligned}
+		\frac{\partial g}{\partial t} &= - {2tg}\left( {x, t}\right) + {2xg}\left( {x, t}\right)\\
+		&= - \mathop{\sum }\limits_{{n = 0}}^{\infty }2{H}_{n}\left( x\right) \frac{{t}^{n + 1}}{n!} + \mathop{\sum }\limits_{{n = 0}}^{\infty }{2x}{H}_{n}\left( x\right) \frac{{t}^{n}}{n!}\\
+		&= - \mathop{\sum }\limits_{{n = 0}}^{\infty }{2n}{H}_{n - 1}\left( x\right) \frac{{t}^{n}}{n!} + \mathop{\sum }\limits_{{n = 0}}^{\infty }{2x}{H}_{n}\left( x\right) \frac{{t}^{n}}{n!}
+	\end{aligned}
+\end{equation}
+或者, 如果我们微商级数形式, 则我们有
+\begin{equation}
+	\frac{\partial g}{\partial t} = \mathop{\sum }\limits_{{n = 0}}^{\infty }n{H}_{n}\left( x\right) \frac{{t}^{n - 1}}{n!} = \mathop{\sum }\limits_{{n = 0}}^{\infty }{H}_{n + 1}\left( x\right) \frac{{t}^{n}}{n!}
+\end{equation}
+相比较, 给出递推关系
+\begin{equation}
+	{H}_{n + 1}\left( x\right) = {2x}{H}_{n}\left( x\right) - {2n}{H}_{n - 1}\left( x\right)
+\end{equation}
+我们把它与厄米多项式组合在一起, 得到
+\begin{equation}
+	\begin{aligned}
+		{H}^{\prime \prime }_{n}\left( x\right) &= {2n} \cdot 2\left( {n - 1}\right) {H}_{n - 2}\left( x\right)\\
+		&= {2n}\left\lbrack {{2x}{H}_{n - 1}\left( x\right) - {H}_{n}\left( x\right) }\right\rbrack\\
+		&= {2x}{H}_{n}^{\prime }\left( x\right) - {2n}{H}_{n}\left( x\right)
+	\end{aligned}
+\end{equation}
 换句话说, 厄米多项式满足微分方程
-
-$$
-{H}_{n}^{\prime \prime }\left( x\right) - {2x}{H}_{n}^{\prime }\left( x\right) + {2n}{H}_{n}\left( x\right) = 0, tag{2.5.27}
-$$
-
-其中, $n$ 是个非负整数. 然而,因为 $\varepsilon - 1 = {2n}$ ,所以该式与写成 (2.5.16) 式形式的薛定谔方程是相同的. 这就是说, 简谐振子的波函数由下式给出
-
-$$
-{u}_{n}\left( x\right) = {c}_{n}{H}_{n}\left( {x\sqrt{\frac{m\omega }{\hbar }}}\right) {e}^{-{mw}{x}^{2}/{2h}} tag{2.5.28}
-$$
-
+\begin{equation}
+	{H}_{n}^{\prime \prime }\left( x\right) - {2x}{H}_{n}^{\prime }\left( x\right) + {2n}{H}_{n}\left( x\right) = 0
+\end{equation}
+其中, $n$ 是个非负整数.这就是说, 简谐振子的波函数由下式给出
+\begin{equation}
+	{u}_{n}\left( x\right) = {c}_{n}{H}_{n}\left( {x\sqrt{\frac{m\omega }{\hbar }}}\right) {e}^{-{mw}{x}^{2}/{2h}}
+\end{equation}
 至多差一个归一化常数 ${c}_{n}$ . 这个常数可以从正交关系
+\begin{equation}
+	\int_{-\infty }^{\infty }{\d x}{H}_{n}\left( x\right) {H}_{m}\left( x\right) {e}^{-{x}^{2}} = {\pi }^{1/2}{2}^{n}n!{\delta }_{mn}
+\end{equation}
+确定, 该式很容易利用生成函数证明.
 
-$$
-\int_{-\infty }^{\infty }{dx}{H}_{n}\left( x\right) {H}_{m}\left( x\right) {e}^{-{x}^{2}} = {\pi }^{1/2}{2}^{n}n!{\delta }_{mn}, tag{2.5.29}
-$$
+生成函数具有实用性, 它远超出我们这里的有限应用范围. 尤其是, 很多源于求解不同位势的薛定谔方程的正交多项式都可以从生成函数推导出来.我们鼓励有兴趣的读者可从许多\textbf{优秀的}数学物理教科书中任选一本继续研习,或者去听一位\textbf{优秀的}老师的数学物理方法的课程.
 
-确定, 该式很容易利用生成函数证明. 请看本章末尾的习题 2.21 .
-
-生成函数具有实用性, 它远超出我们这里的有限应用范围. 尤其是, 很多源于求解不同位势的薛定谔方程的正交多项式都可以从生成函数推导出来. 例如, 第 3 章的习题 3.22. 我们鼓励有兴趣的读者可从许多优秀的数学物理教科书中任选一本继续研习.
-
-\subsection*{线性势}
-也许能想到的第一个具有束缚态的势能函数是线性势, 即
-
-$$
-V\left( x\right) = k\left| x\right| , tag{2. 5.30}
-$$
-
-其中 $k$ 是一个任意的正的常数. 给定一个总能量 $E$ ,这个势在 $x = a$ 处有一个经典转折点, 在那里 $E = {ka}$ . 这一点对理解一个质量为 $m$ 被该势束缚的粒子的量子行为十分重要.
-
-薛定谔方程变成
-
-$$
-- \frac{{\hbar }^{2}}{2m}\frac{{d}^{2}{u}_{E}}{d{x}^{2}} + k\left| x\right| {u}_{E}\left( x\right) = E{u}_{E}\left( x\right) . tag{2.5.31}
-$$
-
-把注意力限制在 $x \geq 0$ 的区域处理绝对值是最容易的. 我们之所以可以这样做是因为 $V\left( {-x}\right) = V\left( x\right)$ ,因此存在两类解,即 ${u}_{E}\left( {-x}\right) = \pm {u}_{E}\left( x\right)$ . 在任何一种情况下,我们都需要在 $x \rightarrow \infty$ 时, ${u}_{E}\left( x\right)$ 趋于零. 若 ${u}_{E}\left( {-x}\right) = - {u}_{E}\left( x\right)$ ,则需要 ${u}_{E}\left( 0\right) = 0$ . 另一方面,若 ${u}_{E}\left( {-x}\right) = + {u}_{E}\left( x\right)$ ,则有 ${u}_{E}^{\prime }\left( 0\right) = 0$ ,因为 ${u}_{E}\left( \epsilon \right) - {u}_{E}\left( {-\epsilon }\right) \equiv 0$ ,甚至当 $\epsilon \rightarrow 0$ 时也成立. (正如我们将在第 4 章讨论的, 我们把这些解称为具有 “奇” 和 “偶” 宇称的解.)
-
-
-基于适当的长度与能量的标度, 我们再次用无量纲变量把微分方程写出来. 在这种情况下,无量纲长度标度为 ${x}_{0} = {\left( {\hbar }^{2}/mk\right) }^{1/3}$ 且无量纲能量标度为 ${E}_{0} = k{x}_{0} = {\left( {\hbar }^{2}{k}^{2}/m\right) }^{1/3}$ . 定义 $y \equiv x/{x}_{0}$ 和 $\varepsilon \equiv E/{E}_{0}$ 使我们能够把 (2.5.31) 式改写成
-
-$$
-\frac{{d}^{2}{u}_{E}}{d{y}^{2}} - 2\left( {y - \varepsilon }\right) {u}_{E}\left( y\right) = 0\;y \geq 0. tag{2.5.32}
-$$
-
-注意,当 $x = E/k$ ——即经典转折点 $x = a$ 时, $y = \varepsilon$ . 事实上,定义一个位置平移变量 $z \equiv {2}^{1/3}\left( {y - \varepsilon }\right) ,\left( {2.5.32}\right)$ 就变成
-
-$$
-\frac{{d}^{2}{u}_{E}}{d{z}^{2}} - z{u}_{E}\left( z\right) = 0 tag{2. 5.33}
-$$
-
-这就是艾里方程,它的解是图 2.3 中的艾里函数 $\operatorname{Ai}\left( z\right)$ . 艾里函数具有一个特别的行为, 在负宗量值时是振荡的, 而在正宗量值时急剧衰减, 趋向于零. 当然, 这正是我们所期待的波函数的行为,因为 $z = 0$ 是经典转折点.
-
-注意,在 $x = 0$ 处的边界条件平移到了 ${\mathrm{{Ai}}}^{\prime }\left( z\right)$ 或 $\mathrm{{Ai}}\left( z\right)$ 的零点,在那里 $z = - {2}^{1/3}\varepsilon$ . 换句话说, 艾里函数或者它的微商的零点确定了量子化的能量. 人们发现,
-
-$$
-{\mathrm{{Ai}}}^{\prime }\left( z\right) = 0\text{对于}z = - {1.019}, - {3.249}, - {4.820},\cdots \text{(偶),} tag{2. 5.34}
-$$
-
-$$
-\operatorname{Ai}\left( z\right) = 0\text{对于}z = - {2.338}, - {4.088}, - {5.521},\cdots tag{2.5.35}
-$$
-
-例如,基态能量为 $E = \left( {{1.019}/{2}^{1/3}}\right) {\left( {\hbar }^{2}{k}^{2}/m\right) }^{1/3}$ .
-
-线性势的量子理论处理似乎与真实世界没有什么关系. 然而, 结果表明 (2.5.30) 类型的势事实上在研究称为夸克偶素的夸克与反夸克束缚态能谱时具有实际意义. 在那种情况下,(2.5.30) 式中的 $x$ 被夸克-反夸克分开的距离 $r$ 所代替. 而经验估算的常数 $k$ 是在
-
-$$
-1\mathrm{{GeV}}/\mathrm{{fm}} \simeq {1.6} \times {10}^{5}\mathrm{\;N}\text{,} tag{2.5.36}
-$$
-
-的邻域, 它相应于一个大约 16 吨的引力.
-
-的确, 线性势的另一个在真实世界的例子是 “弹跳的球”. 人们把 (2.5.30) 式解释为在地板上方高度为 $x$ 处一个质量为 $m$ 的球的势能,且 $k = {mg}$ ,其中 $g$ 是来自于重力的局域加速度. 当然,这是一个只限于 $x \geq 0$ 的势能,因为存在一个无穷大的势垒使球 “弹跳”. 从量子力学的观点看, 这意味着只允许有奇宇称的解 (2.5.35).
-
-
-
-图 2.4 一个弹跳中子的实验观测,取自 V. V. Nesvizhevsky et al., Phys, Rev. D 67
-
-(2003) 102002. 实线是基于经典力学数据拟合. 注意纵轴标度为对数的.
-
-弹跳球碰巧是那些可以宏观地观测到量子力学效应的稀有情况中的一个. 其技巧是有一个质量非常小的 “球”, 它由在法国格勒诺布尔 (Grenoble) 的 (Laue-Langevin) 劳厄- 朗之万学院 (ILL) 工作的一个组 * 用中子做到了. 对 $m = {1.68} \times {10}^{-{27}}\mathrm{\;{kg}}$ 的中子,特征长度的标度是 ${x}_{0} = {\left( {\hbar }^{2}/{m}^{2}g\right) }^{1/3} = {7.40\mu }\mathrm{m}$ . 一个中子能弹起的 “允许高度” 是 $\left( {{2.338}/{2}^{1/3}}\right)$ ${x}_{0} = {14\mu }\mathrm{m}\text{、}\left( {{4.088}/{2}^{1/3}}\right) {x}_{0} = {24\mu }\mathrm{m}\text{、}\left( {{5.521}/{2}^{1/3}}\right) {x}_{0} = {32\mu }\mathrm{m}$ 等等. 它们都是些很小 (但用精密设备可以测量) 的且能量很低 (亦称 “超冷”) 的中子. 实验结果如图 2.4 所示. 画出的是探测到的中子速率作为狭缝高度的函数, 该狭缝只允许超过这个高度的中子穿过. 除非高度至少约为 ${14\mu }\mathrm{m}$ ,否则观测不到任何中子. 在约为 ${24\mu }\mathrm{m}$ 和约为 ${32\mu }\mathrm{m}$ 处观测到清晰的突变, 极好地符合了量子力学的预言.
-
-
-\subsection*{WKB (半经典) 近似}
-求解了线性势问题之后, 引进一种称为 WKB 法的重要近似技术是很值得花些时间的, 这种方法是以温采 (G. Wentzel)、克拉默斯 (A. Kramers) 和布里渊 (L. Brillouin) 三位提出者的名字命名的**. 这种技术基于利用波长较势能发生改变的典型距离短得多的区域. 这绝不会是在经典转折点附近的情况, 但却是可以用线性势的解来连接两边的解的地方.
-
-
-我们再次限于一维, 把薛定谔波动方程写成
-
-$$
-\frac{{d}^{2}{u}_{E}}{d{x}^{2}} + \frac{2m}{{\hbar }^{2}}\left( {E - V\left( x\right) }\right) {u}_{E}\left( x\right) = 0. tag{2.5.37}
-$$
-
-定义如下的一些量
-
-$$
-k\left( x\right) \equiv {\left\lbrack \frac{2m}{{\hbar }^{2}}\left( E - V\left( x\right) \right) \right\rbrack }^{1/2}
-$$
-
-对 $E > V\left( x\right)$ (2.5.38a)
-
-和
-
-$$
-k\left( x\right) \equiv - {i\kappa }\left( x\right) \equiv - i{\left\lbrack \frac{2m}{{\hbar }^{2}}\left( V\left( x\right) - E\right) \right\rbrack }^{1/2}\;\text{ 对 }E < V\left( x\right) , tag{2. 5.38b}
-$$
-
-所以 (2.5.37) 式变成
-
-$$
-\frac{{d}^{2}{u}_{E}}{d{x}^{2}} + {\left\lbrack k\left( x\right) \right\rbrack }^{2}{u}_{E}\left( x\right) = 0. tag{2.5.39}
-$$
-
-现在,若 $V\left( x\right)$ 不随 $x$ 改变,则 $k\left( x\right)$ 就将是个常数,而 $\mathcal{U}\left( x\right) \propto \exp \left( {\pm {ikx}}\right)$ 就是 (2.5.39) 式的解. 因此,如果我们假定 $V\left( x\right)$ 只是 “缓慢地” 随 $x$ 变化,那时我们很想尝试如下形式的解
-
-$$
-{u}_{E}\left( x\right) \equiv \exp \left\lbrack {{iW}\left( x\right) /\hbar }\right\rbrack . tag{2.5.40}
-$$
-
-(包含 $h$ 的原因在这一节的末尾讨论 WKB 近似方法的物理解释时将变得清晰). 在这种情况下, (2.5.39) 式变成
-
-$$
-i\hbar \frac{{d}^{2}W}{d{x}^{2}} - {\left( \frac{dW}{dx}\right) }^{2} + {\hbar }^{2}{\left\lbrack k\left( x\right) \right\rbrack }^{2} = 0, tag{2.5.41}
-$$
-
-它完全等价于薛定谔方程, 尽管它被改写成了一种看上去很不舒服的形式. 但不管怎么样, 我们将考虑该方程在如下条件下的解, 即
-
-$$
-\hbar \left| \frac{{d}^{2}W}{d{x}^{2}}\right| \ll {\left| \frac{dW}{dx}\right| }^{2}. tag{2.5.42}
-$$
-
-这个条件把我们 “缓慢变化” 位势 $V\left( x\right)$ 的概念定量化了,不久我们将返回到这个条件的物理意义.
-
-继续下去,我们使用条件 (2.5.42) 式与微分方程 (2.5.41) 一起写出 $W\left( x\right)$ 的最低级近似, 即
-
-$$
-{W}_{0}^{\prime }\left( x\right) = \pm \hbar k\left( x\right) , tag{2.5.43}
-$$
-
-基于
-
-$$
-{\left( \frac{d{W}_{1}}{dx}\right) }^{2} = {\hbar }^{2}{\left\lbrack k\left( x\right) \right\rbrack }^{2} + i\hbar {W}^{\prime \prime }{}_{0}\left( x\right)
-$$
-
-$$
-= {\hbar }^{2}{\left\lbrack k\left( x\right) \right\rbrack }^{2} \pm i{\hbar }^{2}{k}^{\prime }\left( x\right) , tag{2.5.44}
-$$
-
-导致 $W\left( x\right)$ 的一级近似,其中 (2.5.44) 式中的第二项比第一项小得多,因此
-
-$$
-W\left( x\right) \approx {W}_{1}\left( x\right) = \pm \hbar {\int }^{x}d{x}^{\prime }{\left\lbrack {k}^{2}\left( {x}^{\prime }\right) \pm i{k}^{\prime }\left( {x}^{\prime }\right) \right\rbrack }^{1/2}
-$$
-
-$$
-\approx \pm \hbar {\int }^{x}d{x}^{\prime }k\left( {x}^{\prime }\right) \left\lbrack {1 \pm \frac{i}{2}\frac{{k}^{\prime }\left( {x}^{\prime }\right) }{{k}^{2}\left( {x}^{\prime }\right) }}\right\rbrack
-$$
-
-$$
-= \pm \hbar {\int }^{x}d{x}^{\prime }k\left( {x}^{\prime }\right) + \frac{i}{2}\hbar \operatorname{In}\left\lbrack {k\left( x\right) }\right\rbrack . tag{2.5.45}
-$$
-
-波函数的 WKB 近似由 (2.5.40) 式和对于 $W\left( x\right)$ 的一级近似 (2.5.45) 式给出,即
-
-$$
-{u}_{E}\left( x\right) \approx \exp \left\lbrack {{iW}\left( x\right) /\hbar }\right\rbrack = \frac{1}{{\left\lbrack k\left( x\right) \right\rbrack }^{1/2}}\exp \left\lbrack {\pm i{\int }^{x}d{x}^{\prime }k\left( {x}^{\prime }\right) }\right\rbrack . tag{2.5.46}
-$$
-
-注意,这个近似具体指定了 (±) 这两个解是在 $k\left( x\right)$ 由 (2.5.38a) 给出的, $E > V\left( x\right)$ 区域; 或者, $k\left( x\right)$ 由 (2.5.38b) 给出的, $E < V\left( x\right)$ 区域. 把经典转折点两边的两个解连接起来是下一步任务.
-
-
-图 2.5 在具有转折点 ${x}_{1}$ 和 ${x}_{2}$ 的势阱 $V\left( x\right)$ 中,波函数 ${u}_{E}\left( x\right)$ 行为的示意图. 注意在转折点附近与图 2.3 的相似性.
-
-我们不去详细地讨论连接手续, 因为在许多书中都讨论过 (例如, Schiff 1968, 268 $\sim {276}$ 页,或 Merzbacher 1988,第 7 章). 作为替代,对图 2.5 示意性给出的具有转折点 ${x}_{1}$ 和 ${x}_{2}$ 的势阱,我们只满足于展示对该势阱做的这样一种分析的结果. 波函数必须依照 (2.5.46) 式变化,其中在区域 II 中的 $k\left( x\right)$ 由 (2.5.38a) 式给定,在区域 I 和 III 中的 $k\left( x\right)$ 由 (2.5.38b) 式给定. 而在转折点邻域的解,如图 2.5 中的虚线所示,由艾里函数给出, 因为我们假定在这些区域的位势取线性近似. 注意艾里函数渐近依赖关系 * 是
-
-$$
-\operatorname{Ai}\left( z\right) \rightarrow \frac{1}{2\sqrt{\pi }}{z}^{-1/4}\exp \left( {-\frac{2}{3}{z}^{3/2}}\right) \;z \rightarrow + \infty
-$$
-
-(2. ${5.47a}$ )
-
-$$
-\operatorname{Ai}\left( z\right) \rightarrow \frac{1}{\sqrt{\pi }}{\left| z\right| }^{-1/4}\cos \left( {\frac{2}{3}{\left| z\right| }^{3/2} - \frac{\pi }{4}}\right) \;z \rightarrow - \infty tag{2.5.47b}
-$$
-
-为了连接 I区和 II 区, (2.5.46) 式的两个解的正确线性组合通过如下方式选择积分常数来确定
-
-$$
-\left\{ \frac{1}{{\left\lbrack V\left( x\right) - E\right\rbrack }^{1/4}}\right\} \exp \left\lbrack {-\left( \frac{1}{\hbar }\right) \int_{x}^{{x}_{1}}d{x}^{\prime }\sqrt{{2m}\left\lbrack {V\left( {x}^{\prime }\right) - E}\right\rbrack }}\right\rbrack tag{2.5.48}
-$$
-
-$$
-\rightarrow \left\{ \frac{2}{{\left\lbrack E - V\left( x\right) \right\rbrack }^{1/4}}\right\} \cos \left\lbrack {\left( \frac{1}{\hbar }\right) \int_{{x}_{1}}^{x}d{x}^{\prime }\sqrt{{2m}\left\lbrack {E - V\left( {x}^{\prime }\right) }\right\rbrack } - \frac{\pi }{4}}\right\rbrack .
-$$
-
-同样地, 从区域 III 到区域 II 我们有
-
-$$
-\left\{ \frac{1}{{\left\lbrack V\left( x\right) - E\right\rbrack }^{1/4}}\right\} \exp \left\lbrack {-\left( \frac{1}{\hbar }\right) \int_{{x}_{2}}^{x}d{x}^{\prime }\sqrt{{2m}\left\lbrack {V\left( {x}^{\prime }\right) - E}\right\rbrack }}\right\rbrack tag{2.5.49}
-$$
-
-$$
-\rightarrow \left\{ \frac{2}{{\left\lbrack E - V\left( x\right) \right\rbrack }^{1/4}}\right\} - \cos \left\lbrack {-{\left( \frac{1}{\hbar }\right) }_{x}\int_{x}^{{x}_{2}}d{x}^{\prime }\sqrt{{2m}\left\lbrack {E - V\left( {x}^{\prime }\right) }\right\rbrack } + \frac{\pi }{4}}\right\rbrack .
-$$
-
-当然, 不管分析哪个转折点, 对于区域 II 的波函数我们必须得到相同的形式. 这意味着 (2.5.48) 式和 (2.5.49) 式中余弦函数的宗量必须至多相差一个整数倍的 $\pi$ [不是 ${2\pi }$ , 因为 (2.5.49) 式两边的符号可能是相反的]. 用这样的方法我们求得一个非常有趣自洽条件:
-
-$$
-\int_{{x}_{1}}^{{x}_{2}}{dx}\sqrt{{2m}\left\lbrack {E - V\left( x\right) }\right\rbrack } = \left( {n + \frac{1}{2}}\right) \pi \hbar \;\left( {n = 0,1,2,3,\cdots }\right) . tag{2.5.50}
-$$
-
----
-
-* 实际上有一个第二类艾里函数, $\mathrm{{Bi}}\left( z\right)$ ,它非常类似于 $\mathrm{{Ai}}\left( z\right)$ ,但是在原点是奇异的. 它与这个讨论有关,但我们跳过了这些细节.
-
----
-
-除去 $n + \frac{1}{2}$ 与 $n$ 的差别之外,这个方程就是索末菲 (A. Sommerfeld) 和威尔逊 (W. Wilson) 于 1915 年写出的旧量子论的量子化条件
-
-$$
-\oint {pdq} = {nh} tag{2.5.51}
-$$
-
-其中的 $h$ 是普朗克的 $h$ ,而不是狄拉克的 $\hbar$ ,积分是对经典运动的一个完整周期求的,从 ${x}_{1}$ 积到 ${x}_{2}$ 然后再积回来.
-
-使用方程 (2.5.50) 可求得禁闭在一个势阱中的粒子能级近似表示式. 作为一个例子, 我们考虑在一个坚硬表面上方上下弹跳的球, 即本节早先讨论过的 “跳跃中子” 的能谱, 即
-
-$$
-V = \left\{ \begin{array}{ll} {mgx}, & \text{ 对于 }x > 0 \\ \infty , & \text{ 对于 }x < 0. \end{array}\right. tag{2.5.52}
-$$
-
-其中 $x$ 代表从坚硬表面量起测得的球的高度. 人们或许总是想在 (2.5.50) 式中直接使用
-
-$$
-{x}_{1} = 0,\;{x}_{2} = \frac{E}{mg}, tag{2.5.53}
-$$
-
-这两个点是该问题的经典转折点. 然而, 我们注意到, (2.5.50) 式是在假定 WKB 波函数 “渗透” 进 $x < {x}_{1}$ 的区域导出的,而在我们问题中,波函数在 $x \leq {x}_{1} = 0$ 的区域严格为零. 处理该问题的更为满意的方法是考虑由
-
-$$
-V\left( x\right) = {mg}\left| x\right| \;\left( {-\infty < x < \infty }\right) , tag{2.5.54}
-$$
-
-它的转折点为
-
-$$
-{x}_{1} = - \frac{E}{mg},\;{x}_{2} = \frac{E}{mg}, tag{2.5.55}
-$$
-
-所定义的修改过的问题的奇宇称解,一一这些解保证在 $x = 0$ 处为零. 对于这个修改过的问题, 奇宇称态的能谱一定与原问题的能谱相同. 于是量子化条件变成
-
-$$
-\int_{-E/{m}_{K}}^{E/{m}_{K}}{dx}\sqrt{{2m}\left( {E - {mg}\left| x\right| }\right) } = \left( {{n}_{\text{奇 }} + \frac{1}{2}}\right) \pi \hbar \;\left( {{n}_{\text{奇 }} = 1,3,5,\cdots }\right) tag{2.5.56}
-$$
-
-或与之等价的
-
-$$
-\int_{0}^{E/{mg}}{dx}\sqrt{{2m}\left( {E - {mgx}}\right) } = \left( {n - \frac{1}{4}}\right) \pi \hbar \;\left( {n = 1,2,3,4,\cdots }\right) . tag{2.5.57}
-$$
-
-这个积分是初等的, 于是对于这个跳跃球的量子化能级, 我们求得
-
-$$
-{E}_{n} = \left\{ \frac{{\left\lbrack 3\left( n - \frac{1}{4}\right) \pi \right\rbrack }^{2/3}}{2}\right\} {\left( m{g}^{2}{\hbar }^{2}\right) }^{1/3}, tag{2. 5.58}
-$$
-
-表 2.2 一个跳跃球的量子化能级,单位取为 ${\left( m{g}^{2}{\hbar }^{2}/2\right) }^{1/3}$
-
-<table><thead><tr><th>$n$</th><th>WKB</th><th>精确值</th></tr></thead><tr><td>1</td><td>2. 320</td><td>2. 338</td></tr><tr><td>2</td><td>4. 082</td><td>4. 088</td></tr><tr><td>3</td><td>5.517</td><td>5. 521</td></tr><tr><td>4</td><td>6. 784</td><td>6. 787</td></tr><tr><td>5</td><td>7.942</td><td>7.944</td></tr><tr><td>6</td><td>9. 021</td><td>9. 023</td></tr><tr><td>7</td><td>10.039</td><td>10. 040</td></tr><tr><td>8</td><td>11.008</td><td>11.009</td></tr><tr><td>9</td><td>11.935</td><td>11.936</td></tr><tr><td>10</td><td>12. 828</td><td>12. 829</td></tr></table>
-
-表 2.2 比较了前 10 个能级的 WKB 近似解与利用艾里函数的零点得到的精确解. 我们看到,甚至对较小的 $n$ 值,符合都是相当好的,而且在 $n \simeq {10}$ 时,实际上就是精确值.
-
-在结束之前,让我们返回到条件 (2.5.42) 式的解释. 在 $\hbar \rightarrow 0$ 的情况下它是精确的, 它暗示着 WKB 近似和经典极限之间的联系. 事实上, 当我们利用 (2.5.40) 式时, 时间相关波函数变成
-
-$$
-\psi \left( {x, t}\right) \propto {u}_{E}\left( x\right) \exp \left( {-{iEt}/\hbar }\right) = \exp \left( {{iW}\left( x\right) /\hbar - {iEt}/\hbar }\right) . tag{2.5.59}
-$$
-
-把它与 (2.4.18) 式和 (2.4.28) 式比较,我们看到 $W\left( x\right)$ 直接对应于哈密顿特征函数. 的确, 条件 (2.5.42) 与达到经典极限所需的条件 (2.4.26) 是相同的. 由于这些原因, WKB 近似经常称为 “半经典” 近似.
-
-我们还注意到,条件 (2.5.42) 式等价于 $\left| {{k}^{\prime }\left( x\right) }\right| \ll \left| {{k}^{2}\left( x\right) }\right|$ . 使用德布罗意波长除以 ${2\pi }$ ,这个条件等同于
-
-$$
-\lambda = \frac{\hbar }{\sqrt{{2m}\left\lbrack {E - V\left( x\right) }\right\rbrack }} \ll \frac{2\left\lbrack {E - V\left( x\right) }\right\rbrack }{\left| dV/dx\right| }. tag{2.5.60}
-$$
-
-换言之, 与位势发生显著改变所需的特征距离相比, $\lambda$ 必须是小的. 粗略地讲,在许多个波长的区间位势必须基本上是常数. 这样, 我们看到半经典图像在短波长极限下是可靠的.
 \section{传播子和费曼路径积分}
 \subsection*{波动力学中的传播子}
 在 2.1 节我们指出了,一旦我们把初始右矢借助一个与 $H$ 对易的可观测量的本征右矢展开, 具有时间无关哈密顿量的最普遍的时间演化问题是如何求解的. 让我们把这种说法翻译成波动力学语言. 我们开始有
@@ -3722,7 +3336,7 @@ $$
 其中我们用到了
 
 $$
-\int_{-\infty }^{\infty }{d\xi }\exp \left( \frac{{im}{\xi }^{2}}{2\hbar {\Delta t}}\right) = \sqrt{\frac{{2\pi i}\hbar {\Delta t}}{m}} tag{2.6.45a}
+\int_{-\infty }^{\infty }{\d \xi }\exp \left( \frac{{im}{\xi }^{2}}{2\hbar {\Delta t}}\right) = \sqrt{\frac{{2\pi i}\hbar {\Delta t}}{m}} tag{2.6.45a}
 $$
 
 和
@@ -3752,13 +3366,13 @@ $$
 其中, ${x}_{N}$ 和 ${t}_{N}$ 是固定的并取了 $N \rightarrow \infty$ 的极限. 通常定义一类新的多维（事实上,无穷维) 积分算符
 
 $$
-\int_{{x}_{1}}^{{x}_{N}}\mathcal{D}\left\lbrack {x\left( t\right) }\right\rbrack \equiv \mathop{\lim }\limits_{{N \rightarrow \infty }}{\left( \frac{m}{{2\pi i}\hbar {\Delta t}}\right) }^{\left( {N - 1}\right) /2}\int \d{x}_{N - 1}\int \d{x}_{N - 2}\cdots \int \d{x}_{2} tag{2. 6.48}
+\int_{{x}_{1}}^{{x}_{N}}\mathcal{\d}\left\lbrack {x\left( t\right) }\right\rbrack \equiv \mathop{\lim }\limits_{{N \rightarrow \infty }}{\left( \frac{m}{{2\pi i}\hbar {\Delta t}}\right) }^{\left( {N - 1}\right) /2}\int \d{x}_{N - 1}\int \d{x}_{N - 2}\cdots \int \d{x}_{2} tag{2. 6.48}
 $$
 
 并把 (2.6.47) 式写成
 
 $$
-\left\langle {{x}_{N},{t}_{N} | {x}_{1},{t}_{1}}\right\rangle = \int_{{x}_{1}}^{{x}_{N}}\mathcal{D}\left\lbrack {x\left( t\right) }\right\rbrack \exp \left\lbrack {i\int_{{t}_{1}}^{{t}_{N}}{\d t}\frac{{L}_{\text{经典 }}\left( {x,\dot{x}}\right) }{\hbar }}\right\rbrack . tag{2.6.49}
+\left\langle {{x}_{N},{t}_{N} | {x}_{1},{t}_{1}}\right\rangle = \int_{{x}_{1}}^{{x}_{N}}\mathcal{\d}\left\lbrack {x\left( t\right) }\right\rbrack \exp \left\lbrack {i\int_{{t}_{1}}^{{t}_{N}}{\d t}\frac{{L}_{\text{经典 }}\left( {x,\dot{x}}\right) }{\hbar }}\right\rbrack . tag{2.6.49}
 $$
 
 这个表达式称为费曼路径积分. 它作为对所有可能的路径求和的意义应当从 (2.6.47) 式中清晰地看到.
@@ -3790,7 +3404,7 @@ $$
 且设 ${x}_{N} \rightarrow x$ 和 ${t}_{N} \rightarrow t + {\Delta t}$ ,我们得到
 
 $$
-\left\langle {x, t + {\Delta t} | {x}_{1},{t}_{1}}\right\rangle = \sqrt{\frac{m}{{2\pi i}\hbar {\Delta t}}}\int_{-\infty }^{\infty }{d\xi }\exp \left( {\frac{{im}{\xi }^{2}}{2\hbar {\Delta t}} - \frac{iV\Delta t}{\hbar }}\right) \left\langle {x - \xi, t | {x}_{1},{t}_{1}}\right\rangle .(2 tag{2.6.52}
+\left\langle {x, t + {\Delta t} | {x}_{1},{t}_{1}}\right\rangle = \sqrt{\frac{m}{{2\pi i}\hbar {\Delta t}}}\int_{-\infty }^{\infty }{\d \xi }\exp \left( {\frac{{im}{\xi }^{2}}{2\hbar {\Delta t}} - \frac{iV\Delta t}{\hbar }}\right) \left\langle {x - \xi, t | {x}_{1},{t}_{1}}\right\rangle .(2 tag{2.6.52}
 $$
 
 正如从 (2.6.45b) 式显而易见的,在 ${\Delta t} \rightarrow 0$ 的极限下,对该积分的主要贡献来自 $\xi \simeq 0$ 的区域. 因此可以合理地使用 $\xi$ 的幂来展开 $\left\langle {x - \xi, t | {x}_{1},{t}_{1}}\right\rangle$ . 我们还用 ${\Delta t}$ 的幂来展开 $\langle x, t$ $+ {\Delta t}\left| {{x}_{1},{t}_{1}}\right\rangle$ 和 $\exp \left( {-{iV\Delta t}/\hbar }\right)$ ,于是
@@ -3800,7 +3414,7 @@ $$
 $$
 
 $$
-= \sqrt{\frac{m}{{2\pi i}\hbar {\Delta t}}}\int_{-\infty }^{\infty }{d\xi }\exp \left( \frac{{im}{\xi }^{2}}{2\hbar {\Delta t}}\right) \left( {1 - \frac{iV\Delta t}{\hbar } + \cdots }\right) tag{2. 6.53}
+= \sqrt{\frac{m}{{2\pi i}\hbar {\Delta t}}}\int_{-\infty }^{\infty }{\d \xi }\exp \left( \frac{{im}{\xi }^{2}}{2\hbar {\Delta t}}\right) \left( {1 - \frac{iV\Delta t}{\hbar } + \cdots }\right) tag{2. 6.53}
 $$
 
 $$
@@ -3820,7 +3434,7 @@ $$
 其中我们用到了
 
 $$
-\int_{-\infty }^{\infty }{d\xi }{\xi }^{2}\exp \left( \frac{{im}{\xi }^{2}}{2\hbar {\Delta t}}\right) = \sqrt{2\pi }{\left( \frac{i\hbar {\Delta t}}{m}\right) }^{3/2}, tag{2.6.55}
+\int_{-\infty }^{\infty }{\d \xi }{\xi }^{2}\exp \left( \frac{{im}{\xi }^{2}}{2\hbar {\Delta t}}\right) = \sqrt{2\pi }{\left( \frac{i\hbar {\Delta t}}{m}\right) }^{3/2}, tag{2.6.55}
 $$
 
 它是通过把 (2.6.45a) 式对 ${\Delta t}$ 求微商得到的. 就这样,我们看到 $\left\langle {x, t | {x}_{1},{t}_{1}}\right\rangle$ 满足薛定谔时间相关波动方程
@@ -3882,11 +3496,6 @@ $$
 \psi \left( {{\mathbf{x}}^{\prime }, t}\right) \rightarrow \exp \left\lbrack \frac{-i{V}_{0}\left( {t - {t}_{0}}\right) }{\hbar }\right\rbrack \psi \left( {{\mathbf{x}}^{\prime }, t}\right) . tag{2.7.6}
 $$
 
----
-
-* 对于路径积分的基础及应用感兴趣的读者可以查阅 Feynman 和 Hibbs（1965）的专著, 也可参看 Zee (2010) 的专著.
-
----
 
 接下来,我们考虑, ${V}_{0}$ 是空间均匀但随时间变化的. 我们很容易看到与 (2.7.5) 式类似的表达式
 
@@ -3903,9 +3512,6 @@ $$
 $$
 
 
-
-图 2.8 用于探测位势差的量子力学干涉
-
 其中
 
 $$
@@ -3914,97 +3520,6 @@ $$
 
 所以, 尽管事实上粒子没有受到力, 却存在一个可观测效应,它依赖于 ${V}_{2}\left( t\right) - {V}_{1}\left( t\right)$ 是否作用其上. 注意,这个效应是纯量子力学的,在 $\hbar \rightarrow 0$ 的极限下,这个有趣的干涉效应被抹掉了, 因为余弦项的振荡变得无穷剧烈*.
 
-\subsection*{量子力学中的引力}
-有一个引人注目地显示引力效应如何出现在量子力学中的实验. 在描述它之前, 我们首先评论一下经典力学和量子力学二者之中引力的作用. 考虑一个纯落体的经典运动方程:
-
-$$
-m\ddot{\mathbf{x}} = - m\nabla {\Phi }_{\text{引力 }{jj}} = - {mg}\widehat{\mathbf{z}}. tag{2. 7.10}
-$$
-
-质量因子可以消掉, 所以, 在不存在空气阻力时, 一片羽毛与一块石头在引力的影响下有相同的行为方式——按照伽利略 (Galileo) 的方式. 当然, 这是引力质量和惯性质量相等的直接结果. 由于在一个粒子运动轨迹的方程中不出现质量, 在经典力学中引力经常称为纯几何理论.
-
----
-
-* 这个假想实验是本节稍后将要讨论的阿哈罗诺夫-玻姆实验的闵可夫斯基 (Minkowski) 转动后的形式.
-
----
-
-在量子力学中情况全然不同. 在波动力学形式中, (2.7.10) 式的类似公式为
-
-$$
-\left\lbrack {-\left( \frac{{\hbar }^{2}}{2m}\right) {\nabla }^{2} + m{\Phi }_{\mathcal{G} | {jj}}}\right\rbrack \psi = i\hbar \frac{\partial \psi }{\partial t}. tag{2.7.11}
-$$
-
-质量不再相消了,而是以组合 $\hbar /m$ 的形式出现. 所以在一个有 $\hbar$ 出现的问题中,预期 $m$ 也会出现. 使用基于
-
-$$
-\left\langle {{\mathbf{x}}_{n},{t}_{n} | {\mathbf{x}}_{n - 1},{t}_{n - 1}}\right\rangle = \sqrt{\frac{m}{{2\pi i}\hbar {\Delta t}}}\exp \left\lbrack {i\int_{{t}_{n} - 1}^{{t}_{n}}{\d t}\frac{\left( \frac{1}{2}m{\dot{\mathbf{x}}}^{2} - mgz\right) }{\hbar }}\right\rbrack ,
-$$
-
-$$
-\left( {{t}_{n} - {t}_{n - 1} = {\Delta t} \rightarrow 0}\right) tag{2.7.12}
-$$
-
-的一个落体的费曼路径积分公式框架, 我们也可以看到这一点. 在这里我们再一次看到, $m$ 出现在组合 $m/\hbar$ 中. 这与基于
-
-$$
-\delta \int_{{t}_{1}}^{{t}_{2}}{\d t}\left( {\frac{m{\dot{\mathbf{x}}}^{2}}{2} - {mgz}}\right) = 0, tag{2.7.13}
-$$
-
-的哈密顿经典方法形成鲜明的对比,在那里的 $m$ 一开始就可以消掉,
-
-从薛定谔方程 (2.7.11) 式出发, 我们可以导出埃伦费斯特定理
-
-$$
-\frac{{d}^{2}}{\d{t}^{2}}\langle \mathbf{x}\rangle = - g\widehat{\mathbf{z}} tag{2. 7.14}
-$$
-
-然而,在这里既不出现 $h$ ,也不出现 $m$ . 要看到引力的非平庸量子力学效应,我们必须研究 $h$ 显式出现的效应,因此,我们预期质量也在那里出现,它与经典力学的纯引力现象相反.
-
-到 1975 年为止,一直没有直接的实验来确证 (2.7.11) 式中 $m{\Phi }_{\psi | h}$ 项的存在. 不可否认, 已经观测到一个基本粒子的自由落体, 但是经典运动方程——或埃伦费斯特定理 (2.7.14) 式,在那里 $h$ 不出现一一已足以解释这一现象. 庞德 (V. Pound) 与其合作者的著名的 “光子重量” 实验, 也没有在量子范畴内检验引力, 因为他们测量了一个频移, 在那里 $h$ 没有明显地出现.
-
-在微观尺度上, 引力太弱, 因而不容易观测. 为了体会在观察束缚态问题中的引力所涉及的困难, 让我们考虑一个电子和一个中子靠引力束缚形成的基态. 这是电子与质子靠库仑力束缚的氢原子的引力对照物. 在相同的距离, 电子与中子之间的引力比电子与质子之间的库仑力小了一个 $\sim 2 \times {10}^{39}$ 的因子. 这里涉及的波尔半径可以简单地求得:
-
-$$
-{a}_{0} = \frac{{\hbar }^{2}}{{e}^{2}{m}_{e}} \rightarrow \frac{{\hbar }^{2}}{{G}_{N}{m}_{e}^{2}{m}_{n}}, tag{2.7.15}
-$$
-
-其中 ${G}_{\mathrm{N}}$ 是牛顿引力常数. 如果我们把数字代入这个方程,结果则表明这个引力束缚系统的波尔半径为 $\sim {10}^{31}$ ,或 $\sim {10}^{13}$ 光年,它比估算的宇宙半径还要大几个数量级.
-
-我们现在讨论一个引人瞩目的称之为引力诱导量子干涉的现象. 一束几乎是单能量的粒子束流一实际上是热中子, 劈裂成两个部分, 然后如图 2.9 所示交汇在一起. 在实际的实验中利用硅晶体将中子束劈裂和弯折, 但是中子干涉仪的这种漂亮艺术的细节不是我们这里所关心的. 由于可以假定波包比两条可选路径形成的圈的宏观尺寸小得多, 我们可以应用经典的轨道概念. 让我们先假定路径 $A \rightarrow B \rightarrow D$ 和路径 $A \rightarrow C \rightarrow D$ 处于一个水平面上. 因为源于引力的势能绝对零点是没有任何意义的, 对于在这个水平面上发生的任何现象我们都可以设 $V = 0$ ; 换句话说,完全忽略引力是合理的. 如果由这两条可选路径形成的平面绕线段 ${AC}$ 旋转一个 $\delta$ 角,则情况就非常不一样了. 这时, ${BD}$ 水平的势能比 ${AC}$ 的高 ${mg}{l}_{2}\sin \delta$ ,这意味着与路径 ${BD}$ 相关联的态右矢 “转动得更快”. 这导致在到达 $D$ 点的两个波包振幅之间出现了一个引力诱导的相位差. 实际上还存在一个与 ${AB}$ 及 ${CD}$ 相关联的引力诱导的相位改变,但是当我们比较这两条可选路径时, 他们的效应相消了. 净剩的结果是经过路径 ${ABD}$ 到达 $D$ 的波包相对于经过路径 ${ACD}$ 到达 $D$ 的波包发生的相位变化
-
-$$
-\exp \left\lbrack \frac{-i{m}_{n}g{l}_{2}\left( {\sin \delta }\right) T}{\hbar }\right\rbrack tag{2.7.16}
-$$
-
-
-
-图 2.9 探测引力诱导的量子干涉的实验
-
-其中 $T$ 是波包从 $B$ 到 $D$ (或从 $A$ 到 $C$ ) 所用的时间, 而 ${m}_{n}$ 是中子质量. 我们可以通过转动图 2.9 的平面控制这个相位差, $\delta$ 可以从 0 变到 $\pi /$ 2,或 0 变到 $- \pi /2$ . 用中子的德布罗意波长 $\lambda$ 表示所用的时间 $T$ ,或 ${l}_{1}/{\nu }_{\text{波 包 }}$ ,我们得到相位差的表示式为:
-
-$$
-{\phi }_{ABD} - {\phi }_{ACD} = - \frac{\left( {m}_{n}^{2}g{l}_{1}{l}_{2}\lambda \sin \delta \right) }{{\hbar }^{2}}. tag{2. 7.17}
-$$
-
-用这种方式,我们预言了一种依赖于角度 $\delta$ 的可观测的干涉效应,它让人联想起光学中迈克尔逊 (Michelson) 类型干涉仪的条纹.
-
-下面是 (2.7.17) 式的另一种可以代替的、更符合波动力学方式的理解. 因为我们关心的是时间无关的势, 动能与势能之和是个常数:
-
-$$
-\frac{{\mathbf{p}}^{2}}{2m} + {mgz} = E tag{2. 7.18}
-$$
-
-${BD}$ 与 ${AC}$ 水平面之间的高度差别意味着 $\mathbf{p}$ 或者 $\lambda$ 的微小差别. 作为结果,存在一个源于 $\lambda$ 差别的相位差积累. 我们把这个波动力学方法也会导致 (2.7.17) 式结果的证明留做一个习题.
-
-
-图 2.10 引力诱导相位对转动角度 $\delta$ 的依赖关系. 取自 R. Colella, A. W. Overhauser,和 S.
-
-A. Werner, Phys. Rev. Lett. 34 (1975) 1472 .
-
-对表达式 (2.7.17) 感兴趣的地方是它的幅值既不太小, 也不太大. 它恰好能让热中子通过 “桌面” 尺度的路径探测到这个有趣的效应. 对于 $\lambda = {1.42Å}$ (与硅原子之间间隙可比) 和 ${l}_{1}{l}_{2} = {10}{\mathrm{\;{cm}}}^{2}$ ,我们得到 ${m}_{n}^{2}g{l}_{1}{l}_{2}\lambda /{\hbar }^{2}$ 为 55.6 . 随着我们把圈平面逐渐转动到 ${90}^{ \circ }$ 时, 我们预言干涉区内的强度将显示一系列的极大和极小值, 定量上我们应当看到 55.6/ ${2\pi } \simeq 9$ 次振荡. 极不寻常的是,这样一种效应的确被实验上观测到了,见图 2.10,它取自科勒拉 (R. Colella), 奥弗豪泽 (A. Overhauser) 和沃纳 (S. A. Werner) 在 1975 年的实验. 来自引力的相移在 $1\%$ 范围内很好地得到了证实.
-
-我们强调: 这个效应是纯量子力学的,因为当 $\hbar \rightarrow 0$ 时,干涉条纹消失了. 正如所预期的, 显示了引力位势进入到薛定谔方程之中. 这个实验还表明在量子水平上引力不是纯几何的,因为其效应依赖于 ${\left( m/\hbar \right) }^{2} \cdot {}^{ * }$
 \subsection*{电磁学中的规范变换}
 现在让我们回到电磁学中出现的势. 我们考虑从时间无关的标量势和矢量势, $\phi \left( \mathbf{x}\right)$ 和 $\mathbf{A}\left( \mathbf{x}\right)$ ,导出的电场与磁场:
 
@@ -4029,13 +3544,13 @@ $$
 为了研究一个受到 $\phi$ 和 $\mathbf{A}$ 作用的带电粒子的动力学,让我们首先在海森堡绘景中操作. 我们可以直接计算 $\mathbf{x}$ 的时间微商
 
 $$
-\frac{d{x}_{i}}{\d t} = \frac{\left\lbrack {x}_{i}, H\right\rbrack }{i\hbar } = \frac{\left( {p}_{i} - e{A}_{i}/c\right) }{m}, tag{2.7.22}
+\frac{\d {x}_{i}}{\d t} = \frac{\left\lbrack {x}_{i}, H\right\rbrack }{i\hbar } = \frac{\left( {p}_{i} - e{A}_{i}/c\right) }{m}, tag{2.7.22}
 $$
 
 它显示本书中定义为平移生成元的算符 $\mathbf{p}$ 与 ${md}\mathbf{x}/{\d t}$ 不同. $\mathbf{p}$ 经常称为正则动量,以示与运动学 (或力学) 动量的区别,后者用 $\Pi$ 标记:
 
 $$
-\Pi \equiv m\frac{d\mathbf{x}}{\d t} = \mathbf{p} - \frac{e\mathbf{A}}{c}. tag{2.7.23}
+\Pi \equiv m\frac{\d \mathbf{x}}{\d t} = \mathbf{p} - \frac{e\mathbf{A}}{c}. tag{2.7.23}
 $$
 
 尽管对于正则动量我们有
@@ -4056,16 +3571,11 @@ $$
 H = \frac{{\Pi }^{2}}{2m} + {e\phi } tag{2. 7.26}
 $$
 
----
-
-* 然而,这并不意味着在理解这类效应时,等价原理不重要. 如果引力质量 $\left( {m}_{j | J}\right)$ 和惯性质量 $\left( {m}_{\text{惯性 }}\right)$ 不相等,则 ${\left( m/h\right) }^{2}$ 必须代之以 ${m}_{\text{引力 }}{m}_{\text{惯性性 }}/{h}^{2}$ . 我们可以正确地预言干涉条纹而不需要区分 ${m}_{\text{引力力 }}$ 和 ${m}_{\text{惯性 }}$ 表明对于量子水平的等价原理的某种支持.
-
----
 
 并利用基本对易关系, 我们可以导出量子力学版本的洛伦兹 (Lorentz) 力, 即
 
 $$
-m\frac{{d}^{2}\mathbf{x}}{\d{t}^{2}} = \frac{d\Pi }{\d t} = e\left\lbrack {\mathbf{E} + \frac{1}{2c}\left( {\frac{d\mathbf{x}}{\d t} \times \mathbf{B} - \mathbf{B} \times \frac{d\mathbf{x}}{\d t}}\right) }\right\rbrack tag{2.7.27}
+m\frac{{\d}^{2}\mathbf{x}}{\d{t}^{2}} = \frac{\d \Pi }{\d t} = e\left\lbrack {\mathbf{E} + \frac{1}{2c}\left( {\frac{\d \mathbf{x}}{\d t} \times \mathbf{B} - \mathbf{B} \times \frac{\d \mathbf{x}}{\d t}}\right) }\right\rbrack tag{2.7.27}
 $$
 
 这就是海森堡绘景中,当 $\mathbf{E}$ 和 $\mathbf{B}$ 存在时,带电粒子的埃伦费斯特定理.
@@ -4181,7 +3691,7 @@ $$
 回顾哈密顿运动方程:
 
 $$
-\frac{d{p}_{x}}{\d t} = - \frac{\partial H}{\partial x},\;\frac{d{p}_{y}}{\d t} = - \frac{\partial H}{\partial y},\cdots tag{2. 7.43}
+\frac{\d {p}_{x}}{\d t} = - \frac{\partial H}{\partial x},\;\frac{\d {p}_{y}}{\d t} = - \frac{\partial H}{\partial y},\cdots tag{2. 7.43}
 $$
 
 一般说来,正则动量 $\mathbf{p}$ 不是一个规范不变量,即使我们针对的是同一个物理情况,它的数值仍依赖于所采用的特殊规范. 相比之下,跟踪粒子轨迹的运动学动量 $\Pi$ ,或 ${md}\mathbf{x}/{\d t}$ ,是一个规范不变量,这一点可以明确证明. 因为 $\mathbf{p}$ 和 ${md}\mathbf{x}/{\d t}$ 通过 (2.7.23) 式相关联, $\mathbf{p}$ 必须改变以补偿 (2.7.42) 式给出的 $\mathbf{A}$ 的变化.
@@ -4369,19 +3879,19 @@ $$
 尽管可以通过比较 B 存在和不存在时薛定谔方程的解来处理这个问题, 为了便于教学,我们宁可采用费曼路径积分方法. 设 ${\mathbf{x}}_{1}$ 和 ${\mathbf{x}}_{N}$ 分别是源区 $\mathrm{A}$ 和干涉区 $\mathrm{B}$ 中的两个有代表性的点. 从经典力学得知, 存在磁场时的拉格朗日量可从不存在磁场时的拉格朗日量 (用 ${L}_{\text{经典 }}^{\left( 0\right) }$ 表示) 得到
 
 $$
-{L}_{\text{经典 }}^{\left( 0\right) } = \frac{m}{2}{\left( \frac{d\mathbf{x}}{\d t}\right) }^{2} \rightarrow {L}_{\text{经典 }}^{\left( 0\right) } + \frac{e}{c}\frac{d\mathbf{x}}{\d t} \cdot \mathbf{A}. tag{2. 7.65}
+{L}_{\text{经典 }}^{\left( 0\right) } = \frac{m}{2}{\left( \frac{\d \mathbf{x}}{\d t}\right) }^{2} \rightarrow {L}_{\text{经典 }}^{\left( 0\right) } + \frac{e}{c}\frac{\d \mathbf{x}}{\d t} \cdot \mathbf{A}. tag{2. 7.65}
 $$
 
 然后,对于从 $\left( {{\mathbf{x}}_{n - 1},{t}_{n - 1}}\right)$ 到 $\left( {{\mathbf{x}}_{n},{t}_{n}}\right)$ 的某段确定的路径单元,作用量相应的改变由下式给出
 
 $$
-{S}^{\left( 0\right) }\left( {n, n - 1}\right) \rightarrow {S}^{\left( 0\right) }\left( {n, n - 1}\right) + \frac{e}{c}\int_{{t}_{n - 1}}^{{t}_{n}}{\d t}\left( \frac{d\mathbf{x}}{\d t}\right) \cdot \mathbf{A}. tag{2. 7.66}
+{S}^{\left( 0\right) }\left( {n, n - 1}\right) \rightarrow {S}^{\left( 0\right) }\left( {n, n - 1}\right) + \frac{e}{c}\int_{{t}_{n - 1}}^{{t}_{n}}{\d t}\left( \frac{\d \mathbf{x}}{\d t}\right) \cdot \mathbf{A}. tag{2. 7.66}
 $$
 
 而最后的这个积分可以写成
 
 $$
-\frac{e}{c}\int_{{t}_{n - 1}}^{{t}_{n}}{\d t}\left( \frac{d\mathbf{x}}{\d t}\right) \cdot \mathbf{A} = \frac{e}{c}\int_{{x}_{n - 1}}^{{x}_{n}}\mathbf{A} \cdot d\mathbf{s}, tag{2.7.67}
+\frac{e}{c}\int_{{t}_{n - 1}}^{{t}_{n}}{\d t}\left( \frac{\d \mathbf{x}}{\d t}\right) \cdot \mathbf{A} = \frac{e}{c}\int_{{x}_{n - 1}}^{{x}_{n}}\mathbf{A} \cdot d\mathbf{s}, tag{2.7.67}
 $$
 
 其中的 $d\mathbf{s}$ 是沿着这段路径单元的微分线元,因此当我们考虑从 ${\mathbf{x}}_{1}$ 到 ${\mathbf{x}}_{N}$ 的全部贡献时, 有下列的改变
@@ -4393,15 +3903,15 @@ $$
 所有这一切只是对于一条特殊的路径, 比如从圆柱体上部通过的路径. 我们还必须对所有的可能路径求和, 这似乎是一个令人生畏的任务. 幸运的是, 我们从电磁学理论知道, $\int \mathbf{A} \cdot d\mathbf{s}$ 的线积分与路径无关. 即,只要一对不同的路径形成的圈不包围磁通量,它就仅依赖于两个端点. 作为结果,由于 $\mathbf{A} \neq 0$ 所有从圆柱体上部通过的路径的贡献都由一个共同的相位因子给出; 类似地, 来自所有从圆柱体下部通过的路径的贡献都将乘以另一个共同的相位因子. 用路径积分符号, 对于整个跃迁振幅我们有
 
 $$
-\int_{\mathrm{E}}\mathcal{D}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack + \int_{\mathrm{F}}\mathcal{D}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack
+\int_{\mathrm{E}}\mathcal{\d}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack + \int_{\mathrm{F}}\mathcal{\d}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack
 $$
 
 $$
-\rightarrow \int_{E}\mathcal{D}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack \left\{ {\exp {\left\lbrack \left( \frac{ie}{\hbar c}\right) \int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}\right\rbrack }_{E}}\right\} tag{2. 7.69}
+\rightarrow \int_{E}\mathcal{\d}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack \left\{ {\exp {\left\lbrack \left( \frac{ie}{\hbar c}\right) \int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}\right\rbrack }_{E}}\right\} tag{2. 7.69}
 $$
 
 $$
-+ \int_{\mathrm{F}}\mathcal{D}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack \left\{ {\exp {\left\lbrack \left( \frac{ie}{\hbar c}\right) \int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}\right\rbrack }_{\mathrm{F}}}\right\}
++ \int_{\mathrm{F}}\mathcal{\d}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack \left\{ {\exp {\left\lbrack \left( \frac{ie}{\hbar c}\right) \int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}\right\rbrack }_{\mathrm{F}}}\right\}
 $$
 
 在干涉区 B 找到粒子的概率依赖于整个跃迁振幅模的平方, 因此依赖于来自上部和下部路径贡献的相位差. 由于 $\mathbf{B}$ 的存在,这个相位差正好是
@@ -4468,7 +3978,7 @@ $$
 但是矢量势 (2.7.75) 式有一个困难一一在负 $z$ 轴 $\left( {\theta = \pi }\right)$ 上它是奇异的. 事实上,结果表明, 对这个问题构造一个没有奇异性且到处都适用的势是不可能的. 要看到这一点, 我们首先注意到, 对于任何包围磁单极所在的原点的边界曲面, “高斯定理” 都给出
 
 $$
-\int_{\text{封闭曲面 }}\mathbf{B} \cdot {d\sigma } = {4\pi }{e}_{M} tag{2.7.77}
+\int_{\text{封闭曲面 }}\mathbf{B} \cdot {\d \sigma } = {4\pi }{e}_{M} tag{2.7.77}
 $$
 
 另一方面,假如 $\mathbf{A}$ 是非奇异的,就会处处都有
@@ -4480,7 +3990,7 @@ $$
 因此,
 
 $$
-\int_{\text{封闭曲面 }}\mathbf{B} \cdot d\mathbf{\sigma } = \int_{\text{曲面内体积 }}\nabla \cdot \left( {\nabla \times \mathbf{A}}\right) {d}^{3}x = 0, tag{2.7.79}
+\int_{\text{封闭曲面 }}\mathbf{B} \cdot d\mathbf{\sigma } = \int_{\text{曲面内体积 }}\nabla \cdot \left( {\nabla \times \mathbf{A}}\right) {\d}^{3}x = 0, tag{2.7.79}
 $$
 
 它与 (2.7.77) 式矛盾.
@@ -4617,7 +4127,7 @@ $$
 通过计算 $\left\lbrack {\mathbf{x} \cdot \mathbf{p}, H}\right\rbrack$ ,求
 
 $$
-\frac{d}{\d t}\langle \mathbf{x} \cdot \mathbf{p}\rangle = \left\langle \frac{{\mathbf{p}}^{2}}{m}\right\rangle - \langle \mathbf{x} \cdot \nabla V\rangle .
+\frac{\d}{\d t}\langle \mathbf{x} \cdot \mathbf{p}\rangle = \left\langle \frac{{\mathbf{p}}^{2}}{m}\right\rangle - \langle \mathbf{x} \cdot \nabla V\rangle .
 $$
 
 为了使我们能把上面的关系式等同于维里定理的量子力学类似物, 左边等于零是必要的. 这会在什么条件下发生?
@@ -4713,7 +4223,7 @@ $$
 (b) 维里定理可表述为
 
 $$
-\left\langle \frac{{\mathbf{p}}^{2}}{m}\right\rangle = \langle \mathbf{x} \cdot \nabla V\rangle \;\text{ 三维时,或 }\;\left\langle \frac{{p}^{2}}{m}\right\rangle = \left\langle {x\frac{dV}{dx}}\right\rangle \;\text{ 一维时. }
+\left\langle \frac{{\mathbf{p}}^{2}}{m}\right\rangle = \langle \mathbf{x} \cdot \nabla V\rangle \;\text{ 三维时,或 }\;\left\langle \frac{{p}^{2}}{m}\right\rangle = \left\langle {x\frac{\d V}{\d x}}\right\rangle \;\text{ 一维时. }
 $$
 
 检验对于动能和势能在一个能量本征态上的期望, 维里定理成立. (按勘误表要求, 这里给出了维里定理. 一译者注)
@@ -4805,7 +4315,7 @@ $$
 2.21 通过使用生成函数推导正交关系 (2.5.29) 式,导出 (2.5.28) 式中的归一常数 ${c}_{n}$ . 从计算出积分
 
 $$
-I = \int_{-\infty }^{\infty }g\left( {x, t}\right) g\left( {x, s}\right) {e}^{-{t}^{2}}{dx},
+I = \int_{-\infty }^{\infty }g\left( {x, t}\right) g\left( {x, s}\right) {e}^{-{t}^{2}}{\d x},
 $$
 
 出发, 之后借助于厄米多项式的级数再一次利用生成函数考虑这个积分.
@@ -5063,7 +4573,7 @@ $$
 \section{电磁单位制}
 相比于我们常用的国际单位制,也称为MKSA单位制(即米,千克,秒,安培),我们在电磁中常用的高斯单位制被称为CGS单位制(即厘米,克,秒).\\接下来为了避免混乱,列举高斯单位制所常用的单位:电荷$statC$,电势$statV$,力$dyne$\footnote{中文音译为达因},磁感应强度$gauss$,磁场强度$oersted$,磁通量$mx$,能量$erg$.\\
 
-相比于自然单位制直接将值赋为1,高斯单位制就比较保守,它根据我们熟知的库仑定律,通过定义$1\mathrm{A}=0.1c\cdot\mathrm{dyne}^{\frac12},1\mathrm{C}=0.1c\cdot\rm{dyne}^{\frac12}\cdot s$来达到简化的操作.\\
+相比于自然单位制直接将值赋为1,高斯单位制就比较保守,它根据我们熟知的库仑定律,通过定义$1\mathrm{A}=0.1c\cdot\mathrm{\d yne}^{\frac12},1\mathrm{C}=0.1c\cdot\rm{\d yne}^{\frac12}\cdot s$来达到简化的操作.\\
 \begin{table}[htbp]
 	\centering
 	\caption{一些简单对应关系}

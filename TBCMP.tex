@@ -1269,15 +1269,15 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 考虑内积 $\langle \beta | \alpha \rangle$ . 利用 $\left| {x}^{\prime }\right\rangle$ 的完备性,我们有
 \begin{equation}
 	\begin{aligned}
-		\langle \beta | \alpha \rangle &= \int \d{x}^{\prime }\left\langle {\beta \left| {{x}^{\prime }\rangle \left\langle {{x}^{\prime } | \alpha }\right\rangle }\right| }\right\rangle\\
-		&= \int \d{x}^{\prime }{\psi }_{\beta }^{ * }\left( {x}^{\prime }\right) {\psi }_{\alpha }\left( {x}^{\prime }\right)
+		\langle \beta | \alpha \rangle &= \int \d{x}^{\prime }\langle {\beta | {{x}^{\prime }\rangle \langle {{x}^{\prime } | \alpha }\rangle } }\\
+		&= \int \d{x}^{\prime }{\psi }_{\beta }^{ * }( {x}^{\prime }) {\psi }_{\alpha }( {x}^{\prime })
 	\end{aligned}
 \end{equation}
 所以 $\langle \beta | \alpha \rangle$ 表征两个波函数之间的重叠度. 注意,我们并不是把 $\langle \beta | \alpha \rangle$ 定义为重叠积分,确认 $\langle \beta | \alpha \rangle$ 为重叠积分是由我们对 $\left| {x}^{\prime }\right\rangle$ 的完备性假定推知的. $\langle \beta | \alpha \rangle$ 更为一般的、 不依赖于表象的解释是,它表示在 $|\beta \rangle$ 态中找到 $|\alpha \rangle$ 态的概率振幅.
 
 这一次让我们用波函数语言解释展开式
 \begin{equation}
-	| {\alpha \rangle = \mathop{\sum }\limits_{{a}^{\prime }}\left| {a}^{\prime }\right\rangle \left\langle {{a}^{\prime } | \alpha }\right\rangle }|
+	| {\alpha \rangle = \mathop{\sum }\limits_{{a}^{\prime }}\left| {a}^{\prime }\right\rangle \left\langle {{a}^{\prime } | \alpha }\right\rangle }
 \end{equation}
 我们就用位置本征右矢 $\left\langle {x}^{\prime }\right|$ 左乘式子的两边. 这样
 \begin{equation}
@@ -1295,7 +1295,7 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 现在让我们研究怎么使用 $| {\alpha \rangle \text{和}}| \beta \rangle$ 的波函数写出 $\langle \beta \left| A\right| \alpha \rangle$ . 显然,我们有
 \begin{equation}
 	\begin{aligned}
-		\langle \beta \left| A\right| \alpha \rangle &= \int \d{x}^{\prime }\int \d{x}^{\prime \prime }\left\langle {\beta \left| {{x}^{\prime }\rangle \left\langle {{x}^{\prime }\left| A\right| {x}^{\prime \prime }}\right\rangle \left\langle {x}^{\prime \prime }\right| \alpha }\right| }\right\rangle\\
+		\langle \beta \left| A\right| \alpha \rangle &= \int \d{x}^{\prime }\int \d{x}^{\prime \prime }\left\langle {\beta \left| {{x}^{\prime }\rangle \left\langle {{x}^{\prime }\left| A\right| {x}^{\prime \prime }}\right\rangle \left\langle {x}^{\prime \prime }\right| \alpha } }\right\rangle\\
 		&= \int \d{x}^{\prime }\int \d{x}^{\prime \prime }{\psi }_{\beta }^{ * }\left( {x}^{\prime }\right) \left\langle {{x}^{\prime }\left| A\right| {x}^{\prime \prime }}\right\rangle {\psi }_{\alpha }\left( {x}^{\prime \prime }\right)
 	\end{aligned}
 \end{equation}
@@ -1377,7 +1377,7 @@ $$\langle a^{\prime\prime}| X| a^{\prime}\rangle=\langle a^{\prime}| X^\dagger| 
 \end{equation}
 如果 $|\alpha \rangle$ 已被归一化了,则我们得到
 \begin{equation}
-	\int \d{p}^{\prime }\langle {\alpha | {{p}^{\prime }\rangle \langle {{p}^{\prime } | \alpha }\rangle = \int \d{p}^{\prime }}| {\phi }_{\alpha }( {p}^{\prime }) {| }^{2} = 1}\rangle
+	\int \d{p}^{\prime }\langle {\alpha | {{p}^{\prime }\rangle \langle {{p}^{\prime } | \alpha }\rangle = \int \d{p}^{\prime }}| {\phi }_{\alpha }( {p}^{\prime }) {| }^{2} = 1}
 \end{equation}
 现在让我们建立 $x$ 表象与 $p$ 表象之间的联系. 我们回忆一下,在分立谱的情况下,从老的基 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 到新的基 $\left\{ \left| {b}^{\prime }\right\rangle \right\}$ 的基的改变是用变换矩阵表征的. 同样地, 我们预期,欲求的信息包含在 $\left\langle {{x}^{\prime } | {p}^{\prime }}\right\rangle$ 中,它是 ${x}^{\prime }$ 和 ${p}^{\prime }$ 的函数,通常称之为从 $x$ 表象到 $p$ 表象的\textbf{变换函数}. 为了推导出 $\left\langle {{x}^{\prime } | {p}^{\prime }}\right\rangle$ 的显示表达式,首先回忆一下\ref{1.209}式, 令 $|\alpha \rangle$ 为动量本征右矢 $\left| {p}^{\prime }\right\rangle$ ,我们得到
 \begin{equation}
@@ -4628,8 +4628,53 @@ $${\displaystyle \alpha ={\frac {e^{2}k_{e}}{\hbar c}}={\frac {e^{2}}{\hbar c(4\
 1
 \chapter{mathematica的基本用法}
 1
+\chapter{临时章节}
+\begin{equation}
+\begin{array}{ll|l}
+	\texttt{"normal"}      &\texttt{}         & ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+	\texttt{"blackboard"}  &\texttt{mathbb}  &\mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	\texttt{"boldface"}    &\texttt{mathbf}  &\mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	\texttt{"typewriter"}  &\texttt{mathtt}  &\mathtt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	\texttt{"roman"}       &\texttt{mathrm}  &\mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	\texttt{"sans-serif"}  &\texttt{mathsf}  &\mathsf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	\texttt{"calligraphic"}&\texttt{mathcal} &\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	\texttt{"script"}      &\texttt{mathscr} &\mathscr{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	\texttt{"fraktur"}     &\texttt{mathfrak}&\mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+\end{array}
+\end{equation}
+\begin{equation}
+	\begin{array}{|lc|}
+		\hline
+		\verb+\color{black}{黑色}+    & \color{black}{黑色}   \\
+		\verb+\color{darkgray}{深灰}+ & \color{darkgray}{深灰}\\
+		\verb+\color{gray}{灰色}+     & \color{gray}{灰色}    \\
+		\verb+\color{silver}{银色}+   & \color{silver}{银色}  \\
+		\verb+\color{lightgray}{浅灰}+&\color{lightgray}{浅灰}\\
+		\verb+\color{white}{白色}+    & \color{white}{白色}   \\
+		\hline
+		\verb+\color{brown}{棕色}+    & \color{brown}{棕色}   \\
+		\verb+\color{maroon}{栗色}+   & \color{maroon}{栗色}  \\
+		\verb+\color{red}{红色}+      & \color{red}{红色}     \\
+		\verb+\color{fuchsia}{桃红}+  & \color{fuchsia}{桃红} \\
+		\verb+\color{magenta}{品红}+  & \color{magenta}{品红} \\
+		\verb+\color{pink}{粉红}+     & \color{pink}{粉红}    \\
+		\verb+\color{orange}{橙色}+   & \color{orange}{橙色}  \\
+		\verb+\color{yellow}{黄色}+   & \color{yellow}{黄色}  \\
+		\verb+\color{lime}{青柠}+     & \color{lime}{青柠}    \\
+		\verb+\color{olive}{橄榄}+    & \color{olive}{橄榄}   \\
+		\verb+\color{green}{绿色}+    & \color{green}{绿色}   \\
+		\verb+\color{aqua}{水绿}+     & \color{aqua}{水绿}    \\
+		\verb+\color{cyan}{青色}+     & \color{cyan}{青色}    \\
+		\verb+\color{teal}{靛青}+     & \color{teal}{靛青}    \\
+		\verb+\color{blue}{蓝色}+     & \color{blue}{蓝色}    \\
+		\verb+\color{navy}{海蓝}+     & \color{navy}{海蓝}    \\
+		\verb+\color{violet}{罗兰}+   & \color{purple}{罗兰}  \\ 
+		\verb+\color{purple}{紫色}+   & \color{purple}{紫色}  \\ 
+		\hline
+	\end{array}
+\end{equation}
 \chapter{答案及解析}
-\section*{第一章}
+\section{第一章}
 \begin{enumerate}
 	\item 证明:如果$X=|\beta\rangle\langle\alpha|$,那么则有$X^\dagger=|\alpha\rangle\langle\beta|$.
 	\begin{proof}
@@ -4638,6 +4683,8 @@ $${\displaystyle \alpha ={\frac {e^{2}k_{e}}{\hbar c}}={\frac {e^{2}}{\hbar c(4\
 	\item 习题2
 	\item 习题3
 \end{enumerate}
+\section{第二章}
+1
 \chapter{致谢/参考}
 \section{致谢}
 感谢elegantbook所提供的模板,\href{https://elegantlatex.org/}{https://elegantlatex.org/}.\\

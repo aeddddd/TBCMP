@@ -1543,7 +1543,7 @@ $p$ 和 ${p}^{2}$ 的期望也可以计算如下
 	\end{enumerate}
 	\item 证明:
 	$$
-	\left\lbrack {{AB},{CD}}\right\rbrack = - {AC}\{ D, B\} + A\{ C, B\} D - C\{ D, A\} B + \{ C, A\} {\d B}.
+	\left\lbrack {{AB},{CD}}\right\rbrack = - {AC}\{ D, B\} + A\{ C, B\} D - C\{ D, A\} B + \{ C, A\} {D B}.
 	$$
 	\item 假定一个 $2 \times 2$ 矩阵 $X$ (不一定是厄米或幺正矩阵) 被写成
 	$$
@@ -3397,291 +3397,190 @@ $V\left( \mathbf{x}\right) = 0$ 的情况有重要意义. 这里我们将在三�
 这就是海森堡绘景中,当 $\mathbf{E}$ 和 $\mathbf{B}$ 存在时,带电粒子的\textbf{埃伦费斯特定理}.
 
 现在,我们研究具有 $\phi$ 和 $\mathbf{A}$ 的薛定谔波动方程. 我们的第一个任务是在 $\left\langle {\mathbf{x}}^{\prime }\right|$ 和 $\alpha ,{t}_{0}$ ; $t\rangle$ 之间夹入 $H$ . 唯一需要加以小心的项是
-
-$$
-\left\langle {{\mathbf{x}}^{\prime }\left| {\left\lbrack \mathbf{p} - \frac{e\mathbf{A}\left( \mathbf{x}\right) }{c}\right\rbrack }^{2}\right| \alpha ,{t}_{0};t}\right\rangle
-$$
-
-$$
-= \left\lbrack {-i\hbar {\nabla }^{\prime } - \frac{e\mathbf{A}\left( {\mathbf{x}}^{\prime }\right) }{c}}\right\rbrack \left\langle {{\mathbf{x}}^{\prime }\left| \left\lbrack {\mathbf{p} - \frac{e\mathbf{A}\left( \mathbf{x}\right) }{c}}\right\rbrack \right| \alpha ,{t}_{0};t}\right\rangle tag{2. 7.28}
-$$
-
-$$
-= \left\lbrack {-i\hbar {\nabla }^{\prime } - \frac{e\mathbf{A}\left( {\mathbf{x}}^{\prime }\right) }{c}}\right\rbrack \cdot \left\lbrack {-{ih}{\nabla }^{\prime } - \frac{e\mathbf{A}\left( {\mathbf{x}}^{\prime }\right) }{c}}\right\rbrack \left\langle {{\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t}\right\rangle .
-$$
-
+\begin{equation}
+	\begin{aligned}
+		\left\langle {{\mathbf{x}}^{\prime }\left| {\left\lbrack \mathbf{p} - \frac{e\mathbf{A}\left( \mathbf{x}\right) }{c}\right\rbrack }^{2}\right| \alpha ,{t}_{0};t}\right\rangle &= \left\lbrack {-i\hbar {\nabla }^{\prime } - \frac{e\mathbf{A}\left( {\mathbf{x}}^{\prime }\right) }{c}}\right\rbrack \left\langle {{\mathbf{x}}^{\prime }\left| \left\lbrack {\mathbf{p} - \frac{e\mathbf{A}\left( \mathbf{x}\right) }{c}}\right\rbrack \right| \alpha ,{t}_{0};t}\right\rangle\\
+		&= \left\lbrack {-i\hbar {\nabla }^{\prime } - \frac{e\mathbf{A}\left( {\mathbf{x}}^{\prime }\right) }{c}}\right\rbrack \cdot \left\lbrack {-{ih}{\nabla }^{\prime } - \frac{e\mathbf{A}\left( {\mathbf{x}}^{\prime }\right) }{c}}\right\rbrack \left\langle {{\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t}\right\rangle
+	\end{aligned}
+\end{equation}
 需要强调的是,在最后一行中的第一个 ${\nabla }^{\prime }$ 既要对 $\left\langle {{\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t}\right\rangle$ 微商,也要对 $\mathbf{A}\left( {\mathbf{x}}^{\prime }\right)$ 微商. 把这一切组合起来, 我们有
-
-$$
-\frac{1}{2m}\left\lbrack {-i\hbar {\nabla }^{\prime } - \frac{e\mathbf{A}\left( {\mathbf{x}}^{\prime }\right) }{c}}\right\rbrack \cdot \left\lbrack {-i\hbar {\nabla }^{\prime } - \frac{e\mathbf{A}\left( {\mathbf{x}}^{\prime }\right) }{c}}\right\rbrack \left\langle {{\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t}\right\rangle tag{2.7.29}
-$$
-
-$$
-+ {e\phi }\left( {\mathbf{x}}^{\prime }\right) \left\langle {{\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t}\right\rangle = i\hbar \frac{\partial }{\partial t}\left\langle {{\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t}\right\rangle
-$$
-
+\begin{equation}
+	\frac{1}{2m}\left\lbrack {-i\hbar {\nabla }^{\prime } - \frac{e\mathbf{A}\left( {\mathbf{x}}^{\prime }\right) }{c}}\right\rbrack \cdot \left\lbrack {-i\hbar {\nabla }^{\prime } - \frac{e\mathbf{A}\left( {\mathbf{x}}^{\prime }\right) }{c}}\right\rbrack \left\langle {{\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t}\right\rangle+ {e\phi }\left( {\mathbf{x}}^{\prime }\right) \left\langle {{\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t}\right\rangle = i\hbar \frac{\partial }{\partial t}\left\langle {{\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t}\right\rangle
+\end{equation}
 从这个表达式我们很容易得到连续性方程
-
-$$
-\frac{\partial \rho }{\partial t} + {\nabla }^{\prime } \cdot \mathbf{j} = 0, tag{2. 7.30}
-$$
-
+\begin{equation}
+	\frac{\partial \rho }{\partial t} + {\nabla }^{\prime } \cdot \mathbf{j} = 0
+\end{equation}
 在那里,像以前一样 $\rho$ 是 ${\left| \psi \right| }^{2},\left\langle {{\mathbf{x}}^{\prime } | \alpha ,{t}_{0};t}\right\rangle$ 是 $\psi$ ,而对概率流 $\mathbf{j}$ 我们有
-
-$$
-\mathbf{j} = \left( \frac{\hbar }{m}\right) \operatorname{Im}\left( {{\psi }^{ * }{\nabla }^{\prime }\psi }\right) - \left( \frac{e}{mc}\right) \mathbf{A}{\left| \psi \right| }^{2}, tag{2. 7.31}
-$$
-
+\begin{equation}
+	\mathbf{j} = \left( \frac{\hbar }{m}\right) \operatorname{Im}\left( {{\psi }^{ * }{\nabla }^{\prime }\psi }\right) - \left( \frac{e}{mc}\right) \mathbf{A}{\left| \psi \right| }^{2}
+\end{equation}
 它正是我们由代换
-
-$$
-{\nabla }^{\prime } \rightarrow {\nabla }^{\prime } - \left( \frac{ie}{\hbar c}\right) \mathbf{A} tag{2. 7.32}
-$$
-
-所预期的. 若把波函数写成 $\sqrt{\rho }\exp \left( {{iS}/\hbar }\right)$ [见 (2.4.18) 式],我们得到 $\mathbf{j}$ 的一个替代形式, 即
-
-$$
-\mathbf{j} = \left( \frac{\rho }{m}\right) \left( {\nabla S - \frac{e\mathbf{A}}{c}}\right) , tag{2. 7.33}
-$$
-
-它将与 (2.4.20) 式相比较. 我们将发现, 这种形式在讨论超导、通量量子化等问题时是方便的. 我们还注意到,除去 $1/m$ 外, $\mathbf{j}$ 的空间积分就是运动学动量 (而不是正则动量) 的期望
-
-$$
-\int {\d}^{3}{x}^{\prime }\mathbf{j} = \frac{\langle \mathbf{p} - e\mathbf{A}/c\rangle }{m} = \langle \Pi \rangle /m. tag{2. 7.34}
-$$
-
+\begin{equation}
+	{\nabla }^{\prime } \rightarrow {\nabla }^{\prime } - \left( \frac{ie}{\hbar c}\right) \mathbf{A}
+\end{equation}
+所预期的. 若把波函数写成 $\sqrt{\rho }\exp \left( {{iS}/\hbar }\right)$,我们得到 $\mathbf{j}$ 的一个替代形式, 即
+\begin{equation}
+	\mathbf{j} = \left( \frac{\rho }{m}\right) \left( {\nabla S - \frac{e\mathbf{A}}{c}}\right)
+\end{equation}
+相比较,我们将发现, 这种形式在讨论超导、通量量子化等问题时是方便的. 我们还注意到,除去 $1/m$ 外, $\mathbf{j}$ 的空间积分就是运动学动量 (而不是正则动量) 的期望
+\begin{equation}
+	\int {\d}^{3}{x}^{\prime }\mathbf{j} = \frac{\langle \mathbf{p} - e\mathbf{A}/c\rangle }{m} = \langle \Pi \rangle /m
+\end{equation}
 现在我们是讨论电磁学中规范变换问题的时候了. 首先, 考虑
-
-$$
-\phi \rightarrow \phi + \lambda ,\;\mathbf{A} \rightarrow \mathbf{A}, tag{2. 7.35}
-$$
-
-其中的 $\lambda$ 是个常数,这就是说,不依赖于 $\mathbf{x}$ 和 $t$ . $\mathbf{E}$ 和 $\mathbf{B}$ 二者显然都保持不变. 这个变换只意味着能量标度零点的变化,它是在本节开始时用过的一种可能性; 我们只不过用 ${e\phi }$ 代替了 $V$ . 我们已经讨论过了态右矢所需要的伴随变化 [见 (2.7.5)式],因此,我们不再赘述这个变换.
+\begin{equation}
+	\phi \rightarrow \phi + \lambda ,\;\mathbf{A} \rightarrow \mathbf{A}
+\end{equation}
+其中的 $\lambda$ 是个常数,这就是说,不依赖于 $\mathbf{x}$ 和 $t$ . $\mathbf{E}$ 和 $\mathbf{B}$ 二者显然都保持不变. 这个变换只意味着能量标度零点的变化,它是在本节开始时用过的一种可能性; 我们只不过用 ${e\phi }$ 代替了 $V$ . 我们已经讨论过了态右矢所需要的伴随变化,因此,我们不再赘述这个变换.
 
 更有趣的是变换
-
-$$
-\phi \rightarrow \phi ,\;\mathbf{A} \rightarrow \mathbf{A} + \nabla \Lambda , tag{2. 7.36}
-$$
-
-其中 $\Lambda$ 是 $\mathbf{x}$ 的函数. 在 (2.7.36) 式变换下,静电磁场 $\mathbf{E}$ 和 $\mathbf{B}$ 是不变的. (2.7.35) 式和 (2.7.36) 式都是
-
-$$
-\phi \rightarrow \phi - \frac{1}{c}\frac{\partial \Lambda }{\partial t},\;\mathbf{A} \rightarrow \mathbf{A} + \nabla \Lambda , tag{2. 7.37}
-$$
-
+\begin{equation}
+	\phi \rightarrow \phi ,\;\mathbf{A} \rightarrow \mathbf{A} + \nabla \Lambda
+\end{equation}
+其中 $\Lambda$ 是 $\mathbf{x}$ 的函数. 在上面的变换下,静电磁场 $\mathbf{E}$ 和 $\mathbf{B}$ 是不变的.都是
+\begin{equation}
+	\phi \rightarrow \phi - \frac{1}{c}\frac{\partial \Lambda }{\partial t},\;\mathbf{A} \rightarrow \mathbf{A} + \nabla \Lambda
+\end{equation}
 的特殊情况, 它们保持由
-
-$$
-\mathbf{E} = - \nabla \phi - \frac{1}{c}\frac{\partial \mathbf{A}}{\partial t},\;\mathbf{B} = \nabla \times \mathbf{A}, tag{2. 7.38}
-$$
-
-给出的 $\mathbf{E}$ 和 $\mathbf{B}$ 不变,但下面我们不考虑时间相关的场和势. 在本节的余下部分,术语规范变换指的都是 (2.7.36) 式.
+\begin{equation}
+	\mathbf{E} = - \nabla \phi - \frac{1}{c}\frac{\partial \mathbf{A}}{\partial t},\;\mathbf{B} = \nabla \times \mathbf{A}
+\end{equation}
+给出的 $\mathbf{E}$ 和 $\mathbf{B}$ 不变,但下面我们不考虑时间相关的场和势. 在本节的余下部分,术语规范变换指的都是这类变换.
 
 在经典物理中, 诸如带电粒子轨道这样的可观测量效应不依赖所使用的规范一一即我们碰巧采用的特别选择的 $\Lambda$ . 考虑一个带电粒子处于沿 $z$ 方向的均匀磁场中
-
-$$
-\mathbf{B} = B\widehat{\mathbf{z}}\text{.} tag{2. 7.39}
-$$
-
+\begin{equation}
+	\mathbf{B} = B\widehat{\mathbf{z}}
+\end{equation}
 这个磁场可以从
-
-$$
-{A}_{x} = \frac{-{By}}{2},\;{A}_{y} = \frac{Bx}{2},\;{A}_{z} = 0 tag{2. 7.40}
-$$
-
+\begin{equation}
+	{A}_{x} = \frac{-{By}}{2},\;{A}_{y} = \frac{Bx}{2},\;{A}_{z} = 0
+\end{equation}
 推导出来. 或者也可以从
-
-$$
-{A}_{x} = - {By},\;{A}_{y} = 0,\;{A}_{z} = 0, tag{2. 7.41}
-$$
-
+\begin{equation}
+	{A}_{x} = - {By},\;{A}_{y} = 0,\;{A}_{z} = 0
+\end{equation}
 推导出来. 第二种形式是通过
-
-$$
-\mathbf{A} \rightarrow \mathbf{A} - \nabla \left( \frac{Bxy}{2}\right) tag{2. 7.42}
-$$
-
-从第一种形式中求得的,它的确是 (2.7.36) 的形式. 不管我们可能会用哪个 $\mathbf{A}$ ,具有一组给定初始条件的带电粒子的轨道都是相同的,它就是一条螺旋线——投影到 ${xy}$ 平面时的一个匀速圆周运动,同时叠加上沿 $z$ 方向的一个匀速直线运动. 然而,如果我们看一下 ${p}_{x}$ 和 ${p}_{y}$ ,结果则是很不一样的. 首先,当使用 (2.7.41) 式时, ${p}_{x}$ 是个运动常数,而当使用 (2.7.40) 式时它就不再是运动常数.
+\begin{equation}
+	\mathbf{A} \rightarrow \mathbf{A} - \nabla \left( \frac{Bxy}{2}\right)
+\end{equation}
+从第一种形式中求得的,它的确是规范变换的形式. 不管我们可能会用哪个 $\mathbf{A}$ ,具有一组给定初始条件的带电粒子的轨道都是相同的,它就是一条螺旋线——投影到 ${xy}$ 平面时的一个匀速圆周运动,同时叠加上沿 $z$ 方向的一个匀速直线运动. 然而,如果我们看一下 ${p}_{x}$ 和 ${p}_{y}$ ,结果则是很不一样的. 首先,当使用第二种形式时, ${p}_{x}$ 是个运动常数,而当使用第一种形式时它就不再是运动常数.
 
 回顾哈密顿运动方程:
-
-$$
-\frac{\d {p}_{x}}{\d t} = - \frac{\partial H}{\partial x},\;\frac{\d {p}_{y}}{\d t} = - \frac{\partial H}{\partial y},\cdots tag{2. 7.43}
-$$
-
-一般说来,正则动量 $\mathbf{p}$ 不是一个规范不变量,即使我们针对的是同一个物理情况,它的数值仍依赖于所采用的特殊规范. 相比之下,跟踪粒子轨迹的运动学动量 $\Pi$ ,或 ${md}\mathbf{x}/{\d t}$ ,是一个规范不变量,这一点可以明确证明. 因为 $\mathbf{p}$ 和 ${md}\mathbf{x}/{\d t}$ 通过 (2.7.23) 式相关联, $\mathbf{p}$ 必须改变以补偿 (2.7.42) 式给出的 $\mathbf{A}$ 的变化.
+\begin{equation}
+	\frac{\d {p}_{x}}{\d t} = - \frac{\partial H}{\partial x},\;\frac{\d {p}_{y}}{\d t} = - \frac{\partial H}{\partial y},\cdots
+\end{equation}
+一般说来,正则动量 $\mathbf{p}$ 不是一个规范不变量,即使我们针对的是同一个物理情况,它的数值仍依赖于所采用的特殊规范. 相比之下,跟踪粒子轨迹的运动学动量 $\Pi$ ,或 ${m\d}\mathbf{x}/{\d t}$ ,是一个规范不变量,这一点可以明确证明. 因为 $\mathbf{p}$ 和 ${md}\mathbf{x}/{\d t}$ 相关联, $\mathbf{p}$ 必须改变以补偿$\mathbf{A}$ 的变化.
 
 现在我们回到量子力学. 我们相信, 在规范变换下要求量子力学中的期望具有类似于相应的经典量的行为方式是合理的,所以在规范变换下,预期 $\langle \mathbf{x}\rangle$ 和 $\langle \Pi \rangle$ 不变,而 $\langle \mathbf{p}\rangle$ 会变化.
 
 让我们用 $|\alpha \rangle$ 表示 $\mathbf{A}$ 存在时的态右矢; 当用
-
-$$
-\widetilde{\mathbf{A}} = \mathbf{A} + \nabla \Lambda tag{2.7.44}
-$$
-
+\begin{equation}
+	\widetilde{\mathbf{A}} = \mathbf{A} + \nabla \Lambda
+\end{equation}
 代替 $\mathbf{A}$ 时,同样物理情况下的态右矢用 $|\widetilde{\alpha }\rangle$ 表示. 这里的 $\Lambda$ ,和 $\mathbf{A}$ 一样,是位置算符 $\mathbf{x}$ 的函数. 我们的基本要求是
-
-$$
-\langle \alpha \left| \mathbf{x}\right| \alpha \rangle = \langle \widetilde{\alpha }\left| \mathbf{x}\right| \widetilde{\alpha }\rangle
-$$
-
-(2. ${7.45a}$ )
-
+\begin{equation}
+	\langle \alpha \left| \mathbf{x}\right| \alpha \rangle = \langle \widetilde{\alpha }\left| \mathbf{x}\right| \widetilde{\alpha }\rangle
+\end{equation}
 和
-
-$$
-\langle \alpha \left| \left( {\mathbf{p} - \frac{e\mathbf{A}}{c}}\right) \right| \alpha \rangle = \langle \widetilde{\alpha }\left| \left( {\mathbf{p} - \frac{e\widetilde{\mathbf{A}}}{c}}\right) \right| \widetilde{\alpha }\rangle . tag{2.7.45b}
-$$
-
+\begin{equation}
+	\langle \alpha | \left( {\mathbf{p} - \frac{e\mathbf{A}}{c}}\right) | \alpha \rangle = \langle \widetilde{\alpha }| \left( {\mathbf{p} - \frac{e\widetilde{\mathbf{A}}}{c}}\right) | \widetilde{\alpha }\rangle
+\end{equation}
 此外, 像往常一样, 我们要求态右矢的模保持不变:
-
-$$
-\langle \alpha | \alpha \rangle = \langle \widetilde{\alpha } | \widetilde{\alpha }\rangle tag{2.7.46}
-$$
-
-我们必须构建一个把 $\left| {\bar{\alpha }\rangle \text{和}}\right| \alpha \rangle$ 如下联系起来的算符 $\mathcal{J}$
-
-$$
-\left| {\widetilde{\alpha }\rangle = g}\right| \alpha \rangle tag{2.7.47}
-$$
-
+\begin{equation}
+	\langle \alpha | \alpha \rangle = \langle \widetilde{\alpha } | \widetilde{\alpha }\rangle
+\end{equation}
+我们必须构建一个把 $\left| {\bar{\alpha }\rangle \text{和}}\right| \alpha \rangle$ 如下联系起来的算符 $\mathscr{G}$
+\begin{equation}
+	\left| {\widetilde{\alpha }\rangle = \mathscr{G}}\right| \alpha \rangle
+\end{equation}
 倘若
-
-$$
-{\partial }^{ + }x\partial \lambda = x tag{2.7.48a}
-$$
-
+\begin{equation}
+	\mathscr{G}^\dagger x\mathscr{G}= x
+\end{equation}
 和
-
-$$
-{\partial }^{ + }\left( {\mathbf{p} - \frac{e\mathbf{A}}{c} - \frac{e\nabla \Lambda }{c}}\right) \partial f = \mathbf{p} - \frac{e\mathbf{A}}{c}.
-$$
-
-(2. 7. ${48}\mathrm{\;b}$ )
-
-则不变性 (2.7.45a)式和 (2.7.45b)式都能得到保障. 我们断言
-
-$$
-\mathcal{J} = \exp \left\lbrack \frac{{ie\Lambda }\left( \mathbf{x}\right) }{\hbar c}\right\rbrack tag{2. 7.49}
-$$
-
-能满足这个要求. 首先, $\mathbf{g}$ 是幺正的,所以 (2.7.46) 式能满足. 其次,因为 $\mathbf{x}$ 与 $\mathbf{x}$ 的任意函数对易, (2.7.48a) 式显然满足. 至于 (2.7.48b) 式, 只需指出
-
-$$
-\exp \left( \frac{-{ie\Lambda }}{\hbar c}\right) \mathbf{p}\exp \left( \frac{ie\Lambda }{\hbar c}\right) = \exp \left( \frac{-{ie\Lambda }}{\hbar c}\right) \left\lbrack {\mathbf{p},\exp \left( \frac{ie\Lambda }{\hbar c}\right) }\right\rbrack + \mathbf{p}
-$$
-
-$$
-= - \exp \left( \frac{-{ie\Lambda }}{\hbar c}\right) i\hbar \nabla \left\lbrack {\exp \left( \frac{ie\Lambda }{\hbar c}\right) }\right\rbrack + \mathbf{p} tag{2.7.50}
-$$
-
-$$
-= \mathbf{p} + \frac{e\nabla \Lambda }{c},
-$$
-
-其中我们用到了 (2.2.23b) 式.
-
+\begin{equation}
+	\mathscr{G}^\dagger\left( {\mathbf{p} - \frac{e\mathbf{A}}{c} - \frac{e\nabla \Lambda }{c}}\right) \mathscr{G} = \mathbf{p} - \frac{e\mathbf{A}}{c}
+\end{equation}
+则不变性都能得到保障. 我们断言
+\begin{equation}
+	\mathscr{G} = \exp \left\lbrack \frac{{ie\Lambda }\left( \mathbf{x}\right) }{\hbar c}\right\rbrack
+\end{equation}
+能满足这个要求.$\mathscr{G}$ 是幺正的且 $\mathbf{x}$ 与 $\mathbf{x}$ 的任意函数对易,则前面的式子显然满足. 至于最后一个式子, 只需指出
+\begin{equation}
+	\begin{aligned}
+		\exp \left( \frac{-{ie\Lambda }}{\hbar c}\right) \mathbf{p}\exp \left( \frac{ie\Lambda }{\hbar c}\right) &= \exp \left( \frac{-{ie\Lambda }}{\hbar c}\right) \left\lbrack {\mathbf{p},\exp \left( \frac{ie\Lambda }{\hbar c}\right) }\right\rbrack + \mathbf{p}\\
+		&= - \exp \left( \frac{-{ie\Lambda }}{\hbar c}\right) i\hbar \nabla \left\lbrack {\exp \left( \frac{ie\Lambda }{\hbar c}\right) }\right\rbrack + \mathbf{p}\\
+		&= \mathbf{p} + \frac{e\nabla \Lambda }{c}
+	\end{aligned}
+\end{equation}
 规范变换下的量子力学不变性还可以通过直接观察薛定谔方程来展示. 设 $\left| {\alpha ,{t}_{0};t}\right\rangle$ 是 $\mathbf{A}$ 存在时薛定谔方程的一个解:
-
-$$
-\left\lbrack {\frac{{\left( \mathbf{p} - e\mathbf{A}/c\right) }^{2}}{2m} + {e\phi }}\right\rbrack \left| {\alpha ,{t}_{0};t}\right\rangle = i\hbar \frac{\partial }{\partial t}\left| {\alpha ,{t}_{0};t}\right\rangle . tag{2. 7.51}
-$$
-
+\begin{equation}
+	\left\lbrack {\frac{{\left( \mathbf{p} - e\mathbf{A}/c\right) }^{2}}{2m} + {e\phi }}\right\rbrack \left| {\alpha ,{t}_{0};t}\right\rangle = i\hbar \frac{\partial }{\partial t}\left| {\alpha ,{t}_{0};t}\right\rangle
+\end{equation}
 在 $\widetilde{\mathbf{A}}$ 存在时,相应的解必须满足
+\begin{equation}
+	\left\lbrack {\frac{{\left( \mathbf{p} - e\mathbf{A}/c - e\nabla \Lambda /c\right) }^{2}}{2m} + {e\phi }}\right\rbrack \left| {\alpha ,\widetilde{{t}_{0}};t}\right\rangle = i\hbar \frac{\partial }{\partial t}\left| {\alpha ,\widetilde{{t}_{0}};t}\right\rangle
+\end{equation}
+我们看到, 如果=把新的右矢取为
+\begin{equation}
+	\left| {\alpha ,{\widetilde{t}}_{0};t}\right\rangle = \exp \left( \frac{ie\Lambda }{\hbar c}\right) \left| {\alpha ,{t}_{0};t}\right\rangle
+\end{equation}
+则上面新的薛定谔方程将得到满足; 我们必须注意的是
+\begin{equation}
+	\exp \left( \frac{-{ie\Lambda }}{\hbar c}\right) {\left( \mathbf{p} - \frac{e\mathbf{A}}{c} - \frac{e\nabla \Lambda }{c}\right) }^{2}\exp \left( \frac{ie\Lambda }{\hbar c}\right) = {\left( \mathbf{p} - \frac{e\mathbf{A}}{c}\right) }^{2}
+\end{equation}
+相应的波函数通过
+\begin{equation}
+	\psi \left( {{\mathbf{x}}^{\prime }, t}\right) = \exp \left\lbrack \frac{{ie\Lambda }\left( {\mathbf{x}}^{\prime }\right) }{\hbar c}\right\rbrack \psi \left( {{\mathbf{x}}^{\prime }, t}\right)
+\end{equation}
+关联起来,其中的 $\mathbf{\Lambda }\left( {\mathbf{x}}^{\prime }\right)$ 现在是位置矢量本征值 ${\mathbf{x}}^{\prime }$ 的一个实函数. 当然,通过直接代入以 $\mathbf{A} + \nabla \Lambda$ 代替 $\mathbf{A}$ 的薛定谔波动方程,也可以证明这一点. 从 $\rho$ 和 $S$ 的角度来讲,我们看到, $\rho$ 是不变的,而 $S$ 被修改为
+\begin{equation}
+	S \rightarrow S + \frac{e\Lambda }{c}
+\end{equation}
+这一点是非常合理的, 因为我们发现所给出的概率流是规范不变的.
 
-$$
-\left\lbrack {\frac{{\left( \mathbf{p} - e\mathbf{A}/c - e\nabla \Lambda /c\right) }^{2}}{2m} + {e\phi }}\right\rbrack \left| {\alpha ,\widetilde{{t}_{0}};t}\right\rangle = i\hbar \frac{\partial }{\partial t}\left| {\alpha ,\widetilde{{t}_{0}};t}\right\rangle . tag{2. 7.52}
-$$
-
-我们看到, 如果依照 (2.7.49) 式把新的右矢取为
-
-$$
-\left| {\alpha ,{\widetilde{t}}_{0};t}\right\rangle = \exp \left( \frac{ie\Lambda }{\hbar c}\right) \left| {\alpha ,{t}_{0};t}\right\rangle , tag{2. 7.53}
-$$
-
-则新的薛定谔方程 (2.7.52) 式将得到满足; 我们必须注意的是
-
-$$
-\exp \left( \frac{-{ie\Lambda }}{\hbar c}\right) {\left( \mathbf{p} - \frac{e\mathbf{A}}{c} - \frac{e\nabla \Lambda }{c}\right) }^{2}\exp \left( \frac{ie\Lambda }{\hbar c}\right) = {\left( \mathbf{p} - \frac{e\mathbf{A}}{c}\right) }^{2}, tag{2. 7.54}
-$$
-
-它是通过使用 (2.7.50) 式两次得到的.
-
-方程 (2.7.53) 式还意味着相应的波函数通过
-
-$$
-\psi \left( {{\mathbf{x}}^{\prime }, t}\right) = \exp \left\lbrack \frac{{ie\Lambda }\left( {\mathbf{x}}^{\prime }\right) }{\hbar c}\right\rbrack \psi \left( {{\mathbf{x}}^{\prime }, t}\right) , tag{2. 7.55}
-$$
-
-关联起来,其中的 $\mathbf{\Lambda }\left( {\mathbf{x}}^{\prime }\right)$ 现在是位置矢量本征值 ${\mathbf{x}}^{\prime }$ 的一个实函数. 当然,通过直接把 (2.7.55) 式代入以 $\mathbf{A} + \nabla \Lambda$ 代替 $\mathbf{A}$ 的薛定谔波动方程,也可以证明这一点. 从 $\rho$ 和 $S$ 的角度来讲,我们看到, $\rho$ 是不变的,而 $S$ 被修改为
-
-$$
-S \rightarrow S + \frac{e\Lambda }{c} tag{2.7.56}
-$$
-
-这一点是非常令人满意的, 因为我们看到由 (2.7.33) 式给出的概率流是规范不变的.
-
-总之, 当对同样的物理情况使用不同规范下的矢量势时, 相应的态右矢 (或波函数) 必定是不同的. 然而, 仅仅需要简单的改变; 只要把老的右矢 (或老的波函数) 乘以 $\exp \left\lbrack {{ie\Lambda }\left( \mathbf{x}\right) /\hbar c}\right\rbrack \left( {\exp \left\lbrack {{ie\Lambda }\left( {\mathbf{x}}^{\prime }\right) /\hbar c}\right\rbrack }\right)$ ,就可以从由 $\mathbf{A}$ 确定的规范变到另一个由 $\mathbf{A} + \nabla \Lambda$ 确定的规范. 在其期望依赖于特殊规范的这样一种意义上, 定义为平移生成元的正则动量显然是规范相关的, 而运动学动量和概率流都是规范不变的.
-
-读者可能会想, 为什么在 (2.7.49) 式作用下的不变性称为规范不变性. 这个词是德文 Eichinvarianz 翻译过来的, 其中的 Eich 意思是 “规范 (gauge)”. (其后的部分与英文的不变性, invariance 是一样的. 一译者注) 有一个历史掌故伴随着这个术语的起源. 请继续读下去.
+总之, 当对同样的物理情况使用不同规范下的矢量势时, 相应的态右矢 (或波函数) 必定是不同的. 然而, 仅仅需要简单的改变; 只要把老的右矢 (或老的波函数) 乘以 $\exp \left\lbrack {{ie\Lambda }\left( \mathbf{x}\right) /\hbar c}\right\rbrack \left( {\exp \left\lbrack {{ie\Lambda }\left( {\mathbf{x}}^{\prime }\right) /\hbar c}\right\rbrack }\right)$ ,就可以从由 $\mathbf{A}$ 确定的规范变到另一个由 $\mathbf{A} + \nabla \Lambda$ 确定的规范. 在其期望依赖于特殊规范的这样一种意义上, 定义为平移生成元的\textbf{正则动量}显然是规范相关的, 而\textbf{运动学动量}和概率流都是规范不变的.
 
 考虑在 $\mathbf{x}$ 处的某个位置的函数 $F\left( \mathbf{x}\right)$ . 在相邻的点我们显然有
-
-$$
-F\left( {\mathbf{x} + d\mathbf{x}}\right) \simeq F\left( \mathbf{x}\right) + \left( {\nabla F}\right) \cdot d\mathbf{x}. tag{2. 7.57}
-$$
-
-但是假定当我们从 $\mathbf{x}$ 到 $\mathbf{x} + d\mathbf{x}$ 时做了一个标度变化如下:
-
-$$
-{\left. 1\right| }_{\text{在x处 }} \rightarrow {\left. \left\lbrack 1 + \sum \left( \mathbf{x}\right) \cdot d\mathbf{x}\right\rbrack \right| }_{\text{在x } + d\mathbf{x}\text{ 处 }}. tag{2. 7.58}
-$$
-
-那么,代替 (2.7.57) 式,我们必须重新标度 $\mathrm{F}\left( \mathbf{x}\right)$
-
-$$
-{\left. F\left( \mathbf{x} + d\mathbf{x}\right) \right| }_{\text{重新标度后 }} \simeq F\left( \mathbf{x}\right) + \left\lbrack {\left( {\nabla + \mathbf{\sum }}\right) F}\right\rbrack \cdot d\mathbf{x}. tag{2. 7.59}
-$$
-
-组合 $\nabla + \mathbf{\sum }$ 类似于在 (2.7.32) 式见到过的规范不变组合
-
-$$
-\nabla - \left( \frac{ie}{\hbar c}\right) \mathbf{A} tag{2. 7.60}
-$$
-
-除不存在 $i$ 之外. 历史上,外尔通过把 (2.7.58) 式和 (2.7.59) 式中的标度函数 $\mathbf{\sum }\left( \mathbf{x}\right)$ 等同于矢量势 $\mathbf{A}$ 本身,企图构建一个基于规范不变性的电磁学几何理论的尝试不成功. 随着量子力学的诞生, 福克 (V. Fock) 和伦敦 (F. London) 认识到规范不变性组合 (2.7.60) 式的重要性,通过比较 $\mathbf{\sum }$ 和 $i$ 乘 $\mathbf{A}$ ,他们回顾了外尔早期的工作. 我们坚持了术语规范不变性, 尽管 (2.7.58) 式的量子力学类比
-
-$$
-{\left. 1\right| }_{\text{在x处 }} \rightarrow {\left. \left\lbrack 1 - \left( \frac{ie}{\hbar c}\right) \mathbf{A} \cdot d\mathbf{x}\right\rbrack \right| }_{\text{在x+dx处 }}, tag{2.7.61}
-$$
-
+\begin{equation}
+	F\left( {\mathbf{x} + \d\mathbf{x}}\right) \simeq F\left( \mathbf{x}\right) + \left( {\nabla F}\right) \cdot\d\mathbf{x}
+\end{equation}
+但是假定当我们从 $\mathbf{x}$ 到 $\mathbf{x} + \d\mathbf{x}$ 时做了一个标度变化如下:
+\begin{equation}
+	{\left. 1\right| }_{\text{在x处 }} \rightarrow {\left. \left\lbrack 1 + \sum \left( \mathbf{x}\right) \cdot \d\mathbf{x}\right\rbrack \right| }_{\text{在x } + \d\mathbf{x}\text{ 处 }}
+\end{equation}
+那么,我们必须重新标度 $\mathrm{F}\left( \mathbf{x}\right)$
+\begin{equation}
+	{\left. F\left( \mathbf{x} + \d\mathbf{x}\right) \right| }_{\text{重新标度后 }} \simeq F\left( \mathbf{x}\right) + \left\lbrack {\left( {\nabla + \mathbf{\sum }}\right) F}\right\rbrack \cdot \d\mathbf{x}
+\end{equation}
+组合 $\nabla + \mathbf{\sum }$ 类似于在之前见到过的规范不变组合
+\begin{equation}
+	\nabla - \left( \frac{ie}{\hbar c}\right) \mathbf{A}
+\end{equation}
+除不存在 $i$ 之外.  我们坚持了术语规范不变性, 尽管其的量子力学类比
+\begin{equation}
+	{\left. 1\right| }_{\text{在x处 }} \rightarrow {\left. \left\lbrack 1 - \left( \frac{ie}{\hbar c}\right) \mathbf{A} \cdot \d\mathbf{x}\right\rbrack \right| }_{\text{在x+}\d x\text{处}}
+\end{equation}
 将实际对应于 “相位改变” 而不是 “标度改变”.
 \subsection*{阿哈罗诺夫-玻姆效应}
 在量子力学中矢量势的使用有很多深远影响, 我们现在准备讨论其中的一些. 我们从一个看似平淡无奇的问题开始.
 
-考虑一个中空的圆柱形壳,如图 2.11a 所示. 我们假定一个电荷为 $e$ 的粒子能够完全地被禁闭在这个刚性壁壳的内部. 要求波函数在内壁 $\left( {\rho = {\rho }_{a}}\right)$ 和外壁 $\left( {\rho = {\rho }_{b}}\right)$ 上为零, 在顶部和底部也为零. 这是一个数学物理中求解能量本征值的简单的边值问题.
+考虑一个中空的圆柱形壳. 我们假定一个电荷为 $e$ 的粒子能够完全地被禁闭在这个刚性壁壳的内部. 要求波函数在内壁 $\left( {\rho = {\rho }_{a}}\right)$ 和外壁 $\left( {\rho = {\rho }_{b}}\right)$ 上为零, 在顶部和底部也为零. 这是一个数学物理中求解能量本征值的简单的边值问题.
 
 让我们现在考虑一个修改过的装置, 在那里一个圆柱壳把一个均匀磁场包围了起来, 如图 2.11b 所示. 特别是,你可以想象一个非常长的螺线管插到中间的孔中,以致没有任何磁场泄漏到 $\rho \geq {\rho }_{a}$ 的区域. 波函数的边界条件取为与以前的一样; 并且假定壁是刚性的. 凭直觉,我们可以猜测到能谱不会改变,因为 $\mathbf{B} \neq 0$ 的区域完全不可能达到被禁闭在壳内的带电粒子. 然而, 量子力学告诉我们这个猜测不对.
 
 尽管磁场在内部区域为零, 那里的矢量势不为零. 利用斯托克斯 (Stokes) 定理, 我们可以推知要产生磁场 $\mathbf{B}\left( { = B\widehat{\mathbf{z}}}\right)$ 所需的矢量势为
-
-$$
-\mathbf{A} = \left( \frac{B{\rho }_{u}^{2}}{2\rho }\right) \widehat{\phi }, tag{2.7.62}
-$$
-
+\begin{equation}
+	\mathbf{A} = \left( \frac{B{\rho }_{u}^{2}}{2\rho }\right) \widehat{\phi }
+\end{equation}
 其中的 $\widetilde{\phi }$ 是沿方位角增加方向的单位矢量. 在试图求解薛定谔方程以找到这个新问题的能量本征值时,我们仅需要用 $\nabla - \left( {{ie}/\hbar c}\right) \mathbf{A}$ 代替梯度 $\nabla$ ; 我们可以在柱坐标系中把对 $\phi$ 的偏微商做如下代换来实现这一点:
-
-$$
-\frac{\partial }{\partial \phi } \rightarrow \frac{\partial }{\partial \phi } - \left( \frac{ie}{\hbar c}\right) \frac{B{\rho }_{a}^{2}}{2} tag{2. 7.63}
-$$
-
+\begin{equation}
+	\frac{\partial }{\partial \phi } \rightarrow \frac{\partial }{\partial \phi } - \left( \frac{ie}{\hbar c}\right) \frac{B{\rho }_{a}^{2}}{2}
+\end{equation}
 这里要回顾柱坐标系中梯度的表示式:
-
-$$
-\nabla = \widehat{\mathbf{\rho }}\frac{\partial }{\partial \rho } + \widehat{\mathbf{z}}\frac{\partial }{\partial z} + \widehat{\mathbf{\phi }}\frac{1}{\rho }\frac{\partial }{\partial \phi }. tag{2. 7.64}
-$$
-
+\begin{equation}
+	\nabla = \widehat{\mathbf{\rho }}\frac{\partial }{\partial \rho } + \widehat{\mathbf{z}}\frac{\partial }{\partial z} + \widehat{\mathbf{\phi }}\frac{1}{\rho }\frac{\partial }{\partial \phi }
+\end{equation}
 
 图 2.11 空心圆柱壳 (a) 没有磁场, (b) 有一个均匀磁场.
 
@@ -3689,195 +3588,43 @@ $$
 
 我们刚刚处理的这个问题是通常被称作阿哈罗诺夫-玻姆效应 ${}^{ * }$ 的束缚态版本. 现在我们着手讨论阿哈罗诺夫-玻姆效应自身的原始形式. 考虑一个电荷为 $e$ 的粒子,经过一个非常长的不可穿透的圆柱体之上或之下, 如图 2.12 所示. 圆柱体内部是一个平行于圆柱体轴的磁场, 而该轴垂直于图 2.12 的平面. 所以粒子的上路径和下路径包围了磁通量. 我们的目标是研究在相互作用区 $\mathrm{B}$ 找到粒子的概率如何依赖于磁通量.
 
-
 图 2.12 阿哈罗诺夫-玻姆效应
 
 尽管可以通过比较 B 存在和不存在时薛定谔方程的解来处理这个问题, 为了便于教学,我们宁可采用费曼路径积分方法. 设 ${\mathbf{x}}_{1}$ 和 ${\mathbf{x}}_{N}$ 分别是源区 $\mathrm{A}$ 和干涉区 $\mathrm{B}$ 中的两个有代表性的点. 从经典力学得知, 存在磁场时的拉格朗日量可从不存在磁场时的拉格朗日量 (用 ${L}_{\text{经典 }}^{\left( 0\right) }$ 表示) 得到
-
-$$
-{L}_{\text{经典 }}^{\left( 0\right) } = \frac{m}{2}{\left( \frac{\d \mathbf{x}}{\d t}\right) }^{2} \rightarrow {L}_{\text{经典 }}^{\left( 0\right) } + \frac{e}{c}\frac{\d \mathbf{x}}{\d t} \cdot \mathbf{A}. tag{2. 7.65}
-$$
-
+\begin{equation}
+	{L}_{\text{经典 }}^{\left( 0\right) } = \frac{m}{2}{\left( \frac{\d \mathbf{x}}{\d t}\right) }^{2} \rightarrow {L}_{\text{经典 }}^{\left( 0\right) } + \frac{e}{c}\frac{\d \mathbf{x}}{\d t} \cdot \mathbf{A}
+\end{equation}
 然后,对于从 $\left( {{\mathbf{x}}_{n - 1},{t}_{n - 1}}\right)$ 到 $\left( {{\mathbf{x}}_{n},{t}_{n}}\right)$ 的某段确定的路径单元,作用量相应的改变由下式给出
-
-$$
-{S}^{\left( 0\right) }\left( {n, n - 1}\right) \rightarrow {S}^{\left( 0\right) }\left( {n, n - 1}\right) + \frac{e}{c}\int_{{t}_{n - 1}}^{{t}_{n}}{\d t}\left( \frac{\d \mathbf{x}}{\d t}\right) \cdot \mathbf{A}. tag{2. 7.66}
-$$
-
+\begin{equation}
+	{S}^{\left( 0\right) }\left( {n, n - 1}\right) \rightarrow {S}^{\left( 0\right) }\left( {n, n - 1}\right) + \frac{e}{c}\int_{{t}_{n - 1}}^{{t}_{n}}{\d t}\left( \frac{\d \mathbf{x}}{\d t}\right) \cdot \mathbf{A}
+\end{equation}
 而最后的这个积分可以写成
-
-$$
-\frac{e}{c}\int_{{t}_{n - 1}}^{{t}_{n}}{\d t}\left( \frac{\d \mathbf{x}}{\d t}\right) \cdot \mathbf{A} = \frac{e}{c}\int_{{x}_{n - 1}}^{{x}_{n}}\mathbf{A} \cdot d\mathbf{s}, tag{2.7.67}
-$$
-
-其中的 $d\mathbf{s}$ 是沿着这段路径单元的微分线元,因此当我们考虑从 ${\mathbf{x}}_{1}$ 到 ${\mathbf{x}}_{N}$ 的全部贡献时, 有下列的改变
-
-$$
-\prod \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {n, n - 1}\right) }{\hbar }\right\rbrack \rightarrow \left\{ {\prod \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {n, n - 1}\right) }{\hbar }\right\rbrack }\right\} \exp \left( {\frac{ie}{\hbar c}\int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}}\right) . tag{2. 7.68}
-$$
-
+\begin{equation}
+	\frac{e}{c}\int_{{t}_{n - 1}}^{{t}_{n}}{\d t}\left( \frac{\d \mathbf{x}}{\d t}\right) \cdot \mathbf{A} = \frac{e}{c}\int_{{x}_{n - 1}}^{{x}_{n}}\mathbf{A} \cdot \d\mathbf{s}
+\end{equation}
+其中的 $\d\mathbf{s}$ 是沿着这段路径单元的微分线元,因此当我们考虑从 ${\mathbf{x}}_{1}$ 到 ${\mathbf{x}}_{N}$ 的全部贡献时, 有下列的改变
+\begin{equation}
+	\prod \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {n, n - 1}\right) }{\hbar }\right\rbrack \rightarrow \left\{ {\prod \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {n, n - 1}\right) }{\hbar }\right\rbrack }\right\} \exp \left( {\frac{ie}{\hbar c}\int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}}\right)
+\end{equation}
 所有这一切只是对于一条特殊的路径, 比如从圆柱体上部通过的路径. 我们还必须对所有的可能路径求和, 这似乎是一个令人生畏的任务. 幸运的是, 我们从电磁学理论知道, $\int \mathbf{A} \cdot d\mathbf{s}$ 的线积分与路径无关. 即,只要一对不同的路径形成的圈不包围磁通量,它就仅依赖于两个端点. 作为结果,由于 $\mathbf{A} \neq 0$ 所有从圆柱体上部通过的路径的贡献都由一个共同的相位因子给出; 类似地, 来自所有从圆柱体下部通过的路径的贡献都将乘以另一个共同的相位因子. 用路径积分符号, 对于整个跃迁振幅我们有
-
-$$
-\int_{\mathrm{E}}\mathcal{d}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack + \int_{\mathrm{F}}\mathcal{d}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack
-$$
-
-$$
-\rightarrow \int_{E}\mathcal{d}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack \left\{ {\exp {\left\lbrack \left( \frac{ie}{\hbar c}\right) \int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}\right\rbrack }_{E}}\right\}
-$$
-
-$$
-+ \int_{\mathrm{F}}\mathcal{d}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack \left\{ {\exp {\left\lbrack \left( \frac{ie}{\hbar c}\right) \int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}\right\rbrack }_{\mathrm{F}}}\right\}
-$$
-
+\begin{equation}
+	\begin{aligned}
+		&\int_{\mathrm{E}}\mathcal{d}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack + \int_{\mathrm{F}}\mathcal{d}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack\\
+		&\rightarrow \int_{E}\mathcal{d}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack \left\{ {\exp {\left\lbrack \left( \frac{ie}{\hbar c}\right) \int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}\right\rbrack }_{E}}\right\}\\
+		&+ \int_{\mathrm{F}}\mathcal{d}\left\lbrack {\mathbf{x}\left( t\right) }\right\rbrack \exp \left\lbrack \frac{i{S}^{\left( 0\right) }\left( {N,1}\right) }{\hbar }\right\rbrack \left\{ {\exp {\left\lbrack \left( \frac{ie}{\hbar c}\right) \int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}\right\rbrack }_{\mathrm{F}}}\right\}
+	\end{aligned}
+\end{equation}
 在干涉区 B 找到粒子的概率依赖于整个跃迁振幅模的平方, 因此依赖于来自上部和下部路径贡献的相位差. 由于 $\mathbf{B}$ 的存在,这个相位差正好是
-
-$$
-{\left\lbrack \left( \frac{e}{\hbar c}\right) \int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}\right\rbrack }_{E} - {\left\lbrack \left( \frac{e}{\hbar c}\right) \int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}\right\rbrack }_{F} = \left( \frac{e}{\hbar c}\right) \oint \mathbf{A} \cdot d\mathbf{s} tag{2.7.70}
-$$
-
-$$
-= \left( \frac{e}{\hbar c}\right) {\Phi }_{B},
-$$
-
+\begin{equation}
+	{\left\lbrack \left( \frac{e}{\hbar c}\right) \int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}\right\rbrack }_{E} - {\left\lbrack \left( \frac{e}{\hbar c}\right) \int_{{\mathbf{x}}_{1}}^{{\mathbf{x}}_{N}}\mathbf{A} \cdot d\mathbf{s}\right\rbrack }_{F} = \left( \frac{e}{\hbar c}\right) \oint \mathbf{A} \cdot d\mathbf{s}= \left( \frac{e}{\hbar c}\right) {\Phi }_{B}
+\end{equation}
 其中的 ${\Phi }_{B}$ 代表不可穿透的圆柱体内部磁通量. 这意味着,当我们改变磁场强度时,在 $\mathrm{B}$ 区观测粒子的概率中存在一个正弦分量, 其周期用磁通量的基本单位给出, 即
-
-$$
-\frac{{2\pi }\hbar c}{\left| e\right| } = {4.135} \times {10}^{-7}\text{ 高斯 } - \text{ 厘米 }{}^{2} tag{2.7.71}
-$$
-
-我们强调这里讨论的干涉效应是纯粹量子力学的. 经典上, 带电粒子的运动只由牛顿第二定律再加上洛伦兹力定律确定. 这里,像前面的束缚态问题一样,粒子绝不可能进入到 $\mathbf{B}$ 为有限的区域; 在粒子波函数有限的所有区域内洛伦兹力恒为零. 然而有一组引人瞩目的干涉条纹, 它依赖于在不可穿透的圆柱体内部存在还是不存在磁场. 这一点曾导致一些人得出结论: 在量子力学中与其说 $\mathbf{B}$ 倒不如说 $\mathbf{A}$ 是基本的. 然而,值得注意的是,这两个例子中的观测量效应都仅仅依赖于 ${\Phi }_{B}$ ,它可以直接用 $\mathbf{B}$ 来表示. 实验家们利用一根称为触须 * 的铁的磁化细丝, 实现了证明阿哈罗诺夫-玻姆效应的实验.
-
-\subsection*{磁单极}
-我们用量子物理最引人瞩目的预言之一来结束这一节, 但它还有待于实验证实. 一个机敏的学习经典电动力学的学生很可能迷恋上这样的事实: 在 $\mathbf{E}$ 和 $\mathbf{B}$ 之间存在很强的对称性, 然而, 类似于电荷的磁荷——通常称之为磁单极, 却没有单独地存在于在麦克斯韦 (Maxwell) 方程中. 在自然界中观测到的磁场的来源是一个运动电荷, 或者是一个静磁偶极子, 而绝不是一个静磁荷. 代替
-
-$$
-\nabla \cdot \mathbf{B} = {4\pi }{\rho }_{M} tag{2.7.72}
-$$
-
-与
-
-$$
-\nabla \cdot \mathbf{E} = {4\pi \rho }, tag{2.7.73}
-$$
-
-的类似,在以通常方式书写麦克斯韦方程时, $\nabla \cdot \mathbf{B}$ 实际上为零. 量子力学并没有预言磁单极必须存在. 然而, 它明白无误地要求, 假如一个磁单极在自然界中不管什么时候被发现了,则磁荷的大小必须是借助于 $e,\hbar$ 和 $c$ 量子化的,我们现在来证明这一点.
-
-假定,类似于一个点电荷,存在一个位于原点的强度为 ${e}_{M}$ 的点磁单极. 则静磁场由
-
-$$
-\mathbf{B} = \left( \frac{{e}_{M}}{{r}^{2}}\right) \widehat{\mathbf{r}} tag{2.7.74}
-$$
-
-给出. 初看起来, 似乎磁场 (2.7.74) 可以从
-
-$$
-\mathbf{A} = \left\lbrack \frac{{e}_{M}\left( {1 - \cos \theta }\right) }{r\sin \theta }\right\rbrack \widehat{\phi }. tag{2.7.75}
-$$
-
-推导出来. 回顾旋度在球坐标中的表示式:
-
-$$
-\nabla \times \mathbf{A} = \widehat{\mathbf{r}}\left\lbrack {\frac{1}{r\sin \theta }\frac{\partial }{\partial \theta }\left( {{A}_{\phi }\sin \theta }\right) - \frac{\partial {A}_{\theta }}{\partial \phi }}\right\rbrack tag{2.7.76}
-$$
-
-$$
-+ \widehat{\theta }\frac{1}{r}\left\lbrack {\frac{1}{\sin \theta }\frac{\partial {A}_{r}}{\partial \phi } - \frac{\partial }{\partial r}\left( {r{A}_{\phi }}\right) }\right\rbrack + \widehat{\phi }\frac{1}{r}\left\lbrack {\frac{\partial }{\partial r}\left( {r{A}_{\theta }}\right) - \frac{\partial {A}_{r}}{\partial \theta }}\right\rbrack .
-$$
-
----
-
-* 最近的一个这类实验见 A. Tonomura et al., Phys. Rev. Lett. 48 (1982) 1443.
-
----
-
-但是矢量势 (2.7.75) 式有一个困难一一在负 $z$ 轴 $\left( {\theta = \pi }\right)$ 上它是奇异的. 事实上,结果表明, 对这个问题构造一个没有奇异性且到处都适用的势是不可能的. 要看到这一点, 我们首先注意到, 对于任何包围磁单极所在的原点的边界曲面, “高斯定理” 都给出
-
-$$
-\int_{\text{封闭曲面 }}\mathbf{B} \cdot {\d \sigma } = {4\pi }{e}_{M} tag{2.7.77}
-$$
-
-另一方面,假如 $\mathbf{A}$ 是非奇异的,就会处处都有
-
-$$
-\nabla \cdot \left( {\nabla \times \mathbf{A}}\right) = 0 tag{2.7.78}
-$$
-
-因此,
-
-$$
-\int_{\text{封闭曲面 }}\mathbf{B} \cdot d\mathbf{\sigma } = \int_{\text{曲面内体积 }}\nabla \cdot \left( {\nabla \times \mathbf{A}}\right) {\d}^{3}x = 0, tag{2.7.79}
-$$
-
-它与 (2.7.77) 式矛盾.
-
-然而,有人或许会争辩,因为矢量势只不过是求 $\mathbf{B}$ 的一种手段,我们并不需要坚持有一个处处适用的 $\mathbf{A}$ 的单一表示式. 假定我们构造一对这样的势,
-
-$$
-{\mathbf{A}}^{\left( 1\right) } = \left\lbrack \frac{{e}_{M}\left( {1 - \cos \theta }\right) }{r\sin \theta }\right\rbrack \widehat{\phi },\;\left( {\theta < \pi - \varepsilon }\right) tag{2. 7.80a}
-$$
-
-$$
-{\mathbf{A}}^{\left( \parallel \right) } = - \left\lbrack \frac{{e}_{M}\left( {1 + \cos \theta }\right) }{r\sin \theta }\right\rbrack \widehat{\phi },\;\left( {\theta > \varepsilon }\right) tag{2. 7.80b}
-$$
-
-使得势 ${\mathbf{A}}^{\left( 1\right) }$ 除了在一个环绕负 $z$ 轴的由 $\theta = \pi - \varepsilon$ 定义的锥形内部以外处处有效; 同样,势 ${\mathbf{A}}^{\left( \mathrm{{II}}\right) }$ 在除了绕正 $z$ 轴的一个由 $\theta = \varepsilon$ 定义的锥形内部以外处处有效; 见图 2.13. 它们一起导致了处处都是正确的 $\mathbf{B}$ 的表示式 *.
+\begin{equation}
+	\frac{{2\pi }\hbar c}{\left| e\right| } = {4.135} \times {10}^{-7}\text{ 高斯 } - \text{ 厘米 }{}^{2}
+\end{equation}
+我们强调这里讨论的干涉效应是纯粹量子力学的. 经典上, 带电粒子的运动只由牛顿第二定律再加上洛伦兹力定律确定. 这里,像前面的束缚态问题一样,粒子绝不可能进入到 $\mathbf{B}$ 为有限的区域; 在粒子波函数有限的所有区域内洛伦兹力恒为零. 然而有一组引人瞩目的干涉条纹, 它依赖于在不可穿透的圆柱体内部存在还是不存在磁场. 这一点曾导致一些人得出结论: 在量子力学中与其说 $\mathbf{B}$ 倒不如说 $\mathbf{A}$ 是基本的. 然而,值得注意的是,这两个例子中的观测量效应都仅仅依赖于 ${\Phi }_{B}$ ,它可以直接用 $\mathbf{B}$ 来表示. 实验家们利用一根称为触须的铁的磁化细丝, 实现了证明阿哈罗诺夫-玻姆效应的实验.
 
 
-
-图 2.13 势 ${\mathbf{A}}^{\left( 1\right) }$ 和 ${\mathbf{A}}^{\left( 1\right) }$ 的适用区
-
-现在考虑在重叠区 $\varepsilon < \theta < \pi - \varepsilon$ 发生了什么,在那里我们既可以用 ${\mathbf{A}}^{\left( 1\right) }$ 也可以用 ${\mathbf{A}}^{\left( 11\right) }$ . 因为这两个势导致同样的磁场, 它们必须通过一个规范变换彼此联系起来. 为了找到适合这个问题的 $\Lambda$ ,我们首先注意到
-
-$$
-{\mathbf{A}}^{\left( \mathrm{{II}}\right) } - {\mathbf{A}}^{\left( \mathrm{I}\right) } = - \left( \frac{2{e}_{M}}{r\sin \theta }\right) \widehat{\mathbf{\phi }}. tag{2. 7.81}
-$$
-
-回顾球坐标中的梯度表示式
-
-$$
-\nabla \Lambda = \widehat{\mathbf{r}}\frac{\partial \Lambda }{\partial r} + \widehat{\mathbf{\theta }}\frac{1}{r}\frac{\partial \Lambda }{\partial \theta } + \widehat{\mathbf{\phi }}\frac{1}{r\sin \theta }\frac{\partial \Lambda }{\partial \phi }, tag{2.7.82}
-$$
-
-我们推断
-
-$$
-\Lambda = - 2{e}_{M}\phi tag{2. 7.83}
-$$
-
-将会做到这一点.
-
-其次,我们考虑一个电荷为 $e$ ,受到 (2.7.74) 式磁场作用的带电粒子的波函数. 正如我们早些时候强调的, 波函数的特殊形式依赖于采用的特殊的规范. 在重叠区我们既可以用 ${\mathbf{A}}^{\left( 1\right) }$ 也可以用 ${\mathbf{A}}^{\left( 1\right) }$ ,按照 (2.7.55) 式,相应的波函数彼此通过下式联系起来:
-
-$$
-{\psi }^{\left( \mathrm{{II}}\right) } = \exp \left( \frac{-{2ie}{e}_{M}\phi }{\hbar c}\right) {\psi }^{\left( \mathrm{I}\right) }. tag{2. 7.84}
-$$
-
-波函数 ${\psi }^{\left( 1\right) }$ 和 ${\psi }^{\left( 1\right) }$ 各自都必须是单值的,因为一旦我们选择了特殊规范,用位置本征右矢展开的态右矢必须是唯一的. 毕竟, 正如我们曾经反复强调的, 波函数只不过是用位置本征右矢展开态右矢的展开系数.
-
----
-
-* 这个问题另一个可选的方法是到处都用 ${\mathbf{A}}^{\left( 1\right) }$ ,但要特别处理称作狄拉克弦的沿负 $z$ 轴的一串奇点.
-
----
-
-现在让我们考查波函数 ${\psi }^{\left( \mathrm{{II}}\right) }$ 在某个确定半径 $r$ 的赤道 $\left( {\theta = \pi /2}\right)$ 上的行为. 如果我们让方位角 $\phi$ 沿赤道增加,直到转一周,比如从 $\phi = 0$ 到 $\phi = {2\pi }$ ,那时 ${\psi }^{\left( \mathrm{I}\right) }$ 和 ${\psi }^{\left( \mathrm{I}\right) }$ 一样都必须回到它的起始值, 因为它们每一个都是单值函数. 按照 (2.7.84) 式, 这是可能的, 但仅当
-
-$$
-\frac{{2e}{e}_{M}}{\hbar c} = \pm N,\;N = 0, \pm 1, \pm 2,\cdots tag{2. 7.85}
-$$
-
-所以我们得到了一个影响极为深远的结论: 磁荷必须是以
-
-$$
-\frac{\hbar c}{2\left| e\right| } \simeq \left( \frac{137}{2}\right) \left| e\right| . tag{2. 7.86}
-$$
-
-为单位量子化的.
-
-最小的可能的磁荷是 $\hbar c/2\left| e\right|$ ,其中 $e$ 是电荷. 有意思的是,一旦一个磁单极被假定存在, 可以这么说, 我们就可以反向使用 (2.7.85) 式去解释为什么电荷是量子化的, 例如,为什么质子的电荷不可能是 0.999972 倍的 ${\left| e\right| }^{ * }$ .
-
-我们再一次重复指出, 量子力学不要求磁单极存在. 然而, 它毫不含糊地预言, 一个磁荷,如果有一天它在自然界中被发现的话,一定是以单位 $\hbar c/2\left| e\right|$ 量子化的. 在量子力学中磁荷的量子化最早是由狄拉克于 1931 年证明的. 这里给出的推导源于吴大峻和杨振宁. 把狄拉克的量子化条件与角动量的量子化联系起来的一个不同的解, 由 H. J. Lipkin, W. I. Weisberger, 和 M. Peshkin 在 Annals of Physics 53 (1969) 203 上讨论过. 最后, 在 5.6 节与绝热近似配合讨论贝里相位时, 我们将再次回到这个题目.
 \begin{problemset}
 	\item 1
 \end{problemset}
@@ -3913,12 +3660,6 @@ $$
 $$
 \left\lbrack {x\left( t\right), x\left( 0\right) }\right\rbrack \text{.}
 $$
-
----
-
-* 实验上,电子和质子电荷数值的相等在 $4/{10}^{19}$ 的精度上得到确认.
-
----
 
 2.6 考虑一个一维粒子, 其哈密顿量由下式给出
 
@@ -4441,7 +4182,86 @@ $${\displaystyle \alpha ={\frac {e^{2}k_{e}}{\hbar c}}={\frac {e^{2}}{\hbar c(4\
 
 
 \chapter{$\delta_{ij},\varepsilon_{ijk}$和爱因斯坦求和约定与$\delta$函数}
-1
+\section{克罗内克符号$\delta_{ij}$}
+克罗内克符号是一类二元函数,其通常定义为以下形式
+\begin{equation}
+	 \delta _{ij}=\left\{{\begin{matrix}1&(i=j)\\0&(i\neq j)\end{matrix}}\right.\,\!
+\end{equation}
+其具有筛选性(和投影算符类似)
+\begin{equation}
+	\sum _{i=-\infty }^{\infty }\delta _{ij}a_{i}=a_{j}\,\!
+\end{equation}
+其具有和$\delta$函数共同的部分性质,而$\delta$函数也正是源于克罗内克符号.
+\section{列维西维塔符号$\varepsilon_{ijk}$}
+列维-奇维塔符号,对于正整数 $n$ ,它以$1, 2, ..., n $所形成排列的奇偶性来定义.其他名称包括排列符号、反对称符号与交替符号.
+
+而$\varepsilon_{ijk}$的值由下角标$ijk$决定,当存在任意两个角标相同时值取$0$,当全部指标都不相等时,角标的逆序数为偶数取$1$,为奇数则取$0$.
+\subsection*{二维形式}
+\begin{equation}
+	\varepsilon_{ij}={
+		\begin{cases}+1&\text{当}\left(i,j\right)=\left(1,2\right)\\
+			-1&\text{当}\left(i,j\right)=\left(2,1\right)\\
+			0&\text{当}i=j
+		\end{cases}
+	}\,
+\end{equation}
+二维较为少见,仅作为了解.
+\subsection*{三维形式}
+我们经常看到的列维西维塔符号常常是三维形式的,即如下
+\begin{equation}
+	\varepsilon _{ijk}={
+		\begin{cases}
+			+1&\text{当}(i,j,k)=(1,2,3),(2,3,1),(3,1,2)\\
+			-1&\text{当}(i,j,k)=(3,2,1),(2,1,3),(1,3,2)\\
+			0&\text{当}i=j,j=k\text{或}k=i
+			\end{cases}
+		}\,
+\end{equation}
+\subsection*{性质}
+两个列维-奇维塔符号的积，可以用一个以克罗内克符号表示的行列式求得
+\begin{equation}
+	\varepsilon _{ijk\dots }\varepsilon _{mnl\dots }={\begin{vmatrix}\delta _{im}&\delta _{in}&\delta _{il}&\dots \\\delta _{jm}&\delta _{jn}&\delta _{jl}&\dots \\\delta _{km}&\delta _{kn}&\delta _{kl}&\dots \\\vdots &\vdots &\vdots \\\end{vmatrix}}
+\end{equation}
+也可以用来表示行列式和向量内积,对于一个$3\times3$的方阵$A$,有表示
+\begin{equation}
+	\det(A)=\sum _{i,j,k=1}^{3}\varepsilon _{ijk}\,a_{1i}\,a_{2j}\,a_{3k}
+\end{equation}
+对于向量内积,有
+\begin{equation}
+	{\boldsymbol {a}}\times {\boldsymbol {b}}={\begin{vmatrix}{\boldsymbol {e}}_{1}&{\boldsymbol {e}}_{2}&{\boldsymbol {e}}_{3}\\a_{1}&a_{2}&a_{3}\\b_{1}&b_{2}&b_{3}\\\end{vmatrix}}=\sum _{1\leq i,j,k\leq 3}\varepsilon _{ijk}\,a_{i}b_{j}\,{\boldsymbol {e}}_{k}
+\end{equation}
+\section{爱因斯坦求和约定}
+爱因斯坦求和约定是一种标记的约定,即重复角标意味着求和,一般未指定的情况下就是由$1$至$3$.
+\section{$\delta$函数}
+我们首先明确,$\delta$函数并不是通常意义的函数,其更准确的称呼是广义函数.其在$x=0$处取值为正无穷,在$x\ne0$处取值为$0$,但是在全定义域上的积分值为$1$,当然,我们所学的黎曼积分并不支持这一操作,我们需要\textbf{勒贝格积分}来处理它,当然,这里并不会讲述测度论的内容,仅仅作为了解即可.
+\subsection{定义}
+我们从其定义开始这部分内容.
+\begin{equation}
+	\delta (x)={\begin{cases}+\infty ,&x=0\\0,&x\neq 0\end{cases}}
+\end{equation}
+且同时满足
+\begin{equation}
+	\int _{-\infty }^{\infty }\delta (x)\,\d x=1
+\end{equation}
+而对于复变函数中,一切在域$D$中闭包的全纯函数,我们可以用柯西积分公式来表示$\delta$函数
+\begin{equation}
+	\delta _{z}[f]=f(z)={\frac {1}{2\pi i}}\oint _{\partial D}{\frac {f(\zeta )\,\d\zeta }{\zeta -z}}.
+\end{equation}
+\subsection{性质}
+首先,回忆克罗内克符号的部分,很容易联想到$\delta$函数也具有筛选的性质:
+\begin{equation}
+	\int _{-\infty }^{\infty }f(x)\delta (x-x_{0})\,\d x=f(x_{0})
+\end{equation}
+以及(高维的情况与之类似,不再重复,相关证明是显然的)
+\begin{equation}
+	\begin{aligned}
+		\delta (\alpha x)&={\frac {\delta (x)}{|\alpha |}}\\
+		\delta (-x)&=\delta (x)\\
+		x\delta (x)&=0\\
+		\int _{-\infty }^{\infty }\delta (\xi -x)\delta (x-\eta )\,\mathrm {d} x&=\delta (\xi -\eta )
+	\end{aligned}
+\end{equation}
+狄拉克$\delta$分布是在包含所有平方可积函数的希尔伯特空间$L_2$上所稠密定义的一个无界线性泛函.在许多应用中,可以对$L_2$的某个子空间赋予更强的拓扑,使得$\delta$函数能够定义一个有界线性算子.
 \chapter{mathematica的基本用法}
 1
 \chapter{临时章节}
@@ -4458,7 +4278,39 @@ $${\displaystyle \alpha ={\frac {e^{2}k_{e}}{\hbar c}}={\frac {e^{2}}{\hbar c(4\
 	\texttt{"fraktur"}     &\texttt{mathfrak}&\mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
 \end{array}
 \end{equation}
-
+\begin{equation}
+	\begin{aligned}
+		\mathcal{L}_{\mathrm{StandardModel}}&=-\frac{1}{2} \partial_{\nu} g_{\mu}^{a} \partial_{\nu} g_{\mu}^{a}-g_{s} f^{a b c} \partial_{\mu} g_{\nu}^{a} g_{\mu}^{b} g_{\nu}^{c}-\frac{1}{4} g_{s}^{2} f^{a b c} f^{a d e} g_{\mu}^{b} g_{\nu}^{c} g_{\mu}^{d} g_{\nu}^{e}+\frac{1}{2} i g_{s}^{2}\left(\bar{q}_{i}^{\sigma} \gamma^{\mu} q_{j}^{\sigma}\right) g_{\mu}^{a}+\\&\bar{G}^{a} \partial^{2} G^{a}+g_{s} f^{a b c} \partial_{\mu} \bar{G}^{a} G^{b} g_{\mu}^{c}-\partial_{\nu} W_{\mu}^{+} \partial_{\nu} W_{\mu}^{-}-M^{2} W_{\mu}^{+} W_{\mu}^{-}-\frac{1}{2} \partial_{\nu} Z_{\mu}^{0} \partial_{\nu} Z_{\mu}^{0}-\\&\frac{1}{2 c_{w}^{2}} M^{2} Z_{\mu}^{0} Z_{\mu}^{0}-\frac{1}{2} \partial_{\mu} A_{\nu} \partial_{\mu} A_{\nu}-\frac{1}{2} \partial_{\mu} H \partial_{\mu} H-\\&\frac{1}{2} m_{h}^{2} H^{2}-\partial_{\mu} \phi^{+} \partial_{\mu} \phi^{-}-M^{2} \phi^{+} \phi^{-}-\frac{1}{2} \partial_{\mu} \phi^{0} \partial_{\mu} \phi^{0}-\frac{1}{2 c_{w}^{2}} M \phi^{0} \phi^{0}-\beta_{h}\left[\frac{2 M^{2}}{g^{2}}+\right.\\&\left.\frac{2 M}{g} H+\frac{1}{2}\left(H^{2}+\phi^{0} \phi^{0}+2 \phi^{+} \phi^{-}\right)\right]+\frac{2 M^{4}}{g^{2}} \alpha_{h}-i g c_{w}\left[\partial_{\nu} Z_{\mu}^{0}\left(W_{\mu}^{+} W_{\nu}^{-}-\right.\right.\\&\left.W_{\nu}^{+} W_{\mu}^{-}\right)-Z_{\nu}^{0}\left(W_{\mu}^{+} \partial_{\nu} W_{\mu}^{-}-W_{\mu}^{-} \partial_{\nu} W_{\mu}^{+}\right)+Z_{\mu}^{0}\left(W_{\nu}^{+} \partial_{\nu} W_{\mu}^{-}-\right.\\&\left.\left.W_{\nu}^{-} \partial_{\nu} W_{\mu}^{+}\right)\right]-i g s_{w}\left[\partial_{\nu} A_{\mu}\left(W_{\mu}^{+} W_{\nu}^{-}-W_{\nu}^{+} W_{\mu}^{-}\right)-A_{\nu}\left(W_{\mu}^{+} \partial_{\nu} W_{\mu}^{-}-\right.\right.\\
+		&\frac{1}{2} g^{2} W_{\mu}^{+} W_{\nu}^{-} W_{\mu}^{+} W_{\nu}^{-}+g^{2} c_{w}^{2}\left(Z_{\mu}^{0} W_{\mu}^{+} Z_{\nu}^{0} W_{\nu}^{-}-Z_{\mu}^{0} Z_{\mu}^{0} W_{\nu}^{+} W_{\nu}^{-}\right)+\\
+		&g^{2} s_{w}^{2}\left(A_{\mu} W_{\mu}^{+} A_{\nu} W_{\nu}^{-}-A_{\mu} A_{\mu} W_{\nu}^{+} W_{\nu}^{-}\right)+g^{2} s_{w} c_{w}\left[A_{\mu} Z_{\nu}^{0}\left(W_{\mu}^{+} W_{\nu}^{-}-\right.\right.\\
+		&\left.\left.W_{\nu}^{+} W_{\mu}^{-}\right)-2 A_{\mu} Z_{\mu}^{0} W_{\nu}^{+} W_{\nu}^{-}\right]-g \alpha\left[H^{3}+H \phi^{0} \phi^{0}+2 H \phi^{+} \phi^{-}\right]-\\
+		&\frac{1}{8} g^{2} \alpha_{h}\left[H^{4}+\left(\phi^{0}\right)^{4}+4\left(\phi^{+} \phi^{-}\right)^{2}+4\left(\phi^{0}\right)^{2} \phi^{+} \phi^{-}+4 H^{2} \phi^{+} \phi^{-}+2\left(\phi^{0}\right)^{2} H^{2}\right]-\\
+		&g M W_{\mu}^{+} W_{\mu}^{-} H-\frac{1}{2} g \frac{M}{c_{w}^{2}} Z_{\mu}^{0} Z_{\mu}^{0} H-\frac{1}{2} i g\left[W_{\mu}^{+}\left(\phi^{0} \partial_{\mu} \phi^{-}-\phi^{-} \partial_{\mu} \phi^{0}\right)-\right.\\
+		&\left.W_{\mu}^{-}\left(\phi^{0} \partial_{\mu} \phi^{+}-\phi^{+} \partial_{\mu} \phi^{0}\right)\right]+\frac{1}{2} g\left[W_{\mu}^{+}\left(H \partial_{\mu} \phi^{-}-\phi^{-} \partial_{\mu} H\right)-W_{\mu}^{-}\left(H \partial_{\mu} \phi^{+}-\right.\right.\\
+		&\left.\left.\phi^{+} \partial_{\mu} H\right)\right]+\frac{1}{2} g \frac{1}{c_{w}}\left(Z_{\mu}^{0}\left(H \partial_{\mu} \phi^{0}-\phi^{0} \partial_{\mu} H\right)-i g_{c_{w}}^{s_{w}^{2}} M Z_{\mu}^{0}\left(W_{\mu}^{+} \phi^{-}-W_{\mu}^{-} \phi^{+}\right)+\right.\\
+		&i g s_{w} M A_{\mu}\left(W_{\mu}^{+} \phi^{-}-W_{\mu}^{-} \phi^{+}\right)-i g \frac{1-2 c_{w}^{2}}{2 c_{w}} Z_{\mu}^{0}\left(\phi^{+} \partial_{\mu} \phi^{-}-\phi^{-} \partial_{\mu} \phi^{+}\right)+\\
+		&igs_{w} A_{\mu}\left(\phi^{+} \partial_{\mu} \phi^{-}-\phi^{-} \partial_{\mu} \phi^{+}\right)-\frac{1}{4} g^{2} W_{\mu}^{+} W_{\mu}^{-}\left[H^{2}+\left(\phi^{0}\right)^{2}+2 \phi^{+} \phi^{-}\right]-\\
+		&\frac{1}{4} g^{2} \frac{1}{c_{w}^{2}} Z_{\mu}^{0} Z_{\mu}^{0}\left[H^{2}+\left(\phi^{0}\right)^{2}+2\left(2 s_{w}^{2}-1\right)^{2} \phi^{+} \phi^{-}\right]-\frac{1}{2} g^{2} \frac{s_{w}^{2}}{c_{w}} Z_{\mu}^{0} \phi^{0}\left(W_{\mu}^{+} \phi^{-}+\right.\\
+		&\left.W_{\mu}^{-} \phi^{+}\right)-\frac{1}{2} i g^{2} \frac{s_{w}^{2}}{c_{w}} Z_{\mu}^{0} H\left(W_{\mu}^{+} \phi^{-}-W_{\mu}^{-} \phi^{+}\right)+\frac{1}{2} g^{2} s_{w} A_{\mu} \phi^{0}\left(W_{\mu}^{+} \phi^{-}+\right.\\
+		&\left.W_{\mu}^{-} \phi^{+}\right)+\frac{1}{2} i g^{2} s_{w} A_{\mu} H\left(W_{\mu}^{+} \phi^{-}-W_{\mu}^{-} \phi^{+}\right)-g^{2} \frac{s_{w}}{c_{w}}\left(2 c_{w}^{2}-1\right) Z_{\mu}^{0} A_{\mu} \phi^{+} \phi^{-}-\\
+		&g^{1} s_{w}^{2} A_{\mu} A_{\mu} \phi^{+} \phi^{-}-\bar{e}^{\lambda}\left(\gamma \partial+m_{e}^{\lambda}\right) e^{\lambda}-\bar{\nu}^{\lambda} \gamma \partial \nu^{\lambda}-\bar{u}_{j}^{\lambda}\left(\gamma \partial+m_{u}^{\lambda}\right) u_{j}^{\lambda}-\\
+		&\bar{d}_{j}^{\lambda}\left(\gamma \partial+m_{d}^{\lambda}\right) d_{j}^{\lambda}+i g s_{w} A_{\mu}\left[-\left(\bar{e}^{\lambda} \gamma^{\mu} e^{\lambda}\right)+\frac{2}{3}\left(\bar{u}_{j}^{\lambda} \gamma^{\mu} u_{j}^{\lambda}\right)-\frac{1}{3}\left(\bar{d}_{j}^{\lambda} \gamma^{\mu} d_{j}^{\lambda}\right)\right]+\\
+		&\frac{i g}{4 c_{w}} Z_{\mu}^{0}\left[\left(\bar{\nu}^{\lambda} \gamma^{\mu}\left(1+\gamma^{5}\right) \nu^{\lambda}\right)+\left(\bar{e}^{\lambda} \gamma^{\mu}\left(4 s_{w}^{2}-1-\gamma^{5}\right) e^{\lambda}\right)+\left(\bar{u}_{j}^{\lambda} \gamma^{\mu}\left(\frac{4}{3} s_{w}^{2}-\right.\right.\right.\\
+		&\left.\left.\left.1-\gamma^{5}\right) u_{j}^{\lambda}\right)+\left(\bar{d}_{j}^{\lambda} \gamma^{\mu}\left(1-\frac{8}{3} s_{w}^{2}-\gamma^{5}\right) d_{j}^{\lambda}\right)\right]+\frac{i g}{2 \sqrt{2}} W_{\mu}^{+}\left[\left(\bar{\nu}^{\lambda} \gamma^{\mu}\left(1+\gamma^{5}\right) e^{\lambda}\right)+\right.\\
+		&\left.\left(\bar{u}_{j}^{\lambda} \gamma^{\mu}\left(1+\gamma^{5}\right) C_{\lambda \kappa} d_{j}^{\kappa}\right)\right]+\frac{i g}{2 \sqrt{2}} W_{\mu}^{-}\left[\left(\bar{e}^{\lambda} \gamma^{\mu}\left(1+\gamma^{5}\right) \nu^{\lambda}\right)+\left(\bar{d}_{j}^{\kappa} C_{\lambda \kappa}^{\dagger} \gamma^{\mu}(1+\right.\right.\\
+		&\left.\left.\left.\gamma^{5}\right) u_{j}^{\lambda}\right)\right]+\frac{i g}{2 \sqrt{2}} \frac{m_{e}^{\lambda}}{M}\left[-\phi^{+}\left(\bar{\nu}^{\lambda}\left(1-\gamma^{5}\right) e^{\lambda}\right)+\phi^{-}\left(\bar{e}^{\lambda}\left(1+\gamma^{5}\right) \nu^{\lambda}\right)\right]-\\
+		&\frac{\partial}{2} \frac{m_{e}^{\lambda}}{M}\left[H\left(\bar{e}^{\lambda} e^{\lambda}\right)+i \phi^{0}\left(\bar{e}^{\lambda} \gamma^{5} e^{\lambda}\right)\right]+\frac{i g}{2 M \sqrt{2}} \phi^{+}\left[-m_{d}^{\kappa}\left(\bar{u}_{j}^{\lambda} C_{\lambda \kappa}\left(1-\gamma^{5}\right) d_{j}^{\kappa}\right)+\right.\\
+		&m_{u}^{\lambda}\left(\bar{u}_{j}^{\lambda} C_{\lambda \kappa}\left(1+\gamma^{5}\right) d_{j}^{\kappa}\right]+\frac{i g}{2 M \sqrt{2}} \phi^{-}\left[m_{d}^{\lambda}\left(\bar{d}_{j}^{\lambda} C_{\lambda \kappa}^{\dagger}\left(1+\gamma^{5}\right) u_{j}^{\kappa}\right)-m_{u}^{\kappa}\left(\bar{d}_{j}^{\lambda} C_{\lambda \kappa}^{\dagger}(1-\right.\right.\\
+		&\left.\left.\gamma^{5}\right) u_{j}^{\kappa}\right]-\frac{g}{2} \frac{m_{u}^{\lambda}}{M} H\left(\bar{u}_{j}^{\lambda} u_{j}^{\lambda}\right)-\frac{g}{2} \frac{m_{d}^{\lambda}}{M} H\left(\bar{d}_{j}^{\lambda} d_{j}^{\lambda}\right)+\frac{i g}{2} \frac{m_{u}^{\lambda}}{M} \phi^{0}\left(\bar{u}_{j}^{\lambda} \gamma^{5} u_{j}^{\lambda}\right)-\\
+		&\frac{i g}{2} \frac{m_{d}^{\lambda}}{M} \phi^{0}\left(\bar{d}_{j}^{\lambda} \gamma^{5} d_{j}^{\lambda}\right)+\bar{X}^{+}\left(\partial^{2}-M^{2}\right) X^{+}+\bar{X}^{-}\left(\partial^{2}-M^{2}\right) X^{-}+\bar{X}^{0}\left(\partial^{2}-\right.\\
+		&\left.\frac{M^{2}}{c_{w}^{2}}\right) X^{0}+\bar{Y} \partial^{2} Y+i g c_{w} W_{\mu}^{+}\left(\partial_{\mu} \bar{X}^{0} X^{-}-\partial_{\mu} \bar{X}^{+} X^{0}\right)+i g s_{w} W_{\mu}^{+}\left(\partial_{\mu} \bar{Y} X^{-}-\right.\\
+		&\left.\partial_{\mu} \bar{X}^{+} Y\right)+i g c_{w} W_{\mu}^{-}\left(\partial_{\mu} \bar{X}-X^{0}-\partial_{\mu} \bar{X}^{0} X^{+}\right)+i g s_{w} W_{\mu}^{-}\left(\partial_{\mu} \bar{X}-Y-\right.\\
+		&\left.\partial_{\mu} \bar{Y} X^{+}\right)+i g c_{w} Z_{\mu}^{0}\left(\partial_{\mu} \bar{X}^{+} X^{+}-\partial_{\mu} \bar{X}^{-} X^{-}\right)+i g s_{w} A_{\mu}\left(\partial_{\mu} \bar{X}^{+} X^{+}-\right.\\
+		&\left.\partial_{\mu} \bar{X}-X^{-}\right)-\frac{1}{2} g M\left[\bar{X}+X^{+} H+\bar{X}^{-} X^{-} H+\frac{1}{c_{w}^{2}} \bar{X}^{0} X^{0} H\right]+\\
+		&\frac{1-2 c_{w}^{2}}{2 c_{w}} i g M\left[\bar{X}^{+} X^{0} \phi^{+}-\bar{X}^{-} X^{0} \phi^{-}\right]+\frac{1}{2 c_{w}} i g M\left[\bar{X}^{0} X^{-} \phi^{+}-\bar{X}^{0} X^{+} \phi^{-}\right]+\\
+		&ig M s_{w}\left[\bar{X}^{0} X^{-} \phi^{+}-\bar{X}^{0} X^{+} \phi^{-}\right]+\frac{1}{2} i g M\left[\bar{X}^{+} X^{+} \phi^{0}-\bar{X}^{-} X^{-} \phi^{0}\right]
+	\end{aligned}
+\end{equation}
 \chapter{答案及解析}
 \section{第一章}
 \begin{enumerate}

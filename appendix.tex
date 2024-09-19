@@ -1,0 +1,207 @@
+\ifx\allfiles\undefined
+
+% 如果有这一部分另外的package，在这里加上
+% 没有的话不需要
+
+\begin{document}
+	\else
+	\fi
+\chapter{单位制}
+我们从小学就逐步接触一些单位,常见的如米(m),千克(kg),秒(s)等是国际统一使用的\textbf{标准度量系统(国际单位制)}.相应的,像是国内经常接触的斤,公里,亩,美国\footnote{包括美国、开曼群岛、伯利兹等极少数国家和地区}常用的华氏度等,则是生活中使用的独立度量系统,大多数度量系统都和标准度量系统之间存在换算关系.而且生活中使用的度量单位大多比较局限,对于相干度较低的单位往往是不涉及的.\\
+对于初中和高中的物理学习,我们已经熟练使用国际单位制(SI\footnote{法语 Système International d'Unités,简称SI})来解决一些简单的物理问题.但是,就像生活中使用的单位制一样,人们出于方便的角度对于一些物理场景也构建出一些新的单位制.这些单位制能够简化相关的物理问题.\\物理上使用的单位制与国际单位制的转换往往比较复杂,使用时建议标注使用了哪个单位制.\\
+\begin{remark}
+	在这个附录中,电磁单位制与自然单位制独立分为两节,但是按照较广义的自然单位制的定义\footnote{区别于粒子物理的``自然单位制"和普朗克单位制},电磁单位制也属于其中的一类,特此说明.
+\end{remark}
+\section{电磁单位制}
+相比于我们常用的国际单位制,也称为MKSA单位制(即米,千克,秒,安培),我们在电磁中常用的高斯单位制被称为CGS单位制(即厘米,克,秒).\\接下来为了避免混乱,列举高斯单位制所常用的单位:电荷$statC$,电势$statV$,力$dyne$\footnote{中文音译为达因},磁感应强度$gauss$,磁场强度$oersted$,磁通量$mx$,能量$erg$.\\
+
+相比于自然单位制直接将值赋为1,高斯单位制就比较保守,它根据我们熟知的库仑定律,通过定义$1\mathrm{A}=0.1c\cdot\mathrm{\d yne}^{\frac12},1\mathrm{C}=0.1c\cdot\rm{\d yne}^{\frac12}\cdot s$来达到简化的操作.\\
+\begin{table}[htbp]
+	\centering
+	\caption{一些简单对应关系}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		& SI      & Gaussian        & G/SI                     \\ \hline
+		E          & $V/m$   & $statV/m$       & $\sqrt{4\pi\epsilon_0}$  \\ \hline
+		V          & $V$     & $statV$         & $\sqrt{4\pi\epsilon_0}$  \\ \hline
+		D          & $C/m^2$ & $statC/cm^2$    & $\sqrt{4\pi/\epsilon_0}$ \\ \hline
+		q          & $C$     & $statC$         & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
+		P          & $C/m^2$ & $statC/cm^2$    & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
+		I          & $A$     & $statC/s$       & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
+		B          & $T$     & $Gauss$         & $\sqrt{4\pi/\mu_0}$      \\ \hline
+		A          & $Wb/m$  & $Gauss\cdot cm$ & $\sqrt{4\pi/\mu_0}$      \\ \hline
+		H          & $A/m$   & $oersted$       & $\sqrt{4\pi\mu_0}$       \\ \hline
+		$\epsilon$ & $F/m$   & 1               & $1/\epsilon_0$           \\ \hline
+		$\mu$      & $H/m$   & 1               & $1/\mu_0$                \\ \hline
+	\end{tabular}
+\end{table}
+\section{自然单位制}
+我们熟知,国际单位制的7个基本单位是通过物理常数所定义的,那么,如果我们把其中\textbf{一个或几个}的定义值改为1,那么就又可以构造出来一套度量系统.这其中\textbf{显而易见的优点}是直接导致原本含有大量常数的公式可以被写成更加简洁方便的形式.在物理学里,自然单位制就是一种建立于此类方法的计量单位制度.例如,电荷的自然单位是基本电荷${\displaystyle e}$,速度的自然单位是光速${\displaystyle c}$,角动量的自然单位是约化普朗克常数${\displaystyle \hbar }$,电阻的自然单位是自由空间阻抗${\displaystyle Z_{0}}$,质量的自然单位则有电子质量${\displaystyle m_{e}}$与质子质量${\displaystyle m_{p}}$等.\\
+
+事实上,对于单位的改动,我们至少要求不会导致无量纲常数的值发生改变,如精细结构常数.
+$${\displaystyle \alpha ={\frac {e^{2}k_{e}}{\hbar c}}={\frac {e^{2}}{\hbar c(4\pi \epsilon _{0})}}={\frac {1}{137.035999074}}=7.2973525698\cdot 10^{-3}}$$
+这个常数就要求不能同时把${\displaystyle e},{\displaystyle \hbar },{\displaystyle c},{\displaystyle k_{e}}$同时为1.
+\subsection{普朗克单位制}
+普朗克单位制几乎是最常使用的单位制,它的定义只依赖于最基本的性质.普朗克单位选择将真空光速${\displaystyle c}$,万有引力常数${\displaystyle G}$,约化普朗克常数${\displaystyle \hbar }$,真空电容率${\displaystyle \epsilon _{0}}$,玻尔兹曼常数${\displaystyle k_{B}}$定为1\footnote{普朗克洛伦兹-亥维赛单位制将${\displaystyle 4\pi G},{\displaystyle \epsilon _{0}}$定为1，普朗克高斯单位制将${\displaystyle G},{\displaystyle 4\pi \epsilon _{0}}$定为1}.\\
+类比国际单位制,普朗克单位制也有一些基本单位(如常常出现在各种科普作品中的普朗克长度,普朗克时间等)和导出单位(普朗克面积,普朗克动量等).具体列表可参考相关wiki\href{https://zh.wikipedia.org/wiki/%E6%99%AE%E6%9C%97%E5%85%8B%E5%96%AE%E4%BD%8D%E5%88%B6}{普朗克单位制},这里不做展开.
+\subsection{``自然单位制"(粒子物理)}
+在粒子物理中,自然单位制特指${\displaystyle \hbar =c=k_{B}=1}$情况下的单位制.通常会根据情况选择使用洛伦兹-亥维赛单位制或高斯单位制来确定电荷定义.
+\subsection{其他单位制}
+\subsubsection*{史东纳单位制}
+第一次出现的单位制,已经不再使用.规定了${\displaystyle c=G=e={\frac {1}{4\pi \epsilon _{0}}}=k_{B}=1}$.
+\subsubsection*{原子单位制}
+这类单位制是特别为了简易表达原子物理学和分子物理学的方程而精心设计,在本篇中仅做介绍.\\
+原子单位制分为两种:哈特里原子单位制和里德伯原子单位制.哈特里原子单位制比里德伯原子单位制常见.两者的主要区别在于质量单位与电荷单位的选取.\\
+哈特里原子单位制的基本单位为${\displaystyle e=m_{e}=\hbar ={\frac {1}{4\pi \epsilon _{0}}}=k_{B}=1}$,${\displaystyle c={\frac {1}{\alpha }}}$.\\
+里德伯原子单位制的基本单位为${\displaystyle {\frac {e}{\sqrt {2}}}=2m_{e}=\hbar ={\frac {1}{4\pi \epsilon _{0}}}=k_{B}=1}$,${\displaystyle c={\frac {2}{\alpha }}}$.
+\chapter{固体物理中的一些概念}
+对于物理研究,把它放在合适的空间下能够简化问题.对于坐标空间(正格子,基矢)和动量空间(倒格子,倒格矢)来讲,相当于从两个角度来描写\textbf{同一}事物.在之后对于晶格的分析中,我们常常要在动量空间上分析这一问题.\\
+\textit{如果对于物理形式较为敏感,应该会容易的想到``两个角度描写同一事物"的表述和傅里叶变换有很大的相似性.实际上,坐标空间和动量空间互为傅里叶变换.如果对于量子力学有一定了解或已经阅读过关于表象变换的内容,对这一部分会有更深的体会.}
+\section*{一些需要了解的概念}
+为了能够便于理解接下来的内容,以下是需要了解的概念.
+\begin{enumerate}
+	\item \textbf{格矢}:联系任两个晶格点的向量
+	\item \textbf{布拉维晶格 Bravais lattices}:由同种原子构成的晶胞,多种原子构成的晶胞可以视为几个布拉维晶格的叠加.
+	\item 待补充
+\end{enumerate}
+
+
+\chapter{$\delta_{ij},\varepsilon_{ijk}$和爱因斯坦求和约定与$\delta$函数}
+\section{克罗内克符号$\delta_{ij}$}
+克罗内克符号是一类二元函数,其通常定义为以下形式
+\begin{equation}
+	\delta _{ij}=\left\{{\begin{matrix}1&(i=j)\\0&(i\neq j)\end{matrix}}\right.\,\!
+\end{equation}
+其具有筛选性(和投影算符类似)
+\begin{equation}
+	\sum _{i=-\infty }^{\infty }\delta _{ij}a_{i}=a_{j}\,\!
+\end{equation}
+其具有和$\delta$函数共同的部分性质,而$\delta$函数也正是源于克罗内克符号.
+\section{列维西维塔符号$\varepsilon_{ijk}$}
+列维-奇维塔符号,对于正整数 $n$ ,它以$1, 2, ..., n $所形成排列的奇偶性来定义.其他名称包括排列符号、反对称符号与交替符号.
+
+而$\varepsilon_{ijk}$的值由下角标$ijk$决定,当存在任意两个角标相同时值取$0$,当全部指标都不相等时,角标的逆序数为偶数取$1$,为奇数则取$0$.
+\subsection*{二维形式}
+\begin{equation}
+	\varepsilon_{ij}={
+		\begin{cases}+1&\text{当}\left(i,j\right)=\left(1,2\right)\\
+			-1&\text{当}\left(i,j\right)=\left(2,1\right)\\
+			0&\text{当}i=j
+		\end{cases}
+	}\,
+\end{equation}
+二维较为少见,仅作为了解.
+\subsection*{三维形式}
+我们经常看到的列维西维塔符号常常是三维形式的,即如下
+\begin{equation}
+	\varepsilon _{ijk}={
+		\begin{cases}
+			+1&\text{当}(i,j,k)=(1,2,3),(2,3,1),(3,1,2)\\
+			-1&\text{当}(i,j,k)=(3,2,1),(2,1,3),(1,3,2)\\
+			0&\text{当}i=j,j=k\text{或}k=i
+		\end{cases}
+	}\,
+\end{equation}
+\subsection*{性质}
+两个列维-奇维塔符号的积，可以用一个以克罗内克符号表示的行列式求得
+\begin{equation}
+	\varepsilon _{ijk\dots }\varepsilon _{mnl\dots }={\begin{vmatrix}\delta _{im}&\delta _{in}&\delta _{il}&\dots \\\delta _{jm}&\delta _{jn}&\delta _{jl}&\dots \\\delta _{km}&\delta _{kn}&\delta _{kl}&\dots \\\vdots &\vdots &\vdots \\\end{vmatrix}}
+\end{equation}
+也可以用来表示行列式和向量内积,对于一个$3\times3$的方阵$A$,有表示
+\begin{equation}
+	\det(A)=\sum _{i,j,k=1}^{3}\varepsilon _{ijk}\,a_{1i}\,a_{2j}\,a_{3k}
+\end{equation}
+对于向量内积,有
+\begin{equation}
+	{\boldsymbol {a}}\times {\boldsymbol {b}}={\begin{vmatrix}{\boldsymbol {e}}_{1}&{\boldsymbol {e}}_{2}&{\boldsymbol {e}}_{3}\\a_{1}&a_{2}&a_{3}\\b_{1}&b_{2}&b_{3}\\\end{vmatrix}}=\sum _{1\leq i,j,k\leq 3}\varepsilon _{ijk}\,a_{i}b_{j}\,{\boldsymbol {e}}_{k}
+\end{equation}
+\section{爱因斯坦求和约定}
+爱因斯坦求和约定是一种标记的约定,即重复角标意味着求和,一般未指定的情况下就是由$1$至$3$.
+\section{$\delta$函数}
+我们首先明确,$\delta$函数并不是通常意义的函数,其更准确的称呼是广义函数.其在$x=0$处取值为正无穷,在$x\ne0$处取值为$0$,但是在全定义域上的积分值为$1$,当然,我们所学的黎曼积分并不支持这一操作,我们需要\textbf{勒贝格积分}来处理它,当然,这里并不会讲述测度论的内容,仅仅作为了解即可.
+\subsection{定义}
+我们从其定义开始这部分内容.
+\begin{equation}
+	\delta (x)={\begin{cases}+\infty ,&x=0\\0,&x\neq 0\end{cases}}
+\end{equation}
+且同时满足
+\begin{equation}
+	\int _{-\infty }^{\infty }\delta (x)\,\d x=1
+\end{equation}
+而对于复变函数中,一切在域$D$中闭包的全纯函数,我们可以用柯西积分公式来表示$\delta$函数
+\begin{equation}
+	\delta _{z}[f]=f(z)={\frac {1}{2\pi i}}\oint _{\partial D}{\frac {f(\zeta )\,\d\zeta }{\zeta -z}}.
+\end{equation}
+\subsection{性质}
+首先,回忆克罗内克符号的部分,很容易联想到$\delta$函数也具有筛选的性质:
+\begin{equation}
+	\int _{-\infty }^{\infty }f(x)\delta (x-x_{0})\,\d x=f(x_{0})
+\end{equation}
+以及(高维的情况与之类似,不再重复,相关证明是显然的)
+\begin{equation}
+	\begin{aligned}
+		\delta (\alpha x)&={\frac {\delta (x)}{|\alpha |}}\\
+		\delta (-x)&=\delta (x)\\
+		x\delta (x)&=0\\
+		\int _{-\infty }^{\infty }\delta (\xi -x)\delta (x-\eta )\,\mathrm {d} x&=\delta (\xi -\eta )
+	\end{aligned}
+\end{equation}
+狄拉克$\delta$分布是在包含所有平方可积函数的希尔伯特空间$L_2$上所稠密定义的一个无界线性泛函.在许多应用中,可以对$L_2$的某个子空间赋予更强的拓扑,使得$\delta$函数能够定义一个有界线性算子.
+\chapter{mathematica的基本用法}
+1
+\chapter{临时章节}
+\begin{equation}
+	\begin{array}{ll|l}
+		\texttt{"normal"}      &\texttt{}         & ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+		\texttt{"blackboard"}  &\texttt{mathbb}  &\mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+		\texttt{"boldface"}    &\texttt{mathbf}  &\mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+		\texttt{"typewriter"}  &\texttt{mathtt}  &\mathtt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+		\texttt{"roman"}       &\texttt{mathrm}  &\mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+		\texttt{"sans-serif"}  &\texttt{mathsf}  &\mathsf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+		\texttt{"calligraphic"}&\texttt{mathcal} &\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+		\texttt{"script"}      &\texttt{mathscr} &\mathscr{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+		\texttt{"fraktur"}     &\texttt{mathfrak}&\mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+	\end{array}
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+		\mathcal{L}_{\mathrm{StandardModel}}&=-\frac12 \partial_{\nu} g_{\mu}^{a} \partial_{\nu} g_{\mu}^{a}-g_{s} f^{a b c} \partial_{\mu} g_{\nu}^{a} g_{\mu}^{b} g_{\nu}^{c}-\frac{1}{4} g_{s}^{2} f^{a b c} f^{a d e} g_{\mu}^{b} g_{\nu}^{c} g_{\mu}^{d} g_{\nu}^{e}+\frac12 i g_{s}^{2}(\bar{q}_{i}^{\sigma} \gamma^{\mu} q_{j}^{\sigma}) g_{\mu}^{a}+\bar{G}^{a} \partial^{2} G^{a}+&\\&g_{s} f^{a b c} \partial_{\mu} \bar{G}^{a} G^{b} g_{\mu}^{c}-\partial_{\nu} W_{\mu}^{+} \partial_{\nu} W_{\mu}^{-}-M^{2} W_{\mu}^{+} W_{\mu}^{-}-\frac12 \partial_{\nu} Z_{\mu}^{0} \partial_{\nu} Z_{\mu}^{0}-\frac{1}{2 c_{w}^{2}} M^{2} Z_{\mu}^{0} Z_{\mu}^{0}-\frac12 \partial_{\mu} A_{\nu} \partial_{\mu} A_{\nu}-&\\&\frac12 \partial_{\mu} H \partial_{\mu} H-\frac12 m_{h}^{2} H^{2}-\partial_{\mu} \phi^{+} \partial_{\mu} \phi^{-}-M^{2} \phi^{+} \phi^{-}-\frac12 \partial_{\mu} \phi^{0} \partial_{\mu} \phi^{0}-\frac{1}{2 c_{w}^{2}} M \phi^{0} \phi^{0}-\beta_{h}[\frac{2 M^{2}}{g^{2}}+\frac{2 M}{g} H+&\\&\frac12(H^{2}+\phi^{0} \phi^{0}+2 \phi^{+} \phi^{-})]+\frac{2 M^{4}}{g^{2}} \alpha_{h}-i g c_{w}[\partial_{\nu} Z_{\mu}^{0}(W_{\mu}^{+} W_{\nu}^{-}-W_{\nu}^{+} W_{\mu}^{-})-Z_{\nu}^{0}(W_{\mu}^{+} \partial_{\nu} W_{\mu}^{-}-W_{\mu}^{-} \partial_{\nu} W_{\mu}^{+})+&\\&Z_{\mu}^{0}(W_{\nu}^{+} \partial_{\nu} W_{\mu}^{-}-W_{\nu}^{-} \partial_{\nu} W_{\mu}^{+})]-i g s_{w}[\partial_{\nu} A_{\mu}(W_{\mu}^{+} W_{\nu}^{-}-W_{\nu}^{+} W_{\mu}^{-})-A_{\nu}(W_{\mu}^{+} \partial_{\nu} W_{\mu}^{-}-\frac12 g^{2} W_{\mu}^{+} W_{\nu}^{-} W_{\mu}^{+} W_{\nu}^{-}+&\\&g^{2} c_{w}^{2}(Z_{\mu}^{0} W_{\mu}^{+} Z_{\nu}^{0} W_{\nu}^{-}-Z_{\mu}^{0} Z_{\mu}^{0} W_{\nu}^{+} W_{\nu}^{-})+g^{2} s_{w}^{2}(A_{\mu} W_{\mu}^{+} A_{\nu} W_{\nu}^{-}-_{\mu} A_{\mu} W_{\nu}^{+} W_{\nu}^{-})+Ag^{2} s_{w} c_{w}[A_{\mu} Z_{\nu}^{0}(W_{\mu}^{+} W_{\nu}^{-}-&\\&W_{\nu}^{+} W_{\mu}^{-})-2 A_{\mu} Z_{\mu}^{0} W_{\nu}^{+} W_{\nu}^{-}]-g \alpha[H^{3}+H \phi^{0} \phi^{0}+2 H \phi^{+} \phi^{-}]-\frac{1}{8} g^{2} \alpha_{h}[H^{4}+(\phi^{0})^{4}+4(\phi^{+} \phi^{-})^{2}+4(\phi^{0})^{2} \phi^{+} \phi^{-}+&\\&4 H^{2} \phi^{+} \phi^{-}+2(\phi^{0})^{2} H^{2}]-g M W_{\mu}^{+} W_{\mu}^{-} H-\frac12 g \frac{M}{c_{w}^{2}} Z_{\mu}^{0} Z_{\mu}^{0} H-\frac12 i g[W_{\mu}^{+}(\phi^{0} \partial_{\mu} \phi^{-}-\phi^{-} \partial_{\mu} \phi^{0})-W_{\mu}^{-}(\phi^{0} \partial_{\mu} \phi^{+}-&\\&\phi^{+} \partial_{\mu} \phi^{0})]+\frac12 g[W_{\mu}^{+}(H \partial_{\mu} \phi^{-}-\phi^{-} \partial_{\mu} H)-W_{\mu}^{-}(H \partial_{\mu} \phi^{+}-\phi^{+} \partial_{\mu} H)]+\frac12 g \frac{1}{c_{w}}(Z_{\mu}^{0}(H \partial_{\mu} \phi^{0}-\phi^{0} \partial_{\mu} H)-&\\&i g_{c_{w}}^{s_{w}^{2}} M Z_{\mu}^{0}(W_{\mu}^{+} \phi^{-}-W_{\mu}^{-} \phi^{+})+i g s_{w} M A_{\mu}(W_{\mu}^{+} \phi^{-}-W_{\mu}^{-} \phi^{+})-i g \frac{1-2 c_{w}^{2}}{2 c_{w}} Z_{\mu}^{0}(\phi^{+} \partial_{\mu} \phi^{-}-\phi^{-} \partial_{\mu} \phi^{+})+igs_{w} A_{\mu}&\\&(\phi^{+} \partial_{\mu} \phi^{-}-\phi^{-} \partial_{\mu} \phi^{+})-\frac{1}{4} g^{2} W_{\mu}^{+} W_{\mu}^{-}[H^{2}+(\phi^{0})^{2}+2 \phi^{+} \phi^{-}]-\frac{1}{4} g^{2} \frac{1}{c_{w}^{2}} Z_{\mu}^{0} Z_{\mu}^{0}[H^{2}+(\phi^{0})^{2}+2(2 s_{w}^{2}-1)^{2} \phi^{+} \phi^{-}]-&\\&\frac12 g^{2} \frac{s_{w}^{2}}{c_{w}} Z_{\mu}^{0} \phi^{0}(W_{\mu}^{+} \phi^{-}+W_{\mu}^{-} \phi^{+})-\frac12 i g^{2} \frac{s_{w}^{2}}{c_{w}} Z_{\mu}^{0} H(W_{\mu}^{+} \phi^{-}-W_{\mu}^{-} \phi^{+})+\frac12 g^{2} s_{w} A_{\mu} \phi^{0}(W_{\mu}^{+} \phi^{-}+W_{\mu}^{-} \phi^{+})+\frac12 i g^{2} s_{w} A_{\mu} H&\\&(W_{\mu}^{+} \phi^{-}-W_{\mu}^{-} \phi^{+})-g^{2} \frac{s_{w}}{c_{w}}(2 c_{w}^{2}-1) Z_{\mu}^{0} A_{\mu} \phi^{+} \phi^{-}-g^{1} s_{w}^{2} A_{\mu} A_{\mu} \phi^{+} \phi^{-}-\bar{e}^{\lambda}(\gamma \partial+m_{e}^{\lambda}) e^{\lambda}-\bar{\nu}^{\lambda} \gamma \partial \nu^{\lambda}-\bar{u}_{j}^{\lambda}(\gamma \partial+&\\&m_{u}^{\lambda}) u_{j}^{\lambda}-\bar{d}_{j}^{\lambda}(\gamma \partial+m_{d}^{\lambda}) d_{j}^{\lambda}+i g s_{w} A_{\mu}[-(\bar{e}^{\lambda} \gamma^{\mu} e^{\lambda})+\frac{2}{3}(\bar{u}_{j}^{\lambda} \gamma^{\mu} u_{j}^{\lambda})-\frac{1}{3}(\bar{d}_{j}^{\lambda} \gamma^{\mu} d_{j}^{\lambda})]+\frac{i g}{4 c_{w}} Z_{\mu}^{0}[(\bar{\nu}^{\lambda} \gamma^{\mu}(1+\gamma^{5}) \nu^{\lambda})+&\\&(\bar{e}^{\lambda} \gamma^{\mu}(4 s_{w}^{2}-1-\gamma^{5}) e^{\lambda})+(\bar{u}_{j}^{\lambda} \gamma^{\mu}(\frac{4}{3} s_{w}^{2}-1-\gamma^{5}) u_{j}^{\lambda})+(\bar{d}_{j}^{\lambda} \gamma^{\mu}(1-\frac{8}{3} s_{w}^{2}-\gamma^{5}) d_{j}^{\lambda})]+\frac{i g}{2 \sqrt{2}} W_{\mu}^{+}[(\bar{\nu}^{\lambda} \gamma^{\mu}(1+\gamma^{5}) e^{\lambda})+&\\&(\bar{u}_{j}^{\lambda} \gamma^{\mu}(1+\gamma^{5}) C_{\lambda \kappa} d_{j}^{\kappa})]+\frac{i g}{2 \sqrt{2}} W_{\mu}^{-}[(\bar{e}^{\lambda} \gamma^{\mu}(1+\gamma^{5}) \nu^{\lambda})+(\bar{d}_{j}^{\kappa} C_{\lambda \kappa}^{\dagger} \gamma^{\mu}(1+\gamma^{5}) u_{j}^{\lambda})]+\frac{i g}{2 \sqrt{2}} \frac{m_{e}^{\lambda}}{M}[-\phi^{+}(\bar{\nu}^{\lambda}(1-\gamma^{5}) e^{\lambda})+&\\&\phi^{-}(\bar{e}^{\lambda}(1+\gamma^{5}) \nu^{\lambda})]-\frac{\partial}{2} \frac{m_{e}^{\lambda}}{M}[H(\bar{e}^{\lambda} e^{\lambda})+i \phi^{0}(\bar{e}^{\lambda} \gamma^{5} e^{\lambda})]+\frac{i g}{2 M \sqrt{2}} \phi^{+}[-m_{d}^{\kappa}(\bar{u}_{j}^{\lambda} C_{\lambda \kappa}(1-\gamma^{5}) d_{j}^{\kappa})+m_{u}^{\lambda}(\bar{u}_{j}^{\lambda} C_{\lambda \kappa}(1+&\\&\gamma^{5}) d_{j}^{\kappa}]+\frac{i g}{2 M \sqrt{2}} \phi^{-}[m_{d}^{\lambda}(\bar{d}_{j}^{\lambda} C_{\lambda \kappa}^{\dagger}(1+\gamma^{5}) u_{j}^{\kappa})-m_{u}^{\kappa}(\bar{d}_{j}^{\lambda} C_{\lambda \kappa}^{\dagger}(1-\gamma^{5}) u_{j}^{\kappa}]-\frac{g}{2} \frac{m_{u}^{\lambda}}{M} H(\bar{u}_{j}^{\lambda} u_{j}^{\lambda})-\frac{g}{2} \frac{m_{d}^{\lambda}}{M} H(\bar{d}_{j}^{\lambda} d_{j}^{\lambda})+&\\&\frac{i g}{2} \frac{m_{u}^{\lambda}}{M} \phi^{0}(\bar{u}_{j}^{\lambda} \gamma^{5} u_{j}^{\lambda})-\frac{i g}{2} \frac{m_{d}^{\lambda}}{M} \phi^{0}(\bar{d}_{j}^{\lambda} \gamma^{5} d_{j}^{\lambda})+\bar{X}^{+}(\partial^{2}-M^{2}) X^{+}+\bar{X}^{-}(\partial^{2}-M^{2}) X^{-}+\bar{X}^{0}(\partial^{2}-\frac{M^{2}}{c_{w}^{2}}) X^{0}+\bar{Y} \partial^{2} Y+&\\&i g c_{w} W_{\mu}^{+}(\partial_{\mu} \bar{X}^{0} X^{-}-\partial_{\mu} \bar{X}^{+} X^{0})+i g s_{w} W_{\mu}^{+}(\partial_{\mu} \bar{Y} X^{-}-\partial_{\mu} \bar{X}^{+} Y)+i g c_{w} W_{\mu}^{-}(\partial_{\mu} \bar{X}-X^{0}-\partial_{\mu} \bar{X}^{0} X^{+})+i g s_{w} W_{\mu}^{-}(\partial_{\mu} \bar{X}-&\\&Y-\partial_{\mu} \bar{Y} X^{+})+i g c_{w} Z_{\mu}^{0}(\partial_{\mu} \bar{X}^{+} X^{+}-\partial_{\mu} \bar{X}^{-} X^{-})+i g s_{w} A_{\mu}(\partial_{\mu} \bar{X}^{+} X^{+}-\partial_{\mu} \bar{X}-X^{-})-\frac12 g M[\bar{X}+X^{+} H+\bar{X}^{-} X^{-} H+&\\&\frac{1}{c_{w}^{2}} \bar{X}^{0} X^{0} H]+\frac{1-2 c_{w}^{2}}{2 c_{w}} i g M[\bar{X}^{+} X^{0} \phi^{+}-\bar{X}^{-} X^{0} \phi^{-}]+\frac{1}{2 c_{w}} i g M[\bar{X}^{0} X^{-} \phi^{+}-\bar{X}^{0} X^{+} \phi^{-}]+ig M s_{w}[\bar{X}^{0} X^{-} \phi^{+}-&\\&\bar{X}^{0} X^{+} \phi^{-}]+\frac12 i g M[\bar{X}^{+} X^{+} \phi^{0}-\bar{X}^{-} X^{-} \phi^{0}]
+	\end{aligned}
+\end{equation}
+\chapter{答案及解析}
+\section{第一章}
+\begin{enumerate}
+	\item 证明:如果$X=|\beta\rangle\langle\alpha|$,那么则有$X^\dagger=|\alpha\rangle\langle\beta|$.
+	\begin{proof}
+		暂略,第一章结束补充.
+	\end{proof}
+	\item 习题2
+	\item 习题3
+\end{enumerate}
+\section{第二章}
+1
+\chapter{致谢/参考}
+\section{致谢}
+感谢elegantbook所提供的模板,\href{https://elegantlatex.org/}{https://elegantlatex.org/}.\\
+
+\section{参考}
+本文主要参考的书籍和期刊如下:
+\begin{enumerate}
+	\item Modern Quantum Mechanics 2nd.J.J.Sakurai
+	\item Quantum Field Theory in Condensed Matter Physics 2nd.Alexei M.Tsvellk
+	\item Entanglement in Many-Body Systems
+	\item 物理学家用李群李代数
+	\item 物理学中的泛函分析
+	\item Nicolas Dupuis - Field Theory of Condensed Matter and Ultracold Gases
+	\item Conformal Field Theory A.N. Schellekens
+\end{enumerate}
+
+
+	
+	
+	
+	
+\ifx\allfiles\undefined
+\end{document}
+	\else
+	\fi

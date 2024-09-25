@@ -1481,7 +1481,7 @@ $p$ 和 ${p}^{2}$ 的期望也可以计算如下
 	\end{enumerate}
 	\item 证明一个 $2 \times 2$ 矩阵 $\mathbf{\sigma } \cdot \mathbf{a}$ 的行列式在如下变换中不变:
 	$$
-	\sigma \cdot \mathbf{a} \rightarrow \sigma \cdot {\mathbf{a}}^{\prime } \equiv \exp \left( \frac{{i\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) \sigma \cdot \operatorname{aexp}\left( \frac{-{i\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) .
+	\sigma \cdot \mathbf{a} \rightarrow \sigma \cdot {\mathbf{a}}^{\prime } \equiv \exp \left( \frac{{i\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) \sigma \cdot \textbf{a}\operatorname{exp}\left( \frac{-{i\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) .
 	$$
 	当 $\widehat{\mathbf{n}}$ 沿 $z$ 正方向时,利用 ${a}_{k}$ 求出 ${a}_{k}^{\prime }$ 并解释你的结果.
 	\item 利用左矢-右矢代数规则证明或计算下列各式
@@ -1489,7 +1489,7 @@ $p$ 和 ${p}^{2}$ 的期望也可以计算如下
 		\item $\operatorname{tr}\left( {XY}\right) = \operatorname{tr}\left( {YX}\right)$ ,其中 $X$ 和 $Y$ 都是算符.
 		\item ${\left( XY\right) }^{ \dagger } = {Y}^{ \dagger }{X}^{ \dagger }$ ,其中 $X$ 和 $Y$ 都是算符.
 		\item 在左矢-右矢形式下 $\exp \left\lbrack {{if}\left( A\right) }\right\rbrack =$ ? 其中 $A$ 是厄米算符,其本征值是已知的.
-		\item $\sum {a}^{\prime }{\psi }_{a}{}^{\prime }\left( {\mathbf{x}}^{\prime }\right) {\psi }_{a} \cdot \left( {\mathbf{x}}^{\prime \prime }\right)$ ,其中 ${\psi }_{a} \cdot \left( {\mathbf{x}}^{\prime }\right) = \left\langle {{\mathbf{x}}^{\prime } | {a}^{\prime }}\right\rangle$ .
+		\item $\sum {a}^{\prime }{\psi }_{a}^{\prime }\left( {\mathbf{x}}^{\prime }\right) {\psi }_{a}\left( {\mathbf{x}}^{\prime \prime }\right)$ ,其中 ${\psi }_{a}\left( {\mathbf{x}}^{\prime }\right) = \left\langle {{\mathbf{x}}^{\prime } | {a}^{\prime }}\right\rangle$
 	\end{enumerate}
 	\item
 	\begin{enumerate}
@@ -1497,20 +1497,6 @@ $p$ 和 ${p}^{2}$ 的期望也可以计算如下
 		\item 现在考虑一个自旋 $\frac{1}{2}$ 系统,设 $|\alpha \rangle$ 和 $|\beta \rangle$ 分别为 $\left| {{s}_{z} = \hbar /2}\right\rangle$ 和 $\left| {{s}_{x} = \hbar /2}\right\rangle$ 态. 写出在通常 $\left( {s}_{z}\right.$ 对角) 的基下,与 $\left| {\alpha \rangle \langle \beta }\right|$ 对应的方阵的显示式.
 	\end{enumerate}
 	\item 假定 $\left| {i\rangle \text{和}}\right| j\rangle$ 都是某厄米算符 $A$ 的本征右矢. 在什么条件下 $\left| {i\rangle + }\right| j\rangle$ 也是 $A$ 的一个本征右矢. 证明答案的正确性.
-	\item 考虑被厄米算符 $A$ 的本征右矢 $\left\{ \left| {a}^{\prime }\right\rangle \right\}$ 所张的一个右矢空间. 不存在任何简并.
-	\begin{enumerate}
-		\item 证明
-		$$
-		\mathop{\prod }\limits_{{a}^{\prime }}\left( {A - {a}^{\prime }}\right)
-		$$
-		是零算符.
-		\item 解释
-		$$
-		\mathop{\prod }\limits_{{{a}^{\prime } \neq {a}^{\prime }}}\frac{\left( A - {a}^{\prime \prime }\right) }{\left( {a}^{\prime } - {a}^{\prime \prime }\right) }
-		$$
-		的意义.
-		\item 令 $A$ 等于自旋 $\frac{1}{2}$ 系统的 ${S}_{z}$ ,用它解释前两个小问.
-	\end{enumerate}
 	\item 利用 $\left| {+\rangle \text{和}}\right| - \rangle$ 的正交性证明
 	$$
 	\left\lbrack {{S}_{i},{S}_{j}}\right\rbrack = i{\varepsilon }_{ijk}\hbar {S}_{k},\;\left\{ {{S}_{i},{S}_{j}}\right\} = \left( \frac{{\hbar }^{2}}{2}\right) {\delta }_{ij},
@@ -1527,22 +1513,14 @@ $p$ 和 ${p}^{2}$ 的期望也可以计算如下
 	H = a\left( {\left| {1\rangle \langle 1}\right| - \left| {2\rangle \langle 2}\right| + \left| {1\rangle \langle 2}\right| + \left| {2\rangle \langle 1}\right| }\right) ,
 	$$
 	其中 $a$ 是一个数,其量纲为能量. 求能量的本征值和相应的能量本征右矢 (作为 $|1\rangle$ 和 $|2\rangle$ 的线性组合).
-	\item 已知一个自旋 $\frac{1}{2}$ 的系统处于 $\mathbf{S} \cdot \widehat{\mathbf{n}}$ 的一个本征态,其本征值为 $h/2$ ,其中 $\widehat{\mathbf{n}}$ 为 ${xz}$ 平面上的一个单位矢量,与正 $z$ 轴夹 $\gamma$ 角.
+	\item 已知一个自旋 $\frac{1}{2}$ 的系统处于 $\mathbf{S} \cdot \widehat{\mathbf{n}}$ 的一个本征态,其本征值为 $\hbar/2$ ,其中 $\widehat{\mathbf{n}}$ 为 ${xz}$ 平面上的一个单位矢量,与正 $z$ 轴夹 $\gamma$ 角.
 	\begin{enumerate}
-		\item 假定已测得 ${S}_{r}$ . 得到 $+ \hbar /2$ 的概率是什么?
+		\item 假定已测得 ${S}_{x}$ . 得到 $+ \hbar /2$ 的概率是什么?
 		\item计算 ${S}_{x}$ 的弥散度,即
 		$$
 		\left\langle {\left( {S}_{x} - \left\langle {S}_{x}\right\rangle \right) }^{2}\right\rangle \text{.}
 		$$
 		(为了让你自己放心起见,验证在 $\gamma = 0,\pi /2$ 和 $\pi$ 等特殊情况下的答案.)
-	\end{enumerate}
-	\item 量子力学中某一可观测量有如下的 $3 \times 3$ 矩阵表示
-	$$
-	\frac{1}{\sqrt{2}}\left( \begin{array}{lll} 0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{array}\right) .
-	$$
-	\begin{enumerate}
-		\item 求这个可观测量的归一化本征矢和相应的本征值. 有简并存在吗?
-		\item 给出一个与上述结果相关的物理实例.
 	\end{enumerate}
 	\item 设 $A$ 和 $B$ 是两个可观测量. 假定 $A$ 和 $B$ 的共同本征右矢 $\left\{ \left| {{a}^{\prime },{b}^{\prime }}\right\rangle \right\}$ 构成一组正交完备的基右矢集合. 我们是否总可以得出结论
 	$$
@@ -1582,11 +1560,6 @@ $p$ 和 ${p}^{2}$ 的期望也可以计算如下
 		\item 显然, $A$ 展示了一个简并的谱. $B$ 也展示了简并的谱吗?
 		\item 证明 $A$ 和 $B$ 对易.
 		\item 找到一组新的正交归一右矢集合,它们是 $A$ 和 $B$ 的共同本征右矢. 具体确定在这三个本征右矢的每一个本征右矢上 $A$ 和 $B$ 的本征值. 你确定的本征值能完全地表征每个本征右矢吗?
-	\end{enumerate}
-	\item 
-	\begin{enumerate}
-		\item 证明, $\left( {1/\sqrt{2}}\right) \left( {1 + i{\sigma }_{x}}\right)$ 作用在一个二分量旋量上可被看作绕 $x$ 轴旋转 $- \pi /2$ 的转动算符的矩阵表示. (负号意味着转动是顺时针的).
-		\item 用 ${S}_{y}$ 的本征右矢作为基矢时,构造 ${S}_{z}$ 的矩阵表示.
 	\end{enumerate}
 	\item 构造一个变换矩阵,它把 ${S}_{z}$ 对角的基和 ${S}_{x}$ 对角的基联系起来. 证明你的结果与下列的普遍关系式自洽:
 	$$

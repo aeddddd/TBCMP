@@ -173,10 +173,309 @@ $${\displaystyle \alpha ={\frac {e^{2}k_{e}}{\hbar c}}={\frac {e^{2}}{\hbar c(4\
 \begin{enumerate}
 	\item 证明:如果$X=|\beta\rangle\langle\alpha|$,那么则有$X^\dagger=|\alpha\rangle\langle\beta|$.
 	\begin{proof}
-		暂略,第一章结束补充.
+		由左右矢运算规则可得,也可以利用矩阵形式进行运算.
+		$$(|\beta\rangle\langle\alpha|)^\dagger=\langle\alpha|^\dagger|\beta\rangle^\dagger=|\alpha\rangle\langle\beta|$$
 	\end{proof}
-	\item 习题2
-	\item 习题3
+	\item 判断
+	\begin{enumerate}
+		\item 对
+		\item 错
+		\item 对
+	\end{enumerate}
+	\item 证明:
+	$$
+	\left\lbrack {{AB},{CD}}\right\rbrack = - {AC}\{ D, B\} + A\{ C, B\} D - C\{ D, A\} B + \{ C, A\} {D B}.
+	$$
+	\begin{proof}
+	$$
+	\begin{aligned}
+	AC\{D,B\}&=ACDB+ACBD,\\
+	A\{C,B\}D&=ACBD+ABCD,\\
+	C\{D,A\}B&=CDAB+CADB,\\ \{C,A\}DB&=CADB+ACDB.\\
+	\text{于是有}-AC\{D,B\}+A\{C,B\}D-C\{D,A\}B+\{C,A\}DB&=-ACDB+ABCD-CDAB+ACDB\\&=ABCD-CDAB=[AB,CD]
+	\end{aligned}
+	$$
+	\end{proof}
+	\item 假定一个 $2 \times 2$ 矩阵 $X$ (不一定是厄米或幺正矩阵) 被写成
+	$$
+	X = {a}_{0} + \mathbf{\sigma } \cdot \mathbf{a},
+	$$
+	其中 ${a}_{0}$ 和 ${a}_{1.2.3}$ 都是数.
+	\begin{enumerate}
+		\item ${a}_{0}$ 和 ${a}_{k}\left( {k = 1,2,3}\right)$ 与 $\operatorname{tr}\left( X\right)$ 和 $\operatorname{tr}\left( {{\sigma }_{k}X}\right)$ 有什么样的关系?
+		\begin{proof}
+			我们先分别计算$\mathrm{Tr}(X)$和$\mathrm{Tr}(\sigma_{k}X)$,对于前者(我们首先需要强调,$a_0$是一个数,得到的结果是矩阵,这里的加法我们视为$X = {a}_{0}\cdot \textbf{1} + \mathbf{\sigma } \cdot \mathbf{a}$,并且这里的乘法显然是矩阵乘法而不是内积.)我们有
+			\begin{equation}
+			\mathrm{Tr}(X)=a_{0} \mathrm{Tr}(\textbf{1})+\sum_{\ell} \mathrm{Tr}(\sigma_{\ell})a_{\ell}=2a_{0}
+			\end{equation}
+			其中我们知道$\mathrm{Tr}(A+B)=\mathrm{Tr}(A)+\mathrm{Tr}(B)$,而且我们不需要理会后面那一项,因为我们知道泡利矩阵的迹为$0$,不要忘记单位矩阵的迹是$2$,自然得出结果.\\
+			下面我们看后面部分
+			\begin{equation}
+				\mathrm{Tr}(\sigma_{k}X)=a_{0}\mathrm{Tr}(\sigma_{k})+\sum_{\ell}\mathrm{Tr}(\sigma_{k}\sigma_{\ell})a_{\ell}=\frac{1}{2}\sum_{\ell}\mathrm{Tr}(\sigma_{k}\sigma_{\ell}+\sigma_{\ell}\sigma_{k})a_{\ell}
+			\end{equation}
+			其中$a_{0}\mathrm{Tr}(\sigma_{k})$这一项同样为$0$,后一项我们利用了迹的循环性质(泡利矩阵为$2\times2$的方阵):$\mathrm{Tr}(ABCD)=\mathrm{Tr}(BCDA)=\mathrm{Tr}(CDAB)$,并且注意到可以利用克罗内克符号将其表现为
+			\begin{equation}
+				\frac{1}{2}\sum_{\ell}\mathrm{Tr}(\sigma_{k}\sigma_{\ell}+\sigma_{\ell}\sigma_{k})a_{\ell}=\sum_{\ell}\delta_{k\ell}\mathrm{Tr}(\textbf{1})a_{\ell}=2a_{k}
+			\end{equation}
+			注意$\frac12$被约去了,且我们知道$\sum_{\ell}\delta_{k\ell}$具有筛选性质(参照附录),现在我们一并给出最终结果.
+			\begin{equation}
+				a_{0}=\frac{1}{2}\mathrm{Tr}(X)\text{和}a_{k}=\frac{1}{2}\mathrm{Tr}(\sigma_{k}X)
+			\end{equation}
+		\end{proof}
+		\item 利用矩阵元 ${X}_{ij}$ 求出 ${a}_{0}$ 和 ${a}_{k}$.
+		\begin{proof}
+			直接写为矩阵元形式带入即可得到答案
+			\begin{equation}
+				a_{0}=(X_{11}+X_{22})/2,a_{1}=(X_{12}+X_{21})/2, a_{2}=i(-X_{21}+X_{12})/2,a_{3}=(X_{11}-X_{22})/2
+			\end{equation}
+		\end{proof}
+	\end{enumerate}
+	\item 证明一个 $2 \times 2$ 矩阵 $\mathbf{\sigma } \cdot \mathbf{a}$ 的行列式在如下变换中不变:
+	$$
+	\sigma \cdot \mathbf{a} \rightarrow \sigma \cdot {\mathbf{a}}^{\prime } \equiv \exp \left( \frac{{i\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) \sigma \cdot \textbf{a}\operatorname{exp}\left( \frac{-{i\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) .
+	$$
+	当 $\widehat{\mathbf{n}}$ 沿 $z$ 正方向时,利用 ${a}_{k}$ 求出 ${a}_{k}^{\prime }$ 并解释你的结果.
+	\begin{proof}
+		事实上,这一题需要一定对于旋转矩阵和SO(2)群的了解,下面使用了其中的部分结论,如果你并不了解这些内容,可以参照后续章节.\\
+		我们知道,$\det(A\cdot B)=\det(A)\det(B)$,自然有$\det(\sigma\cdot\textbf{a})=-a_z^2-(a_x^2+a_y^2)=-|\textbf{a}|^2$,下面存在关系
+		\begin{equation}
+			\det\left[\exp\left(\pm\frac{i\sigma\cdot\hat{\mathbf{n}}\phi}{2}\right)\right]=1
+		\end{equation}
+		这个关系可以从两个角度来解释,我们可以认为通过一个旋转变换后矩阵的行列式不变,也可以尝试证明它:
+		\begin{equation}
+			\det\left[\exp\left(\pm\frac{i\sigma\cdot\hat{\mathbf{n}}\phi}{2}\right)\right]=\exp\left(\mathrm{Tr}\left(\pm\frac{i\sigma\cdot\hat{\mathbf{n}}\phi}{2}\right)\right)=\exp\left(\pm\frac{i\phi}2 \mathrm{Tr}\left(\sigma\cdot\hat{\mathbf{n}}\right)\right)=1
+		\end{equation}
+		自然证明题干.
+		第二种方法是对$\exp\left(\pm\frac{i\sigma\cdot\hat{\mathbf{n}}\phi}{2}\right)$进行泰勒展开,并注意到$(\mathbf{\sigma } \cdot \mathbf{a})^n$当$n$为偶数时为$1$,奇数时仍为$\mathbf{\sigma } \cdot \mathbf{a}$,我们有
+		\begin{equation}
+			\begin{aligned}
+				\exp\biggl({\frac{-i\sigma\cdot{\hat{\mathbf{n}}}\phi}{2}}\biggr)& = \Big[ 1-\frac{(\sigma\cdot\hat{\mathbf{n}})^{2}}{2 !}\Big(\frac{\phi}{2}\Big)^{2}+\frac{(\sigma\cdot\hat{\mathbf{n}})^{1}}{4 !}\Big(\frac{\phi}{2}\Big)^{1}-\cdots\Big] \\
+				&-i\Big[(\sigma\cdot\hat{\mathbf{n}}) \frac{\phi}{2}-\frac{(\sigma\cdot\hat{\mathbf{n}})^{3}}{3!}\Big(\frac{\phi}{2}\Big)^{3}+\cdots\Big] \\
+				&=\Big[ 1-\frac{1}{2 !}\Big(\frac{\phi}{2}\Big)^{2}+\frac{1}{4 !}\Big(\frac{\phi}{2}\Big)^{4}-\cdots\Big]-i\Big[(\sigma\cdot\hat{\mathbf{n}}) \frac{\phi}{2}-\frac{(\sigma\cdot\hat{\mathbf{n}})}{3!}\Big(\frac{\phi}{2}\Big)^{3}+\cdots\Big]\\
+				&= \mathbf{1}\cos\biggl(\frac{\phi}{2}\biggr) - i\mathbf{\sigma} \cdot \mathbf{\hat{n}}\sin\biggl(\frac{\phi}{2}\biggr).
+			\end{aligned}
+		\end{equation}
+		并将其写为矩阵形式
+		\begin{equation}
+			\exp\left(\frac{-i\boldsymbol{\sigma}\cdot\hat{\mathbf{n}}\phi}2\right)=
+			\begin{pmatrix}
+				\cos\left(\frac\phi2\right)-in_z\sin\left(\frac\phi2\right)&(-in_x-n_y)\sin\left(\frac\phi2\right)\\(-in_x+n_y)\sin\left(\frac\phi2\right)&\cos\left(\frac\phi2\right)+in_z\sin\left(\frac\phi2\right)
+			\end{pmatrix}
+		\end{equation}
+		并注意到题干给出$\widehat{\mathbf{n}}$ 沿 $z$ 正方向,自然$n_x,n_y=0,n_z=1$再次发现其行列式恰好为$1$,并可以继续求得$a^{\prime}_k$,后续为基本的矩阵乘法,不单独列出,仅给出答案:
+		\begin{equation}
+			a^{\prime}_1=a_1\cos\phi+a_2\sin\phi,a^{\prime}_2=a_2\cos\phi-a_1\sin\phi,a^{\prime}_3=a_3
+		\end{equation}
+		现在我们不难看出,在$z$-方向上,显然我们刚刚执行了一个绕$z$轴的旋转(将矢量$\textbf{a}$绕$z$轴旋转$\phi$的角度).
+	\end{proof}
+	\item 利用左矢-右矢代数规则证明或计算下列各式
+	\begin{enumerate}
+		\item $\operatorname{tr}\left( {XY}\right) = \operatorname{tr}\left( {YX}\right)$ ,其中 $X$ 和 $Y$ 都是算符.
+		\begin{proof}
+			我们将其写成左右矢形式,并插入一个单位算符:$\mathrm{Tr}(XY)\equiv\sum_a\langle a|XY|a\rangle=\sum_a\sum_b\langle a|X|b\rangle\langle b|Y|a\rangle$,指标交换转置后即证$\mathrm{Tr}(XY)=\sum_b\sum_a\langle b|Y|a\rangle\langle a|X|b\rangle=\sum_b\langle b|YX|b\rangle=\mathrm{Tr}(YX)$
+		\end{proof}
+		\item ${\left( XY\right) }^{ \dagger } = {Y}^{ \dagger }{X}^{ \dagger }$ ,其中 $X$ 和 $Y$ 都是算符.
+		\begin{proof}
+			注意到对偶关系即证.
+		\end{proof}
+		\item 在左矢-右矢形式下 $\exp \left\lbrack {{if}\left( A\right) }\right\rbrack =$ ? 其中 $A$ 是厄米算符,其本征值是已知的.
+		\begin{proof}
+			$\exp[if(A)]=\sum_{a}\exp[if(A)]|a\rangle\langle a|=\sum_{a}\exp[if(a)]|a\rangle\langle a|$
+		\end{proof}
+		\item $\sum {a}^{\prime }{\psi }_{a}^{\prime }\left( {\mathbf{x}}^{\prime }\right) {\psi }_{a}\left( {\mathbf{x}}^{\prime \prime }\right)$ ,其中 ${\psi }_{a}\left( {\mathbf{x}}^{\prime }\right) = \left\langle {{\mathbf{x}}^{\prime } | {a}^{\prime }}\right\rangle$ .
+		\begin{proof}
+			$\sum_{a}\psi_{a}^{*}(\mathbf{x}')\psi_{a}(\mathbf{x}'')=\sum_{a}\langle\mathbf{x}'|a\rangle^{*}\langle\mathbf{x}''|a\rangle=\sum_{a}\langle\mathbf{x}''|a\rangle\langle a|\mathbf{x}'\rangle=\langle\mathbf{x}''|\mathbf{x}'\rangle=\delta(\mathbf{x}''-\mathbf{x}')$
+		\end{proof}
+	\end{enumerate}
+	\item
+	\begin{enumerate}
+		\item 考虑两个右矢 $\left| {\alpha \rangle \text{和}}\right| \beta \rangle$ . 假定 $\left\langle {{\alpha }^{\prime } | \alpha }\right\rangle ,\left\langle {{\alpha }^{\prime \prime } | \alpha }\right\rangle ,\cdots$ 和 $\left\langle {{\alpha }^{\prime } | \beta }\right\rangle ,\left\langle {{\alpha }^{\prime \prime } | \beta }\right\rangle ,\cdots$ 均为已知,其中 $\left| {a}^{\prime }\right\rangle ,\left| {a}^{\prime \prime }\right\rangle ,\cdots$ 组成基右矢的完备集. 求在该基下算符 $|\alpha \rangle \langle \beta |$ 的矩阵表示.
+		\begin{proof}
+			第一问较为简单,我们只需要写出矩阵元$X=|\alpha \rangle \langle \beta |$,$X_{ij}=\langle a_i|\alpha \rangle \langle \beta |a_j\rangle=\langle a_i|\alpha \rangle \langle a_j |\beta\rangle^*$即可.
+		\end{proof}
+		\item 现在考虑一个自旋 $\frac{1}{2}$ 系统,设 $|\alpha \rangle$ 和 $|\beta \rangle$ 分别为 $\left| {{s}_{z} = \hbar /2}\right\rangle$ 和 $\left| {{s}_{x} = \hbar /2}\right\rangle$ 态. 写出在通常 $\left( {s}_{z}\right.$ 对角) 的基下,与 $\left| {\alpha \rangle \langle \beta }\right|$ 对应的方阵的显示式.
+		\begin{proof}
+			我们仅需把之前的结论带入即可
+			\begin{equation}
+				\left.|S_z=\hbar/2\rangle\langle S_x=\hbar/2|\doteq\frac{1}{\sqrt{2}}\left(\begin{array}{cc}1&1\\0&0\end{array}\right.\right)
+			\end{equation}
+		\end{proof}
+	\end{enumerate}
+	\item 假定 $\left| {i\rangle \text{和}}\right| j\rangle$ 都是某厄米算符 $A$ 的本征右矢. 在什么条件下 $\left| {i\rangle + }\right| j\rangle$ 也是 $A$ 的一个本征右矢. 证明答案的正确性.
+	\begin{proof}
+		仅当本征值相同时正确.
+	\end{proof}
+	\item 利用 $\left| {+\rangle \text{和}}\right| - \rangle$ 的正交性证明
+	$$
+	\left\lbrack {{S}_{i},{S}_{j}}\right\rbrack = i{\varepsilon }_{ijk}\hbar {S}_{k},\;\left\{ {{S}_{i},{S}_{j}}\right\} = \left( \frac{{\hbar }^{2}}{2}\right) {\delta }_{ij},
+	$$
+	其中
+	$$
+	{S}_{x} = \frac{\hbar }{2}\left( {\left| {+\rangle \langle - }\right| + \left| {-\rangle \langle + }\right| }\right) ,\;{S}_{y} = \frac{i\hbar }{2}\left( {-\left| {+\rangle \langle - }\right| + \left| {-\rangle \langle + }\right| }\right) ,
+	{S}_{z} = \frac{\hbar }{2}\left( {\left| {+\rangle \langle + }\right| - \left| {-\rangle \langle - }\right| }\right) .
+	$$
+	\begin{proof}
+		本题仅需要理解各个符号的含义并带入即可,一个可以有一定作用的方法是令$\langle +|-\rangle=\langle -|+\rangle=0,\langle +|+\rangle=\langle -|-\rangle=1$,这样可以减少其中的运算量.
+	\end{proof}
+	\item 一个双态系统其哈密顿算符由下式给出
+	$$
+	H = a\left( {\left| {1\rangle \langle 1}\right| - \left| {2\rangle \langle 2}\right| + \left| {1\rangle \langle 2}\right| + \left| {2\rangle \langle 1}\right| }\right) ,
+	$$
+	其中 $a$ 是一个数,其量纲为能量. 求能量的本征值和相应的能量本征右矢 (作为 $|1\rangle$ 和 $|2\rangle$ 的线性组合).
+	\begin{proof}	
+		我们先将其写成矩阵表示的形式
+		\begin{equation}
+			H\doteq\left[\begin{array}{rr}a&a\\a&-a\end{array}\right]
+		\end{equation}
+		本征值 $E$ 满足 $( a- E) ( - a- E) - a^2= - 2a^2+ E^2= 0$ 即 $E= \pm a\sqrt {2}.$ 令$x_1$ 和 $x_2$为本征右矢的两个元素.对于$E=+a\sqrt{2}\equiv E^{(1)},(1-\sqrt{2})x_{1}^{(1)}+x_{2}^{(1)}=0$,而对于$E=-a\sqrt2\equiv E^{(2)},(1+\sqrt2)x_1^{(2)}+x_2^{(2)}=0.$ 于是本征态可以被表示为
+		\begin{equation}
+			\left.|E^{(1)}\rangle\doteq N^{(1)}\left[\begin{array}{c}1\\\sqrt{2}-1\end{array}\right.\right]\quad\text{ 及 }\quad|E^{(2)}\rangle\doteq N^{(2)}\left[\begin{array}{c}-1\\\sqrt{2}+1\end{array}\right]
+		\end{equation}
+		其中 $N^{(1)^2}=1/(4-2\sqrt{2})$ 和 $N^{(2)^2}=1/(4+2\sqrt{2}).$
+	\end{proof}
+	\item 已知一个自旋 $\frac{1}{2}$ 的系统处于 $\mathbf{S} \cdot \widehat{\mathbf{n}}$ 的一个本征态,其本征值为 $\hbar/2$ ,其中 $\widehat{\mathbf{n}}$ 为 ${xz}$ 平面上的一个单位矢量,与正 $z$ 轴夹 $\gamma$ 角.
+	\begin{enumerate}
+		\item 假定已测得 ${S}_{x}$ . 得到 $+ \hbar /2$ 的概率是什么?
+		\begin{proof}
+			这里我们直接给出本征值为$\hbar/2$的$\mathbf{S} \cdot \widehat{\mathbf{n}}$态的构造,可以自行尝试构造.
+			\begin{equation}
+				\cos\left(\frac{\beta}{2}\right)|+\rangle+\sin\left(\frac{\beta}{2}\right)e^{i\alpha}|-\rangle 
+			\end{equation}
+			其中$\alpha$和$\beta$分别对应球坐标系下的$(r,\theta,\varphi)$中的后两项,在本题中$\alpha=0,\beta=\gamma$,于是有
+			\begin{equation}
+				\left|\left[\frac{1}{\sqrt{2}}\langle+|+\frac{1}{\sqrt{2}}\langle-|\right]\left[\cos\frac{\gamma}{2}|+\rangle+\sin\frac{\gamma}{2}|-\rangle\right]\right|^2=\frac{1}{2}\left[\sqrt{\frac{1+\cos\gamma}{2}}+\sqrt{\frac{1-\cos\gamma}{2}}\right]^2=\frac{1+\sin\gamma}{2}
+			\end{equation}
+		\end{proof}
+		\item 计算 ${S}_{x}$ 的弥散度,即
+		$$
+		\left\langle {\left( {S}_{x} - \left\langle {S}_{x}\right\rangle \right) }^{2}\right\rangle \text{.}
+		$$
+		(为了让你自己放心起见,验证在 $\gamma = 0,\pi /2$ 和 $\pi$ 等特殊情况下的答案.)
+		\begin{proof}
+			由第9题我们容易得出$S^2_x=\frac{\hbar^2}4$并且$S_x$的期望
+			\begin{equation}
+				\left|\left[\frac{1}{\sqrt{2}}\langle+|+\frac{1}{\sqrt{2}}\langle-|\right]\left[\cos\frac{\gamma}{2}|+\rangle+\sin\frac{\gamma}{2}|-\rangle\right]\right|^2=\frac{1}{2}\left[\sqrt{\frac{1+\cos\gamma}{2}}+\sqrt{\frac{1-\cos\gamma}{2}}\right]^2=\frac{1+\sin\gamma}{2}
+			\end{equation}
+			于是原式为
+			\begin{equation}
+				\langle(S_{x}-\langle S_{x}\rangle)^{2}\rangle=\hbar^{2}(1-\sin^{2}\gamma)/4=\hbar^{2}\cos^{2}\gamma/4=\hbar^{2}/4,0,\hbar^{2}4\text{分别对于}\gamma=0,\pi/2,\pi.
+			\end{equation}
+		\end{proof}
+	\end{enumerate}
+	\item 设 $A$ 和 $B$ 是两个可观测量. 假定 $A$ 和 $B$ 的共同本征右矢 $\left\{ \left| {{a}^{\prime },{b}^{\prime }}\right\rangle \right\}$ 构成一组正交完备的基右矢集合. 我们是否总可以得出结论
+	$$
+	\left\lbrack {A, B}\right\rbrack = 0?
+	$$
+	如果你的答案是可以, 证明这一论断. 如果你的答案是不可以,举出一个反例.
+	\begin{proof}
+		可以,我们利用单位算符即可得出
+		\begin{equation}
+			AB=AB\textbf{1}=AB\sum_{a^\prime,b^\prime}|a^\prime,b^\prime\rangle\langle a^\prime,b^\prime|=A\sum_{a^\prime,b^\prime}b^\prime|a^\prime,b^\prime\rangle\langle a^\prime,b^\prime|=\sum_{a^\prime,b^\prime}b^\prime a^\prime|a^\prime,b^\prime\rangle\langle a^\prime,b^\prime|=BA
+		\end{equation}
+		我们发现完备性具有强大的作用.需要着重指出的是,为了涵盖完整的集合组,求和必须同时涵盖 a 和 b .
+	\end{proof}
+	\item 两个厄米算符反对易
+	$$
+	\{ A, B\} = {AB} + {BA} = 0.
+	$$
+	能够存在一个 $A$ 和 $B$ 的同时 (即,共同) 的本征右矢吗? 证明或举例说明你的论断.
+	\begin{proof}
+		由反对易关系,$AB=-BA$,如果存在共同本征右矢,需要满足$AB|a,b\rangle=ab|a,b\rangle=BA|a,b\rangle $,则必须有$ab=-ba$,我们同时注意到$a,b$为实数,则除非$a,b$至少有一个为$0$.
+	\end{proof}
+	\item 已知两个可观测量 ${A}_{1}$ 和 ${A}_{2}$ 均不显含时间,且相互不对易
+	$$
+	\left\lbrack {{A}_{1},{A}_{2}}\right\rbrack \neq 0,
+	$$
+	我们还知道 ${A}_{1}$ 和 ${A}_{2}$ 均与哈密顿量对易:
+	$$
+	\left\lbrack {{A}_{1}, H}\right\rbrack = 0.\;\left\lbrack {{A}_{2}, H}\right\rbrack = 0.
+	$$
+	证明, 在一般情况下, 能量本征态是简并的. 存在例外吗? 
+	\begin{proof}
+		略
+	\end{proof}
+	\item 找出使不确定度乘积
+	$$
+	\left\langle {\left( \Delta {S}_{x}\right) }^{2}\right\rangle \left\langle {\left( \Delta {S}_{y}\right) }^{2}\right\rangle 
+	$$
+	取最大值的右矢 $\left| {+\rangle \text{和}}\right| - \rangle$ 的线性组合. 直接证明,你所找到的这个线性组合不破坏 ${S}_{x}$ 和 ${S}_{y}$ 的不确定度关系.
+	\begin{proof}
+		略
+	\end{proof}
+	\item 对于一个禁闭于两个刚性壁之间的一维粒子,
+	$$
+	V = \left\{ \begin{array}{ll} 0 & \text{ 对于 }0 < x < a, \\ \infty & \text{ 其他 } \end{array}\right.
+	$$
+	求出 $x - p$ 不确定度乘积 $\left\langle {\left( \Delta x\right) }^{2}\right\rangle \left\langle {\left( \Delta p\right) }^{2}\right\rangle$ 的值. 对基态和激发态都进行求解.
+	\begin{proof}
+		略
+	\end{proof}
+	\item 考虑一个三维右矢空间. 如果某一组正交的右矢集合,比如 $\left| {1\rangle ,}\right| 2\rangle$ 和 $|3\rangle$ ,用作基右矢,算符 $A$ 和 $B$ 由
+	$$
+	A \doteq \left( \begin{matrix} a & 0 & 0 \\ 0 & - a & 0 \\ 0 & 0 & - a \end{matrix}\right) ,\;B \doteq \left( \begin{matrix} b & 0 & 0 \\ 0 & 0 & - {ib} \\ 0 & {ib} & 0 \end{matrix}\right)
+	$$
+	表示,其中 $a$ 和 $b$ 都是实数.
+	\begin{enumerate}
+		\item 显然, $A$ 展示了一个简并的谱. $B$ 也展示了简并的谱吗?
+		\begin{proof}
+			略
+		\end{proof}
+		\item 证明 $A$ 和 $B$ 对易.
+		\begin{proof}
+			略
+		\end{proof}
+		\item 找到一组新的正交归一右矢集合,它们是 $A$ 和 $B$ 的共同本征右矢. 具体确定在这三个本征右矢的每一个本征右矢上 $A$ 和 $B$ 的本征值. 你确定的本征值能完全地表征每个本征右矢吗?
+		\begin{proof}
+			略
+		\end{proof}
+	\end{enumerate}
+	\item 构造一个变换矩阵,它把 ${S}_{z}$ 对角的基和 ${S}_{x}$ 对角的基联系起来. 证明你的结果与下列的普遍关系式自洽:
+	$$
+	U = \mathop{\sum }\limits_{r}\left| {b}^{\left( r\right) }\right\rangle \left\langle {a}^{\left( r\right) }\right| .
+	$$
+	\begin{proof}
+		略
+	\end{proof}
+	\item 一个有限的 (空间) 位移的平移算符由
+	$$
+	\mathcal{J}\left( \mathbf{I}\right) = \exp \left( \frac{-i\mathbf{p} \cdot \mathbf{I}}{\hbar }\right) ,
+	$$
+	给出,其中 $\mathbf{p}$ 是动量算符.
+	\begin{enumerate}
+		\item 求
+		$$
+		\left\lbrack {{x}_{i}, f\left( 1\right) }\right\rbrack \text{.}
+		$$
+		\begin{proof}
+			略
+		\end{proof}
+		\item 利用上一问, 展示期望 $\langle \mathbf{x}\rangle$ 在平移下如何改变.
+		\begin{proof}
+			略
+		\end{proof}
+	\end{enumerate}
+	\item 
+	\begin{enumerate}
+		\item 证明下列各式:
+		\begin{enumerate}
+			\item $\left\langle {{p}^{\prime }\left| x\right| \alpha }\right\rangle = i\hbar \frac{\partial }{\partial {p}^{\prime }}\left\langle {{p}^{\prime } | \alpha }\right\rangle$
+			\begin{proof}
+				略
+			\end{proof}
+			\item $\left\langle {{\left. \beta \right| }_{x} | \alpha }\right\rangle = \int \d{p}^{\prime }{\phi }_{\beta }\left( {p}^{\prime }\right) i\hbar \frac{\partial }{\partial {p}^{\prime }}{\phi }_{a}\left( {p}^{\prime }\right)$ . 其中 ${\phi }_{a}\left( {p}^{\prime }\right) = \left\langle {{p}^{\prime } | \alpha }\right\rangle$ 和 ${\phi }_{\beta }\left( {p}^{\prime }\right) = \left\langle {{p}^{\prime } | \beta }\right\rangle$ 都是动量空间波函数.
+			\begin{proof}
+				略
+			\end{proof}
+		\end{enumerate}
+		\item $$
+		\exp \left( \frac{ix\Xi }{\hbar }\right)
+		$$
+		
+		的物理意义是什么,其中 $x$ 是位置算符,而 $\Xi$ 是某个量纲为动量的数? 证明你的答案的正确性.
+		\begin{proof}
+			略
+		\end{proof}
+	\end{enumerate}
 \end{enumerate}
 \section{第二章}
 1

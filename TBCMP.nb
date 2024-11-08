@@ -1,0 +1,107 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2987,         99]
+NotebookOptionsPosition[      2494,         81]
+NotebookOutlinePosition[      2908,         98]
+CellTagsIndexPosition[      2865,         95]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"4.1", "-", "\:5f0f\:5b5013"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"1", "/", 
+       RowBox[{"(", 
+        RowBox[{"2", "\[Pi]"}], ")"}]}], 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "I"}], " ", "\[Epsilon]", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"p", "^", "2"}], "/", 
+            RowBox[{"(", 
+             RowBox[{"2", "m"}], ")"}]}], "+", "V"}], ")"}]}], "+", 
+        RowBox[{"I", " ", "p", 
+         RowBox[{"(", 
+          RowBox[{"qf", "-", "qi"}], ")"}]}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"p", ",", 
+       RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], "]"}], "//", 
+   "FullSimplify"}]}]], "Input",
+ CellChangeTimes->{{3.9400660475251474`*^9, 3.940066213369484*^9}, {
+  3.940066261993157*^9, 3.940066285888237*^9}, {3.9400669059061465`*^9, 
+  3.9400669257423286`*^9}},ExpressionUUID->"7f39b20d-469f-41ed-8123-\
+02541b3c3efb"],
+
+Cell[BoxData[
+ TemplateBox[{
+   FractionBox[
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", "m", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+             RowBox[{"qf", "-", "qi"}], ")"}], "2"]}], 
+        RowBox[{"2", " ", "\[Epsilon]"}]], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "V", " ", "\[Epsilon]"}]}]], 
+    RowBox[{
+      SqrtBox[
+       RowBox[{"2", " ", "\[Pi]"}]], " ", 
+      SqrtBox[
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", "\[Epsilon]"}], "m"]]}]], 
+   RowBox[{
+     RowBox[{"Im", "[", 
+       FractionBox["\[Epsilon]", "m"], "]"}], "<", "0"}]},
+  "ConditionalExpression"]], "Output",
+ CellChangeTimes->{3.9400662956858196`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"95fd061a-f6d9-4f59-8089-6129a00c945c"]
+}, Open  ]]
+},
+WindowSize->{571, 598},
+WindowMargins->{{349, Automatic}, {11, Automatic}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (2022\:5e7411\:670818\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c204e4d8-6ce4-43cf-a3d1-d9aaec1b7a63"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1078, 31, 97, "Input",ExpressionUUID->"7f39b20d-469f-41ed-8123-02541b3c3efb"],
+Cell[1661, 55, 817, 23, 89, "Output",ExpressionUUID->"95fd061a-f6d9-4f59-8089-6129a00c945c"]
+}, Open  ]]
+}
+]
+*)
+

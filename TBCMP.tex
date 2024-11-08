@@ -4,6 +4,47 @@
 \usepackage{tikz-feynman}
 \usepackage{fixdif}
 \usepackage{ulem}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{calc}
+% Commands for Highlighting text -- non tikz method
+\newcommand{\highlight}[2]{\colorbox{#1!17}{$\displaystyle #2$}}
+%\newcommand{\highlight}[2]{\colorbox{#1!17}{$#2$}}
+\newcommand{\highlightdark}[2]{\colorbox{#1!47}{$\displaystyle #2$}}
+
+% my custom colors for shading
+%\colorlet{mhpurple}{Plum!80}
+
+
+% Commands for Highlighting text -- non tikz method
+\renewcommand{\highlight}[2]{\colorbox{#1!17}{#2}}
+\renewcommand{\highlightdark}[2]{\colorbox{#1!47}{#2}}
+
+\newcommand{\dt}{\mathrm{d}t}
+\newcommand{\dx}{\mathrm{d}x}
+\newcommand{\dy}{\mathrm{d}y}
+\newcommand{\dq}{\mathrm{d}q}
+\newcommand{\ra}{\rangle}
+\newcommand{\la}{\langle}
+
+\makeatletter
+\def\minusfill{\mathord-\!\!
+	\cleaders\hbox{$\!\!\mathord-\!\!$}\hfill
+	\!\!\mathord-}
+\makeatother
+\def\longto{\mathop{\minusfill\!\!\!\rightarrow}\limits}
+\def\to{\futurelet\next\toAux}
+\def\toAux{\ifx\next^%
+	\expandafter\longto%
+	\else%
+	\ifx\next_%
+	\expandafter\longto%
+	\else%
+	\rightarrow%
+	\fi%
+	\fi%
+}
 \title{凝聚态场论:讲义}
 \subtitle{Condensed Matter Field theory : Notes}
 

@@ -148,7 +148,13 @@ $${\displaystyle \alpha ={\frac {e^{2}k_{e}}{\hbar c}}={\frac {e^{2}}{\hbar c(4\
 \end{equation}
 狄拉克$\delta$分布是在包含所有平方可积函数的希尔伯特空间$L_2$上所稠密定义的一个无界线性泛函.在许多应用中,可以对$L_2$的某个子空间赋予更强的拓扑,使得$\delta$函数能够定义一个有界线性算子.
 \chapter{mathematica的基本用法}
-1
+\subsection*{4.1-式子13}
+输入代码
+\begin{lstlisting}
+	Integrate[
+	1/(2 \[Pi]) Exp[-I \[Epsilon] (p^2/(2 m) + V) + 
+	I p (qf - qi)], {p, -Infinity, Infinity}] // FullSimplify
+\end{lstlisting}
 \chapter{临时章节}
 \begin{equation}
 	\begin{array}{ll|l}

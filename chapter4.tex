@@ -13,12 +13,167 @@
 	\item 配分函数
 	\item 系综
 \end{introduction}
-1
+\begin{comment}
+	注释:可爱且漂亮的公式形式.
+	\begin{equation}
+		\vspace{\baselineskip}
+		
+		定位点a \tikzmarknode{a}{\highlight{red颜色}{$公式内容$}}
+		定位点s \tikzmarknode{s}{\highlight{blue}{$公式内容$}}
+		
+		定位点编码标准:1eq1 (公式序号eq该公式第几个)
+	\end{equation}
+	\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+	% 对于 "1" 定位点
+	\path (1eq1.north) ++ (0,2em) node[anchor=south east,color=red!67] (eq1/1){\textbf{动能}};
+	\draw [color=red!87](1eq1.north) |- ([xshift=-0.3ex,color=red]eq1/1.south west);
+	% 对于 "2" 定位点
+	\path (1eq2.south) ++ (0,-1.5em) node[anchor=north west,color=blue!67] (eq1/2){\textbf{势能}};
+	\draw [color=blue!57](1eq2.south) |- ([xshift=-0.3ex,color=blue]eq1/2.south east);
+	\end{tikzpicture}
+\end{comment}
+在这一章,我们正式进入主题,同时也是最重要的开始部分,在这一章我们会接触许多新概念,我将尽量的把内容详细的解释出来,在后续的时候可能会对其进行再编辑,请以最新版本为准!
+\section{路径积分}
+在初等量子力学的学习中,我们在经典量子化的框架内进行表述,在本节,我们将初步探索另一种表述方法:\textbf{路径积分法}.
+\subsection{量子系统与经典系统中的路径积分}
+我们采取通过一个最基本物理图像的方式来引入路径积分:考虑一维空间内的一个有质量$ m $的粒子,其动力学可以通过拉格朗日量来表述:\footnote{本章开始采取这类更加清晰的公式标注方法.}\\
+	
+\begin{equation}
+	\vspace{\baselineskip}
+	L(q,\dot{q})=\tikzmarknode{1eq1}{\highlight{red}{$\frac12m\dot{q}^2$}}-\tikzmarknode{1eq2}{\highlight{blue}{$V(q)$}}
+\end{equation}
+	\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+		% 对于 "1" 定位点
+		\path (1eq1.north) ++ (0,2em) node[anchor=south east,color=red!67] (eq1/1){\textbf{动能项}};
+		\draw [color=red!87](1eq1.north) |- ([xshift=-0.3ex,color=red]eq1/1.south west);
+		% 对于 "2" 定位点
+		\path (1eq2.south) ++ (0,-1.5em) node[anchor=north west,color=blue!67] (eq1/2){\textbf{势能项}};
+		\draw [color=blue!57](1eq2.south) |- ([xshift=-0.3ex,color=blue]eq1/2.south east);
+	\end{tikzpicture}
+	
+并假设粒子位于与时间无关的势$ V(q) $中.我们使用广义坐标$ q $来表述粒子的位置\footnote{广义坐标往往指一组无关联约束的坐标,即对于三维坐标表述,如果$x,y,z$之间没有约束方程,那么$x,y,z$就可以认为是一组广义坐标.不过,目前可以仅把它们当做特殊的坐标/动量(对于广义动量).},对于广义坐标,同样有$\dot{q}=\partial_t q$.于是,根据我们在理论力学中所学到的欧拉-拉格朗日方程
+\begin{equation}
+	\frac{\d}{\dt}\frac{\partial L(q,\dot{q})}{\partial\dot{q}}=\frac{\partial L(q,\dot{q})}{\partial q}\quad\text{也就是}\quad m\ddot{q}=-\frac{\partial V(q)}{\partial q}.
+\end{equation}
+同时,我们考虑由下式定义的\textbf{哈密顿量}$H(p,q)$
+\begin{equation}
+ H(p,q)=p\dot{q}-L(q,\dot{q})=\frac{p^2}{2m}+V(q)\quad\text{其中广义坐标被定义为}\quad p=\frac{\partial L(q,\dot{q})}{\partial\dot{q}}=m\dot{q}
+\end{equation}
+我们于是通过哈密顿量给出该粒子的经典动力学关系(特别强调的一点是,在对哈密顿量偏导时,我们认为广义坐标和广义动量是无关联的.):
+\begin{equation}
+	\dot{p}=-\frac{\partial H(p,q)}{\partial q}=-\frac{\partial V(q)}{\partial q},\dot{q}=\frac{\partial H(p,q)}{\partial p}=\frac{p}{m}
+\end{equation}
 
-	
-	
-	
-	
+在量子力学中,我们把广义坐标和广义动量的关系上升至对易关系(后续我们把广义坐标和广义动量简称为坐标和动量).
+\begin{equation}
+	[\hat{q},\hat{p}]=i\hbar
+\end{equation}
+同时经典变量$A(p,q)$同时上升为算符$\hat{A}\equiv A(\hat{p},\hat{q})$自然经典哈密顿量也变为量子哈密顿量方程.
+\begin{equation}
+	\hat{H}=\frac{\hat{p}^2}{2m}+V(\hat{q})
+\end{equation}
+
+
+我们知道系统的物理态由希尔伯特空间$ \mathcal H $中的态矢量$|\psi(t)\ra$所描述,我们使用薛定谔方程来描述态矢量的时间演化:\\
+
+\begin{equation}
+	\vspace{\baselineskip}
+	%公式编号: 7
+	\tikzmarknode{7eq1}{\highlight{red}{$i\hbar\partial_t$}}|\psi(t)\rangle=\tikzmarknode{7eq2}{\highlight{blue}{$\hat{H}$}}|\psi(t)\rangle
+\end{equation}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+	% 对于 "1" 定位点
+	\path (7eq1.north) ++ (0,2em) node[anchor=south east,color=red!67] (eq7/1){\textbf{能量$ E $}};
+	\draw [color=red!87](7eq1.north) |- ([xshift=-0.3ex,color=red]eq7/1.south west);
+	% 对于 "2" 定位点
+	\path (7eq2.south) ++ (0,-1.5em) node[anchor=north west,color=blue!67] (eq7/2){\textbf{哈密顿量算符}};
+	\draw [color=blue!57](7eq2.south) |- ([xshift=-0.3ex,color=blue]eq7/2.south east);
+\end{tikzpicture}
+
+我们熟知我们可以利用时间演化算符$\hat U$写成方程的解:
+\begin{equation}
+	|\psi(t)\rangle=\hat{U}(t)|\psi(t=0)\rangle,\quad i\hbar\partial_t\hat{U}(t)=\hat{H}\hat{U}(t).
+\end{equation}
+由于哈密顿量与时间无关,所以我们可以写成时间演化算符的表示
+\begin{equation}
+	\hat{U}(t)=e^{-\frac i\hbar\hat{H}t}
+\end{equation}
+同时我们写出\\
+
+\begin{equation}
+	\vspace{\baselineskip}
+	%公式编号: 10
+	\tikzmarknode{10eq1}{\highlight{red}{$\psi(q_f,t_f)$}}=\langle q_f|\psi(t_f)\rangle=\langle q_f|\hat{U}(t_f-t_i)|\psi(t_i)\rangle=\int \dq_iU(q_f,q_i;t_f-t_i)\tikzmarknode{10eq2}{\highlight{blue}{$\psi(q_i,t_i)$}}
+\end{equation}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+	% 对于 "1" 定位点
+	\path (10eq1.north) ++ (0,2em) node[anchor=south west,color=red!67] (eq10/1){\textbf{$ t_f $时刻时粒子位于$q_f$的概率}};
+	\draw [color=red!87](10eq1.north) |- ([xshift=-0.3ex,color=red]eq10/1.south east);
+	% 对于 "2" 定位点
+	\path (10eq2.south) ++ (0,-1.5em) node[anchor=north east,color=blue!67] (eq10/2){\textbf{$ t_i $时刻时粒子位于$q_i$的概率}};
+	\draw [color=blue!57](10eq2.south) |- ([xshift=-0.3ex,color=blue]eq10/2.south west);
+\end{tikzpicture}
+
+其中$U(q_f,q_i;t_f-t_i) = \langle q_f|\hat{U}(t_f-t_i)|q_i\rangle $被称为传播子,其表示了这个粒子在$t_f-t_i$时间内从位置$q_i$传播到位置$q_f$的概率振幅.并且若已知哈密顿量$\hat{H}$本征态$\{|n\ra,\epsilon_n\}$,那么我们以此可以把传播子写作
+\begin{equation}
+	\begin{aligned}U(q_f,q_i;t_f-t_i)&=\langle q_f|e^{-\frac{i}{\hbar}\hat{H}(t_f-t_i)}|q_i\rangle=\sum_n\langle q_f|n\rangle e^{-\frac{i}{\hbar}\epsilon_n(t_f-t_i)}\langle n|q_i\rangle\\[2ex]&=\sum_ne^{-\frac{i}{\hbar}\epsilon_n(t_f-t_i)}\varphi_n(q_f)\varphi_n^*(q_i)\end{aligned}
+\end{equation}
+其中$\varphi_n(q)=\la q|n\ra$为坐标表象下的波函数.我们发现传播子给出了关于这个哈密顿量的波函数和能级的全部信息,这也意味着我们可以把求解波函数的问题变为求解这个哈密顿量所对应的传播子的问题.
+\subsection*{路径积分}
+我们刚刚发现了通过求解传播子可以间接求解波函数,而现在的问题是:如何求出传播子? 这里我们用到费曼的路径积分方法,我们先来首先说明\textbf{传播子可以写为路径积分的形式}.
+
+我们首先考虑一个充分短的时间$\epsilon$
+
+\begin{equation}
+	\vspace{\baselineskip}
+	%公式编号: 12
+	U(q_f,q_i;\epsilon)=\langle q_f|e^{-i\hat{H}\epsilon}|q_i\rangle \tikzmarknode{12eq2}{\highlight{blue}{$\simeq$}}\langle q_f|e^{-i\epsilon\frac{\hat{p}^2}{2m}}e^{-i\epsilon V(\hat{q})}|q_i\rangle
+\end{equation}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+	% 对于 "2" 定位点
+	\path (12eq2.south) ++ (0,-1.5em) node[anchor=north east,color=blue!67] (eq12/2){\textbf{Baker–Hausdorff规则$e^{\epsilon\hat{A}+\epsilon\hat{B}}=e^{\epsilon\hat{A}}e^{\epsilon\hat{B}}e^{\mathcal{O}(\epsilon^{2})}$}};
+	\draw [color=blue!57](12eq2.south) |- ([xshift=-0.3ex,color=blue]eq12/2.south west);
+\end{tikzpicture}
+
+我们在其中插入一个单位算符的谱分解\footnote{此时已经开始采取自然单位制了(对单位制可以参考附录).},在下面的式子中,我们使用了归一化假设$\la q|p\ra=L^{-1/2}e^{ipq}\;q\in[0,L]$,$ q $为连续的位置变量,而$p=n\frac{2\pi}L\;n\in \mathbb Z$为离散的动量变量(关于边界$ L $,并且有归一化条件$e^{ipL}=1$),在极限$L\to\infty$,存在$\frac1L\sum_p\to\int_{-\infty}^\infty\frac{\d p}{2\pi}$.\\
+于是,式子变为
+\begin{equation}
+	\vspace{\baselineskip}
+	%公式编号: 13
+	\begin{aligned}
+		U(q_f,q_i;\epsilon)& \begin{aligned}&=\sum_p\langle q_f|e^{-i\epsilon\frac{\hat{p}^2}{2m}}|p\rangle\langle p|e^{-i\epsilon V(\hat{q})}|q_i\rangle\end{aligned} \\
+		&=\int\frac{\d p}{2\pi}\exp\biggl\{-i\epsilon\biggl[\frac{p^2}{2m}+V(q_i)\biggr]+ip(q_f-q_i)\biggr\} \\
+		&\tikzmarknode{13eq2}{\highlight{blue}{$=$}}\bigg(\frac{m}{2\pi i\epsilon}\bigg)^{1/2}\exp\bigg\{i\epsilon\bigg[\frac{m}{2}\frac{(q_{f}-q_{i})^{2}}{\epsilon^{2}}-V(q_{i})\bigg]\bigg\}.
+	\end{aligned}
+\end{equation}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+	% 对于 "2" 定位点
+	\path (13eq2.south) ++ (0,-1.5em) node[anchor=north west,color=blue!67] (eq13/2){\textbf{此处计算需要利用留数定理,附录中给出了mma计算代码}};
+	\draw [color=blue!57](13eq2.south) |- ([xshift=-0.3ex,color=blue]eq13/2.south east);
+\end{tikzpicture}
+
+为了使对$ p $的积分收敛,我们假设$\epsilon$包含一个小的负虚部,我们发现,指数上的部分恰好是$ i $乘以无穷小作用量$S(q_f,q_i;\epsilon)$,不难发现这个作用量对应着无穷小时间$\epsilon$内$ q_i $和$ q_f $之间以恒定速度的直线轨迹,于是,我们把式子写为如下形式:
+\begin{equation}
+	U(q_f,q_i;\epsilon)=\left(\frac{m}{2\pi i\epsilon}\right)^{1/2}e^{iS(q_f,q_i;\epsilon)+\mathcal{O}(\epsilon^2)}
+\end{equation}
+仅有无穷小时间间隔的传播子显然是远远不够的,现在我们想计算出任意时间间隔$t_f-t_i$的传播子$U(q_f,q_i;t_f-t_i)$.我们考虑将时间段$t_f-t_i$分割为$ N $个长为$\epsilon=(t_f-t_i)/N$的等大小的部分,只要最终我们取极限$N\to\infty\;(\epsilon\to0)$,并对全部时间步积分,就得到了任意时间间隔$t_f-t_i$的传播子.
+\begin{equation}
+	\begin{aligned}
+		\begin{aligned}U(q_f,q_i;t_f-t_i)\end{aligned}& \begin{aligned}=\langle q_{f}|e^{-i\hat{H}\epsilon}\cdots e^{-i\hat{H}\epsilon}|q_{i}\rangle\end{aligned} \\
+		&=\int\prod_{k=1}^{N-1}\d q_k\langle q_f|e^{-i\hat{H}\epsilon}|q_{N-1}\rangle\langle q_{N-1}|e^{-i\hat{H}\epsilon}|q_{N-2}\rangle\cdots\langle q_1|e^{-i\hat{H}\epsilon}|q_i\rangle \\
+		&=\int\prod_{k=1}^{N-1}\d q_k\prod_{k=1}^NU(q_k,q_{k-1};\epsilon)
+	\end{aligned}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
 	
 \ifx\allfiles\undefined
 \end{document}

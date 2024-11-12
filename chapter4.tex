@@ -153,7 +153,7 @@
 \end{tikzpicture}
 
 为了使对$ p $的积分收敛,我们假设$\epsilon$包含一个小的负虚部,我们发现,指数上的部分恰好是$ i $乘以无穷小作用量$S(q_f,q_i;\epsilon)$,不难发现这个作用量对应着无穷小时间$\epsilon$内$ q_i $和$ q_f $之间以恒定速度的直线轨迹,于是,我们把式子写为如下形式:
-\begin{equation}
+\begin{equation}\label{4eq14}
 	U(q_f,q_i;\epsilon)=\left(\frac{m}{2\pi i\epsilon}\right)^{1/2}e^{iS(q_f,q_i;\epsilon)+\mathcal{O}(\epsilon^2)}
 \end{equation}
 仅有无穷小时间间隔的传播子显然是远远不够的,现在我们想计算出任意时间间隔$t_f-t_i$的传播子$U(q_f,q_i;t_f-t_i)$.我们考虑将时间段$t_f-t_i$分割为$ N $个长为$\epsilon=(t_f-t_i)/N$的等大小的部分,只要最终我们取极限$N\to\infty\;(\epsilon\to0)$,并对全部时间步积分,就得到了任意时间间隔$t_f-t_i$的传播子.
@@ -164,6 +164,186 @@
 		&=\int\prod_{k=1}^{N-1}\d q_k\prod_{k=1}^NU(q_k,q_{k-1};\epsilon)
 	\end{aligned}
 \end{equation}
+其中$q_0=q_i,q_N=q_f$,在\ref{4eq14}中,我们对每个时间步传播子都忽略了$\epsilon^2$的高阶项,对于整体,其导致了阶为$\epsilon$的总误差. \\
+现在我们继续考虑,令$N\to\infty$我们有
+\begin{equation}
+	U(q_f,q_i;t)=\lim_{N\to\infty}\left(\frac{mN}{2\pi it}\right)^{N/2}\int\prod_{k=1}^{N-1}\d q_k e^{iS[q]}
+\end{equation}
+其中作用量为
+\begin{equation}
+	S[q]=\sum_{k=1}^NS(q_k,q_{k-1};\epsilon)=\epsilon\sum_{k=1}^N\left[\frac m2\frac{(q_k-q_{k-1})^2}{\epsilon^2}-V(q_{k-1})\right]
+\end{equation}
+在极限$N\to\infty$,我们可以把求和写做积分:
+\begin{equation}
+	\begin{aligned}\epsilon\sum_{k=1}^N\frac{m}{2}\frac{(q_k-q_{k-1})^2}{\epsilon^2}&\to\int_{t_i}^{t_f} \d t\frac{m}{2}\dot{q}^2\\\epsilon\sum_{k=1}^NV(q_{k-1})&\to\int_{t_i}^{t_f} \d t V(q)\end{aligned}
+\end{equation}
+我们使用$q(t)$表示这个粒子的``轨迹"(trajectory),对于始末位置$q(t_i)=q_i,q(t_f)=q_f$,但这并不意味着在大$ N $极限下的连续性/可微性.我们定义积分测度为如下形式\footnote{我们可以认为这个形式不过是把一些成套的东西包装成一个微分算符,依赖这种写法,可以简化我们对于路径积分的表述.}:
+\begin{equation}
+	\mathcal{D}[q]=\lim_{N\to\infty}\left(\frac{mN}{2\pi i\hbar t}\right)^{N/2}\prod_{k=1}^{N-1}\d q_k
+\end{equation}
+于是传播子可以简化为
+\begin{equation}
+	U(q_f,q_i;t_f-t_i)=\int_{q(t_i)=q_i}^{q(t_f)=q_f}\mathcal{D}[q]e^{\frac{i}{\hbar}S[q]}
+\end{equation}
+同时作用量被定义为
+
+\begin{equation}
+	\vspace{\baselineskip}
+	%公式编号: 21
+	\tikzmarknode{21eq1}{\highlight{red}{$S[q]$}}=\int_{t_i}^{t_f}\d t\tikzmarknode{21eq2}{\highlight{blue}{$L(q,\dot{q})$}}
+\end{equation}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+	% 对于 "1" 定位点
+	\path (21eq1.north) ++ (0,2em) node[anchor=south east,color=red!67] (eq21/1){\textbf{作用量}};
+	\draw [color=red!87](21eq1.north) |- ([xshift=-0.3ex,color=red]eq21/1.south west);
+	% 对于 "2" 定位点
+	\path (21eq2.south) ++ (0,-1.5em) node[anchor=north west,color=blue!67] (eq21/2){\textbf{拉格朗日量}};
+	\draw [color=blue!57](21eq2.south) |- ([xshift=-0.3ex,color=blue]eq21/2.south east);
+\end{tikzpicture}
+
+现在我们发现,这个作用量的形式与轨迹$q(t)$的经典作用量的形式一致.
+
+我们不难注意到:积分测度$\mathcal D$中包含的极限是\textbf{发散的},在处理发散问题之前,我们首先尝试讨论其物理含义:对于传播子,我们从公式角度出发观察传播子的形式,我们不难发现这个积分过程只规定了初值条件(初态位置和时间以及末态位置和时间),我们需要对\textbf{所有可能的}路径进行积分(或者说是求和,这两者并没有太大区别),并且对于求和过程,我们最后得出的答案是依赖于作用量的对每条路径的\textbf{加权和}.而按照物理情景的解释,我们有``当一个物理过程\footnote{我们并没有区别宏观和微观,这是因为其对宏观仍然适用,但由于对应原理,我们不必对宏观现象如此分析.}可以以多种路径进行时,它的概率幅由每种路径的幅值之和给出\footnote{英文原文:When a
+	process can take place in more than one way, its probability amplitude is given by the
+	sum of the amplitudes for each way.}".
+
+但是,我们发现这并没有解决发散问题,于是我们要求轨迹是足够``好"的.即要求动力学项$[q(t+\epsilon)-q(t)]^2/\epsilon$在极限$\epsilon\to0$时收敛,并认为在不满足这个条件的轨迹会剧烈震荡,其平均值为$ 0 $,即不那么``好"的轨迹.事实上,这种方法似乎完全看不出来严格的数学依据,但现实如此(这里可以引用那些经典的物理小笑话了,至少我们目前不用去思考如何把这些东西严谨化.)\footnote{关于这一大段的文字讨论是必须的,其有助于构建量子场论的物理图景,事实上,在这一章我一直在尝试把更多重点放在公式内部并突出显示它,倘若把重点置于一大堆文字中,读者不加以仔细的阅读的话,便很容易错过去.而且,对于物理这一门学科,过于长段的文字很难真的揭示什么内涵,它们往往起到解释公式的作用,或者说,公式才是文章的主体.同样的,这一大段内容我放在了脚注中,同样为了让人们去注意到它.}.
+
+\subsection*{经典极限}
+或许你们发现在上一部分的结尾中,我们并没有像往常一样去省略约化普朗克常数$\hbar$,这有关于经典极限的讨论.
+
+我们所关注的重点轨迹为``贴近"经典路径的轨迹,其作用量是静态的.
+\begin{equation}
+	\left.\frac{\delta S[q]}{\delta q(t)}\right|_{q=q_c}=0
+\end{equation}
+对于非静态的轨迹,其意味着作用量的大幅振荡,其平均值为0,或者说,更准确的,传播子$U(q_f,q_i;t_f-t_i)$由轨迹$q(t)$所主导
+Non-stationary trajectories imply large oscillations of the action and therefore average to zero (the Feynman paths interfere destructively). More precisely, the propagator U(qf , qi; tf −ti) is dominated by the trajectories q(t) whose action S[q] differs from the classical action Sc = S[qc] by a term of order ℏ: |S−Sc| ≲ ℏ. When |Sc| ≫ ℏ, these trajectories are very close to the classical trajectory. In the opposite limit, the condition |S − Sc| ≲ ℏ
+= is fulfilled by trajectories very different from the classical one. Formally, the classical limit corresponds to the limit ℏ → 0.
+
+\begin{remark}
+		\textit{To obtain the propagator in the limit ℏ → 0, we write q(t) = qc(t) + r(t) (assuming
+		there is only one classical trajectory) and expand the action to second order in r(t),}
+		\begin{equation}
+			\begin{aligned}&U(q_f,q_i;t_f-t_i)\\&\simeq e^{\frac{i}{\hbar}S[q_c]}\int_{r(t_i)=0}^{r(t_f)=0}\mathcal{D}[r]\exp\biggl\{\frac{i}{2\hbar}\int_{t_i}^{t_f}dt dt' \frac{\delta^2S[q]}{\delta q(t)\delta q(t')}\biggr|_{q=q_c}r(t)r(t')\biggr\}\end{aligned}
+		\end{equation}
+		\textit{The integral is Gaussian and can be done exactly}
+		\begin{equation}
+			U(q_f,q_i;t_f-t_i)\simeq e^{\frac{i}{\hbar}S[q_c]}\det\left(\frac{1}{2\pi i\hbar}\frac{\delta^2S[q]}{\delta q(t)\delta q(t')}\bigg|_{q=q_c}\right)^{-1/2}
+		\end{equation}
+		\textit{The procedure we have followed to obtain (1.24) is known as the stationary-phase
+		approximation. It gives the leading term of an expansion in powers of ℏ that can be
+		systematically carried out to higher orders (see Sec. 1.7).}
+\end{remark}
+
+\subsection*{时序算符以及哈密顿量}
+1
+\subsection{欧式路径积分}
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

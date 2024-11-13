@@ -216,25 +216,34 @@
 \begin{equation}
 	\left.\frac{\delta S[q]}{\delta q(t)}\right|_{q=q_c}=0
 \end{equation}
-对于非静态的轨迹,其意味着作用量的大幅振荡,其平均值为0,或者说,更准确的,传播子$U(q_f,q_i;t_f-t_i)$由轨迹$q(t)$所主导
-Non-stationary trajectories imply large oscillations of the action and therefore average to zero (the Feynman paths interfere destructively). More precisely, the propagator U(qf , qi; tf −ti) is dominated by the trajectories q(t) whose action S[q] differs from the classical action Sc = S[qc] by a term of order ℏ: |S−Sc| ≲ ℏ. When |Sc| ≫ ℏ, these trajectories are very close to the classical trajectory. In the opposite limit, the condition |S − Sc| ≲ ℏ
-= is fulfilled by trajectories very different from the classical one. Formally, the classical limit corresponds to the limit ℏ → 0.
+对于非静态的轨迹,其意味着作用量的大幅振荡,其平均值为0,或者说,更准确的,传播子$U(q_f,q_i;t_f-t_i)$由轨迹$q(t)$所主导,其作用量$S[q]$与经典作用量$S_c=S[q_c]$相差一个$\hbar$阶项:$|S-S_c|\lesssim\hbar$.当$|S_c|\gg\hbar $时,这些轨迹非常接近经典作用量的轨迹.而对于相反的极限中,同样满足条件$|S-S_c|\lesssim\hbar$的轨迹就与经典作用量导致的轨迹截然不同.于是,形式上的经典极限对于与$\hbar\to0$的极限.
 
 \begin{remark}
-		\textit{To obtain the propagator in the limit ℏ → 0, we write q(t) = qc(t) + r(t) (assuming
-		there is only one classical trajectory) and expand the action to second order in r(t),}
+		\textit{为了得到极限$\hbar\to0$中的传播子,我们写出$q(t)=q_c(t)+r(t)$(我们假设仅存在唯一一条经典轨道.),并把作用量对于$r(t)$展开到第二阶.}
 		\begin{equation}
-			\begin{aligned}&U(q_f,q_i;t_f-t_i)\\&\simeq e^{\frac{i}{\hbar}S[q_c]}\int_{r(t_i)=0}^{r(t_f)=0}\mathcal{D}[r]\exp\biggl\{\frac{i}{2\hbar}\int_{t_i}^{t_f}dt dt' \frac{\delta^2S[q]}{\delta q(t)\delta q(t')}\biggr|_{q=q_c}r(t)r(t')\biggr\}\end{aligned}
+			\begin{aligned}&U(q_f,q_i;t_f-t_i)\\&\simeq e^{\frac{i}{\hbar}S[q_c]}\int_{r(t_i)=0}^{r(t_f)=0}\mathcal{D}[r]\exp\biggl\{\frac{i}{2\hbar}\int_{t_i}^{t_f}\d t \d t' \frac{\delta^2S[q]}{\delta q(t)\delta q(t')}\biggr|_{q=q_c}r(t)r(t')\biggr\}\end{aligned}
 		\end{equation}
-		\textit{The integral is Gaussian and can be done exactly}
+		\textit{这类积分被称为\textbf{高斯积分},高斯积分并不需要你去思考如何巧妙积分出来,仅需套用公式就能得出答案,而对应的积分表全部列在下面,即式\ref{GaussIntegral}.}
 		\begin{equation}
 			U(q_f,q_i;t_f-t_i)\simeq e^{\frac{i}{\hbar}S[q_c]}\det\left(\frac{1}{2\pi i\hbar}\frac{\delta^2S[q]}{\delta q(t)\delta q(t')}\bigg|_{q=q_c}\right)^{-1/2}
 		\end{equation}
-		\textit{The procedure we have followed to obtain (1.24) is known as the stationary-phase
-		approximation. It gives the leading term of an expansion in powers of ℏ that can be
-		systematically carried out to higher orders (see Sec. 1.7).}
+		\textit{我们最后得到的结果所遵循的过程被称为稳态相位近似.}
 \end{remark}
-
+\subsection*{高斯积分表}
+如下表,其中$ K $是对称矩阵.
+\begin{equation}\label{GaussIntegral}
+	\begin{alignat}{2}
+		&\int_{-\infty}^{+\infty} e^{-\frac{1}{2}ax^{2}}\dx=\sqrt{\frac{2\pi}{a}} &\quad
+		&\int_{-\infty}^{+\infty}x^{2n}e^{-\frac12ax^2}\dx=\sqrt{2\pi}a^{-\frac{2n+1}2}(2n-1)!! \\
+		&\int_{-\infty}^{+\infty}e^{-\frac12ax^2+Jx}\dx=\sqrt{\frac{2\pi}a}e^{\frac{J^2}{2a}} &
+		&\int_{-\infty}^{+\infty} e^{-\frac{1}{2} ax^{2}+iJx} \dx=\sqrt{\frac{2\pi}{a}}e^{-\frac{J^{2}}{2a}} \\
+		&\int_{-\infty}^{+\infty}e^{i(\frac{1}{2}ax^{2}+Jx)}\dx=\sqrt{\frac{2\pi i}{a}}e^{-i\frac{J^{2}}{2a}} &
+		&\int_{-\infty}^{+\infty}e^{-\frac{1}{2}x^{T}Kx}\d^{n}x=\sqrt{\frac{(2\pi)^{n}}{\det K}} \\
+		&\int_{-\infty}^{+\infty}e^{-\frac{1}{2}x^{T}Kx+Jx}\d^{n}x=\sqrt{\frac{(2\pi)^{n}}{\det K}}e^{\frac{1}{2}JK^{-1}J} &
+		&\int_{-\infty}^{+\infty}e^{-\frac{1}{2}x^{T}Kx+iJx}\d^{n}x=\sqrt{\frac{(2\pi)^{n}}{\det K}}e^{-\frac{1}{2}JK^{-1}J} \\
+		&\int_{-\infty}^{+\infty}e^{i(\frac{1}{2}x^{T}Kx+Jx)}\d^{n}x=\sqrt{\frac{(2\pi i)^{n}}{\det K}}e^{-\frac{i}{2}JK^{-1}J}
+	\end{alignat}
+\end{equation}
 \subsection*{时序算符以及哈密顿量}
 1
 \subsection{欧式路径积分}

@@ -3,9 +3,8 @@
 
 这本书的编著目的是用于小组学习,主要包含了通往一般理论物理凝聚态期刊中的**重要**的知识体系,对于次要的,我推荐在实际使用时再去补充.事实上,想要如同国内高中时的方法学习这一部分*几乎是* 不可能的.
 
-每完成一章,会在Releases中提交对应编译出的pdf文件.
 
-主要参考书籍列表:
+主要参考书籍列表:List of main reference books:
 - Modern Quantum Mechanics 2nd.J.J.Sakurai
 - Quantum Field Theory in Condensed Matter Physics 2nd.Alexei M.Tsvellk
 - Entanglement in Many-Body Systems
@@ -13,22 +12,34 @@
 - 物理学中的泛函分析
 - Nicolas Dupuis - Field Theory of Condensed Matter and Ultracold Gases
 - Conformal Field Theory A.N. Schellekens
-当前版本:1.0.4
+- 列表不全,请参考讲义中最后附录
 
-*尚未制作完成,仅供参考.*
+当前版本:1.2.1
+vision:1.2.1
 
-### 前言
-学好这些物理**必不可少**的是学好线性代数和微积分,本书的最低阅读门槛已经降到掌握线性代数和微积分就可以尝试阅读了.对于部分数学物理方法和固体物理中的概念会尝试在附录补充.
+*尚未制作完成,仅供参考. 
+It has not been made yet and is for reference only.*
 
-我们可以把这些几乎所有的东西都算作**线性空间**里面的东西,无论是态矢量,算符,群$\cdots$这些都没有脱离线性空间的框架,所以本书的大部分内容都尽可能依托线性空间这个基本盘来诠释.大多数诠释是更加物理的,毕竟没有哪一本数学教材会把向量空间和线性空间模糊到一起(不过在必要的情况下尽量修补数学上的漏洞,在前几章尽量不会肆意使用晦涩的数学概念).
+### 前言 Introduction
+很多初学者在初次自学较高深的物理的时候往往会犯一个错误:被同等级的高深的数学所迷惑,认为学好这些物理离不开这些数学.但事实上,学好物理确实离不开数学,但仅仅是一小部分的数学.例如,学好量子力学离不开线性代数,但经常有很多物理系的学生拐去学习泛函分析,李代数,辛几何之类的内容,而这些数学内容往往只有一小部分应用在物理上面,打着先学完这些数学再开始学习物理的想法,只会让物理的学习一拖再拖.我们应当意识到,数学不过是物理的工具,切勿舍本逐末.
 
-对于一些经典实验,如盖拉赫实验,这个实验可以让**从未接触过**这一方面的新手受益匪浅.但是出于一些考虑(更加强调线性空间,能够提供更加深入的理解,同时不必花大篇幅来讲解这一实验),选择直接从线性空间来开始第一章的内容,如果想要对这一方面加以了解的话,可以参考这一篇文章[盖拉赫实验(知乎)](https://zhuanlan.zhihu.com/p/596869364).
+但这并不意味着数学不重要,离开数学的物理不亚于纸上谈兵,毫无意义.而对于本讲义,前面的部分并不十分紧要,仅作为开启凝聚态场论的先备知识,将重要的部分提取出来,作为前两章.第三章是为后续的大量使用做铺垫,第四章开始是文章的主体部分,最后的几章为目前在做的研究方向的总结.
 
-对于这一领域,学到第九章其实就**具备**阅读期刊论文的能力了,后面开始的章节前部分是面世已久的模型.后部分是近些年才面世的新模型和新理论,主要由个人经历写成,方向较为前沿且范围较小,故**仅供参考**.
+对于前三章,可能出现许多笔误的情况,后续会逐一修正,第一第二章的讲述方式极大的参考了樱井纯的现代量子力学.
 
-*目前打算写在最后的东西包括:泛函重整化群,一些较新的模型,一些和纠缠相关的内容.预计在这几个月初步写到第九章,然后慢慢补充修正(尤其是第九章之后的内容),大部分重要的内容会尽量写在较前面,不过可能为了贴合书名先写纠缠的部分.*
+前言仅供参考,不代表最终前言内容和书中内容,该前言已经是第二版.
 
-目前进度:第二章.
+目前进度:第四章.
+
+Many beginners often make a mistake when they first self-study advanced physics: they are confused by the advanced mathematics of the same level and think that learning these physics well is inseparable from these mathematics. But in fact, learning physics well is indeed inseparable from mathematics, but only a small part of mathematics. For example, learning quantum mechanics well is inseparable from linear algebra, but there are often many physics students who go to learn functional analysis, Lie algebra, symplectic geometry and other contents, and these mathematical contents are often only a small part of physics. The idea of ​​learning these mathematics first and then starting to learn physics will only delay the study of physics. We should realize that mathematics is just a tool for physics, and we should not lose sight of the main purpose. 
+
+But this does not mean that mathematics is not a tool for physics. Learning is not important. Physics without mathematics is no less than talking on paper and meaningless. For this lecture, the previous part is not very important. It is only used as the prerequisite knowledge for opening the condensed matter field theory. The important part is extracted as the first two chapters. The third chapter paves the way for subsequent extensive use. The fourth chapter is the main part of the article. The last few chapters are a summary of the current research direction. 
+
+For the first three chapters, there may be many typos, which will be corrected one by one later. The narration of the first and second chapters is largely based on Sakurai Jun's modern quantum mechanics. 
+
+The preface is for reference only and does not represent the final preface content and the content of the book. This preface is already the second edition. 
+
+Current progress: Chapter 4.
 
 ### 版本更新历史 History
 #### 1.0.0 
@@ -50,3 +61,21 @@
 *date:2024/09/19*
 * 第二章大部分完成,修补了部分目录
 * 重新组织了大纲,重新安排了tex文件结构.
+#### 1.1.1 
+*date:2024/10/1*
+* 第二章完成
+* 加入了部分第一章习题解析
+#### 1.1.2
+*date:2024/10/17*
+* 第三章大部分完成
+* 重新整理了后续大纲
+#### 1.2.0 
+*date:2024/11/3*
+* 开始第四章,第三章后半部分暂且搁置
+* 重新整理了前三章内容,删除一部分内容,尤其是第三章
+#### 1.2.1 
+*date:2024/11/16*
+* 对于第四章,开始采取更新的公式样式
+* 整理README内容,使其与当前状态相匹配
+* 加入了配套Mathematica文件(从第四章开始)
+* 加入了小组内配套使用的习题(仅供参考)

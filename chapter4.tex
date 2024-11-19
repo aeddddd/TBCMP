@@ -244,23 +244,126 @@
 		&\int_{-\infty}^{+\infty}e^{i(\frac{1}{2}x^{T}Kx+Jx)}\d^{n}x=\sqrt{\frac{(2\pi i)^{n}}{\det K}}e^{-\frac{i}{2}JK^{-1}J}
 	\end{alignat}
 \end{equation}
+需要强调的是,虽然看似高斯积分较为复杂,但都处于高等数学范畴内的积分,如需要记忆的话也可以仅记忆下面这个,其他都可以通过简单的系数替换得到:
+\begin{equation}
+	\int_{-\infty}^{+\infty}e^{-\frac12ax^2+Jx}\dx=\sqrt{\frac{2\pi}a}e^{\frac{J^2}{2a}}
+\end{equation}
 \subsection*{时序算符以及哈密顿量}
-1
+对于海森堡绘景下算符的矩阵元,例如算符$\hat{q}(t)=e^{i\hat{H}t}\hat{q}e^{-i\hat{H}t}$
+\begin{equation}
+	\langle q_f,t_f|\hat{q}(t)|q_i,t_i\rangle=\langle q_f|e^{-i\hat{H}(t_f-t)}\hat{q}e^{-i\hat{H}(t-t_i)}|q_i\rangle 
+\end{equation}
+如之前那样,我们将时间间隔无限拆分并再次积分,就可以得到矩阵元的路径积分表示:
+\begin{equation}
+	\langle q_f,t_f|\hat{q}(t)|q_i,t_i\rangle=\int_{q(t_i)=q_i}^{q(t_f)=q_f}\mathcal{D}[q] q(t)e^{iS[q]}
+\end{equation}
+而为了使用路径积分表示两个不同时间的算符的乘积,我们引入一个新算符,其被定义为\\
+
+\begin{equation}
+	\vspace{\baselineskip}
+	%公式编号: 29
+	\tikzmarknode{29eq1}{\highlight{red}{$T$}}\left[\prod_{i=1}^n\hat{q}_i(t_i)\right]=\sum_p\left(\prod_{j=1}^{n-1}\tikzmarknode{29eq2}{\highlight{blue}{$\Theta(t_{p_j}-t_{p_{j+1}})$}}\right)\epsilon\prod_{k=1}^{n}\hat{q}_{pk}(t_{pk})
+\end{equation}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+	% 对于 "1" 定位点
+	\path (29eq1.north) ++ (0,2em) node[anchor=south east,color=red!67] (eq29/1){\textbf{时序算符}};
+	\draw [color=red!87](29eq1.north) |- ([xshift=-0.3ex,color=red]eq29/1.south west);
+	% 对于 "2" 定位点
+	\path (29eq2.south) ++ (0,-1.5em) node[anchor=north west,color=blue!67] (eq29/2){\textbf{阶跃函数,即$x\ge0\to\Theta(x)=1;x<0\to\Theta(x)=0$}};
+	\draw [color=blue!57](29eq2.south) |- ([xshift=-0.3ex,color=blue]eq29/2.south east);
+\end{tikzpicture}
+
+于是我们不难看出,虽然这个算符形式看起来十分复杂,但并没有对原来的算符进行实质性改变,只不过是按照时间顺序把这些算符的乘积进行排序,这也是这个算符被称为\textbf{时序算符}的原因.并且对于式子中的$\epsilon$,其对于玻色子算符总是取$+1$,对于费米子算符,其依赖于前面的排序的奇偶性:对于偶置换取正,对于奇置换取负.\\
+我们以最简单的二阶情景为例:
+\begin{equation}
+	T\hat{q}(t)\hat{q}(t')=\Theta(t-t')\hat{q}(t)\hat{q}(t')+\Theta(t'-t)\hat{q}(t')\hat{q}(t)
+\end{equation}
+其路径积分表示为
+\begin{equation}
+	\langle q_f,t_f|T\hat{q}(t)\hat{q}(t')|q_i,t_i\rangle=\int_{q(t_i)=q_i}^{q(t_f)=q_f}\mathcal{D}[q] q(t)q(t')e^{iS[q]}
+\end{equation}
+回想这一形式的物理意义,我们发现路径积分自然表示了算符按一个时序的乘积的期望.
+
+\subsection*{路径积分的哈密顿形式}
+我们先前的作用量都是有拉格朗日形式给出,现在我们一并写出同样对于哈密顿形式的传播子,积分测度以及作用量:
+\begin{equation}
+	\begin{aligned}
+		U(q_f,q_i;t_f-t_i)&=\lim_{N\to\infty}\int\prod_{k=1}^{N-1}\d q_{k}\int\prod_{k=1}^{N}\frac{\d p_{k}}{2\pi}e^{\sum_{k=1}^{N}\left[ip_{k}(q_{k}-q_{k-1})-i\epsilon\frac{p_{k}^{2}}{2m}-i\epsilon V(q_{k-1})\right]}\\
+		&\equiv\int_{q(t_i)=q_i}^{q(t_f)=q_f}\mathcal{D}[p,q] e^{iS[p,q]} \\
+		\mathcal{D}[p,q]&=\lim_{N\to\infty}\prod_{k=1}^{N-1}\d q_k\prod_{k=1}^N\frac{\d p_k}{2\pi}\\
+		S[p,q]&=\lim_{N\to\infty}\sum_{k=1}^N\Big[p_k(q_k-q_{k-1})-\epsilon\frac{p_k^2}{2m}-\epsilon V(q_{k-1})\Big] \\
+		&\equiv\int_{t_i}^{t_f}\dt [p\dot{q}-H(p,q)]
+	\end{aligned}
+\end{equation}
+
+
+
+
+
+
+
+
 \subsection{欧式路径积分}
-1
+回忆我们在统计力学中的学习,通过配分函数可以得到几乎全部我们所关心的物理量,而同样的,对于凝聚态场论,我们仍需要重点关注配分函数.\\
+我们首先写出配分函数的形式
+\begin{equation}
+	Z=\operatorname{Tr}e^{{-\beta\hat{H}}}=\int \d q\langle q|e^{{-\beta\hat{H}}}|q\rangle
+\end{equation}
+为了揭示经典与量子统计力学直接的联系,我们从演化算符$e^{-i\hat{H}t}$在一个虚时(时间为虚数)的情况下求解,其中虚时$t=-i\beta$(对于SI单位制,$t=-i\beta\hbar$),自然得出凝聚态场论中的配分函数.我们自然看出来一个重要的事情:经典统计力学与凝聚态场论(也称为量子统计力学)之间仅仅差了一个变换$t\to-i\tau$.我们称这个变换为\textbf{Wick转动(Wick rotation)}.即在复时间平面上旋转了$-\pi/2$角.虚时的概念在凝聚态场论中至关重要,我们依次作Wick转动,传播子变为:
+\begin{equation}
+	\begin{aligned}
+		U(q_f,q_i;-i\tau)& \begin{aligned}&=\lim_{N\to\infty}\left(\frac{mN}{2\pi\tau}\right)^{N/2}\int\prod_{k=1}^{N-1}dq_k e^{-\epsilon\sum_{k=1}^N\left[\frac{m}{2}\frac{\left(q_k-q_{k-1}\right)^2}{\epsilon^2}+V\left(q_{k-1}\right)\right]}\end{aligned} \\
+		&=\int_{q(0)=q_i}^{q(\tau)=q_f}\mathcal{D}[q] e^{-S_E[q]}.
+	\end{aligned}
+\end{equation}
+对于虚时路径积分,同样的边界满足$q(0)=q_i;q(\tau)=q_f$,对于不同路径的权重同样有作用量给出:\\
 
+\begin{equation}
+	\vspace{\baselineskip}
+	%公式编号: 35
+	\tikzmarknode{35eq1}{\highlight{red}{$S_E[q]$}}=\int_{0}^{\tau}\d\tau'\tikzmarknode{35eq2}{\highlight{blue}{$\left[\frac m2\dot{q}^2+V[q]\right]$}}
+\end{equation}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+	% 对于 "1" 定位点
+	\path (35eq1.north) ++ (0,2em) node[anchor=south east,color=red!67] (eq35/1){\textbf{欧几里得作用量(欧式作用量)}};
+	\draw [color=red!87](35eq1.north) |- ([xshift=-0.3ex,color=red]eq35/1.south west);
+	% 对于 "2" 定位点
+	\path (35eq2.south) ++ (0,-1.5em) node[anchor=north west,color=blue!67] (eq35/2){\textbf{欧式拉格朗日量(动能和势能同号)}};
+	\draw [color=blue!57](35eq2.south) |- ([xshift=-0.3ex,color=blue]eq35/2.south east);
+\end{tikzpicture}
 
+经典极限对于虚时路径积分也是同样的,并且通过Wick旋转,我们可以将欧式作用量变为实时作用量:
+\begin{equation}
+	S_E[q]\xrightarrow[\tau=it]{\text{\textit{Wick 旋转}}}i\int_0^t\d t'\left[-\frac{m}{2}\dot{q}^2+V(q)\right]=-iS[q].
+\end{equation}
+自然可以继续写出配分函数为
+\begin{equation}
+	Z=\int \d qU(q,q,-i\beta)=\int_{q(\beta)=q(0)}\mathcal{D}[q]e^{{-S_{E}[q]}}
+\end{equation}
+作为所有周期为$\beta$的周期性路径的虚时路径积分,虚时算符$\hat{q}(\tau)=e^{\tau\hat{H}}\hat{q}e^{-\tau\hat{H}}$的期望自然写出
+\begin{equation}
+	\langle\hat{q}(\tau)\rangle=\frac{1}{Z}\mathrm{Tr}{\left[e^{-\beta\hat{H}}\hat{q}(\tau)\right]}=\frac{1}{Z}\int_{q(\beta)=q(0)}\mathcal{D}[q]q(\tau)e^{{-S_{E}[q]}}
+\end{equation}
+同样的,对于多个不同时间算符的时序乘积,我们利用时序算符按$\tau$进行排序,并有
+\begin{equation}
+	\langle T_\tau\hat{q}(\tau)\hat{q}(\tau^{\prime})\rangle=\frac1Z\int_{q(\beta)=q(0)}\mathcal{D}[q] q(\tau)q(\tau^{\prime})e^{-S_E[q]}
+\end{equation}
+如果$\beta\to0$或$\hbar\to0$,传播子$U(q,q;-i\beta\hbar)$就可以仅利用一个时间步($ N=1 $)计算出来\footnote{为了直观的和德布罗意关系联系起来,此处再次把$\hbar$显现出来}.其导致
+\begin{equation}
+	\begin{aligned}
+		Z_{\mathrm{cl}}& \begin{aligned}&=\frac{1}{\hbar}\sqrt{\frac{m}{2\pi\beta}}\int \dq e^{-\beta V(q)}\end{aligned} \\
+		&\equiv\int_{-\infty}^{\infty}\frac{\d p}{2\pi\hbar}\int_{-\infty}^{\infty}\dq \mathrm{exp}\bigg\{-\beta\bigg[\frac{p^{2}}{2m}+V(q)\bigg]\bigg\}
+	\end{aligned}
+\end{equation}
+我们发现配分函数变为经典配分函数,在有限温度$T<\infty$的情况下,如果势能$V(q)$在德布罗意波长$\xi_{th}\sim\hbar/\sqrt{mT}$的数量级下的长度尺度缓慢变化,那么我们认为量子统计力学的配分函数退化为经典统计力学的配分函数,即\textbf{对应原理}.
 
+方程还显示了经典系统的一个非常重要的特性:热力学和动力学是分离的:粒子的位置和动量是独立变量,可以积分出动量(这会产生对自由能的附加贡献作用),并仅以位置变量的形式写出配分函数.相比之下,在量子系统中,坐标和动量是两个不对易算符,因此静力学和动力学不是独立的.这就是为什么配分函数可以与虚时中的演化算子相关联的原因.
 
-
-
-
-
-
-
-
-
-
+\begin{eggg}
+	
+	{\Large 已知空间内存在一个有质量的一维谐振子,质量为$ m $,频率为$\omega$.}\\
+	我们首先考虑自由粒子时的简化情况(即$\omega\to0$)
+\end{eggg}
 
 
 

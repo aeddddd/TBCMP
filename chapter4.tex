@@ -1,6 +1,6 @@
 \ifx\allfiles\undefined
 
-% 如果有这一部分另外的package，在这里加上
+% 如果有这一部分另外的package,在这里加上
 % 没有的话不需要
 
 \begin{document}
@@ -32,7 +32,14 @@
 	\draw [color=blue!57](1eq2.south) |- ([xshift=-0.3ex,color=blue]eq1/2.south east);
 	\end{tikzpicture}
 \end{comment}
-在这一章,我们正式进入主题,同时也是最重要的开始部分,在这一章我们会接触许多新概念,我将尽量的把内容详细的解释出来,在后续的时候可能会对其进行再编辑,请以最新版本为准!
+从这一章开始,我们正式进入主题,也是真正核心的部分.现在开始每一章开头都会附带一段简单的小文章来快速总览部分内容,从而可以快速的建立对这些概念的朴素认知.
+\section*{引子:最小作用量原理与路径积分}
+\textit{我们都知道,数学上很讲究“公理”,希望一切都可以由公理自然给出,无论是欧几里得的平面几何几大公设还是近现代的ZFC公理系统,都试图为数学大厦建立一个夯实的根基,而这群搞物理的和搞数学又常常客串,自然而然,这些人也开始思考物理有没有所谓的公设,牛顿三定律？麦克斯韦方程组？薛定谔方程？爱因斯坦场方程？虽然这些定律都是正确的,但都在对应的能标下成立,谈不上“公理”.而最后,弄出来一些似是而非的东西\footnote{因为最小作用量原理不过是其他定律的另一种表示方法,它们互相可以推出,自然谈不上更``本质"的公理了},我们这一篇便讲其中之一：最小作用量原理.\\
+而什么是最小作用量原理呢？正所谓水往低处流,水不会无缘无故的克服重力向上做功,它永远沿着做功最少的路径前进.对于我们中学就学过的电路来讲,导线会把电阻短路,因为电流自发的按照对外做功最小的路径前进.而这种按对外做功最小的行为,我们统称为最小作用量原理.作用量是系统拉格朗日量对时间的泛函(即函数的函数),而Wick转动告诉我们,实轴上的最小作用量原理就是虚时上的最小能量原理.\\
+我们知道,量子态和经典态是截然不同的,一个量子态经由某条路径(区分实际空间中的路径和概念上的路径)到达一个结果的量子态的传播过程并不能像经典的时候那样直接表述出来：我们只知道起始时刻的位置和终点时刻的位置,中间的过程也不是传统意义上的移动,而是黑箱一般,经过一定时间之后就转移到终点,中间的过程是未知的.\\
+于是,我们的首要目的就是破解这个黑箱,对于初态和末态,我们定义了一个新的算符：传播子来代表这个黑箱过程.而下一刻粒子出现在末态的概率幅依赖于始末位置间的所有路径,但是我们知道,两点间可能有无数种方式路径,但那又如何？费曼提出了路径积分,将所有可能的路径全部积分一遍.其遵循了一些简朴的思想：对于过多扭曲的路径,我们可以认为反复的部分的平均为0,自然也不必考虑扭曲转圈的情况,路径被统一为单行线.而始末位置的连线则是经典路径,所有扭曲的其他路径都要以经典路径为核心,偏离太远的也被近似为0.\\
+我们此时从最小作用量原理来解释这个朴素的思想:存在无穷多可能的路线,但是大部分都是高阶项,这说明我们可以取最少的路径来表述这个过程,作用量相当于不同路径的权重,最小作用量原理要求总体权重和最小,这意味着需要有效路径最少,也对应着之前所遵循的原理.\\
+另外需要强调的是,一次量子化(量子力学)告诉我们应当使用波来描述粒子,二次量子化又重新使用粒子来描述波,这些虽然符合实验现象,但是对于某些情况就捉襟见肘了.路径积分时区别于那两种的表述方法,它认为需要使用场来表述粒子,其构建了场论形式的泛函积分方法.}
 \section{路径积分}
 在初等量子力学的学习中,我们在经典量子化的框架内进行表述,在本节,我们将初步探索另一种表述方法:\textbf{路径积分法}.
 \subsection{量子系统与经典系统中的路径积分}
@@ -98,7 +105,8 @@
 \begin{equation}
 	\hat{U}(t)=e^{-\frac i\hbar\hat{H}t}
 \end{equation}
-同时我们写出\\
+在这里,我们重申一点:给定时空位置的波函数代表了该粒子位于该时空位置的概率振幅.\\
+同时我们写出\\\\\\
 
 \begin{equation}
 	\vspace{\baselineskip}
@@ -232,7 +240,7 @@
 \subsection*{高斯积分表}
 如下表,其中$ K $是对称矩阵.
 \begin{equation}\label{GaussIntegral}
-	\begin{alignat}{2}
+	\begin{aligned}{2}
 		&\int_{-\infty}^{+\infty} e^{-\frac{1}{2}ax^{2}}\dx=\sqrt{\frac{2\pi}{a}} &\quad
 		&\int_{-\infty}^{+\infty}x^{2n}e^{-\frac12ax^2}\dx=\sqrt{2\pi}a^{-\frac{2n+1}2}(2n-1)!! \\
 		&\int_{-\infty}^{+\infty}e^{-\frac12ax^2+Jx}\dx=\sqrt{\frac{2\pi}a}e^{\frac{J^2}{2a}} &
@@ -242,7 +250,7 @@
 		&\int_{-\infty}^{+\infty}e^{-\frac{1}{2}x^{T}Kx+Jx}\d^{n}x=\sqrt{\frac{(2\pi)^{n}}{\det K}}e^{\frac{1}{2}JK^{-1}J} &
 		&\int_{-\infty}^{+\infty}e^{-\frac{1}{2}x^{T}Kx+iJx}\d^{n}x=\sqrt{\frac{(2\pi)^{n}}{\det K}}e^{-\frac{1}{2}JK^{-1}J} \\
 		&\int_{-\infty}^{+\infty}e^{i(\frac{1}{2}x^{T}Kx+Jx)}\d^{n}x=\sqrt{\frac{(2\pi i)^{n}}{\det K}}e^{-\frac{i}{2}JK^{-1}J}
-	\end{alignat}
+	\end{aligned}
 \end{equation}
 需要强调的是,虽然看似高斯积分较为复杂,但都处于高等数学范畴内的积分,如需要记忆的话也可以仅记忆下面这个,其他都可以通过简单的系数替换得到:
 \begin{equation}
@@ -361,16 +369,86 @@
 
 \begin{eggg}
 	
-	{\Large 已知空间内存在一个有质量的一维谐振子,质量为$ m $,频率为$\omega$.}\\
-	我们首先考虑自由粒子时的简化情况(即$\omega\to0$)
+	{\Large 题目:已知空间内存在一个有质量的一维自由粒子,质量为$ m $.请计算出它的传播子.}\\
+	对于自由粒子,其拉格朗日量中的势能为$ 0 $,仅有动能项,对于位置$ q $的粒子,我们直接写出其拉格朗日量:
+	\begin{equation}
+		L(q,\dot q)=\frac12m\dot q^2
+	\end{equation}
+	由于我们需要使用路径积分解决这个问题,我们把作用量按照极限求和的形式写出:
+	\begin{equation}
+		S=\int_{t_i}^{t_f} \d t\frac{m}{2}\dot{q}^2\to \epsilon\sum_{k=1}^N\frac{m}{2}\frac{(q_k-q_{k-1})^2}{\epsilon^2}
+	\end{equation}
+	继续写出路径积分形式的传播子:
+	\begin{equation}
+		U(q_f,q_i;t)=\lim_{N\to\infty}\left(\frac{mN}{2\pi it}\right)^{N/2}\int\prod_{k=1}^{N-1}\d q_k\exp\left\{i\frac{m}{2\epsilon}\sum_{k=1}^N(q_k-q_{k-1})^2\right\}
+	\end{equation}
+	我们首先对$q_1$进行积分,式子变形为
+	\begin{equation}
+		\begin{aligned}
+			U(q_f,q_i;t) & =\lim_{N\to\infty}\left(\frac{mN}{2\pi it}\right)^{N/2} \\
+			& \times\int\prod_{k=1}^{N-1}\d q_k\exp\left\{i\frac{m}{2\epsilon}(q_1-q_i)^2+i\frac{m}{2\epsilon}\sum_{k=2}^N(q_k-q_{k-1})^2\right\}
+		\end{aligned}
+	\end{equation}
+	我们提取出对于$ q_1 $的部分
+	\begin{equation}
+	\begin{aligned}
+		U(q_f,q_i;t) & =\lim_{N\to\infty}\left(\frac{mN}{2\pi it}\right)^{N/2}\times\int\d q_1\exp\left\{i\frac{m}{2\epsilon}(q_1^2+2q_1q_0)\right\} \\
+		& \times\int\prod_{k=2}^{N-1}\d q_k\exp\left\{i\frac{m}{2\epsilon}q_0^2+i\frac{m}{2\epsilon}\sum_{k=2}^N(q_k-q_{k-1})^2\right\}
+	\end{aligned}
+	\end{equation}
+	利用高斯积分,我们有
+	\begin{equation}
+		\begin{aligned}
+			U(q_f,q_i;t) & =\lim_{N\to\infty}\left(\frac{mN}{2\pi it}\right)^{N/2}\times\sqrt{\frac{2\pi it}{mN}}\exp\{-i\frac{2mq_0^2}{\epsilon}\} \\
+			& \times\int\prod_{k=2}^{N-1}\d q_k\exp\left\{i\frac{m}{2\epsilon}q_0^2+i\frac{m}{2\epsilon}\sum_{k=2}^N(q_k-q_{k-1})^2\right\}
+		\end{aligned}
+	\end{equation}
+	不断重复对变量逐一使用高斯积分的这一过程,直至得出结果:
+	\begin{equation}
+		U(q_f,q_i;t)=\left(\frac{m}{2\pi it}\right)^{1/2}\exp\left(i\frac{m(q_f-q_i)^2}{2t}\right)
+	\end{equation}
+	\framebox[\width]{这个累次积分的计算很容易出错,我在对应的mathematica文件中给出了相应的数值验证代码供自行验证.}
+	
 \end{eggg}
 
-
-
-
-
-
-
+\begin{note}
+	事实上,像示例中那样逐步计算高斯积分虽然可行,但十分麻烦,那么有没有那么一种方法可以简化我们的运算负担呢?答案是肯定的.按照下面的五个步骤可以大大简化这个复杂的过程.
+	\begin{enumerate}
+		\item 表达传播子:将传播子表示为所有满足边界条件的路径积分
+		\begin{equation}
+			U(x^{\prime},T;x,0)=\int_{x(0)=x}^{x(T)=x^{\prime}}\mathcal{D}[x(t)]e^{iS[x(t)]}
+		\end{equation}
+		\item 分解路径:将路径分解为经典路径 $x_{\text{cl}}(t)$ 和量子路径(或者称量子涨落) $y(t)$,即 $x(t) = x_{\text{cl}}(t) + y(t)$,其中 $y(0) = y(T) = 0$.
+		\item 计算经典作用量 $S_{\text{cl}}$:求解经典运动方程,代入边界条件得到经典路径,并计算其作用量.\\\framebox[\width]{注意:计算后结果尽量避免使用速度$v$或加速度$a$,统一使用$ x $来表示}
+		\item 处理涨落积分:对于二次型作用量,涨落部分的路径积分为高斯型,结果为归一化因子 $N(T)$.
+		\item 最终结果:传播子为 $U = N(T) e^{i S_{\text{cl}}}$,通过计算或对比确定 $N(T)$ (实际上$ e $指数的部分是一个wick转动的代换)
+	\end{enumerate}
+	\framebox[\width]{整个过程最难的部分通常为得出归一化因子,在下面我们将通过谐振子的方式来实际认识如何应用这个方法.}
+	\begin{solution}
+		谐振子的传播子:
+		\begin{enumerate}
+			\item 拉格朗日量:$L = \frac{1}{2}m\dot{x}^2 - \frac{1}{2}m\omega^2 x^2$
+			\item 经典路径满足 $\ddot{x} + \omega^2 x = 0$,其解为
+			\begin{equation}
+				x_{\text{cl}}(t) = x \cos(\omega t) + \frac{x' - x\cos(\omega T)}{\sin(\omega T)} \sin(\omega t)
+			\end{equation}
+			\item 经典作用量
+			\begin{equation}
+				S_{\text{cl}} = \frac{m\omega}{2\sin(\omega T)} \left[(x'^2 + x^2)\cos(\omega T) - 2xx'\right]
+			\end{equation}
+			\item 当频率$\omega\to0$时,谐振子退化为自由粒子,由自由粒子的结果对比谐振子的量纲得到归一化因子
+			\begin{equation}
+				N(T) = \sqrt{\frac{m\omega}{2\pi i \sin(\omega T)}}
+			\end{equation}
+			\item 最终结果:
+			\begin{equation}
+				U_{\text{osc}}(x', T; x, 0) = \sqrt{\frac{m\omega}{2\pi i \sin(\omega T)}} \exp\left( \frac{i m\omega}{2 \sin(\omega T)} \left[ (x'^2 + x^2)\cos(\omega T) - 2xx' \right] \right)
+			\end{equation}
+		\end{enumerate}
+	\end{solution}
+\end{note}
+\subsection{矢量势的路径积分}
+要对经典哈密顿量 $H(p,q)$ 进行量子化,仅仅将经典变量 $ p $ 和 $ q $ 替换为相应的量子算符通常是不够的.当这种对应规则导致产生非对易算符$\hat p$​ 和$\hat q$​ 的乘积时,必须通过附加条件(例如哈密顿量的厄米性)来确定算符的顺序.这些困难在路径积分表述中也表现出来:路径积分必须被仔细定义,以尊重算符的正确顺序.
 
 
 

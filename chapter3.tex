@@ -13,11 +13,11 @@
 	\item 张量
 	\item Lie代数的表示
 \end{introduction}
-这一章大部分内容聚焦在群论,尤其是李群李代数部分,事实上,恐怕到最后的章节也不会继续大篇幅的讲数学内容了,这些数学已经足够支撑你初步的了解这门学科.
 
-虽然这一章的主要内容是数学,但会逐步把相对应的物理内容穿插进来,这样既有助于加深印象,也有助于构建所谓``物理图像".
+\textit{这一章虽然名字比较吓人,但并没有太过深入讲解李群与李代数,主要为了帮助物理系学生来快速对这一门学科建立印象.当然,我们不能保证在后续的不断更新中是否会改变这一点,在最初的版本中,这一章被置于第三章,也就是初量的后续部分,以及这一章的进度只会跟进后续章节的需要,也就是说这一章的全部已完成内容足以支撑起后续章节的学习.}
 
-由于出发点原因\footnote{如标题所见,这本讲义的目的是帮助人快速进入凝聚态理论的科研中,很多初等量子力学的内容可以参考对应的课本学习,并非是这本讲义的重点.事实上,这本讲义从第三章开始才算得上开始正式的内容.},我们抛弃了许多角动量的内容,后续考虑是否以附录的形式补充回来.
+
+由于出发点原因\footnote{如标题所见,这本讲义的目的是帮助人快速进入凝聚态理论的科研中,很多初等量子力学的内容可以参考对应的课本学习,并非是这本讲义的重点.事实上,这本讲义从第三章开始才算得上开始正式的内容.},我们抛弃了许多角动量的内容,后续考虑是否以附录的形式补充回来.应该并不会了,因为连初量的内容我们也逐渐舍去了.
 \section{李群(Lie Group)初步}
 \subsection{群与李群(Lie Group)}
 我们或许听说过一个说法:``物理学的关键是对称和守恒",而诺特定理给出了对称性与守恒性的联系,例如,时间平移不变性意味着能量守恒;空间平移不变性意味着动量守恒;转动不变性意味着角动量守恒;电势和向量势的规范不变性得出电荷的守恒等.而描述对称性的语言就是群论.
@@ -459,6 +459,7 @@
 
 
 \section{角动量理论}
+\textit{这一章后续部分不需要看}
 \subsection{量子力学中的无穷小转动} 
 
 到此为止,我们还没有用到量子力学概念. 矩阵 $R$ 只是一个 $3 \times 3$ 的正交矩阵,它作用于写成列矩阵形式的矢量 $\mathbf{V}$ 上. 现在我们必须弄懂如何表征量子力学中的转动.
@@ -466,7 +467,7 @@
 因为转动影响物理系统, 预期转动后系统的态右矢与原来未经转动系统的态右矢有所不同. 给定由一个 $3 \times 3$ 正交矩阵 $R$ 表征的一个转动算符 $R$ ,我们将其与适当的右矢空间里的一个算符 $\mathcal{D}\left( R\right)$ 这样联系起来,使得:
 
 $$
-|\alpha {\rangle }_{R} = \mathcal{D}\left( R\right) |\alpha \rangle , tag{3.1.10}
+|\alpha {\rangle }_{R} = \mathcal{D}\left( R\right) |\alpha \rangle 
 $$
 
 其中 ${\left| \alpha \right\rangle }_{R}$ 和 $|\alpha \rangle$ 分别代表转动后系统和原始系统的右矢. 
@@ -501,7 +502,7 @@ $$
 现在让我们返回到基于 $R$ 矩阵写成的转动操作 (3.1.9) 式的基本对易关系. 它的转动算符类似公式为
 
 $$
-\left( {1 - \frac{i{J}_{x}\varepsilon }{\hslash } - \frac{{J}_{x}^{2}{\varepsilon }^{2}}{2{\hslash }^{2}}}\right) \left( {1 - \frac{i{J}_{y}\varepsilon }{\hslash } - \frac{{J}_{y}^{2}{\varepsilon }^{2}}{2{\hslash }^{2}}}\right) tag{3. 1.18}
+\left( {1 - \frac{i{J}_{x}\varepsilon }{\hslash } - \frac{{J}_{x}^{2}{\varepsilon }^{2}}{2{\hslash }^{2}}}\right) \left( {1 - \frac{i{J}_{y}\varepsilon }{\hslash } - \frac{{J}_{y}^{2}{\varepsilon }^{2}}{2{\hslash }^{2}}}\right) 
 $$
 
 $$
@@ -536,7 +537,7 @@ $$
 利用泡利在 1926 年引入的二分量旋量形式,可以很方便地处理自旋 $\frac{1}{2}$ 系统的态右矢. 在 1.3 节我们学会了怎样使用一个列 (行) 矩阵表示一个右矢 (左矢); 我们所要做的是把基于某个指定基右矢的展开系数安排到一个列（行）矩阵中. 在自旋 $\frac{1}{2}$ 的情况下,对于基右矢和基左矢, 我们有
 
 $$
-\left| {+\rangle \doteq \left( \begin{array}{l} 1 \\ 0 \end{array}\right) \equiv {\chi }_{ + }\;}\right| - \rangle \doteq \left( \begin{array}{l} 0 \\ 1 \end{array}\right) \equiv {\chi }_{ - } tag{3.2.26}
+\left| {+\rangle \doteq \left( \begin{array}{l} 1 \\ 0 \end{array}\right) \equiv {\chi }_{ + }\;}\right| - \rangle \doteq \left( \begin{array}{l} 0 \\ 1 \end{array}\right) \equiv {\chi }_{ - } 
 $$
 
 $$
@@ -546,7 +547,7 @@ $$
 和对一个任意的态右矢和相应的态左矢有
 
 $$
-\left| {\alpha \rangle = }\right| + \rangle \langle + \left| {\alpha \rangle + }\right| - \rangle \langle - \mid \alpha \rangle \doteq \left( \begin{array}{l} \langle + \mid \alpha \rangle \\ \langle - \mid \alpha \rangle \end{array}\right) tag{3.2.27a}
+\left| {\alpha \rangle = }\right| + \rangle \langle + \left| {\alpha \rangle + }\right| - \rangle \langle - \mid \alpha \rangle \doteq \left( \begin{array}{l} \langle + \mid \alpha \rangle \\ \langle - \mid \alpha \rangle \end{array}\right) 
 $$
 
 和
@@ -569,19 +570,19 @@ $$
 其中 ${c}_{ + }$ 和 ${c}_{ - }$ 一般都是复数. 对于 ${\chi }^{ \dagger }$ 我们有
 
 $$
-{\chi }^{ \dagger } = \left( {\langle \alpha \mid + \rangle ,\langle \alpha \mid - \rangle }\right) = \left( {{c}_{ + }^{ * },{c}_{ - }^{ * }}\right) , tag{3.2.29}
+{\chi }^{ \dagger } = \left( {\langle \alpha \mid + \rangle ,\langle \alpha \mid - \rangle }\right) = \left( {{c}_{ + }^{ * },{c}_{ - }^{ * }}\right) 
 $$
 
 矩阵元 $\left\langle {\pm \left| {S}_{k}\right| + }\right\rangle$ 和 $\left\langle {\pm \left| {S}_{k}\right| - }\right\rangle$ ,除去 $\hslash /2$ 之外,被设定等于那些 $2 \times 2$ 的、以泡利矩阵著称的矩阵 ${\sigma }_{k}$ . 我们确定
 
 $$
-\left\langle {\pm \left| {S}_{k}\right| + }\right\rangle \equiv \left( \frac{\hslash }{2}\right) {\left( {\sigma }_{k}\right) }_{\pm , + },\;\left\langle {\pm \left| {S}_{k}\right| - }\right\rangle \equiv \left( \frac{\hslash }{2}\right) {\left( {\sigma }_{k}\right) }_{\pm , - }. tag{3. 2.30}
+\left\langle {\pm \left| {S}_{k}\right| + }\right\rangle \equiv \left( \frac{\hslash }{2}\right) {\left( {\sigma }_{k}\right) }_{\pm , + },\;\left\langle {\pm \left| {S}_{k}\right| - }\right\rangle \equiv \left( \frac{\hslash }{2}\right) {\left( {\sigma }_{k}\right) }_{\pm , - }
 $$
 
 现在我们可以用 $\chi$ 和 ${\sigma }_{k}$ 写出期待值 $\left\langle {S}_{k}\right\rangle$
 
 $$
-\left\langle {S}_{k}\right\rangle = \left\langle {\alpha \left| {S}_{k}\right| \alpha }\right\rangle = \mathop{\sum }\limits_{{{a}^{\prime } = + , - }}\mathop{\sum }\limits_{{{a}^{\prime \prime } = + , - }}\left\langle {\alpha \left| {a}^{\prime }\right\rangle \left\langle {{a}^{\prime }\left| {S}_{k}\right| {a}^{\prime \prime }}\right\rangle \left\langle {a}^{\prime \prime }\right| \alpha }\right\rangle tag{3. 2.31}
+\left\langle {S}_{k}\right\rangle = \left\langle {\alpha \left| {S}_{k}\right| \alpha }\right\rangle = \mathop{\sum }\limits_{{{a}^{\prime } = + , - }}\mathop{\sum }\limits_{{{a}^{\prime \prime } = + , - }}\left\langle {\alpha \left| {a}^{\prime }\right\rangle \left\langle {{a}^{\prime }\left| {S}_{k}\right| {a}^{\prime \prime }}\right\rangle \left\langle {a}^{\prime \prime }\right| \alpha }\right\rangle 
 $$
 
 $$
@@ -591,7 +592,7 @@ $$
 其中在最后一行用到了矩阵乘法的常用规则. 显然我们可从 (3.2.1) 和 (3.2.30) 式看到
 
 $$
-{\sigma }_{1} = \left( \begin{array}{ll} 0 & 1 \\ 1 & 0 \end{array}\right) ,\;{\sigma }_{2} = \left( \begin{matrix} 0 & - i \\ i & 0 \end{matrix}\right) ,\;{\sigma }_{3} = \left( \begin{matrix} 1 & 0 \\ 0 & - 1 \end{matrix}\right) , tag{3. 2.32}
+{\sigma }_{1} = \left( \begin{array}{ll} 0 & 1 \\ 1 & 0 \end{array}\right) ,\;{\sigma }_{2} = \left( \begin{matrix} 0 & - i \\ i & 0 \end{matrix}\right) ,\;{\sigma }_{3} = \left( \begin{matrix} 1 & 0 \\ 0 & - 1 \end{matrix}\right) 
 $$
 
 其中下标 1,2 和 3 分别代表 $x, y$ 和 $z$ .
@@ -602,13 +603,13 @@ $$
 {\sigma }_{i}^{2} = 1
 $$
 
-(3. ${2.33a}$ )
+
 
 $$
 {\sigma }_{i}{\sigma }_{j} + {\sigma }_{j}{\sigma }_{i} = 0,\;\text{ 对于 }i \neq j,
 $$
 
-(3. ${2.33}\mathrm{\;b}$ )
+
 
 其中 (3.2.33a) 式的右边被理解为 $2 \times 2$ 单位矩阵. 当然,这两个关系式等价于反对易关系
 
@@ -634,7 +635,7 @@ $$
 {\sigma }_{i}^{ \dagger } = {\sigma }_{i},
 $$
 
-(3. ${2.37a}$ )
+
 
 $$
 \det \left( {\sigma }_{i}\right) = - 1, tag{3. 2.37b}
@@ -644,7 +645,7 @@ $$
 \operatorname{Tr}\left( {\sigma }_{i}\right) = 0.
 $$
 
-(3. ${2.37}\mathrm{c}$ )
+
 
 现在考虑 $\mathbf{\sigma } \cdot \mathbf{a}$ ,其中 $\mathbf{a}$ 是一个三维矢量. 要把这个量理解为实际上是一个 $2 \times 2$ 矩阵. 于是
 
@@ -659,7 +660,7 @@ $$
 还有一个非常重要的恒等式
 
 $$
-\left( {\mathbf{\sigma } \cdot \mathbf{a}}\right) \left( {\mathbf{\sigma } \cdot \mathbf{b}}\right) = \mathbf{a} \cdot \mathbf{b} + i\mathbf{\sigma } \cdot \left( {\mathbf{a} \times \mathbf{b}}\right) . tag{3. 2.39}
+\left( {\mathbf{\sigma } \cdot \mathbf{a}}\right) \left( {\mathbf{\sigma } \cdot \mathbf{b}}\right) = \mathbf{a} \cdot \mathbf{b} + i\mathbf{\sigma } \cdot \left( {\mathbf{a} \times \mathbf{b}}\right) 
 $$
 
 为证明该式, 所需的是反对易关系和对易关系, 它们分别为 (3.2.34) 式与 (3.2.35) 式:
@@ -679,7 +680,7 @@ $$
 如果 $\mathbf{a}$ 的分量都是实的,我们有
 
 $$
-{\left( \mathbf{\sigma } \cdot \mathbf{a}\right) }^{2} = {\left| \mathbf{a}\right| }^{2}, tag{3. 2.41}
+{\left( \mathbf{\sigma } \cdot \mathbf{a}\right) }^{2} = {\left| \mathbf{a}\right| }^{2}
 $$
 
 其中 $\left| \mathbf{a}\right|$ 是矢量 $\mathbf{a}$ 的长度.
@@ -689,13 +690,13 @@ $$
 现在研究转动算符 $\mathcal{D}\left( {\widehat{\mathbf{n}},\phi }\right)$ 的 $2 \times 2$ 矩阵表示. 如下
 
 $$
-\exp \left( \frac{-i\mathbf{S} \cdot \widehat{\mathbf{n}}\phi }{\hslash }\right) \doteq \exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) . tag{3. 2.42}
+\exp \left( \frac{-i\mathbf{S} \cdot \widehat{\mathbf{n}}\phi }{\hslash }\right) \doteq \exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) 
 $$
 
 利用从 (3.2.41) 式得到的
 
 $$
-{\left( \mathbf{\sigma } \cdot \widehat{\mathbf{n}}\right) }^{n} = \left\{ \begin{array}{ll} 1 & \text{ 对于偶数的 }n, \\ \mathbf{\sigma } \cdot \widehat{\mathbf{n}} & \text{ 对于奇数的 }n, \end{array}\right. tag{3.2.43}
+{\left( \mathbf{\sigma } \cdot \widehat{\mathbf{n}}\right) }^{n} = \left\{ \begin{array}{ll} 1 & \text{ 对于偶数的 }n, \\ \mathbf{\sigma } \cdot \widehat{\mathbf{n}} & \text{ 对于奇数的 }n, \end{array}\right\}
 $$
 
 我们可以写出
@@ -705,7 +706,7 @@ $$
 $$
 
 $$
-- i\left\lbrack {\left( {\mathbf{\sigma } \cdot \widehat{\mathbf{n}}}\right) \frac{\phi }{2} - \frac{{\left( \mathbf{\sigma } \cdot \widehat{\mathbf{n}}\right) }^{3}}{3!}{\left( \frac{\phi }{2}\right) }^{3} + \cdots }\right\rbrack tag{3. 2.44}
+- i\left\lbrack {\left( {\mathbf{\sigma } \cdot \widehat{\mathbf{n}}}\right) \frac{\phi }{2} - \frac{{\left( \mathbf{\sigma } \cdot \widehat{\mathbf{n}}\right) }^{3}}{3!}{\left( \frac{\phi }{2}\right) }^{3} + \cdots }\right\rbrack 
 $$
 
 $$
@@ -715,25 +716,25 @@ $$
 显然,以 $2 \times 2$ 形式我们有
 
 $$
-\exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) = \left( \begin{array}{ll} \cos \left( \frac{\phi }{2}\right) - i{n}_{z}\sin \left( \frac{\phi }{2}\right) & \left( {-i{n}_{x} - {n}_{y}}\right) \sin \left( \frac{\phi }{2}\right) \\ \left( {-i{n}_{x} + {n}_{y}}\right) \sin \left( \frac{\phi }{2}\right) & \cos \left( \frac{\phi }{2}\right) + i{n}_{z}\sin \left( \frac{\phi }{2}\right) \end{array}\right) , tag{3. 2.45}
+\exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) = \left( \begin{array}{ll} \cos \left( \frac{\phi }{2}\right) - i{n}_{z}\sin \left( \frac{\phi }{2}\right) & \left( {-i{n}_{x} - {n}_{y}}\right) \sin \left( \frac{\phi }{2}\right) \\ \left( {-i{n}_{x} + {n}_{y}}\right) \sin \left( \frac{\phi }{2}\right) & \cos \left( \frac{\phi }{2}\right) + i{n}_{z}\sin \left( \frac{\phi }{2}\right) \end{array}\right) 
 $$
 
 正像算符 $\exp \left( {-i\mathbf{S} \cdot \widehat{\mathbf{n}}\phi /\hslash }\right)$ 作用在态右矢 $|\alpha \rangle$ 上一样, $2 \times 2$ 矩阵 $\exp \left( {-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi /2}\right)$ 作用于一个二分量旋量 $\chi$ 上. 在转动之下,我们使 $\chi$ 发生如下改变:
 
 $$
-\chi \rightarrow \exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) \chi tag{3.2.46}
+\chi \rightarrow \exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) \chi
 $$
 
 另一方面, ${\sigma }_{k}$ 自身在转动下保持不变. 因此,严格地说,尽管 $\mathbf{\sigma }$ 的外貌像矢量,人们却不把它看成一个矢量; 而是把遵从矢量的变换性质的 ${\chi }^{ \dagger }\mathbf{\sigma }\chi$ 看成一个矢量:
 
 $$
-{\chi }^{ \dagger }{\sigma }_{k}\chi \rightarrow \mathop{\sum }\limits_{l}{R}_{kl}{\chi }^{ \dagger }{\sigma }_{l}\chi tag{3.2.47}
+{\chi }^{ \dagger }{\sigma }_{k}\chi \rightarrow \mathop{\sum }\limits_{l}{R}_{kl}{\chi }^{ \dagger }{\sigma }_{l}\chi 
 $$
 
 它的明确证明可以利用
 
 $$
-\exp \left( \frac{i{\sigma }_{3}\phi }{2}\right) {\sigma }_{1}\exp \left( \frac{-i{\sigma }_{3}\phi }{2}\right) = {\sigma }_{1}\cos \phi - {\sigma }_{2}\sin \phi tag{3. 2.48}
+\exp \left( \frac{i{\sigma }_{3}\phi }{2}\right) {\sigma }_{1}\exp \left( \frac{-i{\sigma }_{3}\phi }{2}\right) = {\sigma }_{1}\cos \phi - {\sigma }_{2}\sin \phi
 $$
 
 等给出,它是 (3.2.6) 式的 $2 \times 2$ 矩阵类比.
@@ -741,7 +742,7 @@ $$
 在利用右矢形式讨论 ${2\pi }$ 转动时,我们曾经看到一个自旋 $\frac{1}{2}$ 的右矢 $|\alpha \rangle$ 变成了 $- |\alpha \rangle$ . 这个说法的 $2 \times 2$ 类比是
 
 $$
-{\left. \exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) \right| }_{\phi = {2\pi }} = - 1,\;\text{ 对任何 }\widehat{\mathbf{n}}, tag{3.2.49}
+{\left. \exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) \right| }_{\phi = {2\pi }} = - 1,\;\text{ 对任何 }\widehat{\mathbf{n}}
 $$
 
 它从 (3.2.44) 式显然可得.
@@ -749,13 +750,13 @@ $$
 作为转动矩阵 (3.2.45) 式的一个有益的应用, 让我们看一下怎样构建本征值为 +1 的 $\mathbf{\sigma } \cdot \widehat{\mathbf{n}}$ 的本征旋量,其中 $\widehat{\mathbf{n}}$ 是某特定方向的一个单位矢量. 我们的目的是构建一个满足
 
 $$
-\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\chi = \chi tag{3. 2.50}
+\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\chi = \chi 
 $$
 
 的 $\chi$ . 换句话说,我们要寻找由
 
 $$
-\mathbf{S} \cdot \widehat{\mathbf{n}}\left| {\mathbf{S} \cdot \widehat{\mathbf{n}}; + \rangle = \left( \frac{\hslash }{2}\right) }\right| \mathbf{S} \cdot \widehat{\mathbf{n}}; + \rangle . tag{3. 2.51}
+\mathbf{S} \cdot \widehat{\mathbf{n}}\left| {\mathbf{S} \cdot \widehat{\mathbf{n}}; + \rangle = \left( \frac{\hslash }{2}\right) }\right| \mathbf{S} \cdot \widehat{\mathbf{n}}; + \rangle 
 $$
 
 定义的 $\left| {\mathbf{S} \cdot \widehat{\mathbf{n}}; + }\right\rangle$ 的二分量列矩阵表示. 实际上,该式可作为一个直接的本征值问题来求解 (见第 1 章的习题 1.9), 但是这里, 我们给出另一种可选的基于转动矩阵 (3.2.45) 的方法.
@@ -774,7 +775,7 @@ $$
 $$
 
 $$
-= \left( \begin{array}{l} \cos \left( \frac{\beta }{2}\right) {e}^{-{i\alpha }/2} \\ \sin \left( \frac{\beta }{2}\right) {e}^{{i\alpha }/2} \end{array}\right) . tag{3. 2.52}
+= \left( \begin{array}{l} \cos \left( \frac{\beta }{2}\right) {e}^{-{i\alpha }/2} \\ \sin \left( \frac{\beta }{2}\right) {e}^{{i\alpha }/2} \end{array}\right) 
 $$
 
 如果我们意识到上分量和下分量的共同相位是没有什么物理意义的话, 则上式与第 1 章的习题 1.9 是完全一致的.
@@ -791,7 +792,7 @@ $$
 定义它的矩阵元. 这些矩阵元有时被称为维格纳函数, 它以对量子力学中转动的群论性质作出了开拓性贡献的维格纳的名字命名. 这里要注意,在 (3.5.42) 式中相同的 $j$ 值出现在右矢和左矢中,不需要考虑不同 $j$ 值的态之间的 $\mathcal{D}\left( R\right)$ 矩阵元,因为它们显而易见都是零. 这是因为 ${\left. \mathcal{D}\left( R\right) \mid j, m\right| }^{2}$ 仍是 ${\mathbf{J}}^{2}$ 的具有相同本征值 $j\left( {j + 1}\right) {\hslash }^{2}$ 的本征态:
 
 $$
-{\mathbf{J}}^{2}\mathcal{D}\left( R\right) \left| {j, m\rangle = \mathcal{D}\left( R\right) {\mathbf{J}}^{2}}\right| j, m\rangle tag{3. 5.43}
+{\mathbf{J}}^{2}\mathcal{D}\left( R\right) \left| {j, m\rangle = \mathcal{D}\left( R\right) {\mathbf{J}}^{2}}\right| j, m\rangle 
 $$
 
 $$
@@ -800,10 +801,10 @@ $$
 
 该式可以直接由 ${\mathbf{J}}^{2}$ 与 ${J}_{k}$ (因此与 ${J}_{k}$ 的任何函数) 对易得到. 简单地说,转动不改变 $j$ 值, 这是一个非常有用的结果.
 
-在文献中经常把 ${\mathcal{D}}_{m, m}^{\left( j\right) }\left( R\right)$ 构成的 $\left( {{2j} + 1}\right) \times \left( {{2j} + 1}\right)$ 矩阵称为转动算符 $\mathcal{D}\left( R\right)$ 的 ${2j} + 1$ 维不可约表示. 这意味着,使用一组适当选择的基,在不一定由一个单一的 $j$ 值表征的右矢空间上, 对应一个任意转动算符的矩阵可以具有分块对角形式:(3. 5.44)
+在文献中经常把 ${\mathcal{D}}_{m, m}^{\left( j\right) }\left( R\right)$ 构成的 $\left( {{2j} + 1}\right) \times \left( {{2j} + 1}\right)$ 矩阵称为转动算符 $\mathcal{D}\left( R\right)$ 的 ${2j} + 1$ 维不可约表示. 这意味着,使用一组适当选择的基,在不一定由一个单一的 $j$ 值表征的右矢空间上, 对应一个任意转动算符的矩阵可以具有分块对角形式:
 
 
-其中有阴影的方块是由 ${\mathcal{D}}_{m \mid m}^{\left( j\right) }\left( R\right)$ 构成的、具有某个确定 $j$ 值的 $\left( {{2j} + 1}\right) \times \left( {{2j} + 1}\right)$ 方阵. 而且, 每个方阵本身不可能通过任何基的选择, 破缺成更小的块.(3.5.45)
+其中有阴影的方块是由 ${\mathcal{D}}_{m \mid m}^{\left( j\right) }\left( R\right)$ 构成的、具有某个确定 $j$ 值的 $\left( {{2j} + 1}\right) \times \left( {{2j} + 1}\right)$ 方阵. 而且, 每个方阵本身不可能通过任何基的选择, 破缺成更小的块.
 
 
 
@@ -840,7 +841,7 @@ $$
 在 3.3 节曾看到怎样利用欧拉角表征最一般的转动. 现在考虑一个任意 $j$ (不一定是 $\left. \frac{1}{2}\right)$ 的 (3.3.20) 式的矩阵实现:
 
 $$
-{\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( {\alpha ,\beta ,\gamma }\right) = \left\langle {j,{m}^{\prime }\left| {\;\exp \left( \frac{-i{J}_{z}\alpha }{\hslash }\right) \exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) \exp \left( \frac{-i{J}_{z}\gamma }{\hslash }\right) }\right. j, m}\right\rangle tag{3. 5.50}
+{\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( {\alpha ,\beta ,\gamma }\right) = \left\langle {j,{m}^{\prime }\left| {\;\exp \left( \frac{-i{J}_{z}\alpha }{\hslash }\right) \exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) \exp \left( \frac{-i{J}_{z}\gamma }{\hslash }\right) }\right. j, m}\right\rangle 
 $$
 
 $$
@@ -850,19 +851,19 @@ $$
 注意,唯一非平庸的部分是中间绕 $y$ 轴的转动,它混合了不同 $m$ 值的态. 方便的做法是把一个新矩阵 ${d}^{\left( j\right) }\left( \beta \right)$ 定义为
 
 $$
-{d}_{{m}^{\prime }m}^{\left( j\right) }\left( \beta \right) \equiv \left\langle {j,{m}^{\prime }\left| {\exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) }\right| j, m}\right\rangle . tag{3. 5.51}
+{d}_{{m}^{\prime }m}^{\left( j\right) }\left( \beta \right) \equiv \left\langle {j,{m}^{\prime }\left| {\exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) }\right| j, m}\right\rangle .
 $$
 
 最后,转向一些实例. $j = \frac{1}{2}$ 的情况已经在 3.3 节求解出. 请参见 (3.3.21) 式的中间矩阵
 
 $$
-{d}^{1/2} = \left( \begin{matrix} \cos \left( \frac{\beta }{2}\right) & - \sin \left( \frac{\beta }{2}\right) \\ \sin \left( \frac{\beta }{2}\right) & \cos \left( \frac{\beta }{2}\right) \end{matrix}\right) . tag{3. 5.52}
+{d}^{1/2} = \left( \begin{matrix} \cos \left( \frac{\beta }{2}\right) & - \sin \left( \frac{\beta }{2}\right) \\ \sin \left( \frac{\beta }{2}\right) & \cos \left( \frac{\beta }{2}\right) \end{matrix}\right) .
 $$
 
 下一个最简单的是 $j = 1$ 的情况,将较为详细考虑. 显然,首先必须求出 ${J}_{y}$ 的 $3 \times 3$ 矩阵表示. 因为由 ${J}_{ \pm }$ 定义方程 (3.5.5) 有
 
 $$
-{J}_{y} = \frac{\left( {J}_{ + } - {J}_{ - }\right) }{2i}, tag{3. 5.53}
+{J}_{y} = \frac{\left( {J}_{ + } - {J}_{ - }\right) }{2i},
 $$
 
 可以利用 (3.5.41) 式得到
@@ -872,25 +873,25 @@ m = 1\;m = 0\;m = - 1
 $$
 
 $$
-{J}_{y}^{\left( j = 1\right) } = \left( \frac{\hslash }{2}\right) \left( \begin{matrix} 0 & - \sqrt{2}i & 0 \\ \sqrt{2}i & 0 & - \sqrt{2}i \\ 0 & \sqrt{2}i & 0 \end{matrix}\right) \;\begin{array}{l} {m}^{\prime } = 1 \\ {m}^{\prime } = 0 \\ {m}^{\prime } = - 1 \end{array} tag{3. 5.54}
+{J}_{y}^{\left( j = 1\right) } = \left( \frac{\hslash }{2}\right) \left( \begin{matrix} 0 & - \sqrt{2}i & 0 \\ \sqrt{2}i & 0 & - \sqrt{2}i \\ 0 & \sqrt{2}i & 0 \end{matrix}\right) \;\begin{array}{l} {m}^{\prime } = 1 \\ {m}^{\prime } = 0 \\ {m}^{\prime } = - 1 \end{array} 
 $$
 
 下一个任务是求 $\exp \left( {-i{J}_{y}\beta /\hslash }\right)$ 的泰勒 (Taylor) 展开. 与 $j = \frac{1}{2}$ 的情况不同, ${\left\lbrack {J}_{y}^{\left( j = 1\right) }\right\rbrack }^{2}$ 不依赖于 1 和 ${J}_{y}^{\left( j = 1\right) }$ . 然而,很容易求出:
 
 $$
-{\left( \frac{{J}_{y}^{\left( j = 1\right) }}{\hslash }\right) }^{3} = \frac{{J}_{y}^{\left( j = 1\right) }}{\hslash }. tag{3. 5.55}
+{\left( \frac{{J}_{y}^{\left( j = 1\right) }}{\hslash }\right) }^{3} = \frac{{J}_{y}^{\left( j = 1\right) }}{\hslash }. 
 $$
 
 于是,仅对 $j = 1$ ,可合理地做如下替换
 
 $$
-\exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) \rightarrow 1 - {\left( \frac{{J}_{y}}{\hslash }\right) }^{2}\left( {1 - \cos \beta }\right) - i\left( \frac{{J}_{y}}{\hslash }\right) \sin \beta , tag{3. 5.56}
+\exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) \rightarrow 1 - {\left( \frac{{J}_{y}}{\hslash }\right) }^{2}\left( {1 - \cos \beta }\right) - i\left( \frac{{J}_{y}}{\hslash }\right) \sin \beta 
 $$
 
 读者可以详细地证明它. 具体有
 
 $$
-{d}^{\left( 1\right) }\left( \beta \right) = \left( \begin{matrix} \left( \frac{1}{2}\right) \left( {1 + \cos \beta }\right) & - \left( \frac{1}{\sqrt{2}}\right) \sin \beta & \left( \frac{1}{2}\right) \left( {1 - \cos \beta }\right) \\ \left( \frac{1}{\sqrt{2}}\right) \sin \beta & \cos \beta & - \left( \frac{1}{\sqrt{2}}\right) \sin \beta \\ \left( \frac{1}{2}\right) \left( {1 - \cos \beta }\right) & \left( \frac{1}{\sqrt{2}}\right) \sin \beta & \left( \frac{1}{2}\right) \left( {1 + \cos \beta }\right) \end{matrix}\right) tag{3. 5.57}
+{d}^{\left( 1\right) }\left( \beta \right) = \left( \begin{matrix} \left( \frac{1}{2}\right) \left( {1 + \cos \beta }\right) & - \left( \frac{1}{\sqrt{2}}\right) \sin \beta & \left( \frac{1}{2}\right) \left( {1 - \cos \beta }\right) \\ \left( \frac{1}{\sqrt{2}}\right) \sin \beta & \cos \beta & - \left( \frac{1}{\sqrt{2}}\right) \sin \beta \\ \left( \frac{1}{2}\right) \left( {1 - \cos \beta }\right) & \left( \frac{1}{\sqrt{2}}\right) \sin \beta & \left( \frac{1}{2}\right) \left( {1 + \cos \beta }\right) \end{matrix}\right)
 $$
 
 显然,这种方法对于大的 $j$ 值会很耗时. 别的一些更容易的方法是有可能的,但是在本书中将不继续讨论它们.

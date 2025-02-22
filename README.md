@@ -3,6 +3,8 @@
 
 这本书的编著目的是用于小组学习,主要包含了通往一般理论物理凝聚态期刊中的**重要**的知识体系,对于次要的,我推荐在实际使用时再去补充.事实上,想要如同国内高中时的方法学习这一部分*几乎是* 不可能的.
 
+**正在重构部分内容,目前以pdf内容为准,重构完毕后会修改README文件**
+**Part of the content is being reconstructed, currently the pdf content prevails, and the README file will be modified after the reconstruction**
 
 主要参考书籍列表:List of main reference books:
 - Modern Quantum Mechanics 2nd.J.J.Sakurai

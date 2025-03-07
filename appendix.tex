@@ -7,8 +7,75 @@
 	\else
 	\fi
 	
-\input{chapter1}
-\input{chapter2}
+%\input{chapter1}
+%\input{chapter2}
+
+\chapter{附注}
+\section{带电粒子的拉格朗日量}
+我们知道拉格朗日量往往是用来描述保守体系的,面对像洛伦兹力这类非保守力,我们如果仍维持保守体系的拉格朗日方程不变,势必要引入广义势能.
+
+我们根据电动力学的知识写出带电粒子在电磁场中的洛伦兹力:
+\begin{equation}
+	\boldsymbol F=q(\boldsymbol E+\boldsymbol v\times \boldsymbol  B)
+\end{equation}
+电磁场又满足麦克斯韦方程组
+\begin{equation}
+	\left\{\begin{array}{l}\nabla \times \boldsymbol{E}+\dfrac{\partial \boldsymbol{B}}{\partial t}=0 \\ \nabla \cdot \boldsymbol{E}=\rho / \varepsilon_{0} \\ \nabla \times \boldsymbol{B}-\mu_{0} \varepsilon_{0} \dfrac{\partial \boldsymbol{E}}{\partial t}=\mu_{0} \boldsymbol{j} \\ \nabla \cdot \boldsymbol{B}=0\end{array}\right.
+\end{equation}
+利用
+\begin{equation}
+	\boldsymbol{B}=\nabla \times \boldsymbol{A}
+\end{equation}
+代入麦克斯韦方程组的第一个式子,得到$\nabla \times\left(\boldsymbol{E}+\frac{\partial \boldsymbol{A}}{\partial t}\right)=0$,自然定义出标量势
+
+\begin{equation}
+	-\nabla \varphi=E+\frac{\partial \boldsymbol{A}}{\partial t}
+\end{equation}
+于是洛伦兹力可以重写为
+\begin{equation}
+	\boldsymbol{F}=q\left[-\nabla \varphi-\frac{\partial \boldsymbol{A}}{\partial t}+v \times(\nabla \times \boldsymbol{A})\right]
+\end{equation}
+现在我们需要将其写为如下形式来得到广义势能
+\begin{equation}
+	Q_{\alpha}=-\frac{\partial U}{\partial q_{\alpha}}+\frac{\mathrm d}{\mathrm d t} \frac{\partial U}{\partial \dot{q}_{\alpha}}
+\end{equation}
+首先我们写出其分量形式
+\begin{equation}
+	\begin{aligned} &(\nabla \varphi)_{x}=\frac{\partial \varphi}{\partial x} \\ &[v \times(\nabla \times \boldsymbol A)]_{x}=v_{y}\left(\frac{\partial A_{y}}{\partial x}-\frac{\partial A_{x}}{\partial y}\right)-v_{z}\left(\frac{\partial A_{x}}{\partial z}-\frac{\partial A_{z}}{\partial x}\right) \\ &\left(\frac{\partial \boldsymbol{A}}{\partial t}\right)_{x}=\frac{\partial A_{x}}{\partial t} \end{aligned}
+\end{equation}
+于是洛伦兹力的$ x $分量可以写做
+\begin{equation}
+	F_{x}=q\left[-\frac{\partial \varphi}{\partial x}-\frac{\partial A_{x}}{\partial t}+v_{y}\left(\frac{\partial A_{y}}{\partial x}-\frac{\partial A_{x}}{\partial y}\right)-v_{z}\left(\frac{\partial A_{x}}{\partial z}-\frac{\partial A_{z}}{\partial x}\right)\right]
+\end{equation}
+由于矢势$ A $是坐标和时间的函数.由于$ A $是粒子所在点的电磁场的矢势,因此$ A $中的坐标变量是粒子在对应时刻的空间位置,它们对时间的微商就是粒子的速度,因此有
+\begin{equation}
+	\frac{\mathrm{d} A_{x}}{\mathrm{d} t}=\frac{\partial A_{x}}{\partial t}+v_{x} \frac{\partial A_{x}}{\partial x}+v_{y} \frac{\partial A_{x}}{\partial y}+v_{z} \frac{\partial A_{x}}{\partial z} \\
+\end{equation}
+分量表达式变为
+\begin{equation}
+	F_{x}=q\left[-\frac{\partial \varphi}{\partial x}-\frac{\mathrm{d} A_{x}}{\mathrm{d} t}+v_{x} \frac{\partial A_{x}}{\partial x}+v_{y} \frac{\partial A_{y}}{\partial x}+v_{z} \frac{\partial A_{z}}{\partial x}\right] \\
+\end{equation}
+又因为矢量势和标量势都和速度无关,自然有
+\begin{equation}
+	\begin{aligned} &\frac{\mathrm{d} A_{x}}{\mathrm{d} t}=\frac{\mathrm{d}}{\mathrm{d} t}\left[\frac{\partial}{\partial v_{x}}(\boldsymbol{A} \cdot v)\right]=\frac{\mathrm{d}}{\mathrm{d} t} \frac{\partial}{\partial v_{x}}(-\varphi+\boldsymbol{A} \cdot v)\\ &\left(v_{x} \frac{\partial A_{x}}{\partial x}+v_{y} \frac{\partial A_{y}}{\partial x}+v_{z} \frac{\partial A_{z}}{\partial x}\right)=v \cdot \frac{\partial \boldsymbol{A}}{\partial x}=\frac{\partial}{\partial x}(\boldsymbol{v} \cdot \boldsymbol{A}) \end{aligned}\\
+\end{equation}
+终于,我们把分量式写为
+\begin{equation}
+	F_{x}=q\left[-\frac{\partial}{\partial x}(\varphi-\boldsymbol{A} \cdot v) |+\frac{\mathrm{d}}{\mathrm{d} t} \frac{\partial}{\partial v_{x}}(\varphi-\boldsymbol{A} \cdot v)\right]
+\end{equation}
+对比广义力和广义势能的式子,我们得出了广义势能的表达
+\begin{equation}
+	\color{red}{\boxed{U=q \varphi-q \boldsymbol{A} \cdot v} }
+\end{equation}
+
+相应的拉格朗日量自然写出
+\begin{equation}
+	\color{blue}{\boxed{L=\frac{1}{2} m v^{2}-q \varphi+q \boldsymbol{A} \cdot v }}
+\end{equation}
+
+
+
+
 
 \chapter{单位制}
 我们从小学就逐步接触一些单位,常见的如米(m),千克(kg),秒(s)等是国际统一使用的\textbf{标准度量系统(国际单位制)}.相应的,像是国内经常接触的斤,公里,亩,美国\footnote{包括美国、开曼群岛、伯利兹等极少数国家和地区}常用的华氏度等,则是生活中使用的独立度量系统,大多数度量系统都和标准度量系统之间存在换算关系.而且生活中使用的度量单位大多比较局限,对于相干度较低的单位往往是不涉及的.\\

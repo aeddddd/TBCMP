@@ -448,11 +448,29 @@
 	\end{solution}
 \end{note}
 \subsection{矢量势的路径积分}
-要对经典哈密顿量 $H(p,q)$ 进行量子化,仅仅将经典变量 $ p $ 和 $ q $ 替换为相应的量子算符通常是不够的.当这种对应规则导致产生非对易算符$\hat p$​ 和$\hat q$​ 的乘积时,必须通过附加条件(例如哈密顿量的厄米性)来确定算符的顺序.这些困难在路径积分表述中也表现出来:路径积分必须被仔细定义,以尊重算符的正确顺序.
+要对经典哈密顿量 $H(p,q)$ 进行量子化,仅仅将经典变量 $ p $ 和 $ q $ 替换为相应的量子算符通常是不够的.当这种对应规则导致产生非对易算符$\hat p$​ 和$\hat q$​ 的乘积时,必须通过附加条件(例如哈密顿量的厄米性)来确定算符的顺序.这些困难在路径积分表述中也表现出来:为了尊重算符的正确顺序,路径积分必须被仔细定义.
+
+我们同样以一个例子来引入这个问题:考虑一个三维空间内的自由粒子,受到$\mathbf{B}=\mathbf{\nabla}\times\mathbf{A}$的磁场作用,其拉格朗日量可以写为
 
 
+\begin{equation}
+	\vspace{\baselineskip}
+	%公式编号: 53
+	L(\mathbf{q},\dot{\mathbf{q}})=\tikzmarknode{53eq1}{\highlight{red}{$\frac{1}{2}m\dot{\mathbf{q}}^2$}}+\tikzmarknode{53eq2}{\highlight{blue}{$e\dot{\mathbf{q}}\cdot\mathbf{A}(\mathbf{q})$}}
+\end{equation}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+	% 对于 "1" 定位点
+	\path (53eq1.north) ++ (0,2em) node[anchor=south east,color=red!67] (eq53/1){\textbf{粒子动能}};
+	\draw [color=red!87](53eq1.north) |- ([xshift=-0.3ex,color=red]eq53/1.south west);
+	% 对于 "2" 定位点
+	\path (53eq2.south) ++ (0,-1.5em) node[anchor=north west,color=blue!67] (eq53/2){\textbf{广义势能(附录中给出了详细的讨论)}};
+	\draw [color=blue!57](53eq2.south) |- ([xshift=-0.3ex,color=blue]eq53/2.south east);
+\end{tikzpicture}
 
-
+同样的,我们可以以此直接给出哈密顿量
+\begin{equation}
+	H(\mathbf{p},\mathbf{q})=\frac{[\mathbf{p}-e\mathbf{A}(\mathbf{q})]^2}{2m}
+\end{equation}
 
 
 

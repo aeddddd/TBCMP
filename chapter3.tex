@@ -16,8 +16,11 @@
 
 \textit{这一章虽然名字比较吓人,但并没有太过深入讲解李群与李代数,主要为了帮助物理系学生来快速对这一门学科建立印象.当然,我们不能保证在后续的不断更新中是否会改变这一点,在最初的版本中,这一章被置于第三章,也就是初量的后续部分,以及这一章的进度只会跟进后续章节的需要,也就是说这一章的全部已完成内容足以支撑起后续章节的学习.}
 
+原开头已经隐藏,后续会重新捋顺这一部分内容.
 
-由于出发点原因\footnote{如标题所见,这本讲义的目的是帮助人快速进入凝聚态理论的科研中,很多初等量子力学的内容可以参考对应的课本学习,并非是这本讲义的重点.事实上,这本讲义从第三章开始才算得上开始正式的内容.},我们抛弃了许多角动量的内容,后续考虑是否以附录的形式补充回来.应该并不会了,因为连初量的内容我们也逐渐舍去了.
+%由于出发点原因\footnote{如标题所见,这本讲义的目的是帮助人快速进入凝聚态理论的科研中,很多初等量子力学的内容可以参考对应的课本学习,并非是这本讲义的重点.事实上,这本讲义从第三章开始才算得上开始正式的内容.},我们抛弃了许多角动量的内容,后续考虑是否以附录的形式补充回来.应该并不会了,因为连初量的内容我们也逐渐舍去了.
+\section*{章节导论:对称性与对称性破缺}
+仍在画饼,可以参考这篇知乎文章,写的很不错:\href{https://zhuanlan.zhihu.com/p/338221764}{知乎专栏}
 \section{李群(Lie Group)初步}
 \subsection{群与李群(Lie Group)}
 我们或许听说过一个说法:``物理学的关键是对称和守恒",而诺特定理给出了对称性与守恒性的联系,例如,时间平移不变性意味着能量守恒;空间平移不变性意味着动量守恒;转动不变性意味着角动量守恒;电势和向量势的规范不变性得出电荷的守恒等.而描述对称性的语言就是群论.
@@ -458,443 +461,445 @@
 1
 
 
-\section{角动量理论}
-\textit{这一章后续部分不需要看}
-\subsection{量子力学中的无穷小转动} 
 
-到此为止,我们还没有用到量子力学概念. 矩阵 $R$ 只是一个 $3 \times 3$ 的正交矩阵,它作用于写成列矩阵形式的矢量 $\mathbf{V}$ 上. 现在我们必须弄懂如何表征量子力学中的转动.
-
-因为转动影响物理系统, 预期转动后系统的态右矢与原来未经转动系统的态右矢有所不同. 给定由一个 $3 \times 3$ 正交矩阵 $R$ 表征的一个转动算符 $R$ ,我们将其与适当的右矢空间里的一个算符 $\mathcal{D}\left( R\right)$ 这样联系起来,使得:
-
-$$
-|\alpha {\rangle }_{R} = \mathcal{D}\left( R\right) |\alpha \rangle 
-$$
-
-其中 ${\left| \alpha \right\rangle }_{R}$ 和 $|\alpha \rangle$ 分别代表转动后系统和原始系统的右矢. 
-
-要构建转动算符 $\mathcal{D}\left( R\right)$ ,最有成效的方法仍然是先考查它在一个无穷小转动下的性质. 
-
-得到一个绕第 $k$ 个轴转 ${d\phi }$ 角的无穷小转动算符. 若 ${J}_{k}$ 是厄米的,无穷小转动算符保证是幺正的,而且在 ${d\phi } \rightarrow 0$ 的极限下约化为单位算符. 更普遍地,对一个绕着由单位矢量 $\widehat{\mathbf{n}}$ 表征的方向转无穷小 ${d\phi }$ 角的转动,我们有
-
-$$
-\mathcal{D}\left( {\widehat{\mathbf{n}},{d\phi }}\right) = 1 - i\left( \frac{\mathbf{J} \cdot \widehat{\mathbf{n}}}{\hslash }\right) {d\phi } tag{3.1.15}
-$$
-
-在本书中,我们强调并没有把角动量算符定义为 $\mathbf{x} \times \mathbf{p}$ . 这一点很重要,因为自旋角动量一一我们的普遍形式也适用于它一一与 ${x}_{i}$ 和 ${p}_{j}$ 毫无关系. 换个方式讲,在经典力学中,可以证明定义为 $\mathbf{x} \times \mathbf{p}$ 的角动量是转动的生成元; 相比之下,在量子力学中我们定义 $\mathbf{J}$ 使得一个无穷小转动算符取 (3.1.15) 式形式.
-
-一个有限转动可以通过组合相继地绕同一个轴的无穷小转动得到. 例如, 如果我们对于一个绕 $z$ 轴转 $\phi$ 角的有限转动感兴趣,我们考虑
-
-$$
-{\mathcal{D}}_{z}\left( \phi \right) = \mathop{\lim }\limits_{{N \rightarrow \infty }}{\left\lbrack 1 - i\left( \frac{{J}_{z}}{\hslash }\right) \left( \frac{\phi }{N}\right) \right\rbrack }^{N}
-$$
-
-$$
-= \exp \left( \frac{-i{J}_{z}\phi }{\hslash }\right) tag{3. 1.16}
-$$
-
-$$
-= 1 - \frac{i{J}_{z}\phi }{\hslash } - \frac{{J}_{z}^{2}{\phi }^{2}}{2{\hslash }^{2}} + \cdots .
-$$
-
-为了求得角动量对易关系, 我们还需要一个概念. 正如我们前面评注的, 对每个用 3 $\times 3$ 正交矩阵 $R$ 表示的转动 $R$ ,在恰当的右矢空间中都存在一个转动算符 $\mathcal{D}\left( R\right)$ . 我们进一步假设 $\mathcal{D}\left( R\right)$ 与 $R$ 有相同的群性质
-
-
-现在让我们返回到基于 $R$ 矩阵写成的转动操作 (3.1.9) 式的基本对易关系. 它的转动算符类似公式为
-
-$$
-\left( {1 - \frac{i{J}_{x}\varepsilon }{\hslash } - \frac{{J}_{x}^{2}{\varepsilon }^{2}}{2{\hslash }^{2}}}\right) \left( {1 - \frac{i{J}_{y}\varepsilon }{\hslash } - \frac{{J}_{y}^{2}{\varepsilon }^{2}}{2{\hslash }^{2}}}\right) 
-$$
-
-$$
-- \left( {1 - \frac{i{J}_{y}\varepsilon }{\hslash } - \frac{{J}_{y}^{2}{\varepsilon }^{2}}{2{\hslash }^{2}}}\right) \left( {1 - \frac{i{J}_{x}\varepsilon }{\hslash } - \frac{{J}_{x}^{2}{\varepsilon }^{2}}{2{\hslash }^{2}}}\right) = 1 - \frac{i{J}_{z}{\varepsilon }^{2}}{\hslash } - 1.
-$$
-
-$\varepsilon$ 量级的项已自动地消掉了. 让 (3.1.18) 式两边的 ${\varepsilon }^{2}$ 量级的项相等,我们得到
-
-$$
-\left\lbrack {{J}_{x},{J}_{y}}\right\rbrack = i\hslash {J}_{z}, tag{3.1.19}
-$$
-
-将这种做法重复用于绕其他轴的转动可得到
-
-$$
-\left\lbrack {{J}_{i},{J}_{j}}\right\rbrack = i\hslash {\varepsilon }_{ijk}{J}_{k}, tag{3.1.20}
-$$
-
-该式称为角动量的基本对易关系.
-
-注意在获得对易关系 (3.1.20) 时, 使用了以下两个概念
-
-1. ${J}_{k}$ 是绕第 $k$ 轴转动的生成元.
-
-2. 绕不同轴的转动不对易.
-
-毫不夸张地说, 对易关系 (3.1.20) 式以一种紧凑的方式归纳了三维转动的一切基本性质.
-
-
-\subsection{泡利二分量形式} 
-
-利用泡利在 1926 年引入的二分量旋量形式,可以很方便地处理自旋 $\frac{1}{2}$ 系统的态右矢. 在 1.3 节我们学会了怎样使用一个列 (行) 矩阵表示一个右矢 (左矢); 我们所要做的是把基于某个指定基右矢的展开系数安排到一个列（行）矩阵中. 在自旋 $\frac{1}{2}$ 的情况下,对于基右矢和基左矢, 我们有
-
-$$
-\left| {+\rangle \doteq \left( \begin{array}{l} 1 \\ 0 \end{array}\right) \equiv {\chi }_{ + }\;}\right| - \rangle \doteq \left( \begin{array}{l} 0 \\ 1 \end{array}\right) \equiv {\chi }_{ - } 
-$$
-
-$$
-\langle + \mid \doteq \left( {1,0}\right) = {\chi }_{ + }^{ \dagger }\;\langle - \mid \doteq \left( {0,1}\right) = {\chi }_{ - }^{ \dagger }
-$$
-
-和对一个任意的态右矢和相应的态左矢有
-
-$$
-\left| {\alpha \rangle = }\right| + \rangle \langle + \left| {\alpha \rangle + }\right| - \rangle \langle - \mid \alpha \rangle \doteq \left( \begin{array}{l} \langle + \mid \alpha \rangle \\ \langle - \mid \alpha \rangle \end{array}\right) 
-$$
-
-和
-
-$$
-\langle \alpha \left| { = \langle \alpha }\right| + \rangle \langle + \left| {+\langle \alpha }\right| - \rangle \langle - | \doteq \left( {\langle \alpha \mid + \rangle ,\langle \alpha \mid - \rangle }\right) tag{3.2.27b}
-$$
-
-列矩阵 (3.2.27a) 式称为二分量旋量, 记为
-
-$$
-\chi = \left( \begin{array}{l} \langle + \mid \alpha \rangle \\ \langle - \mid \alpha \rangle \end{array}\right) \equiv \left( \begin{array}{l} {c}_{ + } \\ {c}_{ - } \end{array}\right)
-$$
-
-$$
-= {c}_{ + }{\chi }_{ + } + {c}_{ - }{\chi }_{ - }, tag{3.2.28}
-$$
-
-
-其中 ${c}_{ + }$ 和 ${c}_{ - }$ 一般都是复数. 对于 ${\chi }^{ \dagger }$ 我们有
-
-$$
-{\chi }^{ \dagger } = \left( {\langle \alpha \mid + \rangle ,\langle \alpha \mid - \rangle }\right) = \left( {{c}_{ + }^{ * },{c}_{ - }^{ * }}\right) 
-$$
-
-矩阵元 $\left\langle {\pm \left| {S}_{k}\right| + }\right\rangle$ 和 $\left\langle {\pm \left| {S}_{k}\right| - }\right\rangle$ ,除去 $\hslash /2$ 之外,被设定等于那些 $2 \times 2$ 的、以泡利矩阵著称的矩阵 ${\sigma }_{k}$ . 我们确定
-
-$$
-\left\langle {\pm \left| {S}_{k}\right| + }\right\rangle \equiv \left( \frac{\hslash }{2}\right) {\left( {\sigma }_{k}\right) }_{\pm , + },\;\left\langle {\pm \left| {S}_{k}\right| - }\right\rangle \equiv \left( \frac{\hslash }{2}\right) {\left( {\sigma }_{k}\right) }_{\pm , - }
-$$
-
-现在我们可以用 $\chi$ 和 ${\sigma }_{k}$ 写出期待值 $\left\langle {S}_{k}\right\rangle$
-
-$$
-\left\langle {S}_{k}\right\rangle = \left\langle {\alpha \left| {S}_{k}\right| \alpha }\right\rangle = \mathop{\sum }\limits_{{{a}^{\prime } = + , - }}\mathop{\sum }\limits_{{{a}^{\prime \prime } = + , - }}\left\langle {\alpha \left| {a}^{\prime }\right\rangle \left\langle {{a}^{\prime }\left| {S}_{k}\right| {a}^{\prime \prime }}\right\rangle \left\langle {a}^{\prime \prime }\right| \alpha }\right\rangle 
-$$
-
-$$
-= \left( \frac{\hslash }{2}\right) {\chi }^{ \dagger }{\sigma }_{k}\chi
-$$
-
-其中在最后一行用到了矩阵乘法的常用规则. 显然我们可从 (3.2.1) 和 (3.2.30) 式看到
-
-$$
-{\sigma }_{1} = \left( \begin{array}{ll} 0 & 1 \\ 1 & 0 \end{array}\right) ,\;{\sigma }_{2} = \left( \begin{matrix} 0 & - i \\ i & 0 \end{matrix}\right) ,\;{\sigma }_{3} = \left( \begin{matrix} 1 & 0 \\ 0 & - 1 \end{matrix}\right) 
-$$
-
-其中下标 1,2 和 3 分别代表 $x, y$ 和 $z$ .
-
-下面列出泡利矩阵的一些性质. 首先,
-
-$$
-{\sigma }_{i}^{2} = 1
-$$
-
-
-
-$$
-{\sigma }_{i}{\sigma }_{j} + {\sigma }_{j}{\sigma }_{i} = 0,\;\text{ 对于 }i \neq j,
-$$
-
-
-
-其中 (3.2.33a) 式的右边被理解为 $2 \times 2$ 单位矩阵. 当然,这两个关系式等价于反对易关系
-
-$$
-\left\{ {{\sigma }_{i},{\sigma }_{j}}\right\} = 2{\delta }_{ij}, tag{3. 2.34}
-$$
-
-还有对易关系
-
-$$
-\left\lbrack {{\sigma }_{i},{\sigma }_{j}}\right\rbrack = {2i}{\varepsilon }_{ijk}{\sigma }_{k}, tag{3. 2.35}
-$$
-
-可以看出,它显然就是角动量对易关系 (3.1.20) 的 $2 \times 2$ 矩阵实现. 比较 (3.2.34) 式和 (3.2.35) 式, 我们可以得到
-
-$$
-{\sigma }_{1}{\sigma }_{2} = - {\sigma }_{2}{\sigma }_{1} = i{\sigma }_{3}\cdots tag{3. 2.36}
-$$
-
-还要注意
-
-$$
-{\sigma }_{i}^{ \dagger } = {\sigma }_{i},
-$$
-
-
-
-$$
-\det \left( {\sigma }_{i}\right) = - 1, tag{3. 2.37b}
-$$
-
-$$
-\operatorname{Tr}\left( {\sigma }_{i}\right) = 0.
-$$
-
-
-
-现在考虑 $\mathbf{\sigma } \cdot \mathbf{a}$ ,其中 $\mathbf{a}$ 是一个三维矢量. 要把这个量理解为实际上是一个 $2 \times 2$ 矩阵. 于是
-
-$$
-\mathbf{\sigma } \cdot \mathbf{a} \equiv \mathop{\sum }\limits_{k}{a}_{k}{\sigma }_{k}
-$$
-
-$$
-= \left( \begin{matrix} + {a}_{3} & {a}_{1} - i{a}_{2} \\ {a}_{1} + i{a}_{2} & - {a}_{3} \end{matrix}\right) tag{3. 2.38}
-$$
-
-还有一个非常重要的恒等式
-
-$$
-\left( {\mathbf{\sigma } \cdot \mathbf{a}}\right) \left( {\mathbf{\sigma } \cdot \mathbf{b}}\right) = \mathbf{a} \cdot \mathbf{b} + i\mathbf{\sigma } \cdot \left( {\mathbf{a} \times \mathbf{b}}\right) 
-$$
-
-为证明该式, 所需的是反对易关系和对易关系, 它们分别为 (3.2.34) 式与 (3.2.35) 式:
-
-$$
-\mathop{\sum }\limits_{j}{\sigma }_{j}a\mathop{\sum }\limits_{k}{\sigma }_{k}{b}_{k} = \mathop{\sum }\limits_{j}\mathop{\sum }\limits_{k}\left( {\frac{1}{2}\left\{ {{\sigma }_{j},{\sigma }_{k}}\right\} + \frac{1}{2}\left\lbrack {{\sigma }_{j},{\sigma }_{k}}\right\rbrack }\right) {a}_{j}{b}_{k}
-$$
-
-$$
-= \mathop{\sum }\limits_{j}\mathop{\sum }\limits_{k}\left( {{\delta }_{jk} + i{\varepsilon }_{jkl}{\sigma }_{l}}\right) {a}_{j}{b}_{k} tag{3. 2.40}
-$$
-
-$$
-= \mathbf{a} \cdot \mathbf{b} + i\mathbf{\sigma } \cdot \left( {\mathbf{a} \times \mathbf{b}}\right) .
-$$
-
-如果 $\mathbf{a}$ 的分量都是实的,我们有
-
-$$
-{\left( \mathbf{\sigma } \cdot \mathbf{a}\right) }^{2} = {\left| \mathbf{a}\right| }^{2}
-$$
-
-其中 $\left| \mathbf{a}\right|$ 是矢量 $\mathbf{a}$ 的长度.
-
-\subsection{二分量形式中的转动}
-
-现在研究转动算符 $\mathcal{D}\left( {\widehat{\mathbf{n}},\phi }\right)$ 的 $2 \times 2$ 矩阵表示. 如下
-
-$$
-\exp \left( \frac{-i\mathbf{S} \cdot \widehat{\mathbf{n}}\phi }{\hslash }\right) \doteq \exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) 
-$$
-
-利用从 (3.2.41) 式得到的
-
-$$
-{\left( \mathbf{\sigma } \cdot \widehat{\mathbf{n}}\right) }^{n} = \left\{ \begin{array}{ll} 1 & \text{ 对于偶数的 }n, \\ \mathbf{\sigma } \cdot \widehat{\mathbf{n}} & \text{ 对于奇数的 }n, \end{array}\right\}
-$$
-
-我们可以写出
-
-$$
-\exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) = \left\lbrack {1 - \frac{{\left( \mathbf{\sigma } \cdot \widehat{\mathbf{n}}\right) }^{2}}{2!}{\left( \frac{\phi }{2}\right) }^{2} + \frac{{\left( \mathbf{\sigma } \cdot \widehat{\mathbf{n}}\right) }^{4}}{4!}{\left( \frac{\phi }{2}\right) }^{4} - \cdots }\right\rbrack
-$$
-
-$$
-- i\left\lbrack {\left( {\mathbf{\sigma } \cdot \widehat{\mathbf{n}}}\right) \frac{\phi }{2} - \frac{{\left( \mathbf{\sigma } \cdot \widehat{\mathbf{n}}\right) }^{3}}{3!}{\left( \frac{\phi }{2}\right) }^{3} + \cdots }\right\rbrack 
-$$
-
-$$
-= 1\cos \left( \frac{\phi }{2}\right) - i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\sin \left( \frac{\phi }{2}\right) .
-$$
-
-显然,以 $2 \times 2$ 形式我们有
-
-$$
-\exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) = \left( \begin{array}{ll} \cos \left( \frac{\phi }{2}\right) - i{n}_{z}\sin \left( \frac{\phi }{2}\right) & \left( {-i{n}_{x} - {n}_{y}}\right) \sin \left( \frac{\phi }{2}\right) \\ \left( {-i{n}_{x} + {n}_{y}}\right) \sin \left( \frac{\phi }{2}\right) & \cos \left( \frac{\phi }{2}\right) + i{n}_{z}\sin \left( \frac{\phi }{2}\right) \end{array}\right) 
-$$
-
-正像算符 $\exp \left( {-i\mathbf{S} \cdot \widehat{\mathbf{n}}\phi /\hslash }\right)$ 作用在态右矢 $|\alpha \rangle$ 上一样, $2 \times 2$ 矩阵 $\exp \left( {-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi /2}\right)$ 作用于一个二分量旋量 $\chi$ 上. 在转动之下,我们使 $\chi$ 发生如下改变:
-
-$$
-\chi \rightarrow \exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) \chi
-$$
-
-另一方面, ${\sigma }_{k}$ 自身在转动下保持不变. 因此,严格地说,尽管 $\mathbf{\sigma }$ 的外貌像矢量,人们却不把它看成一个矢量; 而是把遵从矢量的变换性质的 ${\chi }^{ \dagger }\mathbf{\sigma }\chi$ 看成一个矢量:
-
-$$
-{\chi }^{ \dagger }{\sigma }_{k}\chi \rightarrow \mathop{\sum }\limits_{l}{R}_{kl}{\chi }^{ \dagger }{\sigma }_{l}\chi 
-$$
-
-它的明确证明可以利用
-
-$$
-\exp \left( \frac{i{\sigma }_{3}\phi }{2}\right) {\sigma }_{1}\exp \left( \frac{-i{\sigma }_{3}\phi }{2}\right) = {\sigma }_{1}\cos \phi - {\sigma }_{2}\sin \phi
-$$
-
-等给出,它是 (3.2.6) 式的 $2 \times 2$ 矩阵类比.
-
-在利用右矢形式讨论 ${2\pi }$ 转动时,我们曾经看到一个自旋 $\frac{1}{2}$ 的右矢 $|\alpha \rangle$ 变成了 $- |\alpha \rangle$ . 这个说法的 $2 \times 2$ 类比是
-
-$$
-{\left. \exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) \right| }_{\phi = {2\pi }} = - 1,\;\text{ 对任何 }\widehat{\mathbf{n}}
-$$
-
-它从 (3.2.44) 式显然可得.
-
-作为转动矩阵 (3.2.45) 式的一个有益的应用, 让我们看一下怎样构建本征值为 +1 的 $\mathbf{\sigma } \cdot \widehat{\mathbf{n}}$ 的本征旋量,其中 $\widehat{\mathbf{n}}$ 是某特定方向的一个单位矢量. 我们的目的是构建一个满足
-
-$$
-\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\chi = \chi 
-$$
-
-的 $\chi$ . 换句话说,我们要寻找由
-
-$$
-\mathbf{S} \cdot \widehat{\mathbf{n}}\left| {\mathbf{S} \cdot \widehat{\mathbf{n}}; + \rangle = \left( \frac{\hslash }{2}\right) }\right| \mathbf{S} \cdot \widehat{\mathbf{n}}; + \rangle 
-$$
-
-定义的 $\left| {\mathbf{S} \cdot \widehat{\mathbf{n}}; + }\right\rangle$ 的二分量列矩阵表示. 实际上,该式可作为一个直接的本征值问题来求解 (见第 1 章的习题 1.9), 但是这里, 我们给出另一种可选的基于转动矩阵 (3.2.45) 的方法.
-
-
-图 3.3 构建 $\sigma \cdot \widehat{\mathrm{n}}$ 的本征旋量
-
-设表征 $\widehat{\mathbf{n}}$ 的极角与方位角分别为 $\beta$ 和 $\alpha$ . 我们从表示自旋向上态的二分量旋量 $\left( \begin{array}{l} 1 \\ 0 \end{array}\right)$ 开始. 给定这个旋量之后,我们先绕 $y$ 轴转 $\beta$ 角; 随后绕 $z$ 轴转 $\alpha$ 角. 然后我们看到,所期待的自旋态就得到了,见图 3.3. 用泡利旋量语言,这一系列操作等价于把 $\exp \left( {-i{\sigma }_{2}\beta /2}\right)$ 作用于 $\left( \begin{array}{l} 1 \\ 0 \end{array}\right)$ ,随后再用 $\exp \left( {-i{\sigma }_{3}\alpha /2}\right)$ 作用. 净结果是
-
-$$
-\chi = \left\lbrack {\cos \left( \frac{\alpha }{2}\right) - i{\sigma }_{3}\sin \left( \frac{\alpha }{2}\right) }\right\rbrack \left\lbrack {\cos \left( \frac{\beta }{2}\right) - i{\sigma }_{2}\sin \left( \frac{\beta }{2}\right) }\right\rbrack \left( \begin{array}{l} 1 \\ 0 \end{array}\right)
-$$
-
-$$
-= \left( \begin{matrix} \cos \left( \frac{\alpha }{2}\right) - i\sin \left( \frac{\alpha }{2}\right) & 0 \\ 0 & \cos \left( \frac{\alpha }{2}\right) + i\sin \left( \frac{\alpha }{2}\right) \end{matrix}\right) \left( \begin{matrix} \cos \left( \frac{\beta }{2}\right) & - \sin \left( \frac{\beta }{2}\right) \\ \sin \left( \frac{\beta }{2}\right) & \cos \left( \frac{\beta }{2}\right) \end{matrix}\right) \left( \begin{array}{l} 1 \\ 0 \end{array}\right)
-$$
-
-$$
-= \left( \begin{array}{l} \cos \left( \frac{\beta }{2}\right) {e}^{-{i\alpha }/2} \\ \sin \left( \frac{\beta }{2}\right) {e}^{{i\alpha }/2} \end{array}\right) 
-$$
-
-如果我们意识到上分量和下分量的共同相位是没有什么物理意义的话, 则上式与第 1 章的习题 1.9 是完全一致的.
-
-
-\subsection{转动算符的表示}
-
-得到了 ${J}_{z}$ 和 ${J}_{ \pm }$ 的矩阵元之后,就能够研究转动算符 $\mathcal{D}\left( R\right)$ . 如果一个转动 $R$ 由 $\widehat{\mathbf{n}}$ 和 $\phi$ 确定, 就可以用
-
-$$
-{\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( R\right) = \left\langle {j,{m}^{\prime }\left| {\exp \left( \frac{-i\mathbf{J} \cdot \widehat{\mathbf{n}}\phi }{\hslash }\right) }\right| j, m}\right\rangle . tag{3. 5.42}
-$$
-
-定义它的矩阵元. 这些矩阵元有时被称为维格纳函数, 它以对量子力学中转动的群论性质作出了开拓性贡献的维格纳的名字命名. 这里要注意,在 (3.5.42) 式中相同的 $j$ 值出现在右矢和左矢中,不需要考虑不同 $j$ 值的态之间的 $\mathcal{D}\left( R\right)$ 矩阵元,因为它们显而易见都是零. 这是因为 ${\left. \mathcal{D}\left( R\right) \mid j, m\right| }^{2}$ 仍是 ${\mathbf{J}}^{2}$ 的具有相同本征值 $j\left( {j + 1}\right) {\hslash }^{2}$ 的本征态:
-
-$$
-{\mathbf{J}}^{2}\mathcal{D}\left( R\right) \left| {j, m\rangle = \mathcal{D}\left( R\right) {\mathbf{J}}^{2}}\right| j, m\rangle 
-$$
-
-$$
-= j\left( {j + 1}\right) {\hslash }^{2}\left\lbrack {\mathcal{D}\left( R\right) \mid j, m\rangle }\right\rbrack ,
-$$
-
-该式可以直接由 ${\mathbf{J}}^{2}$ 与 ${J}_{k}$ (因此与 ${J}_{k}$ 的任何函数) 对易得到. 简单地说,转动不改变 $j$ 值, 这是一个非常有用的结果.
-
-在文献中经常把 ${\mathcal{D}}_{m, m}^{\left( j\right) }\left( R\right)$ 构成的 $\left( {{2j} + 1}\right) \times \left( {{2j} + 1}\right)$ 矩阵称为转动算符 $\mathcal{D}\left( R\right)$ 的 ${2j} + 1$ 维不可约表示. 这意味着,使用一组适当选择的基,在不一定由一个单一的 $j$ 值表征的右矢空间上, 对应一个任意转动算符的矩阵可以具有分块对角形式:
-
-
-其中有阴影的方块是由 ${\mathcal{D}}_{m \mid m}^{\left( j\right) }\left( R\right)$ 构成的、具有某个确定 $j$ 值的 $\left( {{2j} + 1}\right) \times \left( {{2j} + 1}\right)$ 方阵. 而且, 每个方阵本身不可能通过任何基的选择, 破缺成更小的块.
-
-
-
-由确定的 $j$ 表征的转动矩阵构成一个群. 首先,单位矩阵是一个群元,因为对应于没有任何转动 $\left( {\phi = 0}\right)$ 的转动矩阵是 $\left( {{2j} + 1}\right) \times \left( {{2j} + 1}\right)$ 的单位矩阵. 其次,逆也是一个群元,只不过在不改变转动轴 $\widehat{\mathbf{n}}$ 的情况下,反转了转角 $\phi \rightarrow - \phi$ . 第三,任何两个元的乘积也是一个群元, 明确地有
-
-$$
-\mathop{\sum }\limits_{{m}^{\prime }}{\mathcal{D}}_{{m}^{\prime }{m}^{\prime }}^{\left( j\right) }\left( {R}_{1}\right) {\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( {R}_{2}\right) = {\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( {{R}_{1}{R}_{2}}\right) , tag{3. 5.46}
-$$
-
-其中,乘积 ${R}_{1}{R}_{2}$ 代表一个单一的转动. 注意,因为相应的转动算符是幺正的,所以转动矩阵是幺正的, 显然有
-
-$$
-{\mathcal{D}}_{{m}^{\prime }m}\left( {R}^{-1}\right) = {\mathcal{D}}_{m{m}^{\prime }}^{ * }\left( R\right) . tag{3.5.47}
-$$
-
-为了领会转动矩阵的物理意义,从 $|j, m\rangle$ 所代表的一个态出发. 现在转动它:
-
-$$
-\left| {j, m\rangle \rightarrow \mathcal{D}\left( R\right) }\right| j, m\rangle . tag{3. 5.48}
-$$
-
-尽管这个转动操作并不改变 $j$ ,但一般将得到一些不同于原来 $m$ 的 $m$ 值态. 为了得到发现处于 $\left| {j,{m}^{\prime }}\right\rangle$ 态的振幅,只要把转动后的态展开如下
-
-$$
-\mathcal{D}\left( R\right) \left| {j, m\rangle = \mathop{\sum }\limits_{{m}^{\prime }}}\right| j,{m}^{\prime }\rangle \left\langle {j,{m}^{\prime }\left| {\mathcal{D}\left( R\right) }\right| j, m}\right\rangle tag{3. 5.49}
-$$
-
-$$
-= \mathop{\sum }\limits_{{m}^{\prime }}\left| {j,{m}^{\prime }}\right\rangle {\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( R\right) ,
-$$
-
-其中,在使用完备性关系时,利用了 $\dot{D}\left( R\right)$ 只联系具有相同 $j$ 态的特性. 所以,当原始未转动态由 $|j, m\rangle$ 给出时,矩阵元 ${\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( R\right)$ 只不过是找到转动后态处于 $\left| {j,{m}^{\prime }}\right\rangle$ 的振幅.
-
-在 3.3 节曾看到怎样利用欧拉角表征最一般的转动. 现在考虑一个任意 $j$ (不一定是 $\left. \frac{1}{2}\right)$ 的 (3.3.20) 式的矩阵实现:
-
-$$
-{\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( {\alpha ,\beta ,\gamma }\right) = \left\langle {j,{m}^{\prime }\left| {\;\exp \left( \frac{-i{J}_{z}\alpha }{\hslash }\right) \exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) \exp \left( \frac{-i{J}_{z}\gamma }{\hslash }\right) }\right. j, m}\right\rangle 
-$$
-
-$$
-= {e}^{-i\left( {{m}^{\prime }\alpha + {m\gamma }}\right) }\left\langle {j,{m}^{\prime }\left| {\exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) }\right| j, m}\right\rangle .
-$$
-
-注意,唯一非平庸的部分是中间绕 $y$ 轴的转动,它混合了不同 $m$ 值的态. 方便的做法是把一个新矩阵 ${d}^{\left( j\right) }\left( \beta \right)$ 定义为
-
-$$
-{d}_{{m}^{\prime }m}^{\left( j\right) }\left( \beta \right) \equiv \left\langle {j,{m}^{\prime }\left| {\exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) }\right| j, m}\right\rangle .
-$$
-
-最后,转向一些实例. $j = \frac{1}{2}$ 的情况已经在 3.3 节求解出. 请参见 (3.3.21) 式的中间矩阵
-
-$$
-{d}^{1/2} = \left( \begin{matrix} \cos \left( \frac{\beta }{2}\right) & - \sin \left( \frac{\beta }{2}\right) \\ \sin \left( \frac{\beta }{2}\right) & \cos \left( \frac{\beta }{2}\right) \end{matrix}\right) .
-$$
-
-下一个最简单的是 $j = 1$ 的情况,将较为详细考虑. 显然,首先必须求出 ${J}_{y}$ 的 $3 \times 3$ 矩阵表示. 因为由 ${J}_{ \pm }$ 定义方程 (3.5.5) 有
-
-$$
-{J}_{y} = \frac{\left( {J}_{ + } - {J}_{ - }\right) }{2i},
-$$
-
-可以利用 (3.5.41) 式得到
-
-$$
-m = 1\;m = 0\;m = - 1
-$$
-
-$$
-{J}_{y}^{\left( j = 1\right) } = \left( \frac{\hslash }{2}\right) \left( \begin{matrix} 0 & - \sqrt{2}i & 0 \\ \sqrt{2}i & 0 & - \sqrt{2}i \\ 0 & \sqrt{2}i & 0 \end{matrix}\right) \;\begin{array}{l} {m}^{\prime } = 1 \\ {m}^{\prime } = 0 \\ {m}^{\prime } = - 1 \end{array} 
-$$
-
-下一个任务是求 $\exp \left( {-i{J}_{y}\beta /\hslash }\right)$ 的泰勒 (Taylor) 展开. 与 $j = \frac{1}{2}$ 的情况不同, ${\left\lbrack {J}_{y}^{\left( j = 1\right) }\right\rbrack }^{2}$ 不依赖于 1 和 ${J}_{y}^{\left( j = 1\right) }$ . 然而,很容易求出:
-
-$$
-{\left( \frac{{J}_{y}^{\left( j = 1\right) }}{\hslash }\right) }^{3} = \frac{{J}_{y}^{\left( j = 1\right) }}{\hslash }. 
-$$
-
-于是,仅对 $j = 1$ ,可合理地做如下替换
-
-$$
-\exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) \rightarrow 1 - {\left( \frac{{J}_{y}}{\hslash }\right) }^{2}\left( {1 - \cos \beta }\right) - i\left( \frac{{J}_{y}}{\hslash }\right) \sin \beta 
-$$
-
-读者可以详细地证明它. 具体有
-
-$$
-{d}^{\left( 1\right) }\left( \beta \right) = \left( \begin{matrix} \left( \frac{1}{2}\right) \left( {1 + \cos \beta }\right) & - \left( \frac{1}{\sqrt{2}}\right) \sin \beta & \left( \frac{1}{2}\right) \left( {1 - \cos \beta }\right) \\ \left( \frac{1}{\sqrt{2}}\right) \sin \beta & \cos \beta & - \left( \frac{1}{\sqrt{2}}\right) \sin \beta \\ \left( \frac{1}{2}\right) \left( {1 - \cos \beta }\right) & \left( \frac{1}{\sqrt{2}}\right) \sin \beta & \left( \frac{1}{2}\right) \left( {1 + \cos \beta }\right) \end{matrix}\right)
-$$
-
-显然,这种方法对于大的 $j$ 值会很耗时. 别的一些更容易的方法是有可能的,但是在本书中将不继续讨论它们.
+\textit{本章后续内容待续,请先查阅第二章.原版暂存内容已经注释掉了.}
+%\section{角动量理论}
+
+%\subsection{量子力学中的无穷小转动} 
+%
+%到此为止,我们还没有用到量子力学概念. 矩阵 $R$ 只是一个 $3 \times 3$ 的正交矩阵,它作用于写成列矩阵形式的矢量 $\mathbf{V}$ 上. 现在我们必须弄懂如何表征量子力学中的转动.
+%
+%因为转动影响物理系统, 预期转动后系统的态右矢与原来未经转动系统的态右矢有所不同. 给定由一个 $3 \times 3$ 正交矩阵 $R$ 表征的一个转动算符 $R$ ,我们将其与适当的右矢空间里的一个算符 $\mathcal{D}\left( R\right)$ 这样联系起来,使得:
+%
+%$$
+%|\alpha {\rangle }_{R} = \mathcal{D}\left( R\right) |\alpha \rangle 
+%$$
+%
+%其中 ${\left| \alpha \right\rangle }_{R}$ 和 $|\alpha \rangle$ 分别代表转动后系统和原始系统的右矢. 
+%
+%要构建转动算符 $\mathcal{D}\left( R\right)$ ,最有成效的方法仍然是先考查它在一个无穷小转动下的性质. 
+%
+%得到一个绕第 $k$ 个轴转 ${d\phi }$ 角的无穷小转动算符. 若 ${J}_{k}$ 是厄米的,无穷小转动算符保证是幺正的,而且在 ${d\phi } \rightarrow 0$ 的极限下约化为单位算符. 更普遍地,对一个绕着由单位矢量 $\widehat{\mathbf{n}}$ 表征的方向转无穷小 ${d\phi }$ 角的转动,我们有
+%
+%$$
+%\mathcal{D}\left( {\widehat{\mathbf{n}},{d\phi }}\right) = 1 - i\left( \frac{\mathbf{J} \cdot \widehat{\mathbf{n}}}{\hslash }\right) {d\phi } tag{3.1.15}
+%$$
+%
+%在本书中,我们强调并没有把角动量算符定义为 $\mathbf{x} \times \mathbf{p}$ . 这一点很重要,因为自旋角动量一一我们的普遍形式也适用于它一一与 ${x}_{i}$ 和 ${p}_{j}$ 毫无关系. 换个方式讲,在经典力学中,可以证明定义为 $\mathbf{x} \times \mathbf{p}$ 的角动量是转动的生成元; 相比之下,在量子力学中我们定义 $\mathbf{J}$ 使得一个无穷小转动算符取 (3.1.15) 式形式.
+%
+%一个有限转动可以通过组合相继地绕同一个轴的无穷小转动得到. 例如, 如果我们对于一个绕 $z$ 轴转 $\phi$ 角的有限转动感兴趣,我们考虑
+%
+%$$
+%{\mathcal{D}}_{z}\left( \phi \right) = \mathop{\lim }\limits_{{N \rightarrow \infty }}{\left\lbrack 1 - i\left( \frac{{J}_{z}}{\hslash }\right) \left( \frac{\phi }{N}\right) \right\rbrack }^{N}
+%$$
+%
+%$$
+%= \exp \left( \frac{-i{J}_{z}\phi }{\hslash }\right) tag{3. 1.16}
+%$$
+%
+%$$
+%= 1 - \frac{i{J}_{z}\phi }{\hslash } - \frac{{J}_{z}^{2}{\phi }^{2}}{2{\hslash }^{2}} + \cdots .
+%$$
+%
+%为了求得角动量对易关系, 我们还需要一个概念. 正如我们前面评注的, 对每个用 3 $\times 3$ 正交矩阵 $R$ 表示的转动 $R$ ,在恰当的右矢空间中都存在一个转动算符 $\mathcal{D}\left( R\right)$ . 我们进一步假设 $\mathcal{D}\left( R\right)$ 与 $R$ 有相同的群性质
+%
+%
+%现在让我们返回到基于 $R$ 矩阵写成的转动操作 (3.1.9) 式的基本对易关系. 它的转动算符类似公式为
+%
+%$$
+%\left( {1 - \frac{i{J}_{x}\varepsilon }{\hslash } - \frac{{J}_{x}^{2}{\varepsilon }^{2}}{2{\hslash }^{2}}}\right) \left( {1 - \frac{i{J}_{y}\varepsilon }{\hslash } - \frac{{J}_{y}^{2}{\varepsilon }^{2}}{2{\hslash }^{2}}}\right) 
+%$$
+%
+%$$
+%- \left( {1 - \frac{i{J}_{y}\varepsilon }{\hslash } - \frac{{J}_{y}^{2}{\varepsilon }^{2}}{2{\hslash }^{2}}}\right) \left( {1 - \frac{i{J}_{x}\varepsilon }{\hslash } - \frac{{J}_{x}^{2}{\varepsilon }^{2}}{2{\hslash }^{2}}}\right) = 1 - \frac{i{J}_{z}{\varepsilon }^{2}}{\hslash } - 1.
+%$$
+%
+%$\varepsilon$ 量级的项已自动地消掉了. 让 (3.1.18) 式两边的 ${\varepsilon }^{2}$ 量级的项相等,我们得到
+%
+%$$
+%\left\lbrack {{J}_{x},{J}_{y}}\right\rbrack = i\hslash {J}_{z}, tag{3.1.19}
+%$$
+%
+%将这种做法重复用于绕其他轴的转动可得到
+%
+%$$
+%\left\lbrack {{J}_{i},{J}_{j}}\right\rbrack = i\hslash {\varepsilon }_{ijk}{J}_{k}, tag{3.1.20}
+%$$
+%
+%该式称为角动量的基本对易关系.
+%
+%注意在获得对易关系 (3.1.20) 时, 使用了以下两个概念
+%
+%1. ${J}_{k}$ 是绕第 $k$ 轴转动的生成元.
+%
+%2. 绕不同轴的转动不对易.
+%
+%毫不夸张地说, 对易关系 (3.1.20) 式以一种紧凑的方式归纳了三维转动的一切基本性质.
+%
+%
+%\subsection{泡利二分量形式} 
+%
+%利用泡利在 1926 年引入的二分量旋量形式,可以很方便地处理自旋 $\frac{1}{2}$ 系统的态右矢. 在 1.3 节我们学会了怎样使用一个列 (行) 矩阵表示一个右矢 (左矢); 我们所要做的是把基于某个指定基右矢的展开系数安排到一个列（行）矩阵中. 在自旋 $\frac{1}{2}$ 的情况下,对于基右矢和基左矢, 我们有
+%
+%$$
+%\left| {+\rangle \doteq \left( \begin{array}{l} 1 \\ 0 \end{array}\right) \equiv {\chi }_{ + }\;}\right| - \rangle \doteq \left( \begin{array}{l} 0 \\ 1 \end{array}\right) \equiv {\chi }_{ - } 
+%$$
+%
+%$$
+%\langle + \mid \doteq \left( {1,0}\right) = {\chi }_{ + }^{ \dagger }\;\langle - \mid \doteq \left( {0,1}\right) = {\chi }_{ - }^{ \dagger }
+%$$
+%
+%和对一个任意的态右矢和相应的态左矢有
+%
+%$$
+%\left| {\alpha \rangle = }\right| + \rangle \langle + \left| {\alpha \rangle + }\right| - \rangle \langle - \mid \alpha \rangle \doteq \left( \begin{array}{l} \langle + \mid \alpha \rangle \\ \langle - \mid \alpha \rangle \end{array}\right) 
+%$$
+%
+%和
+%
+%$$
+%\langle \alpha \left| { = \langle \alpha }\right| + \rangle \langle + \left| {+\langle \alpha }\right| - \rangle \langle - | \doteq \left( {\langle \alpha \mid + \rangle ,\langle \alpha \mid - \rangle }\right) tag{3.2.27b}
+%$$
+%
+%列矩阵 (3.2.27a) 式称为二分量旋量, 记为
+%
+%$$
+%\chi = \left( \begin{array}{l} \langle + \mid \alpha \rangle \\ \langle - \mid \alpha \rangle \end{array}\right) \equiv \left( \begin{array}{l} {c}_{ + } \\ {c}_{ - } \end{array}\right)
+%$$
+%
+%$$
+%= {c}_{ + }{\chi }_{ + } + {c}_{ - }{\chi }_{ - }, tag{3.2.28}
+%$$
+%
+%
+%其中 ${c}_{ + }$ 和 ${c}_{ - }$ 一般都是复数. 对于 ${\chi }^{ \dagger }$ 我们有
+%
+%$$
+%{\chi }^{ \dagger } = \left( {\langle \alpha \mid + \rangle ,\langle \alpha \mid - \rangle }\right) = \left( {{c}_{ + }^{ * },{c}_{ - }^{ * }}\right) 
+%$$
+%
+%矩阵元 $\left\langle {\pm \left| {S}_{k}\right| + }\right\rangle$ 和 $\left\langle {\pm \left| {S}_{k}\right| - }\right\rangle$ ,除去 $\hslash /2$ 之外,被设定等于那些 $2 \times 2$ 的、以泡利矩阵著称的矩阵 ${\sigma }_{k}$ . 我们确定
+%
+%$$
+%\left\langle {\pm \left| {S}_{k}\right| + }\right\rangle \equiv \left( \frac{\hslash }{2}\right) {\left( {\sigma }_{k}\right) }_{\pm , + },\;\left\langle {\pm \left| {S}_{k}\right| - }\right\rangle \equiv \left( \frac{\hslash }{2}\right) {\left( {\sigma }_{k}\right) }_{\pm , - }
+%$$
+%
+%现在我们可以用 $\chi$ 和 ${\sigma }_{k}$ 写出期待值 $\left\langle {S}_{k}\right\rangle$
+%
+%$$
+%\left\langle {S}_{k}\right\rangle = \left\langle {\alpha \left| {S}_{k}\right| \alpha }\right\rangle = \mathop{\sum }\limits_{{{a}^{\prime } = + , - }}\mathop{\sum }\limits_{{{a}^{\prime \prime } = + , - }}\left\langle {\alpha \left| {a}^{\prime }\right\rangle \left\langle {{a}^{\prime }\left| {S}_{k}\right| {a}^{\prime \prime }}\right\rangle \left\langle {a}^{\prime \prime }\right| \alpha }\right\rangle 
+%$$
+%
+%$$
+%= \left( \frac{\hslash }{2}\right) {\chi }^{ \dagger }{\sigma }_{k}\chi
+%$$
+%
+%其中在最后一行用到了矩阵乘法的常用规则. 显然我们可从 (3.2.1) 和 (3.2.30) 式看到
+%
+%$$
+%{\sigma }_{1} = \left( \begin{array}{ll} 0 & 1 \\ 1 & 0 \end{array}\right) ,\;{\sigma }_{2} = \left( \begin{matrix} 0 & - i \\ i & 0 \end{matrix}\right) ,\;{\sigma }_{3} = \left( \begin{matrix} 1 & 0 \\ 0 & - 1 \end{matrix}\right) 
+%$$
+%
+%其中下标 1,2 和 3 分别代表 $x, y$ 和 $z$ .
+%
+%下面列出泡利矩阵的一些性质. 首先,
+%
+%$$
+%{\sigma }_{i}^{2} = 1
+%$$
+%
+%
+%
+%$$
+%{\sigma }_{i}{\sigma }_{j} + {\sigma }_{j}{\sigma }_{i} = 0,\;\text{ 对于 }i \neq j,
+%$$
+%
+%
+%
+%其中 (3.2.33a) 式的右边被理解为 $2 \times 2$ 单位矩阵. 当然,这两个关系式等价于反对易关系
+%
+%$$
+%\left\{ {{\sigma }_{i},{\sigma }_{j}}\right\} = 2{\delta }_{ij}, tag{3. 2.34}
+%$$
+%
+%还有对易关系
+%
+%$$
+%\left\lbrack {{\sigma }_{i},{\sigma }_{j}}\right\rbrack = {2i}{\varepsilon }_{ijk}{\sigma }_{k}, tag{3. 2.35}
+%$$
+%
+%可以看出,它显然就是角动量对易关系 (3.1.20) 的 $2 \times 2$ 矩阵实现. 比较 (3.2.34) 式和 (3.2.35) 式, 我们可以得到
+%
+%$$
+%{\sigma }_{1}{\sigma }_{2} = - {\sigma }_{2}{\sigma }_{1} = i{\sigma }_{3}\cdots tag{3. 2.36}
+%$$
+%
+%还要注意
+%
+%$$
+%{\sigma }_{i}^{ \dagger } = {\sigma }_{i},
+%$$
+%
+%
+%
+%$$
+%\det \left( {\sigma }_{i}\right) = - 1, tag{3. 2.37b}
+%$$
+%
+%$$
+%\operatorname{Tr}\left( {\sigma }_{i}\right) = 0.
+%$$
+%
+%
+%
+%现在考虑 $\mathbf{\sigma } \cdot \mathbf{a}$ ,其中 $\mathbf{a}$ 是一个三维矢量. 要把这个量理解为实际上是一个 $2 \times 2$ 矩阵. 于是
+%
+%$$
+%\mathbf{\sigma } \cdot \mathbf{a} \equiv \mathop{\sum }\limits_{k}{a}_{k}{\sigma }_{k}
+%$$
+%
+%$$
+%= \left( \begin{matrix} + {a}_{3} & {a}_{1} - i{a}_{2} \\ {a}_{1} + i{a}_{2} & - {a}_{3} \end{matrix}\right) tag{3. 2.38}
+%$$
+%
+%还有一个非常重要的恒等式
+%
+%$$
+%\left( {\mathbf{\sigma } \cdot \mathbf{a}}\right) \left( {\mathbf{\sigma } \cdot \mathbf{b}}\right) = \mathbf{a} \cdot \mathbf{b} + i\mathbf{\sigma } \cdot \left( {\mathbf{a} \times \mathbf{b}}\right) 
+%$$
+%
+%为证明该式, 所需的是反对易关系和对易关系, 它们分别为 (3.2.34) 式与 (3.2.35) 式:
+%
+%$$
+%\mathop{\sum }\limits_{j}{\sigma }_{j}a\mathop{\sum }\limits_{k}{\sigma }_{k}{b}_{k} = \mathop{\sum }\limits_{j}\mathop{\sum }\limits_{k}\left( {\frac{1}{2}\left\{ {{\sigma }_{j},{\sigma }_{k}}\right\} + \frac{1}{2}\left\lbrack {{\sigma }_{j},{\sigma }_{k}}\right\rbrack }\right) {a}_{j}{b}_{k}
+%$$
+%
+%$$
+%= \mathop{\sum }\limits_{j}\mathop{\sum }\limits_{k}\left( {{\delta }_{jk} + i{\varepsilon }_{jkl}{\sigma }_{l}}\right) {a}_{j}{b}_{k} tag{3. 2.40}
+%$$
+%
+%$$
+%= \mathbf{a} \cdot \mathbf{b} + i\mathbf{\sigma } \cdot \left( {\mathbf{a} \times \mathbf{b}}\right) .
+%$$
+%
+%如果 $\mathbf{a}$ 的分量都是实的,我们有
+%
+%$$
+%{\left( \mathbf{\sigma } \cdot \mathbf{a}\right) }^{2} = {\left| \mathbf{a}\right| }^{2}
+%$$
+%
+%其中 $\left| \mathbf{a}\right|$ 是矢量 $\mathbf{a}$ 的长度.
+%
+%\subsection{二分量形式中的转动}
+%
+%现在研究转动算符 $\mathcal{D}\left( {\widehat{\mathbf{n}},\phi }\right)$ 的 $2 \times 2$ 矩阵表示. 如下
+%
+%$$
+%\exp \left( \frac{-i\mathbf{S} \cdot \widehat{\mathbf{n}}\phi }{\hslash }\right) \doteq \exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) 
+%$$
+%
+%利用从 (3.2.41) 式得到的
+%
+%$$
+%{\left( \mathbf{\sigma } \cdot \widehat{\mathbf{n}}\right) }^{n} = \left\{ \begin{array}{ll} 1 & \text{ 对于偶数的 }n, \\ \mathbf{\sigma } \cdot \widehat{\mathbf{n}} & \text{ 对于奇数的 }n, \end{array}\right\}
+%$$
+%
+%我们可以写出
+%
+%$$
+%\exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) = \left\lbrack {1 - \frac{{\left( \mathbf{\sigma } \cdot \widehat{\mathbf{n}}\right) }^{2}}{2!}{\left( \frac{\phi }{2}\right) }^{2} + \frac{{\left( \mathbf{\sigma } \cdot \widehat{\mathbf{n}}\right) }^{4}}{4!}{\left( \frac{\phi }{2}\right) }^{4} - \cdots }\right\rbrack
+%$$
+%
+%$$
+%- i\left\lbrack {\left( {\mathbf{\sigma } \cdot \widehat{\mathbf{n}}}\right) \frac{\phi }{2} - \frac{{\left( \mathbf{\sigma } \cdot \widehat{\mathbf{n}}\right) }^{3}}{3!}{\left( \frac{\phi }{2}\right) }^{3} + \cdots }\right\rbrack 
+%$$
+%
+%$$
+%= 1\cos \left( \frac{\phi }{2}\right) - i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\sin \left( \frac{\phi }{2}\right) .
+%$$
+%
+%显然,以 $2 \times 2$ 形式我们有
+%
+%$$
+%\exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) = \left( \begin{array}{ll} \cos \left( \frac{\phi }{2}\right) - i{n}_{z}\sin \left( \frac{\phi }{2}\right) & \left( {-i{n}_{x} - {n}_{y}}\right) \sin \left( \frac{\phi }{2}\right) \\ \left( {-i{n}_{x} + {n}_{y}}\right) \sin \left( \frac{\phi }{2}\right) & \cos \left( \frac{\phi }{2}\right) + i{n}_{z}\sin \left( \frac{\phi }{2}\right) \end{array}\right) 
+%$$
+%
+%正像算符 $\exp \left( {-i\mathbf{S} \cdot \widehat{\mathbf{n}}\phi /\hslash }\right)$ 作用在态右矢 $|\alpha \rangle$ 上一样, $2 \times 2$ 矩阵 $\exp \left( {-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi /2}\right)$ 作用于一个二分量旋量 $\chi$ 上. 在转动之下,我们使 $\chi$ 发生如下改变:
+%
+%$$
+%\chi \rightarrow \exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) \chi
+%$$
+%
+%另一方面, ${\sigma }_{k}$ 自身在转动下保持不变. 因此,严格地说,尽管 $\mathbf{\sigma }$ 的外貌像矢量,人们却不把它看成一个矢量; 而是把遵从矢量的变换性质的 ${\chi }^{ \dagger }\mathbf{\sigma }\chi$ 看成一个矢量:
+%
+%$$
+%{\chi }^{ \dagger }{\sigma }_{k}\chi \rightarrow \mathop{\sum }\limits_{l}{R}_{kl}{\chi }^{ \dagger }{\sigma }_{l}\chi 
+%$$
+%
+%它的明确证明可以利用
+%
+%$$
+%\exp \left( \frac{i{\sigma }_{3}\phi }{2}\right) {\sigma }_{1}\exp \left( \frac{-i{\sigma }_{3}\phi }{2}\right) = {\sigma }_{1}\cos \phi - {\sigma }_{2}\sin \phi
+%$$
+%
+%等给出,它是 (3.2.6) 式的 $2 \times 2$ 矩阵类比.
+%
+%在利用右矢形式讨论 ${2\pi }$ 转动时,我们曾经看到一个自旋 $\frac{1}{2}$ 的右矢 $|\alpha \rangle$ 变成了 $- |\alpha \rangle$ . 这个说法的 $2 \times 2$ 类比是
+%
+%$$
+%{\left. \exp \left( \frac{-i\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\phi }{2}\right) \right| }_{\phi = {2\pi }} = - 1,\;\text{ 对任何 }\widehat{\mathbf{n}}
+%$$
+%
+%它从 (3.2.44) 式显然可得.
+%
+%作为转动矩阵 (3.2.45) 式的一个有益的应用, 让我们看一下怎样构建本征值为 +1 的 $\mathbf{\sigma } \cdot \widehat{\mathbf{n}}$ 的本征旋量,其中 $\widehat{\mathbf{n}}$ 是某特定方向的一个单位矢量. 我们的目的是构建一个满足
+%
+%$$
+%\mathbf{\sigma } \cdot \widehat{\mathbf{n}}\chi = \chi 
+%$$
+%
+%的 $\chi$ . 换句话说,我们要寻找由
+%
+%$$
+%\mathbf{S} \cdot \widehat{\mathbf{n}}\left| {\mathbf{S} \cdot \widehat{\mathbf{n}}; + \rangle = \left( \frac{\hslash }{2}\right) }\right| \mathbf{S} \cdot \widehat{\mathbf{n}}; + \rangle 
+%$$
+%
+%定义的 $\left| {\mathbf{S} \cdot \widehat{\mathbf{n}}; + }\right\rangle$ 的二分量列矩阵表示. 实际上,该式可作为一个直接的本征值问题来求解 (见第 1 章的习题 1.9), 但是这里, 我们给出另一种可选的基于转动矩阵 (3.2.45) 的方法.
+%
+%
+%图 3.3 构建 $\sigma \cdot \widehat{\mathrm{n}}$ 的本征旋量
+%
+%设表征 $\widehat{\mathbf{n}}$ 的极角与方位角分别为 $\beta$ 和 $\alpha$ . 我们从表示自旋向上态的二分量旋量 $\left( \begin{array}{l} 1 \\ 0 \end{array}\right)$ 开始. 给定这个旋量之后,我们先绕 $y$ 轴转 $\beta$ 角; 随后绕 $z$ 轴转 $\alpha$ 角. 然后我们看到,所期待的自旋态就得到了,见图 3.3. 用泡利旋量语言,这一系列操作等价于把 $\exp \left( {-i{\sigma }_{2}\beta /2}\right)$ 作用于 $\left( \begin{array}{l} 1 \\ 0 \end{array}\right)$ ,随后再用 $\exp \left( {-i{\sigma }_{3}\alpha /2}\right)$ 作用. 净结果是
+%
+%$$
+%\chi = \left\lbrack {\cos \left( \frac{\alpha }{2}\right) - i{\sigma }_{3}\sin \left( \frac{\alpha }{2}\right) }\right\rbrack \left\lbrack {\cos \left( \frac{\beta }{2}\right) - i{\sigma }_{2}\sin \left( \frac{\beta }{2}\right) }\right\rbrack \left( \begin{array}{l} 1 \\ 0 \end{array}\right)
+%$$
+%
+%$$
+%= \left( \begin{matrix} \cos \left( \frac{\alpha }{2}\right) - i\sin \left( \frac{\alpha }{2}\right) & 0 \\ 0 & \cos \left( \frac{\alpha }{2}\right) + i\sin \left( \frac{\alpha }{2}\right) \end{matrix}\right) \left( \begin{matrix} \cos \left( \frac{\beta }{2}\right) & - \sin \left( \frac{\beta }{2}\right) \\ \sin \left( \frac{\beta }{2}\right) & \cos \left( \frac{\beta }{2}\right) \end{matrix}\right) \left( \begin{array}{l} 1 \\ 0 \end{array}\right)
+%$$
+%
+%$$
+%= \left( \begin{array}{l} \cos \left( \frac{\beta }{2}\right) {e}^{-{i\alpha }/2} \\ \sin \left( \frac{\beta }{2}\right) {e}^{{i\alpha }/2} \end{array}\right) 
+%$$
+%
+%如果我们意识到上分量和下分量的共同相位是没有什么物理意义的话, 则上式与第 1 章的习题 1.9 是完全一致的.
+%
+%
+%\subsection{转动算符的表示}
+%
+%得到了 ${J}_{z}$ 和 ${J}_{ \pm }$ 的矩阵元之后,就能够研究转动算符 $\mathcal{D}\left( R\right)$ . 如果一个转动 $R$ 由 $\widehat{\mathbf{n}}$ 和 $\phi$ 确定, 就可以用
+%
+%$$
+%{\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( R\right) = \left\langle {j,{m}^{\prime }\left| {\exp \left( \frac{-i\mathbf{J} \cdot \widehat{\mathbf{n}}\phi }{\hslash }\right) }\right| j, m}\right\rangle . tag{3. 5.42}
+%$$
+%
+%定义它的矩阵元. 这些矩阵元有时被称为维格纳函数, 它以对量子力学中转动的群论性质作出了开拓性贡献的维格纳的名字命名. 这里要注意,在 (3.5.42) 式中相同的 $j$ 值出现在右矢和左矢中,不需要考虑不同 $j$ 值的态之间的 $\mathcal{D}\left( R\right)$ 矩阵元,因为它们显而易见都是零. 这是因为 ${\left. \mathcal{D}\left( R\right) \mid j, m\right| }^{2}$ 仍是 ${\mathbf{J}}^{2}$ 的具有相同本征值 $j\left( {j + 1}\right) {\hslash }^{2}$ 的本征态:
+%
+%$$
+%{\mathbf{J}}^{2}\mathcal{D}\left( R\right) \left| {j, m\rangle = \mathcal{D}\left( R\right) {\mathbf{J}}^{2}}\right| j, m\rangle 
+%$$
+%
+%$$
+%= j\left( {j + 1}\right) {\hslash }^{2}\left\lbrack {\mathcal{D}\left( R\right) \mid j, m\rangle }\right\rbrack ,
+%$$
+%
+%该式可以直接由 ${\mathbf{J}}^{2}$ 与 ${J}_{k}$ (因此与 ${J}_{k}$ 的任何函数) 对易得到. 简单地说,转动不改变 $j$ 值, 这是一个非常有用的结果.
+%
+%在文献中经常把 ${\mathcal{D}}_{m, m}^{\left( j\right) }\left( R\right)$ 构成的 $\left( {{2j} + 1}\right) \times \left( {{2j} + 1}\right)$ 矩阵称为转动算符 $\mathcal{D}\left( R\right)$ 的 ${2j} + 1$ 维不可约表示. 这意味着,使用一组适当选择的基,在不一定由一个单一的 $j$ 值表征的右矢空间上, 对应一个任意转动算符的矩阵可以具有分块对角形式:
+%
+%
+%其中有阴影的方块是由 ${\mathcal{D}}_{m \mid m}^{\left( j\right) }\left( R\right)$ 构成的、具有某个确定 $j$ 值的 $\left( {{2j} + 1}\right) \times \left( {{2j} + 1}\right)$ 方阵. 而且, 每个方阵本身不可能通过任何基的选择, 破缺成更小的块.
+%
+%
+%
+%由确定的 $j$ 表征的转动矩阵构成一个群. 首先,单位矩阵是一个群元,因为对应于没有任何转动 $\left( {\phi = 0}\right)$ 的转动矩阵是 $\left( {{2j} + 1}\right) \times \left( {{2j} + 1}\right)$ 的单位矩阵. 其次,逆也是一个群元,只不过在不改变转动轴 $\widehat{\mathbf{n}}$ 的情况下,反转了转角 $\phi \rightarrow - \phi$ . 第三,任何两个元的乘积也是一个群元, 明确地有
+%
+%$$
+%\mathop{\sum }\limits_{{m}^{\prime }}{\mathcal{D}}_{{m}^{\prime }{m}^{\prime }}^{\left( j\right) }\left( {R}_{1}\right) {\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( {R}_{2}\right) = {\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( {{R}_{1}{R}_{2}}\right) , tag{3. 5.46}
+%$$
+%
+%其中,乘积 ${R}_{1}{R}_{2}$ 代表一个单一的转动. 注意,因为相应的转动算符是幺正的,所以转动矩阵是幺正的, 显然有
+%
+%$$
+%{\mathcal{D}}_{{m}^{\prime }m}\left( {R}^{-1}\right) = {\mathcal{D}}_{m{m}^{\prime }}^{ * }\left( R\right) . tag{3.5.47}
+%$$
+%
+%为了领会转动矩阵的物理意义,从 $|j, m\rangle$ 所代表的一个态出发. 现在转动它:
+%
+%$$
+%\left| {j, m\rangle \rightarrow \mathcal{D}\left( R\right) }\right| j, m\rangle . tag{3. 5.48}
+%$$
+%
+%尽管这个转动操作并不改变 $j$ ,但一般将得到一些不同于原来 $m$ 的 $m$ 值态. 为了得到发现处于 $\left| {j,{m}^{\prime }}\right\rangle$ 态的振幅,只要把转动后的态展开如下
+%
+%$$
+%\mathcal{D}\left( R\right) \left| {j, m\rangle = \mathop{\sum }\limits_{{m}^{\prime }}}\right| j,{m}^{\prime }\rangle \left\langle {j,{m}^{\prime }\left| {\mathcal{D}\left( R\right) }\right| j, m}\right\rangle tag{3. 5.49}
+%$$
+%
+%$$
+%= \mathop{\sum }\limits_{{m}^{\prime }}\left| {j,{m}^{\prime }}\right\rangle {\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( R\right) ,
+%$$
+%
+%其中,在使用完备性关系时,利用了 $\dot{D}\left( R\right)$ 只联系具有相同 $j$ 态的特性. 所以,当原始未转动态由 $|j, m\rangle$ 给出时,矩阵元 ${\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( R\right)$ 只不过是找到转动后态处于 $\left| {j,{m}^{\prime }}\right\rangle$ 的振幅.
+%
+%在 3.3 节曾看到怎样利用欧拉角表征最一般的转动. 现在考虑一个任意 $j$ (不一定是 $\left. \frac{1}{2}\right)$ 的 (3.3.20) 式的矩阵实现:
+%
+%$$
+%{\mathcal{D}}_{{m}^{\prime }m}^{\left( j\right) }\left( {\alpha ,\beta ,\gamma }\right) = \left\langle {j,{m}^{\prime }\left| {\;\exp \left( \frac{-i{J}_{z}\alpha }{\hslash }\right) \exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) \exp \left( \frac{-i{J}_{z}\gamma }{\hslash }\right) }\right. j, m}\right\rangle 
+%$$
+%
+%$$
+%= {e}^{-i\left( {{m}^{\prime }\alpha + {m\gamma }}\right) }\left\langle {j,{m}^{\prime }\left| {\exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) }\right| j, m}\right\rangle .
+%$$
+%
+%注意,唯一非平庸的部分是中间绕 $y$ 轴的转动,它混合了不同 $m$ 值的态. 方便的做法是把一个新矩阵 ${d}^{\left( j\right) }\left( \beta \right)$ 定义为
+%
+%$$
+%{d}_{{m}^{\prime }m}^{\left( j\right) }\left( \beta \right) \equiv \left\langle {j,{m}^{\prime }\left| {\exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) }\right| j, m}\right\rangle .
+%$$
+%
+%最后,转向一些实例. $j = \frac{1}{2}$ 的情况已经在 3.3 节求解出. 请参见 (3.3.21) 式的中间矩阵
+%
+%$$
+%{d}^{1/2} = \left( \begin{matrix} \cos \left( \frac{\beta }{2}\right) & - \sin \left( \frac{\beta }{2}\right) \\ \sin \left( \frac{\beta }{2}\right) & \cos \left( \frac{\beta }{2}\right) \end{matrix}\right) .
+%$$
+%
+%下一个最简单的是 $j = 1$ 的情况,将较为详细考虑. 显然,首先必须求出 ${J}_{y}$ 的 $3 \times 3$ 矩阵表示. 因为由 ${J}_{ \pm }$ 定义方程 (3.5.5) 有
+%
+%$$
+%{J}_{y} = \frac{\left( {J}_{ + } - {J}_{ - }\right) }{2i},
+%$$
+%
+%可以利用 (3.5.41) 式得到
+%
+%$$
+%m = 1\;m = 0\;m = - 1
+%$$
+%
+%$$
+%{J}_{y}^{\left( j = 1\right) } = \left( \frac{\hslash }{2}\right) \left( \begin{matrix} 0 & - \sqrt{2}i & 0 \\ \sqrt{2}i & 0 & - \sqrt{2}i \\ 0 & \sqrt{2}i & 0 \end{matrix}\right) \;\begin{array}{l} {m}^{\prime } = 1 \\ {m}^{\prime } = 0 \\ {m}^{\prime } = - 1 \end{array} 
+%$$
+%
+%下一个任务是求 $\exp \left( {-i{J}_{y}\beta /\hslash }\right)$ 的泰勒 (Taylor) 展开. 与 $j = \frac{1}{2}$ 的情况不同, ${\left\lbrack {J}_{y}^{\left( j = 1\right) }\right\rbrack }^{2}$ 不依赖于 1 和 ${J}_{y}^{\left( j = 1\right) }$ . 然而,很容易求出:
+%
+%$$
+%{\left( \frac{{J}_{y}^{\left( j = 1\right) }}{\hslash }\right) }^{3} = \frac{{J}_{y}^{\left( j = 1\right) }}{\hslash }. 
+%$$
+%
+%于是,仅对 $j = 1$ ,可合理地做如下替换
+%
+%$$
+%\exp \left( \frac{-i{J}_{y}\beta }{\hslash }\right) \rightarrow 1 - {\left( \frac{{J}_{y}}{\hslash }\right) }^{2}\left( {1 - \cos \beta }\right) - i\left( \frac{{J}_{y}}{\hslash }\right) \sin \beta 
+%$$
+%
+%读者可以详细地证明它. 具体有
+%
+%$$
+%{d}^{\left( 1\right) }\left( \beta \right) = \left( \begin{matrix} \left( \frac{1}{2}\right) \left( {1 + \cos \beta }\right) & - \left( \frac{1}{\sqrt{2}}\right) \sin \beta & \left( \frac{1}{2}\right) \left( {1 - \cos \beta }\right) \\ \left( \frac{1}{\sqrt{2}}\right) \sin \beta & \cos \beta & - \left( \frac{1}{\sqrt{2}}\right) \sin \beta \\ \left( \frac{1}{2}\right) \left( {1 - \cos \beta }\right) & \left( \frac{1}{\sqrt{2}}\right) \sin \beta & \left( \frac{1}{2}\right) \left( {1 + \cos \beta }\right) \end{matrix}\right)
+%$$
+%
+%显然,这种方法对于大的 $j$ 值会很耗时. 别的一些更容易的方法是有可能的,但是在本书中将不继续讨论它们.
 
 \ifx\allfiles\undefined
 \end{document}

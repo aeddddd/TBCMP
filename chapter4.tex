@@ -127,7 +127,7 @@
 	\begin{aligned}U(q_f,q_i;t_f-t_i)&=\langle q_f|e^{-\frac{i}{\hbar}\hat{H}(t_f-t_i)}|q_i\rangle=\sum_n\langle q_f|n\rangle e^{-\frac{i}{\hbar}\epsilon_n(t_f-t_i)}\langle n|q_i\rangle\\[2ex]&=\sum_ne^{-\frac{i}{\hbar}\epsilon_n(t_f-t_i)}\varphi_n(q_f)\varphi_n^*(q_i)\end{aligned}
 \end{equation}
 其中$\varphi_n(q)=\la q|n\ra$为坐标表象下的波函数.我们发现传播子给出了关于这个哈密顿量的波函数和能级的全部信息,这也意味着我们可以把求解波函数的问题变为求解这个哈密顿量所对应的传播子的问题.
-\subsection*{路径积分}
+\subsection{路径积分初步}
 我们刚刚发现了通过求解传播子可以间接求解波函数,而现在的问题是:如何求出传播子? 这里我们用到费曼的路径积分方法,我们先来首先说明\textbf{传播子可以写为路径积分的形式}.
 
 我们首先考虑一个充分短的时间$\epsilon$
@@ -217,7 +217,7 @@
 
 但是,我们发现这并没有解决发散问题,于是我们要求路径是足够``好"的.即要求动力学项$[q(t+\epsilon)-q(t)]^2/\epsilon$在极限$\epsilon\to0$时收敛,并认为在不满足这个条件的路径会剧烈震荡,其平均值为$ 0 $,即不那么``好"的路径.事实上,这种方法似乎完全看不出来严格的数学依据,但现实如此(这里可以引用那些经典的物理小笑话了,至少我们目前不用去思考如何把这些东西严谨化.)\footnote{关于这一大段的文字讨论是必须的,其有助于构建量子场论的物理图景,事实上,在这一章我一直在尝试把更多重点放在公式内部并突出显示它,倘若把重点置于一大堆文字中,读者不加以仔细的阅读的话,便很容易错过去.而且,对于物理这一门学科,过于长段的文字很难真的揭示什么内涵,它们往往起到解释公式的作用,或者说,公式才是文章的主体.同样的,这一大段内容我放在了脚注中,同样为了让人们去注意到它.}.
 
-\subsection*{经典极限}
+\subsubsection{经典极限}
 或许你们发现在上一部分的结尾中,我们并没有像往常一样去省略约化普朗克常数$\hbar$,这有关于经典极限的讨论.
 
 我们所关注的重点路径为``贴近"经典路径的路径,其作用量是静态的.
@@ -237,7 +237,7 @@
 		\end{equation}
 		\textit{我们最后得到的结果所遵循的过程被称为稳态相位近似.}
 \end{remark}
-\subsection*{高斯积分表}
+\subsubsection{高斯积分表}
 如下表,其中$ K $是对称矩阵.
 \begin{equation}\label{GaussIntegral}
 	\begin{aligned}{2}
@@ -256,7 +256,7 @@
 \begin{equation}
 	\int_{-\infty}^{+\infty}e^{-\frac12ax^2+Jx}\dx=\sqrt{\frac{2\pi}a}e^{\frac{J^2}{2a}}
 \end{equation}
-\subsection*{时序算符以及哈密顿量}
+\subsubsection{时序算符以及哈密顿量}
 对于海森堡绘景下算符的矩阵元,例如算符$\hat{q}(t)=e^{i\hat{H}t}\hat{q}e^{-i\hat{H}t}$
 \begin{equation}
 	\langle q_f,t_f|\hat{q}(t)|q_i,t_i\rangle=\langle q_f|e^{-i\hat{H}(t_f-t)}\hat{q}e^{-i\hat{H}(t-t_i)}|q_i\rangle 
@@ -292,7 +292,7 @@
 \end{equation}
 回想这一形式的物理意义,我们发现路径积分自然表示了算符按一个时序的乘积的期望.
 
-\subsection*{路径积分的哈密顿形式}
+\subsubsection{路径积分的哈密顿形式}
 我们先前的作用量都是有拉格朗日形式给出,现在我们一并写出同样对于哈密顿形式的传播子,积分测度以及作用量:
 \begin{equation}
 	\begin{aligned}
@@ -447,7 +447,7 @@
 		\end{enumerate}
 	\end{solution}
 \end{note}
-\subsection{矢量势的路径积分}
+\subsubsection{矢量势的路径积分}
 要对经典哈密顿量 $H(p,q)$ 进行量子化,仅仅将经典变量 $ p $ 和 $ q $ 替换为相应的量子算符通常是不够的.当这种对应规则导致产生非对易算符$\hat p$​ 和$\hat q$​ 的乘积时,必须通过附加条件(例如哈密顿量的厄米性)来确定算符的顺序.这些困难在路径积分表述中也表现出来:为了尊重算符的正确顺序,路径积分必须被仔细定义.
 
 我们同样以一个例子来引入这个问题:考虑一个三维空间内的自由粒子,受到$\mathbf{B}=\mathbf{\nabla}\times\mathbf{A}$的磁场作用,其拉格朗日量可以写为
@@ -472,46 +472,142 @@
 	H(\mathbf{p},\mathbf{q})=\frac{[\mathbf{p}-e\mathbf{A}(\mathbf{q})]^2}{2m}
 \end{equation}
 
+在确定量子哈密顿量时,必须选定算符乘积$\hat{\mathbf{p}} \cdot \mathbf{A}(\hat{\mathbf{q}})$的排序顺序.通过要求哈密顿量保持厄米性这一条件,可推导出
+\begin{equation}
+	\hat{H}=\frac{1}{2m}\left[\hat{\mathbf{p}}^{2}-e\hat{\mathbf{p}}\cdot\mathbf{A}(\hat{\mathbf{q}})-e\mathbf{A}(\hat{\mathbf{q}})\cdot\hat{\mathbf{p}}+e^{2}\mathbf{A}(\hat{\mathbf{q}})^{2}\right]=\frac{[\hat{\mathbf{p}}-e\mathbf{A}(\hat{\mathbf{q}})]^{2}}{2m}
+\end{equation}
+该表达式也可通过规范不变性推导得出, 这意味着哈密顿量只能是规范不变组合$\hat{\mathbf{p}} - e\mathbf{A}(\hat{\mathbf{q}})$的函数. 任何其他量子化方案都会在哈密顿量中引入正比于对易子$e[\hat{\mathbf{p}}, \mathbf{A}(\hat{\mathbf{q}})] = -ie\boldsymbol{\nabla} \cdot \mathbf{A}(\hat{\mathbf{q}})$的项, 这将同时破坏厄米性和规范不变性.
 
+由于拉格朗日量中存在附加项$e\dot{\mathbf{q}} \cdot \mathbf{A}(\mathbf{q})$, 我们预期沿无穷小轨迹\footnote{这里是trajectory,而不是path,之后的文本中也需要进行区分,通常使用轨迹指代trajectory,路径指代path.}$(\mathbf{q}_k, \mathbf{q}_{k-1})$的作用量$S(\mathbf{q}_k, \mathbf{q}_{k-1}; \epsilon)$可表达为
+\begin{equation}\label{56}
+	S(\mathbf{q}_k,\mathbf{q}_{k-1};\epsilon)=\frac{m}{2}\frac{(\mathbf{q}_k-\mathbf{q}_{k-1})^2}{\epsilon}+e(\mathbf{q}_k-\mathbf{q}_{k-1})\cdot\mathbf{A}(\mathbf{q})
+\end{equation}
+由于矢量势$\mathbf{A}(\mathbf{q})$的作用不可忽视, 所以我们面临一个关键问题: 这个矢量势究竟该取路径端点$\mathbf{q}_k$、$\mathbf{q}_{k-1}$, 还是中间某个位置的值? 考虑到典型量子路径满足$|\mathbf{q}_k - \mathbf{q}_{k-1}| \sim \sqrt{\epsilon}$的量级关系, $\dot{\mathbf{q}} \cdot \mathbf{A}(\mathbf{q})$的不同离散化方式会引起作用量$\epsilon$量级的变化——这在路径积分中绝不能忽略.
 
+要解决这个难题, 我们可以从哈密顿量的厄米性要求入手. 该条件直接决定了时间演化算符必须满足对称关系$U(\mathbf{q}_k, \mathbf{q}_{k-1}; \epsilon)^* = U(\mathbf{q}_{k-1}, \mathbf{q}_k; -\epsilon)$, 进而导出作用量的反对称性$S(\mathbf{q}_k, \mathbf{q}_{k-1}; \epsilon) = -S(\mathbf{q}_{k-1}, \mathbf{q}_k; -\epsilon)$. 通过仔细分析这些约束条件, 最终唯一可行的方案是将矢量势$\mathbf{A}$取值于路径中点$(\mathbf{q}_k + \mathbf{q}_{k-1})/2$. 当然, 对称化的处理方式不止一种——例如取端点平均$[\mathbf{A}(\mathbf{q}_k) + \mathbf{A}(\mathbf{q}_{k-1})]/2$, 或是构造其他关于$\mathbf{q}_k$和$\mathbf{q}_{k-1}$对称的表达式——这些方案之所以可行, 关键在于它们都满足量子路径积分的收敛性:
+要求差异项为$\mathcal{O}[(\mathbf{q}_k - \mathbf{q}_{k-1})^2] = \mathcal{O}(\epsilon)$,而相应作用量的差异项则为可忽略的$\mathcal{O}(\epsilon^{3/2})$量级.
 
+但是我们发现,由哈密顿量厄米性导出的``中点法则"是其中唯一与规范不变性相容的选择. 在规范变换$\mathbf{A} \to \mathbf{A} + \boldsymbol{\nabla}\Lambda$下, 沿路径$(\mathbf{q}_i, t_i) \to (\mathbf{q}_f, t_f)$的作用量只会改变关于矢量势的那一项
+\begin{equation}\label{57}
+	e\int_{t_i}^{t_f}\d t\dot{\mathbf{q}}\cdot\boldsymbol{\nabla}\Lambda(\mathbf{q})=e\int_{\mathbf{q}_i}^{\mathbf{q}_f}\d\mathbf{q}\cdot\boldsymbol{\nabla}\Lambda(\mathbf{q})=e[\Lambda(\mathbf{q}_f)-\Lambda(\mathbf{q}_i)]
+\end{equation}
+传播子相应变换为
+\begin{equation}
+	\begin{aligned}U(\mathbf{q}_f,\mathbf{q}_i;t_f-t_i)\to e^{ie\Lambda(\mathbf{q}_f)}U(\mathbf{q}_f,\mathbf{q}_i;t_f-t_i)e^{-ie\Lambda(\mathbf{q}_i)}\end{aligned}
+\end{equation}
+同时反映了波函数相位的变化
+\begin{equation}
+	\varphi(\mathbf{q})\to e^{ie\Lambda(\mathbf{q})}\varphi(\mathbf{q})
+\end{equation}
+除一个平庸的相位因子外,传播子与规范函数$\Lambda$无关(规范不变性). 在路径积分表述中,作用量的改变量由
+\begin{equation}\label{60}
+	e\sum_{k=1}^N(\mathbf{q}_k-\mathbf{q}_{k-1})\cdot\nabla\Lambda(\mathbf{u}_k)
+\end{equation}
+若选择在点$u_k$处计算式\ref{56}中的矢量势$\mathbf{A}$,为验证式\ref{57}与\ref{60}的一致性（此处假设规范函数$\Lambda$具有良好数学性质）,可将式\ref{57}重新表述为：
+\begin{equation}
+	\begin{aligned}\Lambda(\mathbf{q}_f)-\Lambda(\mathbf{q}_i)&=\sum_{k=1}^N[\Lambda(\mathbf{q}_k)-\Lambda(\mathbf{q}_{k-1})]\\&=\sum_{k=1}^N\Big\{(\mathbf{q}_k-\mathbf{q}_{k-1})\cdot\nabla\Lambda(\mathbf{u}_k)\\&+\frac{1}{2}(1-2\theta)[(\mathbf{q}_k-\mathbf{q}_{k-1})\cdot\boldsymbol{\nabla}]^2\Lambda(\mathbf{u}_k)+\mathcal{O}[(\mathbf{q}_k-\mathbf{q}_{k-1})^3]\bigg\}\end{aligned}
+\end{equation}
+当选取离散化点$\mathbf{u}_k = \mathbf{q}_{k-1} + \theta(\mathbf{q}_k - \mathbf{q}_{k-1})$时（其中$0 \leq \theta \leq 1$）,由于经典路径满足$|\mathbf{q}_k - \mathbf{q}_{k-1}|^2 \sim \epsilon$,若未选择中点法则($\theta \neq 1/2$),则方程右端第二项在$\epsilon \to 0$极限下不会消失.唯一可行的方案是取$\theta = 1/2$,即$\mathbf{u}_k = (\mathbf{q}_k + \mathbf{q}_{k-1})/2$（中点法则）.在此选择下,方程\ref{57}与\ref{60}完全一致.
 
+为完整论证中点法则的普适性,我们通过显式计算传播子$U(\mathbf{q}_k, \mathbf{q}_{k-1}; \epsilon)$给出另一种证明.将其重构为：\\
 
+\begin{equation}
+	\vspace{\baselineskip}
+	%公式编号: 62
+	\tikzmarknode{62eq1}{\highlight{red}{$U(\mathbf{q}_k,\mathbf{q}_{k-1};\epsilon)$}}=\frac{1}{(2i\pi)^{3/2}}\int\d^3ue^{\frac{i}{2}\mathbf{u}^2}\langle\mathbf{q}_k|\tikzmarknode{62eq2}{\highlight{blue}{$e^{-i\overline{\epsilon}\mathbf{u}\cdot[\hat{\mathbf{p}}-eA(\hat{\mathbf{q}})]}$}}|\mathbf{q}_{k-1}\rangle
+\end{equation}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+	% 对于 "1" 定位点
+	\path (62eq1.north) ++ (0,0.5em) node[anchor=south east,color=red!67] (eq62/1){\textbf{传播子}};
+	\draw [color=red!87](62eq1.north) |- ([xshift=-0.3ex,color=red]eq62/1.south west);
+	% 对于 "2" 定位点
+	\path (62eq2.south) ++ (0,-0.5em) node[anchor=north west,color=blue!67] (eq62/2){\textbf{这里$\bar{\epsilon}=\sqrt{\epsilon/m}$}};
+	\path (62eq2.south) ++ (0,-1.5em) node[anchor=north west,color=blue!67] (eq62/2){\textbf{直接对指数分解会造成高阶项的误差扩大}};
+	\draw [color=blue!57](62eq2.south) |- ([xshift=-0.3ex,color=blue]eq62/2.south east);
+\end{tikzpicture}\\
 
+为了避免直接指数分解造成的误差,我们再次应用
+\begin{equation}
+	e^{\bar{\epsilon}(\hat{A}+\hat{B})}=e^{\frac{\bar{\epsilon}}{2}\hat{B}}e^{\bar{\epsilon}\hat{A}}e^{\frac{\bar{\epsilon}}{2}\hat{B}}+\mathcal{O}(\bar{\epsilon}^3)
+\end{equation}
+于是得到:\footnote{使用蓝色字体代表公式推导中的注释,以后不再重复强调.}
 
+\begin{equation}
+	\begin{aligned}
+		\langle\mathbf{q}_k|e^{-i\bar{\epsilon}\mathbf{u}\cdot[\hat{\mathbf{p}}-eA(\hat{\mathbf{q}})]}|\mathbf{q}_{k-1}\rangle&=e^{\frac{i}{2}e\bar{\epsilon}\mathbf{u}\cdot\mathbf{A}(\mathbf{q}_k)}\\
+		&\times \langle\mathbf{q}_k|e^{-i\bar{\epsilon}\mathbf{u}\cdot\hat{\mathbf{p}}+\mathcal{O}(\epsilon^{3/2})}|\mathbf{q}_{k-1}\rangle \\
+		&\times e^{\frac{i}{2}e\bar{\epsilon}\mathbf{u}\cdot\mathbf{A}(\mathbf{q}_{k-1})}\\
+		&\color{blue}{\text{处理误差项要注意误差余项!}}
+	\end{aligned}
+\end{equation}
 
+现在忽略高阶项误差,利用完备性关系插入两个单位算符,自然得出
+\begin{equation}
+	\begin{aligned}
+		\langle\mathbf{q}_{k}|e^{-i\bar{\epsilon}\mathbf{u}\cdot\hat{\mathbf{p}}}|\mathbf{q}_{k-1}\rangle
+		&=\sum_{\mathbf{p},\mathbf{p}^{\prime}}\langle\mathbf{q}_k|\mathbf{p}\rangle\langle\mathbf{p}|e^{-i\overline{\epsilon}\mathbf{u}\cdot\hat{\mathbf{p}}}|\mathbf{p}^{\prime}\rangle\langle\mathbf{p}^{\prime}|\mathbf{q}_{k-1}\rangle\\
+		&\blue{\used\langle\mathbf{p}|e^{-i\mathbf{u}\cdot\hat{\mathbf{p}}}|\mathbf{p}^{\prime}\rangle=e^{-i\mathbf{u}\cdot\mathbf{p}^{\prime}}\delta(\mathbf{p}-\mathbf{p}^{\prime})\quad \langle \mathbf{q} | \mathbf{p} \rangle = \frac{1}{(2\pi)^{3/2}} e^{i\mathbf{p}\cdot\mathbf{q}}}\\
+		&=\int\frac{\d^3p}{(2\pi)^3}e^{i\mathbf{p}\cdot(\mathbf{q}_k-\mathbf{q}_{k-1}-\bar{\epsilon}\mathbf{u})}\color{blue}{\int\frac{\d^3p}{(2\pi)^3}e^{i\mathbf{p}\cdot(\mathbf{q})}=\delta^{(3)}(\mathbf{q})}\\
+		&=\frac{1}{\bar{\epsilon}^3}\delta\left(\frac{\mathbf{q}_k-\mathbf{q}_{k-1}}{\bar{\epsilon}}-\mathbf{u}\right)
+	\end{aligned}
+\end{equation}
+传播子自然可以得出:
+\begin{equation}
+	\begin{aligned}U(\mathbf{q}_k,\mathbf{q}_{k-1};\epsilon)&= \left(\frac{m}{2i\pi\epsilon}\right)^{3/2}\exp\biggl\{i\epsilon\biggl[\frac{m}{2}\frac{(\mathbf{q}_k-\mathbf{q}_{k-1})^2}{\epsilon^2}\\&+\frac{e}{2}\frac{\mathbf{q}_k-\mathbf{q}_{k-1}}{\epsilon}\cdot\bigl(\mathbf{A}(\mathbf{q}_k)+\mathbf{A}(\mathbf{q}_{k-1})\bigr)\biggr]\biggr\}\end{aligned}
+\end{equation}
 
+我们注意到, 当用表达式 $[A(q_k) + A(q_{k-1})]/2$ 近似表示矢量势$A(q)$ 时(如前所述, 这等同于中点法则), 包含作用量与虚数单位 $i$ 相乘的指数项会呈现特定形式\footnote{我们也可以直接验证, 由传播子$U(q_k, q_{k-1}; \epsilon)$产生的波函数时间演化结果与哈密顿量所描述的演化一致. 这为路径积分的有效性提供了确凿证明.}.
+\subsubsection{多粒子系统}
+只需稍加扩展, 我们就能为包含$N$个通过两体势$v(q_i-q_j)$相互作用的粒子系统(为简化考虑一维情形)写出配分函数或传播子的路径积分表达式. 希尔伯特空间被定义为张量积空间$\mathcal{H}\otimes\cdots\otimes\mathcal{H}$($\mathcal{H}$表示单粒子希尔伯特空间)的子空间, 其中包含所有根据粒子的量子统计特性进行适当对称化或反对称化的$N$粒子态. 配分函数可表示为\footnote{这里给出了一种表述,同样也有使用$|q_1\cdots q_N\ra=|q_1\ra\otimes\cdots\otimes|q_N\ra$的表述方法的,这两种记号均可.}:
 
+\begin{equation}
+	\vspace{\baselineskip}
+	%公式编号: 67
+	Z=\frac{1}{N!}\tikzmarknode{67eq1}{\highlight{red}{$\sum_{P\in S_N}$}}\epsilon_P\int \d q_1\cdots \d q_N\tikzmarknode{67eq2}{\highlight{blue}{$(q_1\cdots q_N|e^{-\beta\hat{H}}|q_{P(1)}\cdots q_{P(N)})$}}
+\end{equation}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+	% 对于 "1" 定位点
+	\path (67eq1.north) ++ (0,0.5em) node[anchor=south east,color=red!67] (eq67/1){\textbf{这里是对所有可能的排列求和}};
+	\draw [color=red!87](67eq1.north) |- ([xshift=-0.3ex,color=red]eq67/1.south west);
+	% 对于 "2" 定位点
+	\path (67eq2.south) ++ (0,-0.5em) node[anchor=north west,color=blue!67] (eq67/2){\textbf{这里使用$|q_1\cdots q_N)=|q_1\ra\otimes\cdots\otimes|q_N\ra$}};
+	\draw [color=blue!57](67eq2.south) |- ([xshift=-0.3ex,color=blue]eq67/2.south east);
+\end{tikzpicture}
+对于玻色子系统, 置换因子$\epsilon_P$取值为1; 对于费米子系统, $\epsilon_P$则等于排列$P$的置换符号(即奇排列取-1, 偶排列取1).
 
+类似于单粒子情况,我们再次利用完备性关系:
+\begin{equation}
+	\int \d q_1\cdots \d q_N|q_1\cdots q_N)(q_1\cdots q_N|=1
+\end{equation}
+对于每个时间步,我们有路径积分
+\begin{equation}
+	\begin{aligned}Z=\frac{1}{N!}\sum_{P\in S_N}\epsilon_P\int_{q_i(\beta)=q_{P(i)}(0)}\mathcal{D}[q]e^{-S_E[q]}\end{aligned}
+\end{equation}
+以及对于欧式作用量
+\begin{equation}
+	S_E[q]=\int_0^\beta\d\tau\bigg[
+	\frac{m}{2}\sum_{i=1}^N\dot{q}_i^2+
+	\sum_
+	{\substack
+		{i,j=1\\(i<j)}
+	}^Nv(q_i-q_j)
+		\bigg]
+\end{equation}
+%\bigg[\bigg] 大括号,\substack{...}求和号下换行
 
+该表达式与单粒子情形具有明显相似性, 但对于多粒子系统的研究并不适用. 在后续内容中, 我们将再次引入路径积分(更准确地说, 配分函数的泛函积分表示), 这种基于相干态、通过对所有场构型进行加权积分(权重由适当的作用量决定)的表述方式, 最终被证明是更为便捷的数学框架. 
+这成为(量子)统计物理与场论的\textbf{核心特征}: 具有无限自由度的系统自然地通过场(而非所有粒子的坐标集合)进行描述. 在深入探究量子多体系统之前, 我们将在下节讨论场论的一个基本范例. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsection{统计物理中的泛函积分}
+在这一节中, 我们探讨量子谐振弦\footnote{在粒子视角下, `谐振'系统(即拉格朗日量在变量中呈二次型的系统)对应无相互作用的粒子体系, 而'非谐振'系统则包含粒子间的相互作用. 这些粒子未必对应裸粒子, 而可能指代元激发(这一概念将在后续章节详细阐述).而弦则区别于之前的单个粒子,注意这里并不是``弦论"当中的弦,应注意区分.}的泛函积分方法. 这个简单模型已经展现出(更复杂的, 即非谐)量子系统场论的诸多核心特征. 
+\subsubsection{经典谐振弦}
+1
+\subsubsection{量子谐振弦}
+1
+\subsubsection{泛函积分形式}
+1
+\section{二次量子化与格林函数}
+1
 
 
 

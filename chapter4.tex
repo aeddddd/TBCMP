@@ -601,9 +601,97 @@
 \subsection{统计物理中的泛函积分}
 在这一节中, 我们探讨量子谐振弦\footnote{在粒子视角下, `谐振'系统(即拉格朗日量在变量中呈二次型的系统)对应无相互作用的粒子体系, 而'非谐振'系统则包含粒子间的相互作用. 这些粒子未必对应裸粒子, 而可能指代元激发(这一概念将在后续章节详细阐述).而弦则区别于之前的单个粒子,注意这里并不是``弦论"当中的弦,应注意区分.}的泛函积分方法. 这个简单模型已经展现出(更复杂的, 即非谐)量子系统场论的诸多核心特征. 
 \subsubsection{经典谐振弦}
-1
+我们考虑一个具有平衡长度 $L$ 和线质量密度 $\rho$ 的一维谐振弦系统. 该系统的动力学由拉格朗日量描述, 其中 $\phi(x, t)$ 表示位于平衡构型中 $x$ 至 $x+\d x$ 位置之间, 质量为 $\rho \d x$ 的质元相对于平衡位置的位移.  
+\begin{equation}
+	L[\phi]=\int_0^L\d x\mathcal{L}(\partial_x\phi,\dot{\phi})
+\end{equation}
+其中$\mathcal{L}$称为拉格朗日密度.
+
+\begin{equation}
+	\vspace{\baselineskip}
+	%公式编号: 72
+	\mathcal{L}(\partial_x\phi,\dot{\phi})=\tikzmarknode{72eq1}{\highlight{red}{$\frac{1}{2}\rho\dot{\phi}^2$}}-\tikzmarknode{72eq2}{\highlight{blue}{$\frac{1}{2}\kappa(\partial_x\phi)^2$}}
+\end{equation}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+	% 对于 "1" 定位点
+	\path (72eq1.north) ++ (0,0.5em) node[anchor=south east,color=red!67] (eq72/1){\textbf{对应连续介质的动能密度}};
+	\draw [color=red!87](72eq1.north) |- ([xshift=-0.3ex,color=red]eq72/1.south west);
+	% 对于 "2" 定位点
+	\path (72eq2.south) ++ (0,-0.5em) node[anchor=north west,color=blue!67] (eq72/2){\textbf{反映Hooke定律的连续形式的势能}};
+	\draw [color=blue!57](72eq2.south) |- ([xshift=-0.3ex,color=blue]eq72/2.south east);
+\end{tikzpicture}
+
+
+该谐振弦可视为一维``晶体"的低能或长波极限——该晶体由质量$m=\rho a$的质点构成(平衡态间距为$a$),质点间通过劲度系数$\kappa/a$的弹簧连接\footnote{一维晶体系统的拉格朗日量可表述为$L(q_i,\dot{q}_i)=\frac{1}{2}\sum_{i=1}^n\left[m\dot{q}_i^2 - k_s(q_{i+1}-q_i)^2\right]$, 其中$q_i$表示第$i$个原子相对于其平衡位置的位移. 该系统的简正模(声子)以频率$\omega_k = \sqrt{2k_s/m}\left(1 - \cos ka\right)^{1/2}$传播. 在长波极限$|k|a \ll 1$下, 可恢复连续谐振弦的线性频谱关系$\omega = c|k|$, 其中波速$c = \sqrt{\kappa/\rho}$.}.
+
+由欧拉-拉格朗日方程
+\begin{equation}
+	\frac{\d}{\dt}\frac{\partial\mathcal{L}(\partial_x\phi,\dot{\phi})}{\partial\dot{\phi}}+\frac{\d}{\d x}\frac{\partial\mathcal{L}(\partial_x\phi,\dot{\phi})}{\partial(\partial_x\phi)}=0
+\end{equation}
+可以求解出波函数(求解时注意把$\partial_x\phi$和$\dot \phi$作为独立变量分别求导):
+\begin{equation}
+	\rho\ddot{\phi}-\kappa\partial_x^2\phi=0
+\end{equation}
+解的形式为平面波 $\phi(x,t) \propto \exp\{i(kx - c|k|t)\} + \text{c.c.}$,其中$c.c.$为复共轭项,其传播速度为 $c = \sqrt{\kappa/\rho}$.在周期性边界条件 $\phi(x+L,t) = \phi(x,t)$ 下,波数 $k$ 取分立值 $k = p\frac{2\pi}{L}$ ($p$ 为整数).
+
 \subsubsection{量子谐振弦}
-1
+$\phi(x,t)$的共轭动量定义为
+\begin{equation}
+	\Pi(x,t)=\frac{\partial\mathcal{L}(\partial_x\phi,\dot{\phi})}{\partial\dot{\phi}(x,t)}=\rho\dot{\phi}(x,t)
+\end{equation}
+相应的哈密顿量则定义为
+\begin{equation}
+	H=\int_0^L\d x\left[\Pi\dot{\phi}-\mathcal{L}(\partial_x\phi,\dot{\phi})\right]=\int_0^L\d x\left[\frac{\Pi^2}{2\rho}+\frac{1}{2}\kappa(\partial_x\phi)^2\right]
+\end{equation}
+为了对弦进行量子化,我们将$\phi$和$\Pi$提升为满足对易关系的算符
+\begin{equation}
+	[\hat{\phi}(x),\hat{\Pi}(x^{\prime})]=i\delta(x-x^{\prime})
+\end{equation}
+由于满足周期性关系,显然引入傅里叶变换进行处理是极其有效的:
+\begin{equation}
+	\begin{aligned}
+		\hat{\phi}(k)&=\frac{1}{\sqrt{L}}\int_0^L\d xe^{-ikx}\hat{\phi}(x)=\hat{\phi}^\dagger(-k)\\
+		\hat{\Pi}(k)&=\frac{1}{\sqrt{L}}\int_0^L\d xe^{-ikx}\hat{\Pi}(x)=\hat{\Pi}^\dagger(-k)
+	\end{aligned}
+\end{equation}
+傅里叶变换后的场算符满足对易关系
+\begin{equation}
+	[\hat{\phi}(k),\hat{\phi}(k^{\prime})]=[\hat{\Pi}(k),\hat{\Pi}(k^{\prime})]=0\quad\text{以及}\quad[\hat{\phi}(k),\hat{\Pi}^\dagger(k^{\prime})]=i\delta_{k,k^{\prime}}
+\end{equation}
+
+\textit{在这里我们发现,场是一个无穷多自由度的物理量,于是坐标提升为位移场,动量变为共轭动量,但是它们之间满足的对易关系不变.在经典物理学中,我们有百谈不厌的`质点'的概念,但是在场论中,我们描述一个粒子就不能够通过单一的坐标和动量来表述,而是使用位移场算符和共轭动量作为替代,在之后我们会逐步展示这类语言的必要性}\\
+
+这使我们能够将哈密顿量写成谐振子的求和形式$\blue{\text{此处使用傅里叶变换把连续化的场变为多个谐振子的叠加}}$
+\begin{equation}
+	\hat{H}=\sum_k\left[\frac{1}{2\rho}\hat{\Pi}^\dagger(k)\hat{\Pi}(k)+\frac{1}{2}\rho\omega_k^2\hat{\phi}^\dagger(k)\hat{\phi}(k)\right]
+\end{equation}
+其中$\omega_k = c|k|$,且求和覆盖所有满足边界条件$e^{ikL}=1$的波矢$k = p\frac{2\pi}{L}$($p\in\mathbb{Z}$).通过引入产生算符和湮灭算符$\hat{a}_k^\dagger$和$\hat{a}_k$来辅助对角化哈密顿量$\hat{H}$
+\begin{equation}
+	\begin{gathered}\hat{a}(k)\begin{aligned}=\sqrt{\frac{\rho\omega_k}{2}}\left[\hat{\phi}(k)+\frac{i}{\rho\omega_k}\hat{\Pi}(k)\right],\end{aligned}\\\hat{a}^{\dagger}(k)=\sqrt{\frac{\rho\omega_k}{2}}\left[\hat{\phi}^\dagger(k)-\frac{i}{\rho\omega_k}\hat{\Pi}^\dagger(k)\right].\end{gathered}
+\end{equation}
+产生湮灭算符具有如下对易关系
+\begin{equation}
+	[\hat{a}(k),\hat{a}(k^{\prime})]=[\hat{a}^\dagger(k),\hat{a}^\dagger(k^{\prime})]=0,\quad[\hat{a}(k),\hat{a}^\dagger(k^{\prime})]=\delta_{k,k^{\prime}}
+\end{equation}
+显然两个场算符可以通过我们引入的产生算符和湮灭算符重写为如下形式\footnote{这里通过系数 $\sqrt{\frac{1}{2\rho \omega_k}}$ 和 $i\sqrt{\frac{\rho \omega_k}{2}}$ 的调整,确保算符满足正则对易关系 $[\hat{\phi}(k), \hat{\Pi}(k')] = i\delta(k-k')$}.
+\begin{equation}
+	\begin{aligned}
+		\hat{\phi}(k) &= \sqrt{\frac{1}{2\rho \omega_k}} \left( \hat{a}(k) + \hat{a}^\dagger(-k) \right)\\
+		\hat{\Pi}(k) &= i \sqrt{\frac{\rho \omega_k}{2}} \left( \hat{a}^\dagger(-k) - \hat{a}(k) \right)
+	\end{aligned}
+\end{equation}
+将 $\hat{\phi}(k)$ 和 $\hat{\Pi}(k)$ 的表达式代入原哈密顿量,展开后利用算符的对易关系化简\footnote{这里很多教材都采取`one easily finds'等叙述方法跳过了对角化这一块的计算,实际上对于初学者还是具有很大的门槛的,在相应的mathematica文件中给出了计算代码(3/12,尚未搞明白NCAlgebra包,目前代码还不可用)}.
+
+最终我们得到:
+\begin{equation}
+	\hat{H}=\sum_k\omega_k\left(\hat{a}_k^\dagger\hat{a}_k+\frac{1}{2}\right)
+\end{equation}
+
+
+
+
+
+
 \subsubsection{泛函积分形式}
 1
 \section{二次量子化与格林函数}

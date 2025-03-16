@@ -686,6 +686,82 @@ $\phi(x,t)$的共轭动量定义为
 \begin{equation}
 	\hat{H}=\sum_k\omega_k\left(\hat{a}_k^\dagger\hat{a}_k+\frac{1}{2}\right)
 \end{equation}
+定义以$ k $为下标的谐振子本征态为
+\begin{equation}
+	\begin{aligned}|n_k\rangle&=\frac{1}{\sqrt{n_k!}}\left(\hat{a}_k^\dagger\right)^{n_k}|0\rangle,\\\omega_k\left(\hat{a}_k^\dagger\hat{a}_k+\frac{1}{2}\right)|n_k\rangle&=\omega_k\left(n_k+\frac{1}{2}\right)|n_k\rangle\end{aligned}
+\end{equation}
+其中 $|0\rangle=|n_k=0\rangle$ 是归一化真空态: $\hat{a}_k|0\rangle=0$ 且 $\langle0|0\rangle=1$. 阶梯算符 $\hat{a}_k$ 和 $\hat{a}_k^\dagger$ 满足
+\begin{equation}
+	\begin{aligned}&\hat{a}_k|n_k\rangle=\sqrt{n_k}|n_k-1\rangle\\&\hat{a}_k^\dagger|n_k\rangle=\sqrt{n_k+1}|n_k+1\rangle\end{aligned}
+\end{equation}
+可视为动量$k$的元激发(声子)的湮灭算符和产生算符,其中$n_k=\langle n_k|\hat{a}_k^\dagger\hat{a}_k|n_k\rangle$表示态$|n_k\rangle$中的声子数目.哈密顿量的本征态可通过态$\left|n_k\right\rangle$的张量积构造获得,
+\begin{equation}
+	\begin{aligned}|n_{k_1}\cdots n_{k_i}\cdots\rangle&=|n_{k_1}\rangle\otimes\cdots\otimes|n_{k_i}\rangle\otimes\cdots=\prod_i\frac{\left(\hat{a}_{k_i}^\dagger\right)^{n_{k_i}}}{\sqrt{n_{k_i}!}}|\mathrm{vac}\rangle\\\hat{H}|n_{k_1}\cdots n_{k_i}\cdots\rangle&=\left[\sum_j\left(n_{k_j}+\frac{1}{2}\right)\omega_{k_j}\right]|n_{k_1}\cdots n_{k_i}\cdots\rangle\end{aligned}
+\end{equation}
+其中$|vac\rangle$表示真空态, 即满足$\hat{a}_k|vac\rangle=0$（对所有$k$）的归一化态. 本征态$|n_{k_1}\cdots n_{k_i}\cdots\rangle$具有总声子数$n=\sum_i n_{k_i}$. 希尔伯特空间可写为直和$\mathcal{H}=\mathcal{H}_0\oplus\mathcal{H}_1\oplus\cdots\oplus\mathcal{H}_n\oplus\cdots$, 其中$\mathcal{H}_n$表示含$n$个声子的希尔伯特空间. 这类希尔伯特空间通常称为Fock空间, 也即是二次量子化形式的基础.
+
+泛函积分表述可通过遵循前面讨论的路径积分相同步骤获得. 其中$\hat{\phi}(x)$和$\hat{\Pi}(x)$扮演单粒子位置算符$\hat{q}$与动量算符$\hat{p}$的角色（唯一区别在于它们都由$x$标记）. 可以引入满足$\hat{\phi}(x)|\phi\rangle=\phi(x)|\phi\rangle$和$\hat{\Pi}(x)|\Pi\rangle=\Pi(x)|\Pi\rangle$的态矢$|\phi\rangle$与$|\Pi\rangle$. 由于这两组态矢$\{|\phi\rangle\}$和$\{|\Pi\rangle\}$构成希尔伯特空间的完备基组, 我们有以下完备性关系:
+\begin{equation}
+	\begin{aligned}\mathcal{N}\lim_{a\to0}\int\prod_{l=0}^{L/a}\d\phi(la)|\phi\rangle\langle\phi|&=1\\\mathcal{N}^{\prime}\lim_{a\to0}\int\prod_{l=0}^{L/a}\d\Pi(la)|\Pi\rangle\langle\Pi|&=1\end{aligned}
+\end{equation}
+此处我们对一维弦进行离散化处理, 连续变量$x$变为离散变量$x=la$. 当$a\to0$时恢复为谐振弦\footnote{此处有多种表述方式,如谐振弦(string),谐振链(chain)等等,此后统一使用弦作为表达(本书中不会涉及弦论)}. 此步骤对于正确定义完备性关系及泛函积分测度是必要的. $\mathcal{N}$和$\mathcal{N}^\prime$是不重要的归一化常数, 它们对配分函数贡献一个因子, 但不影响期望值. 后续推导中将予以忽略.
+
+为将配分函数表示为泛函积分, 我们使用第一个完备性关系得到
+\begin{equation}
+	Z=\sum_n\langle n|e^{-\beta\hat{H}}|n\rangle=\int \d\phi\sum_n\langle n|e^{-\beta\hat{H}}|\phi\rangle\langle\phi|n\rangle=\int \d\phi\langle\phi|e^{-\beta\hat{H}}|\phi\rangle
+\end{equation}
+其中$\d\phi\equiv\prod_{l=0}^{L/a}\d\phi(la)$且$\{|n\rangle\}$表示哈密顿量$\hat{H}$的完备基组. 我们现按照开头使用的方法, 将虚时$\beta$分割为$N$个无穷小步长$\epsilon=\beta/N$\footnote{虚时常用$\tau$或$\beta$表述,并无区别,并且区分这里$k$是离散时间变量,不是之前的动量.}.
+\begin{equation}\label{2.90}
+	Z=\int\prod_{k=1}^N\d\phi_k\prod_{k=1}^N\langle\phi_k|e^{-\epsilon\hat{H}}|\phi_{k-1}\rangle
+\end{equation}
+其中$\phi_0=\phi_N$,对于$\epsilon\to0$,我们可以近似得出
+\begin{equation}
+	\langle\phi_k|e^{-\epsilon\hat{H}}|\phi_{k-1}\rangle=\langle\phi_k|\exp\left\{-\frac{\epsilon}{2\rho}\int \dx\hat{\Pi}^2\right\}\exp\left\{-\frac{\epsilon\kappa}{2}\int \dx(\partial_x\hat{\phi})^2\right\}|\phi_{k-1}\rangle
+\end{equation}
+同样的,我们再次利用完备性关系插入``$ 1 $''
+\begin{equation}
+	\begin{aligned}\langle\phi_k|e^{-\epsilon\hat{H}}|\phi_{k-1}\rangle&=\int \d\Pi_k\exp\left\{-\frac{\epsilon}{2\rho}\int \dx\Pi_k^2-\frac{\epsilon\kappa}{2}\int \dx(\partial_x\phi_{k-1})^2\right\}\langle\phi_k|\Pi_k\rangle\langle\Pi_k|\phi_{k-1}\rangle\\&=\int \d\Pi_k\exp\left\{-\frac{\epsilon}{2\rho}\int \dx\Pi_k^2-\frac{\epsilon\kappa}{2}\int \dx(\partial_x\phi_{k-1})^2+i\int \dx\Pi_k(\phi_k-\phi_{k-1})\right\}\\
+	&\blue{\used\langle\phi_k|\Pi_k\rangle=\exp\left\{i\int \dx\Pi_k\phi_k\right\}}\\&\blue{\text{结果忽略了一个不相关的乘以公式的系数(即乘性系数)}}
+	\end{aligned}
+\end{equation}
+
+将完备性关系代入原本配分函数\ref{2.90}并取连续时间极限后,配分函数变为
+\begin{equation}
+	Z=\int_{\phi(x,\beta)=\phi(x,0)}\mathcal{D}[\Pi,\phi]\exp\left\{-\int_0^\beta \d\tau\int_0^L\dx\left[\frac{\Pi^2}{2\rho}+\frac{\kappa}{2}(\partial_x\phi)^2-i\Pi\dot{\phi}\right]\right\}
+\end{equation}
+配分函数可表示为虚时内对实场$\phi(x,\tau)$和$\Pi(x,\tau)$的泛函积分. 对$\Pi$进行高斯积分后, 可得  
+\begin{equation}
+	Z=\int_{\phi(x,\beta)=\phi(x,0)}\mathcal{D}[\phi]e^{-S_E[\phi]}
+\end{equation}
+其中欧式作用量
+\begin{equation}
+	S_E[\phi]=\frac{1}{2}\int_0^\beta \d\tau\int_0^L\dx\left[\rho\dot{\phi}^2+\kappa(\partial_x\phi)^2\right]
+\end{equation}
+这里的积分测度被定义为
+\begin{equation}
+	\mathcal{D}[\phi]=\lim_{N\to\infty}\lim_{a\to0}\prod_{k=1}^N\prod_{l=0}^{L/a}\d\phi(la,k\beta/N)
+\end{equation}
+(此处同样忽略一个乘性常数). 进行Wick转动$(\tau=it)$后, 可见实时作用量由经典作用量$S[\phi]=\int \d t\int_0^L \dx\mathcal{L}(\partial_x\phi,\dot{\phi})$给出.  
+
+由于场$\phi(x,\tau)$是周期性的,因此可以展开为傅里叶级数
+\begin{equation}
+	\begin{aligned}
+		\phi(x,\tau)&=\frac{1}{\sqrt{\beta}}\sum_{\omega_n}e^{-i\omega_n\tau}\phi(x,i\omega_n)\\
+		\phi(x,i\omega_n)&=\frac{1}{\sqrt{\beta}}\int_0^\beta \d\tau e^{i\omega_n\tau}\phi(x,\tau)
+	\end{aligned}
+\end{equation}
+其中离散频率
+\begin{equation}
+	\omega_n=\frac{2\pi}{\beta}n\quad(n\in\mathbb{Z})
+\end{equation}
+被称为\textbf{松原频率(Matsubara frequency;虚时频率)}\\
+傅里叶变换后的场$\phi(k,i\omega_n)$对角化了作用量
+\begin{equation}
+	S_E[\phi]=\frac{\rho}{2}\sum_{k,\omega_n}\phi(-k,-i\omega_n)\left(\omega_n^2+\omega_k^2\right)\phi(k,i\omega_n)
+\end{equation}
+因此配分函数可表示为高斯积分的乘积. 注意由于$\phi(x,\tau)$是实场, 满足$\phi(-k,-i\omega_n)=\phi^*(k,i\omega_n)$.  
+
+
 
 
 

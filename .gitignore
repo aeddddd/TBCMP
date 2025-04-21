@@ -249,3 +249,5 @@ TSWLatexianTemp*
 
 # 屏蔽试题文件夹
 examination/
+# 屏蔽.sty文件
+*.sty

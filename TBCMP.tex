@@ -1,6 +1,41 @@
-\def\allfiles{}
-\documentclass[lang=cn,newtx,10pt,scheme=chinese,thmcnt=section]{elegantbook}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% kaobook
+% LaTeX Template
+% Version 1.3 (December 9, 2021)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% For the latest template development version and to make contributions:
+% https://github.com/fmarotta/kaobook
+%
+% Authors:
+% Federico Marotta (federicomarotta@mail.com)
+% Based on the doctoral thesis of Ken Arroyo Ohori (https://3d.bk.tudelft.nl/ken/en)
+% and on the Tufte-LaTeX class.
+% Modified for LaTeX Templates by Vel (vel@latextemplates.com)
+%
+% License:
+% CC0 1.0 Universal (see included MANIFEST.md file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%---------------
+%	宏包及文档配置
+%--------
+\PassOptionsToPackage{svgnames}{xcolor}
+\documentclass[a4paper,fontsize=10pt,open=any,twoside=false,numbers=noenddot,UTF-8,]{kaobook}
+
+% Choose the language
+\ifxetexorluatex
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\else
+\usepackage[english]{babel} % Load characters and hyphenation
+\fi
+\usepackage[english=british]{csquotes}	% English quotes
+\usepackage{ctex}
+% Load packages for testing
 \usepackage{tikz-feynman}
 \usepackage{fixdif}
 \usepackage{ulem}
@@ -12,215 +47,187 @@
 \newcommand{\highlight}[2]{\colorbox{#1!17}{$\displaystyle #2$}}
 %\newcommand{\highlight}[2]{\colorbox{#1!17}{$#2$}}
 \newcommand{\highlightdark}[2]{\colorbox{#1!47}{$\displaystyle #2$}}
-
-% my custom colors for shading
-%\colorlet{mhpurple}{Plum!80}
-
-
 % Commands for Highlighting text -- non tikz method
 \renewcommand{\highlight}[2]{\colorbox{#1!17}{#2}}
 \renewcommand{\highlightdark}[2]{\colorbox{#1!47}{#2}}
+\usepackage{blindtext}
+\usepackage{kaobiblio}
+\addbibresource{main.bib}
+\usepackage[framed=true]{kaotheorems}
+\usepackage{kaorefs}
 
+\graphicspath{{examples/documentation/images/}{images/}} % Paths in which to look for images
+
+\makeindex[columns=3, title=按字母排序的索引, intoc] % Create an index
+
+\makeglossaries % Make LaTeX produce the files required to compile the glossary
+\input{glossary.tex} % Include the glossary definitions
+
+\makenomenclature % Make LaTeX produce the files required to compile the nomenclature
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %新定义的命令!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\used}{\text{此处使用}}
 \newcommand{\blue}{\color{blue}}
 \newcommand{\red}{\color{red}}
-\newcommand{\dt}{\mathrm{d}t}
-\newcommand{\dx}{\mathrm{d}x}
-\newcommand{\dy}{\mathrm{d}y}
-\newcommand{\dq}{\mathrm{d}q}
+\newcommand{\dt}{\d t}
+\newcommand{\dx}{\d x}
+\newcommand{\dy}{\d y}
+\newcommand{\dq}{\d q}
 \newcommand{\ra}{\rangle}
 \newcommand{\la}{\langle}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%texstudio内使用的宏!
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%插入换行公式
-%\begin{equation}
-%	\begin{aligned}
-%		%<%>\\
-%		&
-%	\end{aligned}
-%\end{equation}
-%插入行间公式
-%\begin{equation}
-%	%<%>
-%\end{equation}
-%tab自动为单字符加入$...$环境
-%本行后面这个注释符号不能忽视%SCRIPT
-%var math =  triggerMatches[1]
-%editor.write("$ " + math + " $");
-%定义类环境
-%\begin{definition}[定义标题]
-%	%<%>
-%\end{definition}
-%使用方法参考README!
-%\begin{equation}
-%	\vspace{\baselineskip}
-%	%公式编号: %<eq:num%>
-%	%<eqa%:id:111%>\tikzmarknode{%<num%:mirror%>   eq1}{\highlight{red}{$%<eqb%:id:112%>$}}%<eqf%:id:514%>\tikzmarknode{%<num%:mirror%>   eq2}{\highlight{blue}{$%<eqc%:id:113%>$}}
-%\end{equation}
-%\begin{tikzpicture}[overlay,remember %picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
-%	% 对于 "1" 定位点
-%	\path (%<num%:mirror%>   eq1.north) ++ (0,2em) node[anchor=south east,color=red!67] (eq%<num%:mirror%>   /1){\textbf{%<d%:id:114%>}};
-%	\draw [color=red!87](%<num%:mirror%>   eq1.north) |- ([xshift=-0.3ex,color=red]eq%<num%:mirror%>   /1.south west);
-%	% 对于 "2" 定位点
-%	\path (%<num%:mirror%>   eq2.south) ++ (0,-1.5em) node[anchor=north west,color=blue!67] (eq%<num%:mirror%>   /2){\textbf{%<e%:id:115%>}};
-%	\draw [color=blue!57](%<num%:mirror%>   eq2.south) |- ([xshift=-0.3ex,color=blue]eq%<num%:mirror%>   /2.south east);
-%\end{tikzpicture}
-
-
-
-
-
+% 重定义\to
 \makeatletter
 \def\minusfill{\mathord-\!\!
-	\cleaders\hbox{$\!\!\mathord-\!\!$}\hfill
-	\!\!\mathord-}
+    \cleaders\hbox{$\!\!\mathord-\!\!$}\hfill
+    \!\!\mathord-}
 \makeatother
 \def\longto{\mathop{\minusfill\!\!\!\rightarrow}\limits}
 \def\to{\futurelet\next\toAux}
 \def\toAux{\ifx\next^%
-	\expandafter\longto%
-	\else%
-	\ifx\next_%
-	\expandafter\longto%
-	\else%
-	\rightarrow%
-	\fi%
-	\fi%
+    \expandafter\longto%
+    \else%
+    \ifx\next_%
+    \expandafter\longto%
+    \else%
+    \rightarrow%
+    \fi%
+    \fi%
 }
-\title{凝聚态场论:讲义}
-\subtitle{Condensed Matter Field theory : Notes}
 
-\author{A \& B \& C}
-\institute{Group 530}
-\date{2024/10/27}
-\version{1.3}
-\bioinfo{当前进度}{尚未完成}
 
-\extrainfo{尚未完成!WIP!}
 
-\setcounter{tocdepth}{3}
 
-\cover{main.pdf}
 
-% 本文档命令
-\usepackage{array}
-\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
-\elegantnewtheorem{eggg}{示例}{thmstyle}{}
-% 修改标题页的橙色带
-\definecolor{customcolor}{RGB}{32,178,170}
-\colorlet{coverlinecolor}{customcolor}
-\usepackage{cprotect}
 
-\addbibresource[location=local]{reference.bib} % 参考文献，不要删除
 
+
+
+
+
+
+\setmathfont{Latin Modern Math}
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+\renewcommand\proofname{证明}
+
+%----------------------------------------------------------------------------------------
+%自定义的一段无意义文字，用以代替没有中文内容的\blindtext命令。
+%简单的直接代替，未来有机会再写成标准的函数命令发布
+%----------------------------------------------------------------------------------------
+\newcommand{\cblindtext}{你好，这里有一些没有意义的文本。这段文本应该展示在这个地方打印的文本会是什么样子。如果你阅读这段文本，你将不会获得任何信息。真的吗？真的没有信息吗？这段文本和一些无意义的东西，比如 \enquote{Huardest 天不}，有什么区别吗？Kjift - 完全没有！像这样的盲文给你提供了关于所选字体的信息，字母是如何书写的，以及整体外观的印象。这段文本应该包含字母表中的所有字母，并且应该用原始语言书写。内容不需要特别，但单词的长度应该与语言相匹配。}
+\usepackage{qftcover}
+\coverset
+{
+    title    = 凝聚态场论:讲义,
+    subtitle = Condensed Matter Field theory : Notes,
+    bioinfo  = {当前进度:尚未完成.},
+    color    = DarkGreen,
+    head     = background/4,
+    logo     = cat/sixpointed stars,
+}
 \begin{document}
-
-\maketitle
-\frontmatter
-
-\tableofcontents
-
-\mainmatter
-
-%\begin{definition}[定义标题] \label{\d ef:标签} 
-%\end{definition}
-
-%\begin{exercise}\label{exer:标签}练习
-%\end{exercise}
-
-%\begin{solution}解
-%\end{solution}
-
-%\begin{proof}证明
-%\end{proof}
-
-%\begin{theorem}[定理] \label{thm:标签} 
-%\end{theorem}
-
-%\begin{note}笔记
-%\end{note}
-
-%\begin{proposition}[命题] \label{pro:标签}
-%\end{proposition}
-
-%\begin{property}\label{property:标签}性质
-%\end{property}
-
-%\begin{conclusion}结论
-%\end{conclusion}
-
-\chapter*{前言}
-\markboth{Introduction}{Introduction}
-\textbf{2025/3/10编: 完成了部分内容,附录中的两章目前已经被隐藏起来了,之后会挑选出需要的内容进行筛选,正文第二章正在缓慢进行中,后续彻底完成后会注释掉这些无用信息,目前目录仅供参考,还没有完全来得及修正,前言也尚未完成,仅修正了部分明显的问题}\\
-
-\textbf{2025/2/21编: 为了更加贴合书名,后续的计划中会把第一章和第二章放在附录中,供选择性阅读,主体仍放在凝聚态场论中.后续一些细节部分需要逐步修正.一些格式上的错误将由场论初步章节完成后逐一修订.}\\
-
-
-很多初学者在初次自学较高深的物理的时候往往会犯一个错误:被同等级的高深的数学所迷惑,认为学好这些物理离不开这些数学.但事实上,学好物理确实离不开数学,但仅仅是一小部分的数学.例如,学好量子力学离不开线性代数,但经常有很多物理系的学生拐去学习泛函分析,李代数,辛几何之类的内容,而这些数学内容往往只有一小部分应用在物理上面,打着先学完这些数学再开始学习物理的想法,只会让物理的学习一拖再拖.我们应当意识到,数学不过是物理的工具,切勿舍本逐末.
-
-但这并不意味着数学不重要,离开数学的物理不亚于纸上谈兵,毫无意义.而对于本讲义,前面的部分并不十分紧要,仅作为开启凝聚态场论的先备知识,将重要的部分提取出来,作为先导知识.%第三章是为后续的大量使用做铺垫,第四章开始是文章的主体部分,最后的几章为目前在做的研究方向的总结.
-
-前言仅供参考,不代表最终前言内容和书中内容,该前言已经是第三版.
-
-
-
-目前进度:第二章.
-
-%章节名尚未更改!!! 目前的第一章是chapter3!
-%\input{chapter1}
-%\input{chapter2}
-\input{chapter3}
-\input{chapter4}
-\input{chapter5}
-\input{chapter6}
-\input{chapter7}
-\input{chapter8}
-\input{chapter9}
-
-%写在注释中,在写作过程中为了贴合书名同时减轻多余的内容,我将第一章和第二章放在了附录A与附录B中,但尚未更改文件命名,特此提醒,之后不确保不会再次修正!
-
-
-
-
-\chapter{前沿导读}
-\begin{introduction}
-	\item 松原函数
-	\item Kubo公式
-\end{introduction}
-1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\nocite{*}
-
-\printbibliography[heading=bibintoc, title=\ebibname]
-\appendix
-\input{appendix}
-
+    
+    \maketitle
+    
+    %----------------------------------------------------------------------------------
+    %	PREFACE
+    %----------------------------------------------------------------------------------
+    
+    \input{chapters/preface.tex}
+    \index{preface}
+    
+    %----------------------------------------------------------------------------------
+    %	目录
+    %----------------------------------------------------------------------------------
+    
+    \begingroup % Local scope for the following commands
+    \setlength{\textheight}{230\hscale} % Manually adjust the height of the ToC pages
+    \etocclasstocstyle % "toc display" as if etoc was not loaded
+    \etocstandardlines % "toc lines" as if etoc was not loaded
+    %\tableofcontents % Output the table of contents
+    %\listoffigures % Output the list of figures
+    \let\cleardoublepage\bigskip
+    \let\clearpage\bigskip
+    \listoftables % Output the list of tables
+    \endgroup
+    
+    %----------------------------------------------------------------------------------
+    %	文档主体
+    %----------------------------------------------------------------------------------
+    
+    \mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
+    \setchapterstyle{kao} % Choose the default chapter heading style
+    
+    \input{chapters/chapter1.tex}
+    \input{chapters/chapter2.tex}
+    %\pagelayout{wide} % No margins
+    %
+    %\pagelayout{margin} % Restore margins
+    %
+    %
+    %\pagelayout{wide} % No margins
+    %\pagelayout{margin} % Restore margins
+    
+    
+    \appendix % From here onwards, chapters are numbered with letters, as is the appendix convention
+    
+    %\pagelayout{wide} % No margins
+    %
+    %\pagelayout{margin} % Restore margins
+    
+    \input{chapters/appendix.tex}
+    
+    %----------------------------------------------------------------------------------------
+    
+    \backmatter % Denotes the end of the main document content
+    \setchapterstyle{plain} % Output plain chapters from this point onwards
+    
+    %----------------------------------------------------------------------------------------
+    %	BIBLIOGRAPHY
+    %----------------------------------------------------------------------------------------
+    
+    % The bibliography needs to be compiled with biber using your LaTeX editor, or on the command line with 'biber main' from the template directory
+    
+    \defbibnote{bibnote}{Here are the references in citation order.\par\bigskip} % Prepend this text to the bibliography
+    %\printbibliography[heading=bibintoc, title=Bibliography, prenote=bibnote] % Add the bibliography heading to the ToC, set the title of the bibliography and output the bibliography note
+    \printbibliography[heading=bibintoc, title=参考文献, prenote=bibnote] % Add the bibliography heading to the ToC and set the title of the bibliography
+    
+    
+    
+    %----------------------------------------------------------------------------------------
+    %	GLOSSARY
+    %----------------------------------------------------------------------------------------
+    
+    % The glossary needs to be compiled on the command line with 'makeglossaries main' from the template directory
+    
+    \setglossarystyle{listgroup} % Set the style of the glossary (see https://en.wikibooks.org/wiki/LaTeX/Glossary for a reference)
+    \printglossary[title=Special Terms, toctitle=List of Terms] % Output the glossary, 'title' is the chapter heading for the glossary, toctitle is the table of contents heading
+    
+    %----------------------------------------------------------------------------------------
+    %	INDEX
+    %----------------------------------------------------------------------------------------
+    
+    % The index needs to be compiled on the command line with 'makeindex main' from the template directory
+    
+    \printindex % Output the index
+    
+    %----------------------------------------------------------------------------------------
+    %	BACK COVER
+    %----------------------------------------------------------------------------------------
+    
+    % If you have a PDF/image file that you want to use as a back cover, uncomment the following lines
+    
+    %\clearpage
+    %\thispagestyle{empty}
+    %\null%
+    %\clearpage
+    %\includepdf{cover-back.pdf}
+    
+    %----------------------------------------------------------------------------------------
+    
 \end{document}

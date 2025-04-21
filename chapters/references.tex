@@ -1,0 +1,202 @@
+\setchapterstyle{kao}
+%\setchapterpreamble[u]{\margintoc}
+\chapter{引用}
+\labch{引用}
+
+\section{Citations}
+
+\index{citations}
+
+引用信息 \sidecite{Visscher2008,James2013} 是非常简单的：只需使用 \Command{sidecite}\index{\Command{sidecite}} 命令。它目前还没有偏移参数，但未来可能会有。这个命令支持多个条目，正如你所看到的，默认情况下，它在边缘打印引用，并将其添加到文档末尾的参考书目中。请注意，这些引用与文本无关，\sidecite{James2013} 但它们完全是随机的，因为它们仅用于说明该功能。
+
+为了这个设置，我编写了一个单独的包， \Package{kaobiblio} ，你可以在 \Package{styles} 目录中找到并包含在你的主tex文件中。这个包接受所有可以传递给 \Package{biblatex} 的选项，实际上它在后台将这些选项传递给 \Package{biblatex}。此外，它还定义了一些命令，例如 \Command{sidecite}，以及可以在 \Class{kao} 书籍中使用的环境。\sidenote[][-.9cm]{因此，您应该始终使用 \Package{kaobiblio} 而不是 \Package{biblatex}，但语法和选项完全相同。}
+
+如果您想使用 \Package{bibtex} 而不是 \Package{biblatex}，请将选项 \Option{backend=bibtex} 传递给 \Package{kaobiblio}。\Package{kaobiblio} 还支持两个与 \Package{biblatex} 不共享的选项：\Option{addspace} 和 \Option{linkeverything}，这两个选项都是布尔选项，意味着它们可以取值为“true”或“false”。如果您在加载 \Package{kaobiblio} 时传递 \Option{addspace=true}，则会在引用标记之前自动添加一个空格。如果您传递 \Option{linkeverything=true}，则在 authoryear- 和 authortitle- 样式中的作者姓名将成为一个超链接，就像年份一样。\sidenote{作者姓名不是超链接这一事实让不止一个 biblatex 用户感到困扰。有一些\href{https://github.com/plk/biblatex/issues/428}{强有力的论据}\emph{反对}将作者姓名超链接，但在我个人看来，在大多数实际情况下，将作者姓名链接并不会导致任何问题。}
+
+如您所见，\Command{sidecite} 命令将在边缘打印引用。然而，如果没有自定义引用格式的方法，这个命令将毫无用处，因此 \Class{kaobook} 还提供了 \Command{formatmargincitation} 命令。通过\enquote{更新}这个命令，您可以选择哪些项目将在边缘打印。理解它如何工作的最佳方法是查看该命令的实际定义。
+
+
+\begin{lstlisting}[breaklines,columns=flexible,style=kaolstplain,linewidth=1.5\textwidth]
+\newcommand{\formatmargincitation}[1]{%
+	\parencite{#1}: \citeauthor*{#1} (\citeyear{#1}), \citetitle{#1}%
+}
+\end{lstlisting}
+
+\newpage
+%在页尾引用超行了，好像处理得不好。添加newpage强制换页，临时解决这个问题。
+
+因此，\Command{formatmargincitation} 接受一个参数，即引用键，并打印出 parencite 后跟冒号，然后是作者，然后是年份（用括号表示），最后是标题。 \sidecite{Battle2014} 现在，假设您希望边缘引用显示年份和作者，后跟标题，最后是一个固定的任意字符串；您需要在文档中添加：
+
+
+\begin{lstlisting}[breaklines,columns=flexible,style=kaolstplain,linewidth=1.5\textwidth]
+\renewcommand{\formatmargincitation}[1]{%
+	\citeyear{#1}, \citeauthor*{#1}: \citetitle{#1}; very interesting!%
+}
+\end{lstlisting}
+
+\renewcommand{\formatmargincitation}[1]{%
+	\citeyear{#1}, \citeauthor*{#1}: \citetitle{#1}; very interesting!%
+}
+
+上述代码生成的引用看起来如下所示：\sidecite{Zou2005}。当然，当您更改默认的参考文献样式时，更改格式是最有用的。例如，如果您想在参考文献中使用“philosophy-modern”样式，您可能在前言中会有如下内容：
+
+\begin{lstlisting}[breaklines,columns=flexible,style=kaolstplain,linewidth=1.5\textwidth]
+\usepackage[style=philosophy-modern]{styles/kaobiblio}
+\renewcommand{\formatmargincitation}[1]{%
+	\sdcite{#1}%
+}
+\addbibresource{main.bib}
+\end{lstlisting}
+
+
+\renewcommand{\formatmargincitation}[1]{%
+	\parencite{#1}: \citeauthor*{#1} (\citeyear{#1}), \citetitle{#1}%
+}
+
+像 \Command{citeyear}、\Command{parencite} 和 \Command{sdcite} 这样的命令只是示例。有关可用命令的完整参考可以在这个 \href{http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf}{cheatsheet}中找到，位于\enquote{引用}部分。
+
+最后，要编译一个包含引用的文档，您需要使用一个外部工具，对于这个类来说是 biber。您需要运行以下命令（假设您的 tex 文件名为 main.tex）：
+
+\begin{lstlisting}[style=kaolstplain]
+$ pdflatex main
+$ biber main
+$ pdflatex main
+\end{lstlisting}
+
+\section{Glossaries and Indices}
+
+\index{glossary}
+
+\Class{kaobook} 类加载了 \Package{glossaries} 和 \Package{imakeidx} 包，您可以使用它们为您的书籍添加词汇表和索引。例如，我之前定义了一些词汇条目，现在我将像这样使用它们：\gls{computer}。 \Package{glossaries} 还允许您使用缩略语，例如以下内容：这是完整版本，\acrfull{fpsLabel}，这是简短版本 \acrshort{fpsLabel}。这些条目将在附录中的词汇表中出现。
+
+除非您使用 \href{https://www.overleaf.com}{Overleaf} 或其他一些高级的 \LaTeX IDE，否则您需要从终端运行外部命令，以便编译带有词汇表的文档。特别是，需要的命令是：\sidenote{这些是在 UNIX 系统中运行的命令，但请参见 \nrefsec{compiling}; 我 对Windows 的工作方式还没有想法。}
+
+\begin{lstlisting}[style=kaolstplain]
+$ pdflatex main
+$ makeglossaries main
+$ pdflatex main
+\end{lstlisting}
+
+注意：您不需要每次编译文档时都运行 \texttt{makeglossaries}，而仅在更改词汇表条目时运行。
+
+\index{index} 
+
+要创建索引，您需要在文本中提到“主题”时插入命令 \lstinline|\index{subject}|。例如，在本段的开头，我会写 \lstinline|index{index}|，这样就会在附录中添加一个条目到索引。看看吧！
+
+\marginnote[2mm]{理论上，您也需要为索引运行外部命令，但幸运的是，我们建议的包 \Package{imakeidx} 可以自动编译索引。}
+
+\index{nomenclature}
+
+命名法是一种特殊类型的索引；你可以在这本书的末尾找到一个。要插入命名法，我们使用 \Package{nomencl} 包，并通过 \Command{nomenclature} 命令添加术语。然后我们在希望其出现的位置放置 \Command{printnomenclature}。
+
+此外，使用此包时，我们需要运行一个外部命令来编译文档，否则命名法将不会出现：
+
+\begin{lstlisting}[style=kaolstplain]
+$ pdflatex main
+$ makeindex main.nlo -s nomencl.ist -o main.nls
+$ pdflatex main
+\end{lstlisting}
+
+这些包都加载在 \href{style/packages.sty}{packages.sty} 中，这是与此类文件一起提供的文件之一。然而，元素的配置最好在 main.tex 文件中进行，因为每本书将有不同的条目和样式。
+
+请注意，\Package{nomencl} 包在编译文档时造成了问题，因此，为了简化问题，我不得不防止 \Package{scrhack} 加载 \Package{nomencl} 的黑客文件。然而，在 Overleaf 上编译文档时，这个问题似乎消失了。
+
+\marginnote[-19mm]{这一简短的部分绝不是该主题的完整参考，因此您应该查阅上述包的文档，以全面理解它们的工作原理。}
+
+
+
+\section{Hyperreferences}
+\labsec{hyprefs}
+
+\index{hyperreferences}
+
+为了这个类，我们提供了一个方便的包，帮助您始终以相同的方式引用相同的元素，以确保书籍的一致性。首先，您可以使用特定命令为每个元素标记。例如，如果您想标记一个章节，您可以在 \Command{chapter} 指令后面放置 \lstinline|\labch{chapter-title}|。这只是为了方便，因为 \Command{labch} 实际上只是 \lstinline|\label{ch:chapter-title}| 的别名，因此省去了您写\enquote{ch:}的麻烦。我们为许多通常被标记的元素定义了类似的命令，包括：
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0pt}
+\begin{itemize}
+	\item Page: \Command{labpage}
+	\item Part: \Command{labpart}
+	\item Chapter: \Command{labch}
+	\item Section: \Command{labsec}
+	\item Figure: \Command{labfig}
+	\item Table: \Command{labtab}
+	\item Definition: \Command{labdef}
+	\item Assumption: \Command{labassum}
+	\item Theorem: \Command{labthm}
+	\item Proposition: \Command{labprop}
+	\item Lemma: \Command{lablemma}
+	\item Remark: \Command{labremark}
+	\item Example: \Command{labexample}
+	\item Exercise: \Command{labexercise}
+\end{itemize}
+\end{multicols}
+
+当然，我们有类似的命令来引用这些元素。
+然而，由于引用的样式应依赖于上下文，我们提供不同的命令来引用相同的内容。例如，在某些情况下，您可能希望按名称引用章节，但在其他时候，您只想按数字引用它。一般来说，有四种引用样式，我们称之为普通、变体、名称和完整。
+
+普通样式仅通过数字进行引用。对于章节，可以使用 \lstinline|\refch{chapter-title}| 访问（对于其他元素，语法是类似的）。这样的引用结果为：\refch{引用}。
+
+vario和name样式基于\Package{varioref}包。
+它们的语法是\lstinline|\vrefch{chapter-title}|和
+\lstinline|\nrefch{chapter-title}|，结果为：
+\vrefch{引用}，对于vario样式，以及：\nrefch{引用}，对于name样式。正如您所看到的，页面在\Package{varioref}样式中被引用。
+
+完整样式引用所有内容。您可以使用它与
+\lstinline|\frefch{chapter-title}|，看起来像这样：
+\frefch{引用}。
+
+Of course, all the other elements have similar commands (\eg for parts 
+you would use \lstinline|\vrefpart{part-title}| or something like that). 
+However, not all elements implement all the four styles. The commands 
+provided should be enough, but if you want to see what is available or 
+to add the missing ones, have a look at the 
+\href{styles/kaorefs.sty}{attached package}. 
+
+当然，所有其他元素都有类似的命令（例如，对于部分，你可以使用 \lstinline|\vrefpart{part-title}| 或类似的命令）。然而，并不是所有元素都实现了所有四种样式。提供的命令应该足够，但如果你想查看可用的内容或添加缺失的内容，可以查看附带的包 \href{styles/kaorefs.sty}{attached package}。
+
+为了访问所有这些功能，\Package{kaorefs} 应该在文档的前言中加载。它应该最后加载，或者至少在 \Package{babel}（或 \Package{polyglossia}）和 \Package{plaintheorems}（或 \Package{mdftheorems}）之后加载。可以像对待任何其他包一样向它传递选项；特别是，可以指定标题的语言。例如，如果你指定\enquote{italian}作为选项，那么它将打印\enquote{Capitolo}，这是意大利语的\enquote{Chapter}对应词。如果你知道其他语言，欢迎贡献这些标题的翻译！如需更多详细信息，请随时联系类的作者。
+
+\Package{kaorefs} 包还包括 \Package{cleveref}，因此可以使用 \Command{cref}，作为所有之前描述的引用命令的补充。
+
+\section{A Final Note on Compilation}
+\labsec{compiling}
+
+可能编译 LaTeX 文档最简单的方法是使用 \Package{latexmk} 脚本，因为如果正确配置，它可以处理从参考文献到术语表的所有内容。一般来说，发出的命令是：
+
+\begin{lstlisting}
+latexmk [latexmk_options] [filename ...]
+\end{lstlisting}
+
+\Package{latexmk} 可以进行广泛的配置（参见 \url{https://mg.readthedocs.io/latexmk.html}）。为了方便起见，我在这里打印一个示例配置，该配置将涵盖上述所有步骤。
+
+\begin{lstlisting}
+# By default compile only the file called 'main.tex'
+@default_files = ('main.tex');
+
+# Compile the glossary and acronyms list (package 'glossaries')
+add_cus_dep( 'acn', 'acr', 0, 'makeglossaries' );
+add_cus_dep( 'glo', 'gls', 0, 'makeglossaries' );
+$clean_ext .= " acr acn alg glo gls glg";
+sub makeglossaries {
+   my ($base_name, $path) = fileparse( $_[0] );
+   pushd $path;
+   my $return = system "makeglossaries", $base_name;
+   popd;
+   return $return;
+}
+
+# Compile the nomenclature (package 'nomencl')
+add_cus_dep( 'nlo', 'nls', 0, 'makenlo2nls' );
+sub makenlo2nls {
+    system( "makeindex -s nomencl.ist -o \"$_[0].nls\" \"$_[0].nlo\"" );
+}
+\end{lstlisting}
+
+然而，如果您不想使用外部包并希望手动完成所有操作，这里有一些提示。\sidenote{由于作者只使用Linux并从命令行编译所有内容，因此他不知道Windows或Mac中的编译是如何工作的。因此，这些提示仅涉及在Linux命令行中的使用。}
+
+\minisec{编译kaobook库中的示例}
+要编译位于GitHub上kaobook库的\Path{examples}目录中的示例，特别是文档，请按以下步骤操作。首先，使用命令\lstinline[language=bash]|cd|进入库的根目录，然后运行
+\lstinline|pdflatex -output-directory examples/documentation main.tex|。通过这个技巧，您可以使用与该库相关的类文件来编译文档（而不是，例如，您texmf树中的那些）。选项\enquote{-output-directory}也适用于其他与\LaTeX\ 相关的命令，如biber和makeglossaries。
+
+警告说明： 有时 \LaTeX\ 需要多次运行才能正确定位每个元素；这尤其适用于浮动元素的定位，如图形、表格和边注。偶尔，\LaTeX\ 可能需要多达四次重新运行，因此如果边缘元素的对齐看起来奇怪，或者它们渗入主文本中，请尝试再运行一次 pdflatex。 

@@ -1,0 +1,246 @@
+\setchapterstyle{lines}
+\labch{appendix}
+%\blinddocument
+
+
+\chapter{附注}
+\section{带电粒子的拉格朗日量}
+我们知道拉格朗日量往往是用来描述保守体系的,面对像洛伦兹力这类非保守力,我们如果仍维持保守体系的拉格朗日方程不变,势必要引入广义势能.
+
+我们根据电动力学的知识写出带电粒子在电磁场中的洛伦兹力:
+\begin{equation}
+    \boldsymbol F=q(\boldsymbol E+\boldsymbol v\times \boldsymbol  B)
+\end{equation}
+电磁场又满足麦克斯韦方程组
+\begin{equation}
+    \left\{\begin{array}{l}\nabla \times \boldsymbol{E}+\dfrac{\partial \boldsymbol{B}}{\partial t}=0 \\ \nabla \cdot \boldsymbol{E}=\rho / \varepsilon_{0} \\ \nabla \times \boldsymbol{B}-\mu_{0} \varepsilon_{0} \dfrac{\partial \boldsymbol{E}}{\partial t}=\mu_{0} \boldsymbol{j} \\ \nabla \cdot \boldsymbol{B}=0\end{array}\right.
+\end{equation}
+利用
+\begin{equation}
+    \boldsymbol{B}=\nabla \times \boldsymbol{A}
+\end{equation}
+代入麦克斯韦方程组的第一个式子,得到$\nabla \times\left(\boldsymbol{E}+\frac{\partial \boldsymbol{A}}{\partial t}\right)=0$,自然定义出标量势
+
+\begin{equation}
+    -\nabla \varphi=E+\frac{\partial \boldsymbol{A}}{\partial t}
+\end{equation}
+于是洛伦兹力可以重写为
+\begin{equation}
+    \boldsymbol{F}=q\left[-\nabla \varphi-\frac{\partial \boldsymbol{A}}{\partial t}+v \times(\nabla \times \boldsymbol{A})\right]
+\end{equation}
+现在我们需要将其写为如下形式来得到广义势能
+\begin{equation}
+    Q_{\alpha}=-\frac{\partial U}{\partial q_{\alpha}}+\frac{\mathrm d}{\mathrm d t} \frac{\partial U}{\partial \dot{q}_{\alpha}}
+\end{equation}
+首先我们写出其分量形式
+\begin{equation}
+    \begin{aligned} &(\nabla \varphi)_{x}=\frac{\partial \varphi}{\partial x} \\ &[v \times(\nabla \times \boldsymbol A)]_{x}=v_{y}\left(\frac{\partial A_{y}}{\partial x}-\frac{\partial A_{x}}{\partial y}\right)-v_{z}\left(\frac{\partial A_{x}}{\partial z}-\frac{\partial A_{z}}{\partial x}\right) \\ &\left(\frac{\partial \boldsymbol{A}}{\partial t}\right)_{x}=\frac{\partial A_{x}}{\partial t} \end{aligned}
+\end{equation}
+于是洛伦兹力的$ x $分量可以写做
+\begin{equation}
+    F_{x}=q\left[-\frac{\partial \varphi}{\partial x}-\frac{\partial A_{x}}{\partial t}+v_{y}\left(\frac{\partial A_{y}}{\partial x}-\frac{\partial A_{x}}{\partial y}\right)-v_{z}\left(\frac{\partial A_{x}}{\partial z}-\frac{\partial A_{z}}{\partial x}\right)\right]
+\end{equation}
+由于矢势$ A $是坐标和时间的函数.由于$ A $是粒子所在点的电磁场的矢势,因此$ A $中的坐标变量是粒子在对应时刻的空间位置,它们对时间的微商就是粒子的速度,因此有
+\begin{equation}
+    \frac{\mathrm{d} A_{x}}{\mathrm{d} t}=\frac{\partial A_{x}}{\partial t}+v_{x} \frac{\partial A_{x}}{\partial x}+v_{y} \frac{\partial A_{x}}{\partial y}+v_{z} \frac{\partial A_{x}}{\partial z} \\
+\end{equation}
+分量表达式变为
+\begin{equation}
+    F_{x}=q\left[-\frac{\partial \varphi}{\partial x}-\frac{\mathrm{d} A_{x}}{\mathrm{d} t}+v_{x} \frac{\partial A_{x}}{\partial x}+v_{y} \frac{\partial A_{y}}{\partial x}+v_{z} \frac{\partial A_{z}}{\partial x}\right] \\
+\end{equation}
+又因为矢量势和标量势都和速度无关,自然有
+\begin{equation}
+    \begin{aligned} &\frac{\mathrm{d} A_{x}}{\mathrm{d} t}=\frac{\mathrm{d}}{\mathrm{d} t}\left[\frac{\partial}{\partial v_{x}}(\boldsymbol{A} \cdot v)\right]=\frac{\mathrm{d}}{\mathrm{d} t} \frac{\partial}{\partial v_{x}}(-\varphi+\boldsymbol{A} \cdot v)\\ &\left(v_{x} \frac{\partial A_{x}}{\partial x}+v_{y} \frac{\partial A_{y}}{\partial x}+v_{z} \frac{\partial A_{z}}{\partial x}\right)=v \cdot \frac{\partial \boldsymbol{A}}{\partial x}=\frac{\partial}{\partial x}(\boldsymbol{v} \cdot \boldsymbol{A}) \end{aligned}\\
+\end{equation}
+终于,我们把分量式写为
+\begin{equation}
+    F_{x}=q\left[-\frac{\partial}{\partial x}(\varphi-\boldsymbol{A} \cdot v) |+\frac{\mathrm{d}}{\mathrm{d} t} \frac{\partial}{\partial v_{x}}(\varphi-\boldsymbol{A} \cdot v)\right]
+\end{equation}
+对比广义力和广义势能的式子,我们得出了广义势能的表达
+\begin{equation}
+    \color{red}{\boxed{U=q \varphi-q \boldsymbol{A} \cdot v} }
+\end{equation}
+
+相应的拉格朗日量自然写出
+\begin{equation}
+    \color{blue}{\boxed{L=\frac{1}{2} m v^{2}-q \varphi+q \boldsymbol{A} \cdot v }}
+\end{equation}
+
+
+
+
+
+%\chapter{单位制}
+%我们从小学就逐步接触一些单位,常见的如米(m),千克(kg),秒(s)等是国际统一使用的\textbf{标准度量系统(国际单位制)}.相应的,像是国内经常接触的斤,公里,亩,美国\sidenote[][]{包括美国、开曼群岛、伯利兹等极少数国家和地区}常用的华氏度等,则是生活中使用的独立度量系统,大多数度量系统都和标准度量系统之间存在换算关系.而且生活中使用的度量单位大多比较局限,对于相干度较低的单位往往是不涉及的.\\
+%对于初中和高中的物理学习,我们已经熟练使用国际单位制(SI\sidenote[][]{法语 Système International d'Unités,简称SI})来解决一些简单的物理问题.但是,就像生活中使用的单位制一样,人们出于方便的角度对于一些物理场景也构建出一些新的单位制.这些单位制能够简化相关的物理问题.\\物理上使用的单位制与国际单位制的转换往往比较复杂,使用时建议标注使用了哪个单位制.\\
+%\begin{remark}
+%    在这个附录中,电磁单位制与自然单位制独立分为两节,但是按照较广义的自然单位制的定义\sidenote[][]{区别于粒子物理的``自然单位制"和普朗克单位制},电磁单位制也属于其中的一类,特此说明.
+%\end{remark}
+%\section{电磁单位制}
+%相比于我们常用的国际单位制,也称为MKSA单位制(即米,千克,秒,安培),我们在电磁中常用的高斯单位制被称为CGS单位制(即厘米,克,秒).\\接下来为了避免混乱,列举高斯单位制所常用的单位:电荷$statC$,电势$statV$,力$dyne$\sidenote[][]{中文音译为达因},磁感应强度$gauss$,磁场强度$oersted$,磁通量$mx$,能量$erg$.\\
+%
+%相比于自然单位制直接将值赋为1,高斯单位制就比较保守,它根据我们熟知的库仑定律,通过定义$1\mathrm{A}=0.1c\cdot\mathrm{\d yne}^{\frac12},1\mathrm{C}=0.1c\cdot\rm{\d yne}^{\frac12}\cdot s$来达到简化的操作.\\
+%\begin{table}[htbp]
+%    \centering
+%    \caption{一些简单对应关系}
+%    \begin{tabular}{|c|c|c|c|}
+%        \hline
+%        & SI      & Gaussian        & G/SI                     \\ \hline
+%        E          & $V/m$   & $statV/m$       & $\sqrt{4\pi\epsilon_0}$  \\ \hline
+%        V          & $V$     & $statV$         & $\sqrt{4\pi\epsilon_0}$  \\ \hline
+%        D          & $C/m^2$ & $statC/cm^2$    & $\sqrt{4\pi/\epsilon_0}$ \\ \hline
+%        q          & $C$     & $statC$         & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
+%        P          & $C/m^2$ & $statC/cm^2$    & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
+%        I          & $A$     & $statC/s$       & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
+%        B          & $T$     & $Gauss$         & $\sqrt{4\pi/\mu_0}$      \\ \hline
+%        A          & $Wb/m$  & $Gauss\cdot cm$ & $\sqrt{4\pi/\mu_0}$      \\ \hline
+%        H          & $A/m$   & $oersted$       & $\sqrt{4\pi\mu_0}$       \\ \hline
+%        $\epsilon$ & $F/m$   & 1               & $1/\epsilon_0$           \\ \hline
+%        $\mu$      & $H/m$   & 1               & $1/\mu_0$                \\ \hline
+%    \end{tabular}
+%\end{table}
+%\section{自然单位制}
+%我们熟知,国际单位制的7个基本单位是通过物理常数所定义的,那么,如果我们把其中\textbf{一个或几个}的定义值改为1,那么就又可以构造出来一套度量系统.这其中\textbf{显而易见的优点}是直接导致原本含有大量常数的公式可以被写成更加简洁方便的形式.在物理学里,自然单位制就是一种建立于此类方法的计量单位制度.例如,电荷的自然单位是基本电荷${\displaystyle e}$,速度的自然单位是光速${\displaystyle c}$,角动量的自然单位是约化普朗克常数${\displaystyle \hbar }$,电阻的自然单位是自由空间阻抗${\displaystyle Z_{0}}$,质量的自然单位则有电子质量${\displaystyle m_{e}}$与质子质量${\displaystyle m_{p}}$等.\\
+%
+%事实上,对于单位的改动,我们至少要求不会导致无量纲常数的值发生改变,如精细结构常数.
+%$${\displaystyle \alpha ={\frac {e^{2}k_{e}}{\hbar c}}={\frac {e^{2}}{\hbar c(4\pi \epsilon _{0})}}={\frac {1}{137.035999074}}=7.2973525698\cdot 10^{-3}}$$
+%这个常数就要求不能同时把${\displaystyle e},{\displaystyle \hbar },{\displaystyle c},{\displaystyle k_{e}}$同时为1.
+%\subsection{普朗克单位制}
+%普朗克单位制几乎是最常使用的单位制,它的定义只依赖于最基本的性质.普朗克单位选择将真空光速${\displaystyle c}$,万有引力常数${\displaystyle G}$,约化普朗克常数${\displaystyle \hbar }$,真空电容率${\displaystyle \epsilon _{0}}$,玻尔兹曼常数${\displaystyle k_{B}}$定为1\sidenote[][]{普朗克洛伦兹-亥维赛单位制将${\displaystyle 4\pi G},{\displaystyle \epsilon _{0}}$定为1，普朗克高斯单位制将${\displaystyle G},{\displaystyle 4\pi \epsilon _{0}}$定为1}.\\
+%类比国际单位制,普朗克单位制也有一些基本单位(如常常出现在各种科普作品中的普朗克长度,普朗克时间等)和导出单位(普朗克面积,普朗克动量等).具体列表可参考相关wiki\href{https://zh.wikipedia.org/wiki/%E6%99%AE%E6%9C%97%E5%85%8B%E5%96%AE%E4%BD%8D%E5%88%B6}{普朗克单位制},这里不做展开.
+%\subsection{``自然单位制"(粒子物理)}
+%在粒子物理中,自然单位制特指${\displaystyle \hbar =c=k_{B}=1}$情况下的单位制.通常会根据情况选择使用洛伦兹-亥维赛单位制或高斯单位制来确定电荷定义.
+%\subsection{其他单位制}
+%\subsubsection*{史东纳单位制}
+%第一次出现的单位制,已经不再使用.规定了${\displaystyle c=G=e={\frac {1}{4\pi \epsilon _{0}}}=k_{B}=1}$.
+%\subsubsection*{原子单位制}
+%这类单位制是特别为了简易表达原子物理学和分子物理学的方程而精心设计,在本篇中仅做介绍.\\
+%原子单位制分为两种:哈特里原子单位制和里德伯原子单位制.哈特里原子单位制比里德伯原子单位制常见.两者的主要区别在于质量单位与电荷单位的选取.\\
+%哈特里原子单位制的基本单位为${\displaystyle e=m_{e}=\hbar ={\frac {1}{4\pi \epsilon _{0}}}=k_{B}=1}$,${\displaystyle c={\frac {1}{\alpha }}}$.\\
+%里德伯原子单位制的基本单位为${\displaystyle {\frac {e}{\sqrt {2}}}=2m_{e}=\hbar ={\frac {1}{4\pi \epsilon _{0}}}=k_{B}=1}$,${\displaystyle c={\frac {2}{\alpha }}}$.
+%\chapter{固体物理中的一些概念}
+%对于物理研究,把它放在合适的空间下能够简化问题.对于坐标空间(正格子,基矢)和动量空间(倒格子,倒格矢)来讲,相当于从两个角度来描写\textbf{同一}事物.在之后对于晶格的分析中,我们常常要在动量空间上分析这一问题.\\
+%\textit{如果对于物理形式较为敏感,应该会容易的想到``两个角度描写同一事物"的表述和傅里叶变换有很大的相似性.实际上,坐标空间和动量空间互为傅里叶变换.如果对于量子力学有一定了解或已经阅读过关于表象变换的内容,对这一部分会有更深的体会.}
+%\section*{一些需要了解的概念}
+%为了能够便于理解接下来的内容,以下是需要了解的概念.
+%\begin{enumerate}
+%    \item \textbf{格矢}:联系任两个晶格点的向量
+%    \item \textbf{布拉维晶格 Bravais lattices}:由同种原子构成的晶胞,多种原子构成的晶胞可以视为几个布拉维晶格的叠加.
+%    \item 待补充
+%\end{enumerate}
+%
+%
+%\chapter{$\delta_{ij},\varepsilon_{ijk}$和爱因斯坦求和约定与$\delta$函数}
+%\section{克罗内克符号$\delta_{ij}$}
+%克罗内克符号是一类二元函数,其通常定义为以下形式
+%\begin{equation}
+%    \delta _{ij}=\left\{{\begin{matrix}1&(i=j)\\0&(i\neq j)\end{matrix}}\right.\,\!
+%\end{equation}
+%其具有筛选性(和投影算符类似)
+%\begin{equation}
+%    \sum _{i=-\infty }^{\infty }\delta _{ij}a_{i}=a_{j}\,\!
+%\end{equation}
+%其具有和$\delta$函数共同的部分性质,而$\delta$函数也正是源于克罗内克符号.
+%\section{列维西维塔符号$\varepsilon_{ijk}$}
+%列维-奇维塔符号,对于正整数 $n$ ,它以$1, 2, ..., n $所形成排列的奇偶性来定义.其他名称包括排列符号、反对称符号与交替符号.
+%
+%而$\varepsilon_{ijk}$的值由下角标$ijk$决定,当存在任意两个角标相同时值取$0$,当全部指标都不相等时,角标的逆序数为偶数取$1$,为奇数则取$0$.
+%\subsection*{二维形式}
+%\begin{equation}
+%    \varepsilon_{ij}={
+%        \begin{cases}+1&\text{当}\left(i,j\right)=\left(1,2\right)\\
+%            -1&\text{当}\left(i,j\right)=\left(2,1\right)\\
+%            0&\text{当}i=j
+%        \end{cases}
+%    }\,
+%\end{equation}
+%二维较为少见,仅作为了解.
+%\subsection*{三维形式}
+%我们经常看到的列维西维塔符号常常是三维形式的,即如下
+%\begin{equation}
+%    \varepsilon _{ijk}={
+%        \begin{cases}
+%            +1&\text{当}(i,j,k)=(1,2,3),(2,3,1),(3,1,2)\\
+%            -1&\text{当}(i,j,k)=(3,2,1),(2,1,3),(1,3,2)\\
+%            0&\text{当}i=j,j=k\text{或}k=i
+%        \end{cases}
+%    }\,
+%\end{equation}
+%\subsection*{性质}
+%两个列维-奇维塔符号的积，可以用一个以克罗内克符号表示的行列式求得
+%\begin{equation}
+%    \varepsilon _{ijk\dots }\varepsilon _{mnl\dots }={\begin{vmatrix}\delta _{im}&\delta _{in}&\delta _{il}&\dots \\\delta _{jm}&\delta _{jn}&\delta _{jl}&\dots \\\delta _{km}&\delta _{kn}&\delta _{kl}&\dots \\\vdots &\vdots &\vdots \\\end{vmatrix}}
+%\end{equation}
+%也可以用来表示行列式和向量内积,对于一个$3\times3$的方阵$A$,有表示
+%\begin{equation}
+%    \det(A)=\sum _{i,j,k=1}^{3}\varepsilon _{ijk}\,a_{1i}\,a_{2j}\,a_{3k}
+%\end{equation}
+%对于向量内积,有
+%\begin{equation}
+%    {\boldsymbol {a}}\times {\boldsymbol {b}}={\begin{vmatrix}{\boldsymbol {e}}_{1}&{\boldsymbol {e}}_{2}&{\boldsymbol {e}}_{3}\\a_{1}&a_{2}&a_{3}\\b_{1}&b_{2}&b_{3}\\\end{vmatrix}}=\sum _{1\leq i,j,k\leq 3}\varepsilon _{ijk}\,a_{i}b_{j}\,{\boldsymbol {e}}_{k}
+%\end{equation}
+%\section{爱因斯坦求和约定}
+%爱因斯坦求和约定是一种标记的约定,即重复角标意味着求和,一般未指定的情况下就是由$1$至$3$.
+%\section{$\delta$函数}
+%我们首先明确,$\delta$函数并不是通常意义的函数,其更准确的称呼是广义函数.其在$x=0$处取值为正无穷,在$x\ne0$处取值为$0$,但是在全定义域上的积分值为$1$,当然,我们所学的黎曼积分并不支持这一操作,我们需要\textbf{勒贝格积分}来处理它,当然,这里并不会讲述测度论的内容,仅仅作为了解即可.
+%\subsection{定义}
+%我们从其定义开始这部分内容.
+%\begin{equation}
+%    \delta (x)={\begin{cases}+\infty ,&x=0\\0,&x\neq 0\end{cases}}
+%\end{equation}
+%且同时满足
+%\begin{equation}
+%    \int _{-\infty }^{\infty }\delta (x)\,\d x=1
+%\end{equation}
+%而对于复变函数中,一切在域$D$中闭包的全纯函数,我们可以用柯西积分公式来表示$\delta$函数
+%\begin{equation}
+%    \delta _{z}[f]=f(z)={\frac {1}{2\pi i}}\oint _{\partial D}{\frac {f(\zeta )\,\d\zeta }{\zeta -z}}.
+%\end{equation}
+%\subsection{性质}
+%首先,回忆克罗内克符号的部分,很容易联想到$\delta$函数也具有筛选的性质:
+%\begin{equation}
+%    \int _{-\infty }^{\infty }f(x)\delta (x-x_{0})\,\d x=f(x_{0})
+%\end{equation}
+%以及(高维的情况与之类似,不再重复,相关证明是显然的)
+%\begin{equation}
+%    \begin{aligned}
+%        \delta (\alpha x)&={\frac {\delta (x)}{|\alpha |}}\\
+%        \delta (-x)&=\delta (x)\\
+%        x\delta (x)&=0\\
+%        \int _{-\infty }^{\infty }\delta (\xi -x)\delta (x-\eta )\,\mathrm {d} x&=\delta (\xi -\eta )
+%    \end{aligned}
+%\end{equation}
+%狄拉克$\delta$分布是在包含所有平方可积函数的希尔伯特空间$L_2$上所稠密定义的一个无界线性泛函.在许多应用中,可以对$L_2$的某个子空间赋予更强的拓扑,使得$\delta$函数能够定义一个有界线性算子.
+\chapter{mathematica的基本用法}
+\subsection*{4.1-式子13}
+输入代码
+\begin{lstlisting}
+    Integrate[
+    1/(2 \[Pi]) Exp[-I \[Epsilon] (p^2/(2 m) + V) + 
+    I p (qf - qi)], {p, -Infinity, Infinity}] // FullSimplify
+\end{lstlisting}
+
+\chapter{答案及解析}
+\section{第一章}
+1
+\section{第二章}
+1
+\chapter{致谢/参考}
+\section{致谢}
+感谢elegantbook所提供的模板,\href{https://elegantlatex.org/}{https://elegantlatex.org/}.\\
+并非elegantbook
+
+\section{参考}
+本文主要参考的书籍和期刊如下:
+\begin{enumerate}
+    \item Modern Quantum Mechanics 2nd.J.J.Sakurai
+    \item Quantum Field Theory in Condensed Matter Physics 2nd.Alexei M.Tsvellk
+    \item Entanglement in Many-Body Systems(RMP)
+    \item 物理学家用李群李代数
+    \item 《李群与李代数》讲义-李世雄
+    \item Nicolas Dupuis - Field Theory of Condensed Matter and Ultracold Gases
+    \item Conformal Field Theory A.N. Schellekens
+\end{enumerate}
+参考了十余本,之后慢慢整理,并会改为bib引用的.
+
+免责声明:本讲义仅限个人学习使用,第一章和第二章大篇幅借鉴了Sakurai的MQM,第三章是多本李群李代数教材的综合,对部分内容进行了改写和删改,习题答案系个人补充,仅供参考.部分图片为个人重绘,部分图片来源wiki.同时,本讲义的全部内容和代码已公开至github主页,允许二次传播,但请注意讲义仅为多本书和综述的整理和综合,且仍处于更新状态,不排除未来将前几章重置的可能性.

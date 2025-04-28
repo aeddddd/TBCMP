@@ -70,10 +70,15 @@
 \newcommand{\used}{\text{此处使用}}
 \newcommand{\blue}{\color{blue}}
 \newcommand{\red}{\color{red}}
+\newcommand\mb[1]{\mathbf{#1}}
 \newcommand{\dt}{\d t}
 \newcommand{\dx}{\d x}
 \newcommand{\dy}{\d y}
+\newcommand{\dz}{\d z}
 \newcommand{\dq}{\d q}
+\newcommand{\da}{\d a}
+
+\newcommand{\ddx}{\d \mathbf{x}}
 \newcommand{\ra}{\rangle}
 \newcommand{\la}{\langle}
 % 重定义\to
@@ -149,11 +154,11 @@
     \setlength{\textheight}{230\hscale} % Manually adjust the height of the ToC pages
     \etocclasstocstyle % "toc display" as if etoc was not loaded
     \etocstandardlines % "toc lines" as if etoc was not loaded
-    %\tableofcontents % Output the table of contents
+    \tableofcontents % Output the table of contents
     %\listoffigures % Output the list of figures
     \let\cleardoublepage\bigskip
     \let\clearpage\bigskip
-    \listoftables % Output the list of tables
+    %\listoftables % Output the list of tables
     \endgroup
     
     %----------------------------------------------------------------------------------

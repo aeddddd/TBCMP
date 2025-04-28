@@ -1,14 +1,22 @@
 \setchapterpreamble[u]{\margintoc}
-\chapter{李群(Lie Group)与李代数(Lie Algebra)}
+\chapter{李群,李代数及辛几何}
 \labch{intro}
 
 
 \section*{章节导论:对称性与对称性破缺}
 仍在画饼,可以参考这篇知乎文章,写的很不错:\href{https://zhuanlan.zhihu.com/p/338221764}{知乎专栏}
 
+最近看了一些辛几何的内容,觉得很有意思,后续也会加进来.
 
+非常有意思的是,我打算讲3次诺特定理,分别从基本角度出发,李代数角度,辛流形的角度进行叙述.
 
-
+需要强调的是,受限于章节内容,我们的出发角度都是物理角度,且较为狭隘和数学上有\textbf{很大区别},想深入了解可以参考一些经典案例:
+\begin{enumerate}
+    \item 微分流形:流形导论(Loring W.Tu)
+    \item 李代数:Lie Groups,Lie Algebras,and Representations:An Elementary Introduction(Brian C. Hall)
+    \item 辛几何:经典力学的数学方法(阿诺尔德);Lectures on Symplectic Geometry(da Silva)
+\end{enumerate}
+\marginnote[]{一个不得不提的事情是,倘若要把李群李代数和辛几何讲明白,或甚至是完全照本宣科的写一遍,涉及到的篇幅也远远不是一章可以容纳的下的,于是挑选了一部分简单的,适用于入门的内容.\\另一点是目前的章节还比较粗糙,仍需要足够的打磨,所以较后续的小节迟迟不能够完成,大概李代数会讲到不可约表示这一部分.\\不过说实话,对于物理系的数学,微积分和线代可以解决95\%的问题,剩下的5\%只需要用到一点点李群李代数和表示论以及辛结构了,所以也不必为此担忧什么.}
 \section{李群(Lie Group)初步}
 \subsection{群与李群(Lie Group)}
 我们或许听说过一个说法:``物理学的关键是对称和守恒",而诺特定理给出了对称性与守恒性的联系,例如,时间平移不变性意味着能量守恒;空间平移不变性意味着动量守恒;转动不变性意味着角动量守恒;电势和向量势的规范不变性得出电荷的守恒等.而描述对称性的语言就是群论.

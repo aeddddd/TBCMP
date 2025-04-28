@@ -3,7 +3,7 @@
 %\blinddocument
 
 
-\chapter{附注}
+\chapter{补充内容}
 \section{带电粒子的拉格朗日量}
 我们知道拉格朗日量往往是用来描述保守体系的,面对像洛伦兹力这类非保守力,我们如果仍维持保守体系的拉格朗日方程不变,势必要引入广义势能.
 
@@ -66,6 +66,250 @@
     \color{blue}{\boxed{L=\frac{1}{2} m v^{2}-q \varphi+q \boldsymbol{A} \cdot v }}
 \end{equation}
 
+\chapter{数学内容补充}
+\section{楔积,外微分与外代数}
+\subsection{楔积}
+为了讲清楚楔积\sidenote{楔积,又称外积,但区分向量叉乘,叉乘仅适用于三维情况,而外积对维数没有要求.},我们首先需要回忆一下高数我们已经学过的内容,对于一个二元函数$f(x,y)$,其二重积分
+\begin{equation}
+    A=\iint_Df(x,y)\dx\dy
+\end{equation}
+假设为了便于计算积分,需要引入变量代换
+\begin{equation}
+    \begin{cases}x&=x(x^{\prime},y^{\prime})\\y&=y(x^{\prime},y^{\prime})\end{cases}
+\end{equation}
+坐标变换后,我们知道可以利用雅可比行列式写为如下形式\marginnote[]{或许这里不能够假定每一个人都学过雅可比行列式,对于这个坐标变换,其雅可比行列式定义为$$\left|\frac{\partial(x,y)}{\partial(x^{\prime},y^{\prime})}\right|=\frac{\partial x}{\partial x^{\prime}}\frac{\partial y}{\partial y^{\prime}}-\frac{\partial x}{\partial y^{\prime}}\frac{\partial y}{\partial x^{\prime}} $$写成行列式形式即$$\mathbf J=\left|\frac{\partial(x,y)}{\partial(x',y')}\right| = \begin{vmatrix} \frac{\partial x}{\partial y^{\prime}} & \frac{\partial x}{\partial x^{\prime}} \\ \frac{\partial y}{\partial y^{\prime}} & \frac{\partial y}{\partial x^{\prime}}  \end{vmatrix}$$其几何意义代表坐标前后体积微元(对于二维则是面积微元)的比值,推导过程并不是这一部分的重点,故省略.}
+\begin{equation}
+    A=\iint f(x,y)\left|\frac{\partial(x,y)}{\partial(x^{\prime},y^{\prime})}\right|\dx^{\prime}\dy^{\prime}
+\end{equation}
+我们发现,雅可比行列式的计算往往利用了向量叉乘来求面积,但是我们知道,向量叉乘在高维情况下是非良定义的,这要求我们对高维下的体积微分的运算引入一种新的运算符:楔积.对于上面的二重积分的积分微元$\dx\dy$,我们定义其中的运算关系:$\dx\wedge\dy$.
+
+对于普通矢量的楔积运算,我们根据其楔积``次数"$ k $定义其为k-矢量,如矢量$\vec x$即1-矢量,$\vec x\wedge\vec y$则为2-矢量.一个k-矢量象征一个k维的\textbf{有向}体积,而由k-矢量之间的代数运算关系构成的代数被称为\textbf{外代数},这类代数最显著的特征就是反交换性:
+$$\dx\wedge\dy=-\dx\wedge\dy$$
+由于这种关系,自然可以发现
+$$\dx\wedge \dx=-\dx\wedge \dx=0,\quad \dy\wedge \dy=-\dy\wedge\dy=0$$
+利用这种新的代数关系,我们发现微元之间的坐标变换变得更加清晰
+\begin{equation}
+    \begin{aligned}\dx\wedge \dy&=(\frac{\partial x}{\partial x^{\prime}}\dx^{\prime}+\frac{\partial x}{\partial y^{\prime}}\dy^{\prime})\wedge(\frac{\partial y}{\partial x^{\prime}}\dx^{\prime}+\frac{\partial y}{\partial y^{\prime}}\dy^{\prime})\\&=\frac{\partial x}{\partial x^\prime}\frac{\partial y}{\partial y^\prime}\dx^\prime\wedge \dy^\prime+\frac{\partial x}{\partial y^\prime}\frac{\partial y}{\partial x^\prime}\dy^\prime\wedge \dx^\prime\\&=(\frac{\partial x}{\partial x^\prime}\frac{\partial y}{\partial y^\prime}-\frac{\partial x}{\partial y^\prime}\frac{\partial y}{\partial x^\prime})\dx^\prime\wedge \dy^\prime\\&=\left|\frac{\partial(x,y)}{\partial(x^{\prime},y^{\prime})}\right|\dx^{\prime}\wedge \dy^{\prime}.\end{aligned}
+\end{equation}
+在运算过程中,雅可比行列式自动出现了,并且,这类关系自然与高维情况下兼容,对于$ n $重微元$\dx^1\dx^2\cdots\dx^n$,其以外代数形式写作$\dx^1\wedge\dx^2\wedge\cdots\wedge\dx^n$,并且满足反交换关系
+$$\dx^i\wedge \dx^j=-\dx^j\wedge \dx^i$$
+并且,我们将被积函数$f(x^1,x^2,...,x^n)$与$\dx^1\wedge\dx^2\wedge\cdots\wedge\dx^n$乘起来称为一个$ n $重微分形式,即n形式记为$\omega$:
+\begin{equation}
+    \omega=f(x^1,x^2,...,x^n)\dx^1\wedge\dx^2\wedge\cdots\wedge\dx^n
+\end{equation}
+于是,我们可以重新写出$ n $元函数的积分表达,其实际上是对n形式$\omega$的积分
+\begin{equation}
+    A=\int\omega
+\end{equation}
+对于$ n $个变量的情况,我们对n形式进行推广,定义k-形式(k-form)$\alpha$:
+\begin{equation}
+    \alpha=\frac{1}{k!}\alpha_{i_1i_2\cdots i_k}\dx^{i_1}\wedge \dx^{i_2}\wedge\cdots\wedge \dx^{i_k}
+\end{equation}
+这里使用了爱因斯坦求和约定.对于任意的k-形式,我们要求k-形式的分量$\alpha_{i_1i_2\cdots i_k}$对$ k $个指标两两反对称,即全反对称\sidenote{即交换任意两个指标变号}.
+
+对于三维情况,由于只有三个变量,自然仅存在0,1,2,3 四种非零的微分形式\marginnote[]{由于外代数的反交换性质,很显然k-形式中的$k$个指标$i_1,i_2,...,i_k$取值必须两两不同,否则对$\alpha$的贡献将为零.特别的,这意味着,n形式是最高重的非零形式,任何$k>n$的$k$形式都必定为零,因为这时候它的$k$个指标取值必定会出现重复,不可能两两不同.},我们对于这四种微分形式分别讨论:
+\begin{enumerate}
+    \item 0-形式就是普通的标量函数
+    \item 1-形式可以写为$a_1\dx+a_2\dy+a_3\dz$,不难发现其分量$(a_1,a_2,a_3)$恰好构成一个三维空间的矢量场$\mb{a}(\mb x)$,于是三维空间的1-形式可以写为$$a_1\dx+a_2\dy+a_3\dz=\mb{a}(\mb x)\cdot\ddx$$
+    \item 2-形式同样可以写为\marginnote[]{\textbf{特别的},对于2-形式,记$a_{12}=b_3,a_{23}=b_1,a_{31}=b_2$,并且定义映射$\dx\wedge \dy\to \dz,\dy\wedge \dz\to \dx,\dz\wedge \dx\to \dy$, 则有$a_{12}\dx\wedge \dy+a_{23}\dy\wedge \dz+a_{31}\dz\wedge \dx\to b_1\dx+b_2\dy+b_3\dz$
+    可见,3 维空间 2-形式和 1-形式之间能够建立一对一映射.因此,2-形式的 3 个独立非零分量$(a_{23},a_{31},a_{12})=(b_1,b_2,b_3)=\mathbf{b}$刚好构成一个 3 维空间矢量.
+    同时,上面这个对映也告诉我们,$(\dy\wedge \dz,\dz\wedge \dx,\dx\wedge \dy)$也完全类似于一个 3 维空间的矢量微元,通常将之定义为面积元矢量$\d\mathbf{S}$,
+        $$\d\mathbf{S}=(\dy\wedge \dz,\dz\wedge \dx,\dx\wedge dy)$$ 我们称这类k-形式与n-k-形式之间的一一映射关系为\textbf{霍奇(Hodge)对偶}}
+    $$a=\frac{1}{2}a_{ij}(\mathbf{x})\dx^i\wedge \dx^j=a_{12}\dx\wedge \dy+a_{23}\dy\wedge \dz+a_{31}\dz\wedge \dx$$
+    \item 3-形式与0-形式类似,可以写做$f(x,y,z)\dx\wedge\dy\wedge\dz$
+\end{enumerate}
+\subsection{外微分}
+对于微分形式,为了与之前的微分运算进行一定的区分,我们定义一种新的微分运算:外微分.我们首先以一个简单的例子引入:对于二维空间内的1-形式$a=a_x\dx+a_y\dy$,我们定义其外微分$\d a$为
+\begin{equation}
+    \d a=\d a_x\wedge\dx+\d a_y\wedge \dy
+\end{equation}
+这样的外微分显然是结合外代数与微分的产物,对其进行计算得到\sidenote{具体运算步骤$$\begin{aligned}\d a&=\d a_x\wedge \dx+\d a_y\wedge\dy\\&=(\partial_xa_x\dx+\partial_ya_x\dy)\wedge \dx\\&\quad+(\partial_xa_y\dx+\partial_ya_y\dy)\wedge \dy\\&=\partial_ya_x\dy\wedge \dx+\partial_xa_y\dx\wedge \dy\\&=(\partial_xa_y-\partial_ya_x)\dx\wedge \dy,\end{aligned}$$}
+\begin{equation}
+    \d a=(\partial_xa_y-\partial_ya_x)\dx\wedge\dy
+\end{equation}
+显然,$\d a$只有一个分量$(\partial_xa_y-\partial_ya_x)$,并且其恰好是二维矢量$\mb a$的\textbf{旋度}.
+
+另一方面,在高数中,我们熟知二维空间内有格林公式
+\begin{equation}
+    \oint_{\partial D}(a_x\dx+a_y\dy)=\int_D(\partial_xa_y-\partial_ya_x)\dx\dy
+\end{equation}
+其中$\partial D$为一个闭合回路,$D$为这条回路包括的区域,利用微分形式,可以将其重新写为
+\begin{equation}\label{B1}
+    \int_{\partial D}a=\int_D\d a
+\end{equation}
+类似于二维空间的1-形式,我们继续分析三维空间的1-形式$a=\mathbf{a}\cdot \d\mathbf{x}=a_x\dx+a_y\dy+a_z\dz$的外微分$\d a$,其定义同样为
+\begin{equation}
+    \d a=\d a_x\wedge \dx+\d a_y\wedge \d y+\d a_z\wedge \dz
+\end{equation}
+通过与二维情况完全类似的运算,我们得到结果
+\begin{equation}
+    \d a=(\partial_xa_y-\partial_ya_x)\dx\wedge \dy+(\partial_ya_z-\partial_za_y)\dy\wedge \dz+(\partial_za_x-\partial_xa_z)\dz\wedge \dx
+\end{equation}
+这是一个三维空间的2-形式,$\d a$的三个独立分量同样恰好构成三维矢量$\mb a$的\textbf{旋度}$\nabla\times\mb a$,即
+\begin{equation}
+    \d a=(\nabla\times\mathbf{a})\cdot \d\mathbf{S}
+\end{equation}
+使用微分形式重写
+\begin{equation}\label{B2}
+    \int_{\partial D}a=\int_D\d a
+\end{equation}
+于是我们发现,\ref{B1}与\ref{B2}完全一致.
+
+我们继续向下考虑三维空间的2-形式的外微分$\d a$,其定义同样为
+\begin{equation}
+    \da=\da_{12}\wedge \dx\wedge \dy+\da_{23}\wedge \dy\wedge \dz+\da_{31}\wedge \dz\wedge \dx
+\end{equation}
+计算得到
+\begin{equation}
+    \da=(\partial_3a_{12}+\partial_1a_{23}+\partial_2a_{31})\dx\wedge \dy\wedge \dz
+\end{equation}
+同样利用$(a_{23},a_{31},a_{12})=(b_1,b_2,b_3)=\mathbf{b}$,我们可以把结果重写为
+\marginnote[]{对于外微分,存在两个常用概念.首先,一个微分形式$\alpha$,如果它的外微分等于零,即$\d\alpha=0$ 我们就称它为\textbf{闭形式}.其次,一个微分形式$\alpha$,如果它是另一个微分形式$\beta$的外微分,即有$\alpha=\d\beta$,我们就称这样的$\alpha$为一个\textbf{恰当形式}.很显然,任何恰当形式都必定是闭形式!反过来,闭形式却不一定是恰当形式,闭形式什么时候是恰当形式什么时候不是.这往往和空间的拓扑有关系,是所谓的 de Rahm 上同调研究的内容.}
+\begin{equation}
+    \da=(\partial_1b_1+\partial_2b_2+\partial_3b_3)\dx\wedge \dy\wedge \dz=(\nabla\cdot\mathbf{b})\dx\wedge \dy\wedge \dz
+\end{equation}
+很明显结果是一个3-形式,并且恰好给出了三维矢量的\textbf{散度}.
+
+于是,我们发现,对于三维空间的高斯定理
+\begin{equation}
+    \oint_{\partial V}\mathbf{b}\cdot \d\mathbf{S}=\int_V(\nabla\cdot\mathbf{b})\d V
+\end{equation}
+利用外微分仍然可以写完类似\ref{B1}与\ref{B2}的形式.我们将其扩展为
+\begin{equation}\label{B3}
+    \int_{\partial D}\alpha=\int_D\d\alpha
+\end{equation}
+式中$\alpha$表示三维空间中的一个k-1-形式,$D$表示三维空间中一个以$\partial D$为边界的$k$维曲面 (因此$\partial D$是$k-1$维的,而$d\alpha$则是一个k-形式).$k=2$时,它就是斯托克斯公式, $k=3$时它就是高斯定理.可见,利用外微分运算,我们可以将矢量分析中那些著名的公式和定理统一起来.
+
+我们可以将其扩展到$ n $维形式,k-1-形式的外微分为一个k-形式,\ref{B3}也被称为\textbf{广义斯托克斯公式}.
+
+外微分有一个尤为重要的性质,对任意微分形式连续进行两次外微分,结果恒等于0\marginnote[]{对于外微分,存在类似于普通复合函数的莱布尼茨公式$$\mathrm{d}(\mu\wedge\lambda)=\mathrm{d}\mu\wedge\lambda+(-1)^{\deg\mu}\mu\wedge\mathrm{d}\lambda$$其中$\deg\mu$为微分形式$\mu$的次数.}
+\begin{equation}
+    \d^2\alpha=\d(\d\alpha)\equiv0
+\end{equation}
+我们知道了外微分可以令相应的微分形式维度上升一次,同样的,我们引入两个类似的算符来表达对于微分形式的其他操作.\\
+在前面,我们了解了k-形式与n-k-形式之间存在一一映射,被称为\textbf{霍奇对偶},于是引入运算符$\star$(有时也使用$*$),即对k-形式取其n-k-形式.我们将在微分几何后面再次讨论.对于
+$$\mathrm{d}f=\frac{\partial f}{\partial x}\mathrm{d}x+\frac{\partial f}{\partial y}\mathrm{d}y+\frac{\partial f}{\partial z}\mathrm{d}z$$
+取$\star$运算后,即得
+\begin{equation}
+    \star\mathrm{d}f=\frac{\partial f}{\partial x}\mathrm{d}y\wedge\mathrm{d}z+\frac{\partial f}{\partial y}\mathrm{d}z\wedge\mathrm{d}x+\frac{\partial f}{\partial z}\mathrm{d}x\wedge\mathrm{d}y
+\end{equation}
+以及与$\d$对应的可以令微分形式降次的运算符$\delta$,定义为
+\begin{equation}
+    \delta=-(-1)^g(-1)^{n(k+1)}\star\mathrm{d}\star
+\end{equation}
+其中,$g$为度规.
+
+利用外微分,我们可以把我们熟知的麦克斯韦方程组(四维时空)变得更加简洁
+\begin{equation}
+    \begin{cases} \mathrm{d}F=0\\ \mathrm{d}\star F=\mu_0\star J \end{cases}
+\end{equation}
+当然,当我们继续深入学习,我们可以得到最终的数学表述:电磁理论是$U(1)$丛上的\textbf{联络}
+\begin{equation}
+    \psi(x)\mapsto e^{\mathrm{i}\varphi(x)}\psi(x)
+\end{equation}
+\subsection{简单实例}
+\subsubsection{保守力}
+回顾力学中我们对于质点系保守力的定义:
+\begin{equation}
+    \sum_i\mathbf{F}_i\cdot \d\mathbf{x}_i=-\d V.
+\end{equation}
+并引入指标$\mu=1,2,3,\cdots,3N$,即对每个质点的3个笛卡尔坐标,于是保守力自然可以重写为
+\begin{equation}
+    F_\mu \dx^\mu=-\d V(x^1,...,x^{3N})
+\end{equation}
+显然这是一个1-形式,并将其简记为$ F $,并且我们能够发现其还是一个\textbf{恰当形式},满足
+\begin{equation}
+    F=-\d V
+\end{equation}
+势能为0-形式,在前面我们知道一个恰当形式必是\textbf{闭形式},立刻得出
+\begin{equation}
+    \d F=0
+\end{equation}
+将$\d F$展开运算,得到
+\begin{equation}
+    \d F=(\partial_\mu F_\nu)\dx^\mu\wedge \dx^\nu=[\frac{1}{2}(\partial_\mu F_\nu-\partial_\nu F_\mu)+\frac{1}{2}(\partial_\mu F_\nu+\partial_\nu F_\mu)]\dx^\mu\wedge \dx^\nu
+\end{equation}
+后一项由于反对称关系为$ 0 $,于是有
+\begin{equation}
+    \d F=\frac{1}{2}(\partial_\mu F_\nu-\partial_\nu F_\mu)\dx^\mu\wedge \dx^\nu
+\end{equation}
+即等价于
+\begin{equation}
+    \partial_\mu F_\nu-\partial_\nu F_\mu=0
+\end{equation}
+对于单个质点,我们得出的结果自然为对力$\mb F$的旋度$\nabla\times\mb F=0$,并且由斯托克斯公式
+\begin{equation}
+    \int_{\partial D}F=\int_D\d F=0
+\end{equation}
+这意味着保守力1-形式在坐标空间内的任意闭合回路积分都为01,我们常称这类积分为\textbf{功},于是,这也就是说明保守力在任意闭合回路做的功为$ 0 $.
+
+\subsubsection{热力学}
+1
+\section{微分流形}
+1
+\section{流形上的外微分}
+1
+\section{纤维丛}
+1
+\section{同调群}
+1
+\section{\textbf{De Rham}上同调群}
+1
+\section{仿射联络空间与黎曼流形}
+1
+\section{电磁理论是$U(1)$丛上的联络}
+1
+
+
+
+
+
+\chapter{mathematica的基本用法}
+\subsection*{4.1-式子13}
+输入代码
+\begin{lstlisting}
+    Integrate[
+    1/(2 \[Pi]) Exp[-I \[Epsilon] (p^2/(2 m) + V) + 
+    I p (qf - qi)], {p, -Infinity, Infinity}] // FullSimplify
+\end{lstlisting}
+
+\chapter{答案及解析}
+\section{第一章}
+1
+\section{第二章}
+1
+\chapter{致谢/参考}
+\section{致谢}
+感谢elegantbook所提供的模板,\href{https://elegantlatex.org/}{https://elegantlatex.org/}.\\
+并非elegantbook
+
+\section{参考}
+本文主要参考的书籍和期刊如下:
+\begin{enumerate}
+    \item Modern Quantum Mechanics 2nd.J.J.Sakurai
+    \item Quantum Field Theory in Condensed Matter Physics 2nd.Alexei M.Tsvellk
+    \item Entanglement in Many-Body Systems(RMP)
+    \item 物理学家用李群李代数
+    \item 《李群与李代数》讲义-李世雄
+    \item Nicolas Dupuis - Field Theory of Condensed Matter and Ultracold Gases
+    \item Conformal Field Theory A.N. Schellekens
+    \item 经典力学新讲-陈童(主要参考部分为微分形式部分)
+\end{enumerate}
+参考了十余本,之后慢慢整理,并会改为bib引用的.
+
+免责声明:本讲义仅限个人学习使用,仅供参考.部分图片为个人重绘,部分图片来源wiki.同时,本讲义的全部内容和代码已公开至github主页,允许二次传播,允许自行更改,但请注意讲义仅为多本书和综述的整理和综合,且仍处于更新状态,不排除未来将前几章重置的可能性.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -84,20 +328,20 @@
 %    \centering
 %    \caption{一些简单对应关系}
 %    \begin{tabular}{|c|c|c|c|}
-%        \hline
-%        & SI      & Gaussian        & G/SI                     \\ \hline
-%        E          & $V/m$   & $statV/m$       & $\sqrt{4\pi\epsilon_0}$  \\ \hline
-%        V          & $V$     & $statV$         & $\sqrt{4\pi\epsilon_0}$  \\ \hline
-%        D          & $C/m^2$ & $statC/cm^2$    & $\sqrt{4\pi/\epsilon_0}$ \\ \hline
-%        q          & $C$     & $statC$         & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
-%        P          & $C/m^2$ & $statC/cm^2$    & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
-%        I          & $A$     & $statC/s$       & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
-%        B          & $T$     & $Gauss$         & $\sqrt{4\pi/\mu_0}$      \\ \hline
-%        A          & $Wb/m$  & $Gauss\cdot cm$ & $\sqrt{4\pi/\mu_0}$      \\ \hline
-%        H          & $A/m$   & $oersted$       & $\sqrt{4\pi\mu_0}$       \\ \hline
-%        $\epsilon$ & $F/m$   & 1               & $1/\epsilon_0$           \\ \hline
-%        $\mu$      & $H/m$   & 1               & $1/\mu_0$                \\ \hline
-%    \end{tabular}
+    %        \hline
+    %        & SI      & Gaussian        & G/SI                     \\ \hline
+    %        E          & $V/m$   & $statV/m$       & $\sqrt{4\pi\epsilon_0}$  \\ \hline
+    %        V          & $V$     & $statV$         & $\sqrt{4\pi\epsilon_0}$  \\ \hline
+    %        D          & $C/m^2$ & $statC/cm^2$    & $\sqrt{4\pi/\epsilon_0}$ \\ \hline
+    %        q          & $C$     & $statC$         & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
+    %        P          & $C/m^2$ & $statC/cm^2$    & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
+    %        I          & $A$     & $statC/s$       & $1/\sqrt{4\pi\epsilon_0}$ \\ \hline
+    %        B          & $T$     & $Gauss$         & $\sqrt{4\pi/\mu_0}$      \\ \hline
+    %        A          & $Wb/m$  & $Gauss\cdot cm$ & $\sqrt{4\pi/\mu_0}$      \\ \hline
+    %        H          & $A/m$   & $oersted$       & $\sqrt{4\pi\mu_0}$       \\ \hline
+    %        $\epsilon$ & $F/m$   & 1               & $1/\epsilon_0$           \\ \hline
+    %        $\mu$      & $H/m$   & 1               & $1/\mu_0$                \\ \hline
+    %    \end{tabular}
 %\end{table}
 %\section{自然单位制}
 %我们熟知,国际单位制的7个基本单位是通过物理常数所定义的,那么,如果我们把其中\textbf{一个或几个}的定义值改为1,那么就又可以构造出来一套度量系统.这其中\textbf{显而易见的优点}是直接导致原本含有大量常数的公式可以被写成更加简洁方便的形式.在物理学里,自然单位制就是一种建立于此类方法的计量单位制度.例如,电荷的自然单位是基本电荷${\displaystyle e}$,速度的自然单位是光速${\displaystyle c}$,角动量的自然单位是约化普朗克常数${\displaystyle \hbar }$,电阻的自然单位是自由空间阻抗${\displaystyle Z_{0}}$,质量的自然单位则有电子质量${\displaystyle m_{e}}$与质子质量${\displaystyle m_{p}}$等.\\
@@ -148,23 +392,23 @@
 %\subsection*{二维形式}
 %\begin{equation}
 %    \varepsilon_{ij}={
-%        \begin{cases}+1&\text{当}\left(i,j\right)=\left(1,2\right)\\
-%            -1&\text{当}\left(i,j\right)=\left(2,1\right)\\
-%            0&\text{当}i=j
-%        \end{cases}
-%    }\,
+    %        \begin{cases}+1&\text{当}\left(i,j\right)=\left(1,2\right)\\
+        %            -1&\text{当}\left(i,j\right)=\left(2,1\right)\\
+        %            0&\text{当}i=j
+        %        \end{cases}
+    %    }\,
 %\end{equation}
 %二维较为少见,仅作为了解.
 %\subsection*{三维形式}
 %我们经常看到的列维西维塔符号常常是三维形式的,即如下
 %\begin{equation}
 %    \varepsilon _{ijk}={
-%        \begin{cases}
-%            +1&\text{当}(i,j,k)=(1,2,3),(2,3,1),(3,1,2)\\
-%            -1&\text{当}(i,j,k)=(3,2,1),(2,1,3),(1,3,2)\\
-%            0&\text{当}i=j,j=k\text{或}k=i
-%        \end{cases}
-%    }\,
+    %        \begin{cases}
+        %            +1&\text{当}(i,j,k)=(1,2,3),(2,3,1),(3,1,2)\\
+        %            -1&\text{当}(i,j,k)=(3,2,1),(2,1,3),(1,3,2)\\
+        %            0&\text{当}i=j,j=k\text{或}k=i
+        %        \end{cases}
+    %    }\,
 %\end{equation}
 %\subsection*{性质}
 %两个列维-奇维塔符号的积，可以用一个以克罗内克符号表示的行列式求得
@@ -204,43 +448,10 @@
 %以及(高维的情况与之类似,不再重复,相关证明是显然的)
 %\begin{equation}
 %    \begin{aligned}
-%        \delta (\alpha x)&={\frac {\delta (x)}{|\alpha |}}\\
-%        \delta (-x)&=\delta (x)\\
-%        x\delta (x)&=0\\
-%        \int _{-\infty }^{\infty }\delta (\xi -x)\delta (x-\eta )\,\mathrm {d} x&=\delta (\xi -\eta )
-%    \end{aligned}
+    %        \delta (\alpha x)&={\frac {\delta (x)}{|\alpha |}}\\
+    %        \delta (-x)&=\delta (x)\\
+    %        x\delta (x)&=0\\
+    %        \int _{-\infty }^{\infty }\delta (\xi -x)\delta (x-\eta )\,\mathrm {d} x&=\delta (\xi -\eta )
+    %    \end{aligned}
 %\end{equation}
 %狄拉克$\delta$分布是在包含所有平方可积函数的希尔伯特空间$L_2$上所稠密定义的一个无界线性泛函.在许多应用中,可以对$L_2$的某个子空间赋予更强的拓扑,使得$\delta$函数能够定义一个有界线性算子.
-\chapter{mathematica的基本用法}
-\subsection*{4.1-式子13}
-输入代码
-\begin{lstlisting}
-    Integrate[
-    1/(2 \[Pi]) Exp[-I \[Epsilon] (p^2/(2 m) + V) + 
-    I p (qf - qi)], {p, -Infinity, Infinity}] // FullSimplify
-\end{lstlisting}
-
-\chapter{答案及解析}
-\section{第一章}
-1
-\section{第二章}
-1
-\chapter{致谢/参考}
-\section{致谢}
-感谢elegantbook所提供的模板,\href{https://elegantlatex.org/}{https://elegantlatex.org/}.\\
-并非elegantbook
-
-\section{参考}
-本文主要参考的书籍和期刊如下:
-\begin{enumerate}
-    \item Modern Quantum Mechanics 2nd.J.J.Sakurai
-    \item Quantum Field Theory in Condensed Matter Physics 2nd.Alexei M.Tsvellk
-    \item Entanglement in Many-Body Systems(RMP)
-    \item 物理学家用李群李代数
-    \item 《李群与李代数》讲义-李世雄
-    \item Nicolas Dupuis - Field Theory of Condensed Matter and Ultracold Gases
-    \item Conformal Field Theory A.N. Schellekens
-\end{enumerate}
-参考了十余本,之后慢慢整理,并会改为bib引用的.
-
-免责声明:本讲义仅限个人学习使用,第一章和第二章大篇幅借鉴了Sakurai的MQM,第三章是多本李群李代数教材的综合,对部分内容进行了改写和删改,习题答案系个人补充,仅供参考.部分图片为个人重绘,部分图片来源wiki.同时,本讲义的全部内容和代码已公开至github主页,允许二次传播,但请注意讲义仅为多本书和综述的整理和综合,且仍处于更新状态,不排除未来将前几章重置的可能性.

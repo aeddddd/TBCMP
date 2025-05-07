@@ -26,6 +26,13 @@
 \PassOptionsToPackage{svgnames}{xcolor}
 \documentclass[a4paper,fontsize=10pt,open=any,twoside=false,numbers=noenddot,UTF-8,]{kaobook}
 
+%%% color
+\colorlet{ColorTitle}{Black}
+\colorlet{ColorSectionName}{Black}
+\colorlet{ColorBoxFG}{Gray}
+\colorlet{ColorBoxText}{Black}
+\colorlet{ColorBoxBG}{White}
+\definecolor{color1}{rgb}{0.5,0.6,0.7}
 % Choose the language
 \ifxetexorluatex
 \usepackage{polyglossia}
@@ -71,6 +78,10 @@
 \newcommand{\blue}{\color{blue}}
 \newcommand{\red}{\color{red}}
 \newcommand\mb[1]{\mathbf{#1}}
+\newcommand\bm[1]{\mathbf{#1}}
+\newcommand\mf[1]{\mathfrak{#1}}
+\newcommand\bb[1]{\mathbb{#1}}
+\newcommand{\tr}{\mathrm{Tr}}
 \newcommand{\dt}{\d t}
 \newcommand{\dx}{\d x}
 \newcommand{\dy}{\d y}
@@ -99,15 +110,122 @@
     \fi%
     \fi%
 }
+%%%%定义映射\map{\exp}{\mathbb{R}}{\mathbb{S}^1}{x}{e^{2\pi i x}}
+%          \Map{\Delta}{X}{X\times X}{x}{(x,x)} 
+\def\map#1#2{\def\mapname{#1}\def\mapdomain{#2}\def\maparrow{\longrightarrow}\futurelet\next\mapAR}
+\def\mapAR{\ifx\next[\expandafter\mapar\else\expandafter\mapAux\fi}
+\def\mapar[#1]{\def\maparrow{#1}\expandafter\mapAux}
+\def\mapAux#1#2{\def\mapcodomain{#1}\def\mapelement{#2}\def\mapmaparrow{\longmapsto}\futurelet\next\mapMAR}
+\def\mapMAR{\ifx\next[\expandafter\mapmar\else\expandafter\mapAuxAux\fi}
+\def\mapmar[#1]{\def\mapmaparrow{#1}\expandafter\mapAuxAux}
+\def\mapAuxAux#1{\def\mapcoelemnt{#1}\futurelet\next\mapAuxAuxAux}
+\def\mapAuxAuxAux{\def\nothing{}%
+    \ifx\mapname\nothing%
+    \mapdomain\maparrow\mapcodomain\qquad\mapelement\mapmaparrow\mapcoelemnt%%
+    \else%
+    \mapname:\mapdomain\maparrow\mapcodomain\qquad\mapelement\mapmaparrow\mapcoelemnt%
+    \fi%
+}
+\def\Map#1#2{\def\Mapname{#1}\def\Mapdomain{#2}\def\Maparrow{\longrightarrow}\futurelet\next\MapAR}
+\def\MapAR{\ifx\next[\expandafter\Mapar\else\expandafter\MapAux\fi}
+\def\Mapar[#1]{\def\Maparrow{#1}\expandafter\MapAux}
+\def\MapAux#1#2{\def\Mapcodomain{#1}\def\Mapelement{#2}\def\Mapmaparrow{\longmapsto}\futurelet\next\MapMAR}
+\def\MapMAR{\ifx\next[\expandafter\Mapmar\else\expandafter\MapAuxAux\fi}
+\def\Mapmar[#1]{\def\Mapmaparrow{#1}\expandafter\MapAuxAux}
+\def\MapAuxAux#1{\def\Mapcoelemnt{#1}\futurelet\next\MapAuxAuxAux}
+\def\MapAuxAuxAux{\def\nothing{}%
+    \ifx\Mapname\nothing%
+    \begin{array}{rcl}{}
+        \Mapdomain&\Maparrow&\Mapcodomain\\{}
+        \Mapelement&\Mapmaparrow&\Mapcoelemnt
+    \end{array}
+    \else%
+    \begin{array}{rrcl}{}
+        \Mapname:&\Mapdomain&\Maparrow&\Mapcodomain\\{}
+        &\Mapelement&\Mapmaparrow&\Mapcoelemnt
+    \end{array}
+    \fi%
+}
 
 
 
+%------------方框
 
+\usepackage[most]{tcolorbox}
 
+\newtcolorbox{tbox}[1]{
+    colback=ColorBoxBG, colframe=ColorBoxFG, coltext=ColorBoxText,
+    sharp corners, enhanced, breakable, parbox=false,
+    before skip=1em, after skip=1em,
+    title={#1}, fonttitle=\usefont{OT1}{phv}{b}{n}, 
+    attach boxed title to top left={yshift=-0.1mm}, boxed title style={sharp corners, colback=ColorBoxFG, left=0.405cm},
+    rightrule=-1pt,toprule=-1pt, bottomrule=-1pt
+}
 
+\newtcolorbox{ytbox}[1]{
+    colback=ColorBoxBG, colframe=color1, coltext=ColorBoxText,
+    sharp corners, enhanced, breakable, parbox=false,
+    before skip=1em, after skip=1em,
+    title={#1}, fonttitle=\usefont{OT1}{phv}{b}{n}, 
+    attach boxed title to top left={yshift=-0.1mm}, boxed title style={sharp corners, colback=color1, left=0.405cm},
+    rightrule=-1pt,toprule=-1pt, bottomrule=-1pt
+}
 
+%%% tikz绘制图标 !!!需要在xcolor后加载
+\newcommand*\enumlabel[1]{\tikz[baseline=(char.base)]{
+        \node[shape=rectangle,inner sep=2pt,fill=ColorBoxFG] (char) 
+        {\fontsize{7}{20}\usefont{OT1}{phv}{b}{n}{\textcolor{ColorBoxBG}{#1}}};}}
+%
+\newcommand*\yenumlabel[1]{\tikz[baseline=(char.base)]{
+        \node[shape=rectangle,inner sep=2pt,fill=color1] (char) 
+        {\fontsize{7}{20}\usefont{OT1}{phv}{b}{n}{\textcolor{ColorBoxBG}{#1}}};}}
 
+\newcommand{\textbox}[2]{
+    \begin{tbox}{#1}
+        #2
+    \end{tbox}
+}
+\newcommand{\ytextbox}[2]{
+    \begin{ytbox}{#1}
+        #2
+    \end{ytbox}
+}
+\newcommand{\tenum}[1]{
+    \begin{enumerate}[label=\protect\enumlabel{\arabic*}, leftmargin=0mm, labelsep=0.265cm, topsep=0.5em
+        %, itemsep=1ex
+        ]
+        #1
+    \end{enumerate}
+}
+\newcommand{\ytenum}[1]{
+    \begin{enumerate}[label=\protect\yenumlabel{\arabic*}, leftmargin=0mm, labelsep=0.265cm, topsep=0.5em
+        %, itemsep=1ex
+        ]
+        #1
+    \end{enumerate}
+}
 
+\tikzset{%
+    >=latex, % option for nice arrows
+    inner sep=0pt,%
+    outer sep=2pt,%
+    mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+        fill=black,circle}%
+}
+% 参数1：【可选】变换的名字，默认 `current plane`
+% 参数2：极点的倾斜角
+% 参数3：经度（东正西负）
+\newcommand\LongitudePlane[3][current plane]{
+    \tikzset{#1/.estyle={cm={cos(#3),sin(#3)*sin(#2),0,cos(#2),(0,0)}}}
+}
+\newcommand\DrawLongitude[3][\AngleGamma]{
+    \LongitudePlane{#1}{#3}
+    \tikzset{current plane/.prefix style={scale=#2}}
+    % angle of "visibility"
+    \pgfmathsetmacro\angVis{atan(sin(#3)*cos(#1)/sin(#1))} %
+    \draw[current plane,thin,black] (\angVis:1) arc (\angVis:\angVis+180:1);
+    \draw[current plane,thin,dashed] (\angVis-180:1) arc (\angVis-180:\angVis:1);
+}
 
 
 
@@ -129,8 +247,8 @@
 \coverset
 {
     title    = 凝聚态场论:讲义,
-    subtitle = Condensed Matter Field theory : Notes,
-    bioinfo  = {当前进度:尚未完成.},
+    subtitle = Condensed Matter Field Theory : Notes,
+    bioinfo  = {Physics:CMFTN},
     color    = DarkGreen,
     head     = background/4,
     logo     = cat/sixpointed stars,
@@ -139,55 +257,27 @@
     
     \maketitle
     
-    %----------------------------------------------------------------------------------
-    %	PREFACE
-    %----------------------------------------------------------------------------------
-    
     \input{chapters/preface.tex}
     \index{preface}
     
-    %----------------------------------------------------------------------------------
-    %	目录
-    %----------------------------------------------------------------------------------
-    
-    \begingroup % Local scope for the following commands
-    \setlength{\textheight}{230\hscale} % Manually adjust the height of the ToC pages
-    \etocclasstocstyle % "toc display" as if etoc was not loaded
-    \etocstandardlines % "toc lines" as if etoc was not loaded
-    \tableofcontents % Output the table of contents
-    %\listoffigures % Output the list of figures
+    \begingroup 
+    \setlength{\textheight}{230\hscale} 
+    \etocclasstocstyle 
+    \etocstandardlines 
+    \tableofcontents 
     \let\cleardoublepage\bigskip
     \let\clearpage\bigskip
-    %\listoftables % Output the list of tables
     \endgroup
     
-    %----------------------------------------------------------------------------------
-    %	文档主体
-    %----------------------------------------------------------------------------------
-    
-    \mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
+    \mainmatter 
     \setchapterstyle{kao} % Choose the default chapter heading style
     
     \input{chapters/chapter1.tex}
     \input{chapters/chapter2.tex}
-    %\pagelayout{wide} % No margins
-    %
-    %\pagelayout{margin} % Restore margins
-    %
-    %
-    %\pagelayout{wide} % No margins
-    %\pagelayout{margin} % Restore margins
     
-    
-    \appendix % From here onwards, chapters are numbered with letters, as is the appendix convention
-    
-    %\pagelayout{wide} % No margins
-    %
-    %\pagelayout{margin} % Restore margins
-    
+    \appendix 
     \input{chapters/appendix.tex}
     
-    %----------------------------------------------------------------------------------------
     
     \backmatter % Denotes the end of the main document content
     \setchapterstyle{plain} % Output plain chapters from this point onwards

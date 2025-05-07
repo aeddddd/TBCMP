@@ -66,6 +66,33 @@
     \color{blue}{\boxed{L=\frac{1}{2} m v^{2}-q \varphi+q \boldsymbol{A} \cdot v }}
 \end{equation}
 
+\section{格林函数}
+关于格林函数的发现者:George Green的一篇很有趣的短文:\\
+\href{https://chaoli.club/index.php/attachment/59eff93a205af_Green%20of%20Green%20Functions%20-%20revised.pdf/download}{Green函数的那个Green.作者:Lawire Challis; Fred Sheard,翻译:超理汉化组}
+\marginnote[]{
+    在这里把这本书的前言附注出来:\\
+    \textit{1828 年,George Green 发表了一篇数学文章,彼时他仍是Nottingham 的一位磨坊工人,这篇文章一度无人问津.但Green 在文中创造的分析技术并未就此湮没,今天的诸多学科,无论是经典的静电学还是相当现代的量子场论,无一不需要这种技术.}
+    坐落在英国中部的Nottingham,是一座充满活力的美丽城市.城墙边坐落着Robin
+    Hood1 的雕像,这城因他而闻名.今日的Nottingham 郡长,仍是政府的重要人物,但是不再被善良的市民们所惧怕.一座新起的风车是当下Nottingham 的最新景点.碧空当间,白色扇叶凭风而动,磨出著名的石磨面粉,再由底下的商铺装成小袋售出去.但你可能想不到,他们也出售数学物理的宣传册.面粉与物理间的奇妙纽带是Nottingham 磨坊的独特记号之一,个中缘由已被磨坊上的一块牌子道出:
+    \begin{Center}
+        生于斯,作于斯的\\
+        George Green\\
+        一位数学家\\
+        1793-1841
+    \end{Center}
+    这里的Green,正是Green 定理的那位Green ,也是Green 函数的那位Green .全世界物理专业的本科学生都熟悉前者;后者则频频现出现在经典物理和量子物理中.
+}
+
+本节将补充格林函数的来源,及为什么要使用格林函数.\\
+
+
+
+
+
+
+
+
+
 \chapter{数学内容补充}
 \section{楔积,外微分与外代数}
 \subsection{楔积}
@@ -244,27 +271,27 @@ $$\mathrm{d}f=\frac{\partial f}{\partial x}\mathrm{d}x+\frac{\partial f}{\partia
 这意味着保守力1-形式在坐标空间内的任意闭合回路积分都为01,我们常称这类积分为\textbf{功},于是,这也就是说明保守力在任意闭合回路做的功为$ 0 $.
 
 \subsubsection{热力学}
-1
-\section{微分流形}
-1
-\section{流形上的外微分}
-1
-\section{纤维丛}
-1
-\section{同调群}
-1
-\section{\textbf{De Rham}上同调群}
-1
-\section{仿射联络空间与黎曼流形}
-1
-\section{电磁理论是$U(1)$丛上的联络}
-1
-
-
-
-
-
+我们熟知热力学第一定律可以写为
+\begin{equation}
+    T\d S=P\d V+\d U
+\end{equation}
+对其应用一次外微分,并注意到$\d^2=0$,有
+\begin{equation}
+    \d T\wedge\d S=\d P\wedge\d V
+\end{equation}
+由这个微分形式关系,自然可以推出热力学所有的麦克斯韦关系式,例如,设$ T,P $是关于$S,V$的函数$T=T(S,V),P=P(S,V)$,有关系
+\begin{equation}
+    (\frac{\partial T}{\partial V})_{S} \d V \wedge \d S = (\frac{\partial P}{\partial S})_{V} \d S \wedge \d V
+\end{equation}
+即关系
+\begin{equation}
+    (\frac{\partial T}{\partial V})_{S} = - (\frac{\partial P}{\partial S})_{V}
+\end{equation}
+而$U,H,F,G$则是勒让德变换的关系,但不是本篇的重点了,可以参考这一本热统教材\href{https://chaoli.club/index.php/attachment/59a781504bce2_CallenThermo.pdf/download}{热力学和热统计物理导论,作者:Herbert B. Callen,翻译:超理汉化组},这一本写的远超国内绝大多数热统教科书.
+\section{矢量分析与张量代数}
+还没写.
 \chapter{mathematica的基本用法}
+本篇附录内容大概是基本语法,常用函数介绍,一些匿名函数,绘图.(不一定什么时候会写)
 \subsection*{4.1-式子13}
 输入代码
 \begin{lstlisting}
@@ -276,12 +303,12 @@ $$\mathrm{d}f=\frac{\partial f}{\partial x}\mathrm{d}x+\frac{\partial f}{\partia
 \chapter{答案及解析}
 \section{第一章}
 1
+%第一章至少有一道利用代数方法解谐振子的大题.李群李代数若干,乱七八糟的数学象征性来一点.
 \section{第二章}
 1
 \chapter{致谢/参考}
 \section{致谢}
-感谢elegantbook所提供的模板,\href{https://elegantlatex.org/}{https://elegantlatex.org/}.\\
-并非elegantbook
+感谢在这本讲义完成中提供帮助的人,以及提供模板的\href{https://github.com/fmarotta/kaobook}{https://github.com/fmarotta/kaobook}.
 
 \section{参考}
 本文主要参考的书籍和期刊如下:
